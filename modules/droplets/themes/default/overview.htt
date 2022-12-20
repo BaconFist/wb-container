@@ -1,0 +1,156 @@
+<!-- BEGIN main_block -->
+<section class="droplets-block w3-container">
+    <div class="droplets overview" id="cb-droplets" >
+        <form action="{ActionUrl}" method="post" id="droplets_form">
+            <input type="hidden" name="tool" value="{MODULE_NAME}" />
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <table class="droplets w3-table-all" id="DropletsTable">
+                <tbody>
+                    <tr>
+                        <td >
+                            <button class="btn w3-blue-wb w3-hover-green" type="submit" name="command" value="add_droplet?droplet_id={IDKEY0}">{DR_TEXT_ADD_DROPLET}</button>
+                            <button class="btn w3-blue-wb w3-hover-green" type="submit" name="command" value="select_archiv#openModal">{DR_TEXT_IMPORT}</button>
+                       </td>
+                        <td style="text-align: right;">
+                            <button class="btn w3-blue-wb w3-hover-green modal-header_btn modal-trigger btn-fixed" type="submit" name="command" value="call_help#openModal" >Droplet {DR_TEXT_HELP}</button>
+                            <button class="btn w3-blue-wb w3-hover-green" type="submit" name="command" value="backup_droplets">{TEXT_BACKUP}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>{DR_TEXT_MODIFY}/{DR_TEXT_DELETE} {DR_TEXT_DROPLETS}</h2>
+            <div id="dr-legende" class="nowrap">
+              <nav class="table">
+                <ul class="tr">
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/modify.png" alt="" /> {DR_TEXT_MODIFY}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/copy.png" alt="" /> {DR_TEXT_COPY_DROPLET}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/rename.png" alt="" /> {TEXT_RENAME}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/delete.png" alt="" /> {TEXT_DELETE}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/status_1.png" alt="" /> {TEXT_ACTIVE}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/status_0.png" alt="" /> {TEXT_INACTIVE}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/droplet.png" alt="" /> {DR_TEXT_VALID_CODE}</li>
+                    <li class="td dr-btn"><img src="{sAddonThemeUrl}/img/24/invalid.png" alt="" /> {DR_TEXT_INVALID_CODE}</li>
+                </ul>
+              </nav>
+            </div>
+            <div class="outer">
+                <table class="fixed-headers sortierbar droplets-data w3-border w3-hoverable" id="tableData" >
+                    <thead>
+                        <tr class="w3-header-blue-wb">
+                            <th>
+                                <input name="select_all" id="select_all" type="checkbox" value="1"  />
+                            </th>
+                            <th>
+                                <img src="{sAddonThemeUrl}/img/24/blank.gif" alt="" />
+                            </th>
+                            <th>
+                                <img src="{sAddonThemeUrl}/img/24/blank.gif" alt="" />
+                            </th>
+                            <th>
+                                <img src="{sAddonThemeUrl}/img/24/blank.gif" alt="" />
+                            </th>
+                            <th class="sortierbar">{TEXT_NAME}</th>
+                            <th class="sortierbar">{TEXT_DESCRIPTION}</th>
+                            <th class="sortierbar vorsortiert+">{DR_TEXT_MODIFIED_WHEN}</th>
+                            <th>
+                                <img src="{sAddonThemeUrl}/img/24/blank.gif" alt="" />
+                            </th>
+                            <th id="DropletsActive" style="cursor: help;">
+                            <img src="{sAddonThemeUrl}/img/24/info.png" alt="" title="{DR_TEXT_ACTION}" />
+                            </th>
+                            <th>
+                                <img src="{sAddonThemeUrl}/img/24/blank.gif" alt="" />
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <!-- BEGIN list_droplet_block -->
+                        <tr >
+                            <td>
+                                 <input type="checkbox" name="cb[{DropletId}]" id="L{DropletId}cb" value="{sDropletName}" />
+                            </td>
+                            <td >
+                                <button name="command" type="submit" class="noButton" value="copy_droplet?droplet_id={iDropletIdKey}" title="">
+                                    <img src="{sAddonThemeUrl}/img/24/copy.png" alt="" />
+                                </button>
+                            </td>
+                            <td>
+                                <button name="command" type="submit" class="noButton" value="modify_droplet?droplet_id={iDropletIdKey}" title="">
+                                    <img src="{sAddonThemeUrl}/img/24/modify.png" alt="" />
+                                </button>
+                            </td>
+                            <td>
+                                <button name="command" type="submit" class="noButton" value="modify_droplet?droplet_id={iDropletIdKey}">
+                                     <img src="{sAddonThemeUrl}/img/24/{icon}.png" alt="" />
+                                </button>
+                            </td>
+                            <td>
+                                <button class="noButton" name="command" type="submit" value="modify_droplet?droplet_id={iDropletIdKey}" title="{sDropletTitle}">
+                                    <span class="truncate" >{sDropletName}</span>
+                                    <span id="tooltip_{DropletId}">{comments}</span>
+                                </button>
+                            </td>
+                            <td>
+                                  <span class="truncate" title="{sDescriptionTitle}">{sDropletDescription}</span>
+                            </td>
+                            <td>
+                                <b>{modified_when}</b>
+                            </td>
+                            <td >
+                                <button name="command" type="submit" class="noButton" value="rename_droplet?droplet_id={iDropletIdKey}" title="">
+                                    <img src="{sAddonThemeUrl}/img/24/rename.png" alt="" />
+                                </button>
+                            </td>
+                            <td id="id_{DropletId}" class="toggle_active_status cursor">
+                                <img id="active_{DropletId}" src="{sAddonThemeUrl}/img/24/status_{ActiveIcon}.png" alt=""  />
+                            </td>
+                            <td>
+                                <button name="command" type="submit" class="noButton" value="delete_droplet?droplet_id={iDropletIdKey}" title="">
+                                    <img src="{sAddonThemeUrl}/img/24/delete.png" alt="" />
+                                </button>
+                            </td>
+                        </tr>
+                <!-- END list_droplet_block -->
+                        <tr class="noHeight">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form><!-- droplets_form -->
+    </div><!-- droplets -->
+</section>
+<script>
+var Droplet = {
+    ADMIN_DIRECTORY : '{ADMIN_DIRECTORY}',
+    WB_URL : '{AppUrl}',
+    ADMIN_URL : '{AcpUrl}',
+    AddonUrl : '{sAddonUrl}/',
+    ThemeUrl : '{sAddonThemeUrl}/'
+};
+</script>
+<script src="{sAddonThemeUrl}/js/TableSort.js"></script>
+
+<!-- END main_block -->
+<script>
+<!--
+/*
+    var table = $('#DropletsTable').DataTable( {
+        ajax: "data.json"
+    });
+    setInterval( function () {
+        table.ajax.reload( null, false ); // user paging is not reset on reload
+    }, 30000 );
+    setInterval();
+*/
+-->
+</script>

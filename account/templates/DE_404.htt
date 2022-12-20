@@ -1,0 +1,8 @@
+<main style="background-image: url('<?= WB_REL; ?>/account/templates/B003.jpg') ;background-size: cover; border-radius: 0 .5rem .5rem;">
+<div id="info" style="padding: 1em;height: auto;border-left: 5px solid #c32e04;min-width: 20em;margin: 1em auto; color: #fff;">
+<h2 style="font-size: 1.8em;">Entschuldigung</h2>
+<h4>Das hätte nicht passieren dürfen!</h4>
+<h5><?php echo $sMsg;?></h5>
+<h5>Bitte versuchen Sie es später noch einmal oder gehen sie zur <a href="<?= WB_URL; ?>">Startseite</a>.</h5>
+</div>
+</main>

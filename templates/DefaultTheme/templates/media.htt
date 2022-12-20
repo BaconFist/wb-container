@@ -1,0 +1,197 @@
+<!-- BEGIN main_block -->
+<article class="media-block w3-container w3-margin">
+<h2 class="w3-margin-bottom">{HEADING_MEDIA_MANAGEMENT}</h2>
+<div class="w3-cell-row block-outer" id="main">
+    <div class="w3-container w3-cell" style="width: 40%;">
+    <h2 style="margin-bottom: 0.325em;">{HEADING_UPLOAD_FILES}</h2>
+
+      <form id="upload" action="upload.php" method="post" enctype="multipart/form-data" class="{DISPLAY_UPLOAD}">
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}"/>
+        <input type="hidden" name="max_file_size" value="{MAX_FILE_SIZE}" />
+        <table class="w3-table">
+            <tbody>
+          <tr>
+            <td><label>{TEXT_TARGET_FOLDER}:</label>:
+              <select id="upload_target" class="w3-border w3-select w3--medium" name="upload_target" style="width:100%;">
+                <option class="level-0" value="{MEDIA_DIRECTORY}{HOME_DIRECTORY}" {MEDIA_SELECTED} >{MEDIA_DIR}{HOME_DIRECTORY}</option>
+                <!-- BEGIN dir_list_block -->
+                <option class="level-{LEVEL}" value="{VALUE}" {SELECTED}>{NAME}</option>
+                <!-- END dir_list_block -->
+              </select>
+            </td>
+          </tr>
+            </tbody>
+        </table>
+
+        <table class="w3-table">
+            <tbody>
+          <tr>
+              <td>
+                <div class="w3-bar-block ">
+                  <span class="w3-bar-item">
+                    <input class="switch w3-border-grey w3-nowrap" type="checkbox" name="unzip" id="unzip"/>
+                    <label for="unzip" class="tooltip w3--medium" title="{TEXT_UNZIP_FILE}">{TEXT_UNZIP_FILE}</label>
+                  </span>
+                  <span class="w3-bar-item" id="delzip" style="display: none;">
+                    <input class="switch w3-border-grey w3-nowrap" type="checkbox" name="delzip" id="deletezip" />
+                    <label class="w3--medium" for="deletezip">{TEXT_DELETE_ARCHIVE}</label>
+                  </span>
+                </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file1" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file2" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file3" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file4" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file5" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file6" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]"  id="file7" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file8" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file9" style="visibility: visible;" />
+            </td>
+          </tr>
+          <tr>
+            <td style=" float: left;">
+            <input class="w3--medium w3-opennav w3-hover-text-blue-grey" type="file" name="file[]" id="file10" style="visibility: visible;" />
+            </td>
+          </tr>
+            </tbody>
+        </table>
+
+        <table class="w3-table">
+            <tbody>
+          <tr id="disable_overwrite" style="visibility: visible;">
+            <td>
+                <input class="switch w3-border-grey w3-nowrap" type="checkbox" name="overwrite" id="overwrite"/>
+                <label for="overwrite">{TEXT_OVERWRITE_EXISTING} {TEXT_FILES}</label><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="w3-margin-top" style="line-height: 1;">
+                    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{TEXT_UPLOAD_FILES}"  />
+                </div>
+            </td>
+          </tr>
+            </tbody>
+        </table>
+      </form>
+<!--
+If you want to HIDE the option of creating folders in the Media-folder (for your clients, for example),
+please set the class below to "w3-hide", else to "w3-show".
+-->
+      <div class="w3-show">
+        <form id="create" action="create.php" method="post" class="{DISPLAY_CREATE}">
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}"/>
+          <h2>{HEADING_CREATE_FOLDER}</h2>
+          <table  class="w3-table">
+            <tbody>
+            <tr>
+              <td><label>{TEXT_NAME}:</label>
+              <input class="w3-border w3-input" type="text" name="name"  /></td>
+            </tr>
+          </table>
+
+          <table  class="w3-table">
+            <tbody>
+            <tr>
+              <td><label>{TEXT_TARGET_FOLDER}:</label>
+                <select id="create_target" class="w3-border w3-select-small w3--medium" name="create_target">
+                  <option class="level-0" value="{MEDIA_DIRECTORY}{HOME_DIRECTORY}"  {MEDIA_SELECTED}>{MEDIA_DIR}{HOME_DIRECTORY}</option>
+                  <!-- BEGIN dir_list_block -->
+                  <option class="level-{LEVEL}" value="{VALUE}" {SELECTED}>{NAME} </option>
+                  <!-- END dir_list_block -->
+                </select>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <table class="w3-table">
+            <tbody>
+            <tr>
+              <td>
+                <div class="w3-margin-top" style="line-height: 1;">
+                    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{TEXT_CREATE_FOLDER}" style="min-width: 12.225em;"  />
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div >&nbsp;</div>
+
+    <div class="media_right w3-container w3-cell" style="overflow: hidden;">
+        <h2 style="padding-left:3px;">{HEADING_BROWSE_MEDIA}</h2>
+        <div class="w3-content w3-pale-grey w3-bottombar w3-border-grey w3-border">
+            <p class="w3-panel">{MESSAGE_MEDIA_SIZE_INFO}</p>
+        </div>
+        <div class="w3-content w3-bar {DISPLAY_SETTINGS} ">
+        <label class="w3-bar-item">{OPTIONS}:</label>
+        <a class="w3-bar-item Text color dark grey" href="setparameter.php" target="browse">{CHANGE_SETTINGS}</a>
+        <label class="w3-bar-item">|</label>
+        <a class="w3-bar-item Text color dark grey" id="reload" href="browse.php?dir=" target="browse">{TEXT_RELOAD}</a>
+        </div>
+        <div style="width: auto;">
+        </div>
+        <div class="iframe-container" style="min--height: 50em!important;">
+            <iframe class="iframe-browse" id="browse" name="browse" src="browse.php?dir={CURRENT_DIR}" data-src="{CURRENT_DIR}" class=" w3-margin-bottom"  ></iframe>
+        </div>
+  <div class="w3-margin">&nbsp;</div>
+    </div>
+</div>
+</article>
+
+<!--
+<script src="{WB_URL}/include/plugins/default/sweetalert2/09.17.2/dist/sweetalert2.all.min.js"></script>
+-->
+<script src="toggle_zip.js"></script>
+<!-- END main_block -->
+<script>
+/**/
+  document.querySelector(".iframe-container iframe#browse").addEventListener ( "load", function () {
+      //var iframeHeight = this.contentWindow.document.body.scrollHeight;
+      const elem = document.querySelector('.iframe-container');
+      let width = window.getComputedStyle(elem).width;
+      let height = window.getComputedStyle(elem).height;
+//console.log(height);
+     this.setAttribute("style","height: height;overflow:hidden;");
+  });
+
+</script>

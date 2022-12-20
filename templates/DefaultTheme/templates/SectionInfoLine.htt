@@ -1,0 +1,14 @@
+<span class="w3-hide"><!--
+ @version         $Id: SectionInfoLine.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<div class="section-{aTarget.SectionInfoLine}">
+  <div class="section-info w3-padding-4 w3--medium">
+  <b>{MESSAGE_PAGES_SECTIONS_ORGA}</b> » <b class="w3-text-blue-wb">Block: </b>[{aTarget.sectionBlock}] {aTarget.BlockName} <b class="w3-text-blue-wb"> Modul: </b> {aTarget.sectionModule}<b class="w3-text-blue-wb"> SecId: </b> [{aTarget.SectionId}] <b>&nbsp;{SECTIONS_TITLE}</b> {aTarget.title}
+<!-- BEGIN section_block -->
+  <button data-modal-id="sec{aTarget.SectionId}" class="wb-edit page-expert w3-right w3-circle w3-transparent w3-padding-0"><i title="{TEXT_EXPERT_MODE}" class="fa fa-cog w3-xlarge w3-text-blue-gray  w3-hover-text-blue"><span class="w3-hide">&nbsp;</span></i></button>
+<!-- END section_block -->
+  </div>
+  <div style="line-height: 0;" id="{aTarget.SectionIdPrefix}">&nbsp;</div>
+</div>
+<!-- END main_block -->

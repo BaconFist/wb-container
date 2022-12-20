@@ -1,0 +1,61 @@
+<span class="w3-hide"><!--
+ @version         $Id: media_rename.htt 75 2017-03-10 10:47:06Z manu $
+--></span>
+<!-- BEGIN main_block -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Rename Media</title>
+<meta name="Referrer-Policy" content="no-referrer | same-origin"/>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2" />
+<link href="{THEME_URL}/css/3/w3.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_URL}/css/media.css" rel="stylesheet" type="text/css" />
+
+<style>
+.hide {display:none;}
+</style>
+</head>
+<body>
+
+<!-- BEGIN main_block -->
+<section class="media-rename-block">
+<form id="rename" action="rename2.php" method="post">
+      <input type="hidden" name="dir" value="{DIR}" />
+      <input type="hidden" name="old_name" value="{FILENAME}" />
+      <input type="hidden" name="id" value="{FILE_ID}" />
+      <input type="hidden" name="id_num" value="{FILE_ID_NUM}" />
+      <input type="hidden" name="extension" value="{EXTENSION}" />
+      {FTAN}
+      <table class="w3-table" style="width: 100%; margin: 0 auto;">
+          <tbody>
+              <tr>
+                  <td class="w3-text-gray w3-center" colspan="2">{TEXT_TYPE} {FILENAME} {TEXT_RENAME}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <input class="w3-input w3-border" type="text" name="name"  value="{BASENAME}" />
+                  </td>
+                  <td class="{DISPlAY_EXTENSION}" style="width: 10%;">
+                      <span>{EXTENSION}</span>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                      <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{TEXT_RENAME}" />
+                      <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="button" name="cancel" value="{TEXT_CANCEL}" onclick="javascript: window.location = 'browse.php?dir={DIR}';" />
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+</form>
+</section>
+
+<script>
+document.querySelector('form#rename').name.focus();
+</script>
+
+</body>
+</html>
+
+<!-- END main_block -->

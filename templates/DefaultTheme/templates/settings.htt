@@ -1,0 +1,1241 @@
+<span class="w3-hide"><!--
+ @version         $Id: settings.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+  <article class="options-block w3-container w3-margin">
+    <h2 class="w3-margin-0">{MENU_SETTINGS}</h2>
+    <form id="Settings" action="{ADMIN_URL}/settings/save.php" method="post">
+      <input type="hidden" name="advanced" value="{ADVANCED_VALUE}" />
+      {FTAN}
+
+      <div class=" block-outer w3-margin-top " >
+          <span onclick="ToogleSettings('General')" class="w3-pointer w3-toggle w3-input w3-block w3-light-grey w3-hover-grey w3-left-align w3-large"><i class="fa fa-arrow-down w3-margin"><span class="w3-hide">&nbsp;</span></i>{HEADING_GENERAL_SETTINGS}</span>
+          <div id="General" class="w3-hide w3-container" style="padding: 0.825em;">
+              <div class="Settings-content">
+                  <table class="settings_table">
+                      <colgroup>
+                          <col style="width:25%;" />
+                          <col style="width:40%;" />
+                          <col style="width:35%;" />
+                      </colgroup>
+
+                      <tbody class="value_label">
+                      <tr>
+                          <th class="setting_name">{TEXT_WEBSITE_TITLE}:</th>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" type="text" name="website_title" value="{WEBSITE_TITLE}" />
+                          </td>
+                      </tr>
+                      <tr>
+                          <th class="setting_name">{TEXT_WEBSITE_DESCRIPTION}:</th>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="website_description" cols="50" rows="3">{WEBSITE_DESCRIPTION}</textarea>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_WEBSITE_KEYWORDS}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="website_keywords" cols="50" rows="3" >{WEBSITE_KEYWORDS}</textarea>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td class="setting_name">{TEXT_WEBSITE_HEADER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" id="website_header" name="website_header" cols="60" rows="15" style="height: 150.333px;">{WEBSITE_HEADER}</textarea>
+                              <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" onclick="createEditor('header');return false;" value="{TEXT_EDITOR_ENABLE}" id="create_header" type="button" style="width: 25%;">
+                              <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" onclick="removeEditor('header');return false;" value="{TEXT_EDITOR_DISABLE}" id="remove_header" style="display:none; width: 25%;" type="button" >
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td class="setting_name">{TEXT_WEBSITE_FOOTER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" id="website_footer" name="website_footer" cols="80" rows="15" style="height: 150.333px;">{WEBSITE_FOOTER}</textarea>
+                              <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" onclick="createEditor('footer');return false;" value="{TEXT_EDITOR_ENABLE}" id="create_footer" type="button" style="width: 25%;">
+                              <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" onclick="removeEditor('footer');return false;" value="{TEXT_EDITOR_DISABLE}" id="remove_footer" style="display:none; width: 25%;" type="button" >
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_WEBSITE_SIGNATURE}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" id="website_signature" name="website_signature" cols="80" rows="5">{WEBSITE_SIGNATURE}</textarea>
+                          </td>
+                      </tr>
+                      <!-- BEGIN show_page_level_limit_block -->
+                      <tr>
+                          <td class="setting_name">{TEXT_PAGE_LEVEL_LIMIT}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="page_level_limit">
+                              <!-- BEGIN page_level_limit_list_block -->
+                                  <option value="{NUMBER}"{SELECTED}>{NUMBER}</option>
+                              <!-- END page_level_limit_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- END show_page_level_limit_block -->
+                      <tr>
+                          <td class="setting_name middle">{TEXT_PAGE_TRASH}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="page_trash_inline">
+                              <input type="radio" name="page_trash" id="page_trash_inline" style="width: 14px; height: 14px;" value="inline"{PAGE_TRASH_INLINE} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="page_trash_disabled">
+                              <input type="radio" name="page_trash" id="page_trash_disabled" style="width: 14px; height: 14px;" value="disabled"{PAGE_TRASH_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                              <div style="margin: 0; padding: 0;{DISPLAY_PAGE_TRASH_SEPARATE}">
+                                  <label class="check-container" for="page_trash_separate">
+                                  <input type="radio" name="page_trash" id="page_trash_separate" style="width: 14px; height: 14px;" value="separate"{PAGE_TRASH_SEPARATE} />
+                                  {TEXT_SEPARATE}</label>
+                              </div>
+                          </td>
+                      </tr>
+                      <!-- BEGIN show_checkbox_1_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{TEXT_PAGE_LANGUAGES}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="page_languages_true">
+                              <input type="radio" name="page_languages" id="page_languages_true" style="width: 14px; height: 14px;" value="true"{PAGE_LANGUAGES_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="page_languages_false">
+                              <input type="radio" name="page_languages" id="page_languages_false" style="width: 14px; height: 14px;" value="false"{PAGE_LANGUAGES_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{TEXT_MULTIPLE_MENUS}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="multiple_menus_true">
+                              <input type="radio" name="multiple_menus" id="multiple_menus_true" style="width: 14px; height: 14px;" value="true"{MULTIPLE_MENUS_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="multiple_menus_false">
+                              <input type="radio" name="multiple_menus" id="multiple_menus_false" style="width: 14px; height: 14px;" value="false"{MULTIPLE_MENUS_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <tr style="display: none;">
+                          <td class="setting_name middle">{TEXT_HOME_FOLDERS}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="home_folders_true">
+                              <input type="radio" name="home_folders" id="home_folders_true" style="width: 14px; height: 14px;" value="true"{HOME_FOLDERS_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="home_folders_false">
+                              <input type="radio" name="home_folders" id="home_folders_false" style="width: 14px; height: 14px;" value="false"{HOME_FOLDERS_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <!-- END show_checkbox_1_block -->
+                      <!-- BEGIN show_checkbox_2_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{HEADING_MANAGE_SECTIONS}:</td>
+                          <td class="setting_value" colspan="2">
+                               <label class="check-container" for="manage_sections_true">
+                              <input class="radiobtn" type="radio" name="manage_sections" id="manage_sections_true" style="width: 14px; height: 14px;" value="true"{MANAGE_SECTIONS_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="manage_sections_false">
+                              <input class="radiobtn" type="radio" name="manage_sections" id="manage_sections_false" style="width: 14px; height: 14px;" value="false"{MANAGE_SECTIONS_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{TEXT_SECTION_BLOCKS}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="section_blocks_true">
+                              <input type="radio" name="section_blocks" id="section_blocks_true" style="width: 14px; height: 14px;" value="true"{SECTION_BLOCKS_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="section_blocks_false">
+                              <input type="radio" name="section_blocks" id="section_blocks_false" style="width: 14px; height: 14px;" value="false"{SECTION_BLOCKS_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <!-- END show_checkbox_2_block -->
+                      <tr>
+                          <td class="setting_name middle">{TEXT_INTRO_PAGE}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="intro_page_true">
+                              <input type="radio" name="intro_page" id="intro_page_true" style="width: 14px; height: 14px;" value="true"{INTRO_PAGE_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="intro_page_false">
+                              <input type="radio" name="intro_page" id="intro_page_false" style="width: 14px; height: 14px;" value="false"{INTRO_PAGE_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <!-- BEGIN show_checkbox_3_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{TEXT_HOMEPAGE_REDIRECTION}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="homepage_redirection_true">
+                              <input type="radio" name="homepage_redirection" id="homepage_redirection_true" style="width: 14px; height: 14px;" value="true"{HOMEPAGE_REDIRECTION_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="homepage_redirection_false">
+                              <input type="radio" name="homepage_redirection" id="homepage_redirection_false" style="width: 14px; height: 14px;" value="false"{HOMEPAGE_REDIRECTION_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{INFO_SHOW_DATETIME}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="show_start_datetime_true">
+                              <input type="radio" name="show_start_datetime" id="show_start_datetime_true" style="width: 14px; height: 14px;" value="true"{SHOW_START_DATETIME_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="show_start_datetime_false">
+                              <input type="radio" name="show_start_datetime" id="show_start_datetime_false" style="width: 14px; height: 14px;" value="false"{SHOW_START_DATETIME_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <!-- END show_checkbox_3_block -->
+
+                      <!-- BEGIN show_redirect_timer_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_REDIRECT_AFTER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <div style="width: 100%;">
+                                  <input class="w3-input w3-border" type="text" name="redirect_timer" value="{REDIRECT_TIMER}" style="width:10%;display: inline !important;" />
+                                  <span>&nbsp;&nbsp;( <strong>-1</strong> = {TEXT_DISABLED}, <strong>0 -10000</strong> )</span>
+                              </div>
+                          </td>
+                      </tr>
+                      <!-- END show_redirect_timer_block -->
+
+                      <!-- BEGIN show_media_setting_block -->
+                      <tr>
+                          <td class="setting_name">{TEXT_MEDIA_RESIZE}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border w3-right-align" type="text" name="media_width" value="{MEDIA_WIDTH}" style="width: 4.625em;display: inline !important;" />
+                          <label class="post-label">{TEXT_MEDIA_WIDTH}</label><span class="w3-padding-left w3-padding-right">x</span>
+                          <input class="w3-input w3-border w3-right-align" type="text" name="media_height" value="{MEDIA_HEIGHT}" style="width: 4.625em;display: inline !important;" />
+                          <label class="post-label">{TEXT_MEDIA_HEIGHT}</label>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_MEDIA_COMPRESS}:</td>
+                          <td class="setting_value" style="font-weight: bold;" colspan="2">
+                          <input id="slider" class="w3-input w3-border w3-right-align" type="range" max="100" min="20" name="media_compress" value="{MEDIA_COMPRESS}" style="width: 24.625em;display: inline !important;vertical-align: middle;" />
+                          <output for="slider">{MEDIA_COMPRESS}</output> %
+                          </td>
+                      </tr>
+                      <!-- END show_media_setting_block -->
+                      <tr>
+                          <td class="setting_value w3-hide" colspan="3">
+                              <div style="min-height: 1.225em; width: 100%;" >&nbsp;</div>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td colspan="2" class="setting_value_permissions">
+                              <input type="submit" name="submit_general" value="{TEXT_SAVE}" class="save w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                              <input type="reset"  name="reset" value="{TEXT_RESET}" class="reset w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                          </td>
+                          <td class="setting_value_permissions" style="text-align: right;">
+                              <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}" class="{DISPLAY_ADVANCED_BUTTON} w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+
+      <!-- BEGIN show_frontend_block -->
+      <div class=" block-outer w3-margin-top " >
+          <span onclick="ToogleSettings('FrontendLogin')" class="w3-pointer w3-toggle w3-input w3-block w3-light-grey w3-hover-grey w3-left-align w3-large"><i class="fa fa-arrow-down w3-margin"><span class="w3-hide">&nbsp;</span></i>{HEADING_LOGIN_SETTINGS}</span>
+          <div id="FrontendLogin" class="w3-hide w3-container" style="padding: 0.825em;">
+              <div class="Settings-content">
+                  <table id="myTable" class="settings_table">
+                      <colgroup>
+                          <col style="width:25%;" />
+                          <col style="width:40%;" />
+                          <col style="width:35%;" />
+                      </colgroup>
+                      <tbody class="value_label">
+                <!-- BEGIN show_smart_login_block -->
+                      <tr>
+                          <td class="setting_name middle">{TEXT_SMART_LOGIN}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container " for="smart_login_true">
+                              <input type="radio" name="smart_login" id="smart_login_true" value="true"{SMART_LOGIN_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container " for="smart_login_false">
+                              <input type="radio" name="smart_login" id="smart_login_false" value="false"{SMART_LOGIN_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                <!-- END show_smart_login_block -->
+
+                <!-- BEGIN show_login_block -->
+                      <tr>
+                          <td class="setting_name middle">{TEXT_LOGIN}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="frontend_login_true">
+                              <input type="radio" name="frontend_login" id="frontend_login_true" value="true"{PRIVATE_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="frontend_login_false">
+                              <input type="radio" name="frontend_login" id="frontend_login_false" value="false"{PRIVATE_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_SIGNUP}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="frontend_signup">
+                                  <option value="false">{TEXT_DISABLED}</option>
+                                  <!-- BEGIN group_list_block -->
+                                      <option value="{ID}" {SELECTED}>{NAME}</option>
+                                  <!-- END group_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                <!-- END show_login_block -->
+
+                  <!-- BEGIN show_dsgvo_login_block -->
+                  <tr style="display: none;">
+                      <td class="setting_name" style="vertical-align:middle !important;">{TEXT_DSGVO}</td>
+                      <td class="setting_value" colspan="2">
+                          <label class="check-container" for="use_data_protection" style="width: 90%;margin-top:-0.625em;">
+                          <input disabled="disabled" class="w3-border w3-check" id="use_data_protection" name="use_data_protection" value="true" type="checkbox"{CHECKED}>
+                          <span class="checkbtn"><span class="w3-hide">&nbsp;</span></span>
+                          {TEXT_TOGGLE}</label>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="setting_name" style="line-height: 1.5;">{INFO_ENABLED_SIGNUP}:</th>
+                      <td class="setting_value" colspan="2">
+                      <label class="check-container" for="enabled_signup" style="width: 90%;margin-top:-0.625em;">
+                      <input type="checkbox" id="enabled_signup" name="enabled_signup" value="1" {SIGNUPCHECKED} />
+                      <span class="checkbtn"><span class="w3-hide">&nbsp;</span></span>
+                      {INFO_LABEL_ENABLED_SIGNUP}</label>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="setting_name" style="line-height: 1.5;">{INFO_ENABLED_LOGINFORM}:</th>
+                      <td class="setting_value" colspan="2">
+                      <label class="check-container" for="enabled_loginform" style="width: 90%;margin-top:-0.625em;">
+                      <input type="checkbox" id="enabled_loginform" name="enabled_loginform" value="2" {LOGINCHECKED} />
+                      <span class="checkbtn"><span class="w3-hide">&nbsp;</span></span>
+                      {INFO_LABEL_ENABLED_LOGINFORM}</label>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="setting_name" style="line-height: 1.5;">{INFO_ENABLED_LOSTPASSWORD}:</th>
+                      <td class="setting_value" colspan="2" style="width: 90%;margin-top:-0.625em;">
+                      <label class="check-container" for="enabled_lostpassword">
+                      <input type="checkbox" id="enabled_lostpassword" name="enabled_lostpassword" value="4" {LOSTPWCHECKED} />
+                      <span class="checkbtn"><span class="w3-hide">&nbsp;</span></span>
+                      {INFO_LABEL_ENABLED_LOSTPASSWORD}</label>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="setting_value w3-hide" colspan="3">
+                          <div class="w3-panel w3-pale-green w3-leftbar w3-border-green " style="min-height: 6.225em; width: 100%;" ><p>{INFO_DSGVO}</p></div>
+                      </td>
+                  </tr>
+                  <tr id="dsgvo_status">
+                      <td class="setting_name"><label for="dsgvo">{TEXT_DSGVO_LINK}:</label></td>
+                      <td class="value_input" colspan="2">
+                          <div class="input-container">
+                          <i class="fa fa-search icon"><span class="w3-hide">&nbsp;</span></i>
+                          <input class="input-field" placeholder="Search" id="dsgvoInput" onkeyup="searchSelect(this)" type="text" value=""/>
+                          </div>
+                          <select
+                          size="2"
+                          id="dsgvo"
+                          class="w3-border w3-select-multi js-dsgvo-multiple"
+                          size="7"
+                          style="max-width: 100%!important;min-height: 10.25em;"
+                          name="dsgvo[]"
+                          multiple="multiple"
+                          >
+                              <option value="0" {SELECT_RESET}>{TEXT_DSGVO_DISABLED}</option>
+                          <!-- BEGIN dsgvo_list_block -->
+                              <option value="{DSGVO_ID}" class="flag-padding flag-box" style="background-image: url('{ADDON_LANG_URL}flags/png/{PAGE_LANG}-24.png');" {SELECTED} >{PREFIX}{ADDON}{DSGVO_NAME}{POSTFIX}</option>
+                          <!-- END dsgvo_list_block -->
+                          </select>
+                      </td>
+                  </tr>
+                  <!-- END show_dsgvo_login_block -->
+                      <tr>
+                          <td class="setting_value w3-hide" colspan="3">
+                              <div style="min-height: 1.225em; width: 100%;" >&nbsp;</div>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td colspan="2" class="setting_value_permissions">
+                              <input type="submit" name="submit_dsgvo" value="{TEXT_SAVE}" class="save w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                              <input type="reset"  name="reset" value="{TEXT_RESET}" class="reset w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                          </td>
+                          <td class="setting_value_permissions" style="text-align: right;">
+                              <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}" class="{DISPLAY_ADVANCED_BUTTON} w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      <!-- END show_frontend_block -->
+      <div class=" block-outer w3-margin-top " >
+          <span onclick="ToogleSettings('Default')" class="w3-pointer w3-toggle w3-input w3-block w3-light-grey w3-hover-grey w3-left-align w3-large"><i class="fa fa-arrow-down w3-margin"><span class="w3-hide">&nbsp;</span></i>{HEADING_DEFAULT_SETTINGS}</span>
+          <div id="Default" class="w3-hide w3-container" style="padding: 0.825em;">
+              <div class="Settings-content">
+                  <table class="settings_table">
+                      <colgroup>
+                          <col style="width:25%;" />
+                          <col style="width:40%;" />
+                          <col style="width:35%;" />
+                      </colgroup>
+                      <tbody class="value_label">
+                      <tr>
+                          <td class="setting_name"><label for="default_language">{TEXT_LANGUAGE}:</label></td>
+                          <td class="setting_value" colspan="2">
+                              <select
+                              size="2"
+                              id="default_language"
+                              class="w3-select w3-border w3-padding-4 js-select-templating"
+                              name="default_language"
+                              style="min-height: 10.25em;"
+                              >
+                                  <!-- BEGIN language_list_block -->
+                                <option value="{CODE}" class="flag-padding flag-box" style="background-image: url('{ADDON_LANG_URL}flags/png/{PAGE_LANG}-24.png');" {SELECTED} >{NAME} ({CODE})</option>
+                                  <!-- END language_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- BEGIN show_charset_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_CHARSET}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-select w3-border w3-padding-4" name="default_charset">
+                                      <option value="">{TEXT_PLEASE_SELECT}...</option>
+                                  <!-- BEGIN charset_list_block -->
+                                      <option value="{VALUE}" {SELECTED}>{NAME}</option>
+                                  <!-- END charset_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- END show_charset_block -->
+                      <tr>
+                          <td class="setting_name">{TEXT_TIMEZONE}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-select w3-border w3-padding-4" name="default_timezone">
+                                  <option value="">{TEXT_PLEASE_SELECT}...</option>
+                                  <!-- BEGIN timezone_list_block -->
+                                      <option value="{VALUE}" {SELECTED}>{NAME}</option>
+                                  <!-- END timezone_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_DATE_FORMAT}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="default_date_format">
+                                  <option value="">{TEXT_PLEASE_SELECT}...</option>
+                                  <!-- BEGIN date_format_list_block -->
+                                      <option value="{VALUE}" {SELECTED}>{NAME}</option>
+                                  <!-- END date_format_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_TIME_FORMAT}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="default_time_format">
+                                  <option value="g:i A">{TEXT_PLEASE_SELECT}...</option>
+                                  <!-- BEGIN time_format_list_block -->
+                                      <option value="{VALUE}" {SELECTED}>{NAME}</option>
+                                  <!-- END time_format_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_TEMPLATE}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="default_template">
+                              <!-- BEGIN template_list_block -->
+                                  <option value="{FILE}"{SELECTED}>{NAME}</option>
+                              <!-- END template_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_THEME}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="default_theme">
+                              <!-- BEGIN theme_list_block -->
+                                  <option value="{FILE}"{SELECTED}>{NAME}</option>
+                              <!-- END theme_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- BEGIN show_wysiwyg_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_WYSIWYG_STYLE}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" name="wysiwyg_style" value="{WYSIWYG_STYLE}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_WYSIWYG_EDITOR}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="wysiwyg_editor">
+                              <!-- BEGIN wysiwyg_list_block -->
+                                  <option value="{FILE}"{SELECTED}>{NAME}</option>
+                              <!-- END wysiwyg_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- END show_wysiwyg_block -->
+                      <tr>
+                          <td class="setting_value w3-hide" colspan="3">
+                              <div style="min-height: 1.225em; width: 100%;" >&nbsp;</div>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td colspan="2" class="setting_value_permissions">
+                              <input type="submit" name="submit_default" value="{TEXT_SAVE}" class="save w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                              <input type="reset" name="reset" value="{TEXT_RESET}" class="reset w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                          </td>
+                          <td class="setting_value_permissions" style="text-align: right;">
+                              <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}" class="{DISPLAY_ADVANCED_BUTTON} w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+        </div>
+      </div>
+
+      <div class=" block-outer w3-margin-top " >
+          <span onclick="ToogleSettings('Search')" class="w3-pointer w3-toggle w3-input w3-block w3-light-grey w3-hover-grey w3-left-align w3-large"><i class="fa fa-arrow-down w3-margin"><span class="w3-hide">&nbsp;</span></i>{HEADING_SEARCH_SETTINGS}</span>
+          <div id="Search" class="w3-hide w3-container" style="padding: 0.825em;">
+              <div class="Settings-content">
+                  <table class="settings_table">
+                      <colgroup>
+                          <col style="width:25%;" />
+                          <col style="width:40%;" />
+                          <col style="width:35%;" />
+                      </colgroup>
+                      <tbody class="value_label">
+                      <tr>
+                          <td class="setting_name">{TEXT_VISIBILITY}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="search">
+                                  <option value="public">{TEXT_PUBLIC}</option>
+                                  <option value="private" {PRIVATE_SEARCH}>{TEXT_PRIVATE}</option>
+                                  <option value="registered" {REGISTERED_SEARCH}>{TEXT_REGISTERED}</option>
+                                  <option value="none" {NONE_SEARCH}>{TEXT_NONE}</option>
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_TEMPLATE}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="search_template">
+                              <!-- BEGIN search_template_list_block -->
+                                  <option value="{FILE}"{SELECTED}>{NAME}</option>
+                              <!-- END search_template_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- BEGIN show_search_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_HEADER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="search_header" style="height: 100px;" cols="50" rows="3">{SEARCH_HEADER}</textarea>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_RESULTS_HEADER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="search_results_header" cols="50" rows="3">{SEARCH_RESULTS_HEADER}</textarea>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_RESULTS_LOOP}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="search_results_loop" cols="50" rows="3">{SEARCH_RESULTS_LOOP}</textarea>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_RESULTS_FOOTER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="search_results_footer" cols="50" rows="3">{SEARCH_RESULTS_FOOTER}</textarea>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_NO_RESULTS}:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" type="text" name="search_no_results" value="{SEARCH_NO_RESULTS}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_FOOTER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <textarea class="w3-border" name="search_footer" cols="50" rows="3">{SEARCH_FOOTER}</textarea>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_MODULE_ORDER}:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" type="text" name="search_module_order" value="{SEARCH_MODULE_ORDER}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_MAX_EXCERPT}:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" type="text" name="search_max_excerpt" value="{SEARCH_MAX_EXCERPT}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_TIME_LIMIT}:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" type="text" name="search_time_limit" value="{SEARCH_TIME_LIMIT}" />
+                          </td>
+                      </tr>
+                      <!-- END show_search_block -->
+                      <tr>
+                          <td class="setting_value w3-hide" colspan="3">
+                              <div style="min-height: 1.225em; width: 100%;" >&nbsp;</div>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td colspan="2" class="setting_value_permissions">
+                              <input type="submit" name="submit_search" value="{TEXT_SAVE}" class="save w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                              <input type="reset"  name="reset" value="{TEXT_RESET}" class="reset w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                          </td>
+                          <td class="setting_value_permissions" style="text-align: right;">
+                              <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}"  class="{DISPLAY_ADVANCED_BUTTON} w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+
+      <!-- BEGIN show_access_block -->
+      <div class=" block-outer w3-margin-top " >
+          <span onclick="ToogleSettings('System')" class="w3-pointer w3-toggle w3-input w3-block w3-light-grey w3-hover-grey w3-left-align w3-large"><i class="fa fa-arrow-down w3-margin"><span class="w3-hide">&nbsp;</span></i>{HEADING_SERVER_SETTINGS}</span>
+          <div id="System" class="w3-hide w3-container" style="padding: 0.825em;">
+              <div class="Settings-content">
+                  <table class="settings_table" >
+                      <colgroup>
+                          <col style="width:25%;" />
+                          <col style="width:40%;" />
+                          <col style="width:35%;" />
+                      </colgroup>
+                      <tbody class="value_label">
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">Debug Mode:</td>
+                          <td class="setting_value">
+                              <label class="check-container" for="debug_true">
+                              <input type="radio" name="debug" id="debug_true" style="width: 14px; height: 14px;" value="true"{DEBUG_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="debug_false">
+                              <input type="radio" name="debug" id="debug_false" style="width: 14px; height: 14px;" value="false"{DEBUG_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                          <td>&nbsp;</td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">PHP SessionGarbage:</td>
+                          <td class="setting_value">
+                                <label class="check-container" for="sgc_execute_true">
+                                <input class="radio" type="radio" name="sgc_execute" id="sgc_execute_true" value="true"{SGC_EXECUTE_ENABLED} />
+                                <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                                {TEXT_ENABLED}</label>
+                                 <label class="check-container" for="sgc_execute_false">
+                                <input class="radio" type="radio" name="sgc_execute" id="sgc_execute_false" value="false"{SGC_EXECUTE_DISABLED} />
+                                <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                                {TEXT_DISABLED}</label>
+                          </td>
+                          <td>&nbsp;</td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{TEXT_DEV_INFOS}:</td>
+                          <td class="setting_value">
+                                <label class="check-container" for="dev_infos_true">
+                                <input class="radio" type="radio" name="dev_infos" id="dev_infos_true" value="true"{DEV_INFOS_ENABLED} />
+                                <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                                {TEXT_ENABLED}</label>
+                                 <label class="check-container" for="dev_infos_false">
+                                <input class="radio" type="radio" name="dev_infos" id="dev_infos_false" value="false"{DEV_INFOS_DISABLED} />
+                                <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                                {TEXT_DISABLED}</label>
+                          </td>
+                          <td>&nbsp;</td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">{TEXT_PAGES_ACCESSSTYLE}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="page_oldstyle_true">
+                              <input type="radio" name="page_oldstyle" id="page_oldstyle_true" style="width: 14px; height: 14px;" value="true"{PAGES_OLDSTYLE_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_PAGES_OLDSTYLE}</label>
+                              <label class="check-container" for="page_oldstyle_false">
+                              <input type="radio" name="page_oldstyle" id="page_oldstyle_false" style="width: 14px; height: 14px;" value="false"{PAGES_OLDSTYLE_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_PAGES_NEWSTYLE}</label>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name middle">Token_Fingerprint:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="sec_token_fingerprint_true">
+                              <input type="radio" name="sec_token_fingerprint" id="sec_token_fingerprint_true" style="width: 14px; height: 14px;" value="true"{FINGERPRINT_ENABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_ENABLED}</label>
+                              <label class="check-container" for="sec_token_fingerprint_false">
+                              <input type="radio" name="sec_token_fingerprint" id="sec_token_fingerprint_false" style="width: 14px; height: 14px;" value="false"{FINGERPRINT_DISABLED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_DISABLED}</label>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">Token_Netmask4:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" style="width: 10%;display: inline !important;" type="text" name="sec_token_netmask4" value="{SEC_TOKEN_NETMASK4}" /> <span> (0-32 // 0 = off  default = 24) </span>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">Token_Netmask6:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" style="width: 10%;display: inline !important;" type="text" name="sec_token_netmask6" value="{SEC_TOKEN_NETMASK6}" /> <span> (0-128 // 0 = off  default = 64) </span>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">Token_Life_Time:</td>
+                          <td class="setting_value" colspan="2">
+                              <input class="w3-input w3-border" style="width: 10%;display: inline !important;" type="text" name="sec_token_life_time" value="{value}" /> <span> ( 30min [default] | 45min | 60min | 120min ) </span>
+                      </tr>
+                      <!-- BEGIN show_php_error_level_block -->
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_PHP_ERROR_LEVEL}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="er_level">
+                                  <option value="">{TEXT_PLEASE_SELECT}...</option>
+                                  <!-- BEGIN error_reporting_list_block -->
+                                      <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                                  <!-- END error_reporting_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED} class="w3-hide">
+                          <td class="setting_name">{TEXT_TWIG_VERSION}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="twig_version">
+                                  <!-- BEGIN twig_version_list_block -->
+                                      <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                                  <!-- END twig_version_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_JQUERY_VERSION}:</td>
+                          <td class="setting_value" colspan="2">
+                              <select class="w3-border" name="jquery_version">
+                                  <!-- BEGIN jquery_version_list_block -->
+                                      <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                                  <!-- END jquery_version_list_block -->
+                              </select>
+                          </td>
+                      </tr>
+                      <!-- END show_php_error_level_block -->
+                      <tr>
+                          <td class="setting_name middle">{TEXT_SERVER_OPERATING_SYSTEM}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="operating_system_linux" >
+                              <input type="radio" name="operating_system" id="operating_system_linux"  style="width: 14px; height: 14px;" value="linux"{LINUX_SELECTED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_LINUX_UNIX_BASED}</label>
+                              <label class="check-container" for="operating_system_windows" >
+                              <input type="radio" name="operating_system" id="operating_system_windows"  style="width: 14px; height: 14px;" value="windows"{WINDOWS_SELECTED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_WINDOWS}</label>
+                          </td>
+                      </tr>
+                      <tr style="display: none;">
+                          <td class="setting_name"><div id="{BASIC_FILE_PERMS_ID}1" style="margin: 0; padding: 0;">&nbsp;</div></td>
+                          <td class="setting_value" colspan="2">
+                              <div id="{BASIC_FILE_PERMS_ID}2" style="margin: 0; padding: 0;">
+                                  <input type="checkbox" name="world_writeable" id="world_writeable" style="width: 14px; height: 14px;" value="true"{WORLD_WRITEABLE_SELECTED} />
+                                  <label for="world_writeable">
+                                      {TEXT_WORLD_WRITEABLE_FILE_PERMISSIONS} (777)
+                                  </label>
+                                  <span class="warning">({WORLD_WRITEABLE_WARNING})</span>
+                              </div>
+                              <div id="{BASIC_FILE_PERMS_ID}3" style="margin: 0; padding: 0;"></div>
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED} style="line-height: 1.925em;">
+                          <td class="setting_name"></td>
+                          <td class="setting_value_permissions" id="file_mode" colspan="2">
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+
+              <div class="w3-row chmod-box">
+                  <div class="w3-third w3-container setting_name" style="margin-top: 1.125em;">
+                      <div id="{ADVANCED_FILE_PERMS_ID}1" style="margin: 0; padding: 0;">{TEXT_FILESYSTEM_PERMISSIONS}:</div>
+                  </div>
+                  <div class="w3-cell w3-rest">
+                          <dl class="ui-helper-clearfix" id="{ADVANCED_FILE_PERMS_ID}2" {DISPLAY_CHMOD}>
+                              <dt style="height: 0px;">&#160;</dt>
+                              <dd class="setting_value">
+                              <div class="w3-col m5 chmod chmodbox block-outer" style="white-space: nowrap; float: left;">
+                              <h4 >{TEXT_FILES}</h4>
+                                  <div >
+                                      <div class="spacer"></div>
+                                      <div class="labelbox">
+                                          <label>{TEXT_USER}</label>
+                                          <label>{TEXT_GROUP}</label>
+                                          <label>{TEXT_OTHERS}</label>
+                                      </div>
+                                      <div class="boxes">
+                                          <label>{TEXT_READ}:</label>
+                                          <label>{TEXT_WRITE}:</label>
+                                          <label>{TEXT_EXECUTE}:</label>
+                                      </div>
+                                      <div id="file-user" class="modbtn">
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="file_u_r" id="file_u_r" class="cb" {FILE_U_R_CHECKED}>
+                                              <label for="file_u_r">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="file_u_w" id="file_u_w" class="cb"{FILE_U_W_CHECKED}>
+                                              <label for="file_u_w">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree disabled">
+                                              <input type="checkbox" value="true" name="file_u_e" id="file_u_e" disabled="disabled" class="cb"{FILE_U_E_CHECKED}>
+                                              <label for="file_u_e">&#160;</label>
+                                          </div>
+                                      </div>
+                                      <div id="file-group" class="modbtn">
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="file_g_r" id="file_g_r" class="cb"{FILE_G_R_CHECKED}>
+                                              <label for="file_g_r">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="file_g_w" id="file_g_w" class="cb"{FILE_G_W_CHECKED}>
+                                              <label for="file_g_w">&#160;</label>
+                                           </div>
+                                          <div class="checkboxThree disabled">
+                                               <input type="checkbox" value="true" name="file_g_e" id="file_g_e" disabled="disabled" class="cb"{FILE_G_E_CHECKED}>
+                                               <label for="file_g_e">&#160;</label>
+                                           </div>
+                                      </div>
+                                      <div id="file-other" class="modbtn">
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="file_o_r" id="file_o_r" class="cb"{FILE_O_R_CHECKED}>
+                                              <label for="file_o_r">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="file_o_w" id="file_o_w" class="cb"{FILE_O_W_CHECKED}>
+                                              <label for="file_o_w">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree disabled">
+                                              <input type="checkbox" value="true" name="file_o_e" id="file_o_e"  disabled="disabled" class="cb"{FILE_O_E_CHECKED}>
+                                              <label for="file_o_e">&#160;</label>
+                                          </div>
+                                      </div>
+                                      <div class="clear reformed-form">
+                                          <h4>chmod Value:</h4>
+                                          <input type="text" readonly="" value="{STRING_FILE_MODE}" name="chmodFile" id="chmodFileValue" class="formInput">
+                                          <input type="text" readonly="" value="---------" name="sym_chmodFile" id="chmodFileCode" class="formInput">
+                                      </div>
+                                  </div>
+                                </div>
+
+                              <div class="w3-col m5 chmod chmodbox block-outer" id="{ADVANCED_FILE_PERMS_ID}3" style="white-space: nowrap;float: left;">
+                              <h4 >{TEXT_DIRECTORIES}</h4>
+                                  <div >
+                                      <div class="spacer"></div>
+                                      <div class="labelbox">
+                                          <label>{TEXT_USER}</label>
+                                          <label>{TEXT_GROUP}</label>
+                                          <label>{TEXT_OTHERS}</label>
+                                      </div>
+                                      <div class="boxes">
+                                          <label>{TEXT_READ}:</label>
+                                          <label>{TEXT_WRITE}:</label>
+                                          <label>{TEXT_EXECUTE}:</label>
+                                      </div>
+                                      <div id="dir-user" class="modbtn">
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_u_r" id="dir_u_r" class="cb" {DIR_U_R_CHECKED}>
+                                              <label for="dir_u_r">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_u_w" id="dir_u_w" class="cb"{DIR_U_W_CHECKED}>
+                                              <label for="dir_u_w">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_u_e" id="dir_u_e" class="cb"{DIR_U_E_CHECKED}>
+                                              <label for="dir_u_e">&#160;</label>
+                                          </div>
+                                      </div>
+                                      <div id="dir-group" class="modbtn">
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_g_r" id="dir_g_r" class="cb"{DIR_G_R_CHECKED}>
+                                              <label for="dir_g_r">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_g_w" id="dir_g_w" class="cb"{DIR_G_W_CHECKED}>
+                                              <label for="dir_g_w">&#160;</label>
+                                           </div>
+                                          <div class="checkboxThree">
+                                               <input type="checkbox" value="true" name="dir_g_e" id="dir_g_e" class="cb"{DIR_G_E_CHECKED}>
+                                               <label for="dir_g_e">&#160;</label>
+                                           </div>
+                                      </div>
+                                      <div id="dir-other" class="modbtn">
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_o_r" id="dir_o_r" class="cb"{DIR_O_R_CHECKED}>
+                                              <label for="dir_o_r">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_o_w" id="dir_o_w" class="cb"{DIR_O_W_CHECKED}>
+                                              <label for="dir_o_w">&#160;</label>
+                                          </div>
+                                          <div class="checkboxThree">
+                                              <input type="checkbox" value="true" name="dir_o_e" id="dir_o_e" class="cb"{DIR_O_E_CHECKED}>
+                                              <label for="dir_o_e">&#160;</label>
+                                          </div>
+                                      </div>
+                                      <div class="clear reformed-form">
+                                          <h4>chmod Value:</h4>
+                                          <input type="text" readonly="" value="{STRING_DIR_MODE}" name="chmodDir" id="chmodDirValue" class="formInput">
+                                          <input type="text" readonly="" value="---------" name="sym_chmodDir" id="chmodDirCode" class="formInput">
+                                      </div>
+                                  </div>
+                              </div>
+                              </dd>
+                          </dl>
+                    </div>
+                </div>
+
+                  <table class="settings_table" >
+                      <colgroup>
+                          <col style="width:25%;" />
+                          <col style="width:40%;" />
+                          <col style="width:35%;" />
+                      </colgroup>
+                      <tbody class="value_label">
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_PAGES_DIRECTORY}:</td>
+                          <td class="setting_value" colspan="2">
+                      <!-- BEGIN input_pages_directory_block -->
+                          <input class="w3-input w3-border" type="text" name="pages_directory" value="{PAGES_DIRECTORY}" />
+                      <!-- END input_pages_directory_block -->
+                      <!-- BEGIN show_pages_directory_block -->
+                          <button class="w3-input w3-border" type="button" style="width: 100%; text-align: left; padding: 0 0.525em; cursor: not-allowed; " class="btn" >{PAGES_DIRECTORY}</button>
+                      <!-- END show_pages_directory_block -->
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_MEDIA_DIRECTORY}:</td>
+                          <td class="setting_value" colspan="2">
+                      <!-- BEGIN input_media_directory_block -->
+                          <input class="w3-input w3-border" type="text" name="media_directory" value="{MEDIA_DIRECTORY}" />
+                      <!-- END input_media_directory_block -->
+                      <!-- BEGIN show_media_directory_block -->
+                          <button class="w3-input w3-border" type="button" style="width: 100%; text-align: left; padding: 0 0.525em; cursor: not-allowed; line-height: 1.925em; " class="btn" >{MEDIA_DIRECTORY}</button>
+                      <!-- END show_media_directory_block -->
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_RENAME_FILES_ON_UPLOAD}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" name="rename_files_on_upload" value="{RENAME_FILES_ON_UPLOAD}" />
+                          </td>
+                      </tr>
+
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_PAGE_EXTENSION}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" name="page_extension" value="{PAGE_EXTENSION}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_PAGE_SPACER}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" name="page_spacer" value="{PAGE_SPACER}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_SESSION_IDENTIFIER}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" name="app_name" value="{APP_NAME}" />
+                          </td>
+                      </tr>
+                      <tr{DISPLAY_ADVANCED}>
+                          <td class="setting_name">{TEXT_SEC_ANCHOR}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" name="sec_anchor" value="{SEC_ANCHOR}" />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_value w3-hide" colspan="3">
+                              <div style="min-height: 1.225em; width: 100%;" >&nbsp;</div>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td colspan="2" class="setting_value_permissions">
+                              <input type="submit" name="submit_system" value="{TEXT_SAVE}" class="save w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                              <input type="reset" name="reset" value="{TEXT_RESET}" class="reset w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                          </td>
+                          <td class="setting_value_permissions" style="text-align: right; white-space: nowrap;">
+                              <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}" class="{DISPLAY_ADVANCED_BUTTON} w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+
+      <div class=" block-outer w3-margin-top " >
+          <span onclick="ToogleSettings('Mailer')" class="w3-pointer w3-toggle w3-input w3-block w3-light-grey w3-hover-grey w3-left-align w3-large"><i class="fa fa-arrow-down w3-margin"><span class="w3-hide">&nbsp;</span></i>{HEADING_WBMAILER_SETTINGS}</span>
+          <div id="Mailer" class="w3-hide w3-container" style="padding: 0.825em;">
+              <div class="Settings-content">
+                  <table class="settings_table" >
+                      <tbody class="value_label">
+                      <!-- BASIC MAILER SETTINGS -->
+                      <!-- https://de.ssl-tools.net/mailservers -->
+                      <tr>
+                          <td colspan="3" style="padding-top: 10px;">
+                              <div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue" style="min-height: 3.225em; width: 100%;" >{TEXT_WBMAILER_DEFAULT_SETTINGS_NOTICE}</div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_WBMAILER_DEFAULT_SENDER_MAIL}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" style="width: 50%;" name="server_email" value="{SERVER_EMAIL}" />
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_name">{TEXT_WBMAILER_DEFAULT_SENDER_NAME}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" style="width: 50%;" name="wbmailer_default_sendername" value="{WBMAILER_DEFAULT_SENDERNAME}" />
+                          </td>
+                      </tr>
+                      <!-- MORE ADVANCED SMTP MAILER SETTINGS -->
+                      <tr id="row_wbmailer_smtp_settings">
+                          <td colspan="3" style="padding-top: 10px;">
+                              <div class="w3-panel w3-pale-green w3-leftbar w3-border-green" style="min-height: 4.225em; width: 100%;" ><p>{TEXT_WBMAILER_NOTICE}</p></div>
+                          </td>
+                      </tr>
+
+                      <tr>
+                          <td class="setting_name">{TEXT_WBMAILER_FUNCTION}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="wbmailer_routine_phpmail" >
+                              <input type="radio" name="wbmailer_routine" id="wbmailer_routine_phpmail" style="width: 14px; " value="phpmail"{PHPMAIL_SELECTED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_WBMAILER_PHP}</label>
+                              <label class="check-container w3-hide" for="wbmailer_routine_sendmail" >
+                              <input type="radio" name="wbmailer_routine" id="wbmailer_routine_sendmail" style="width: 14px; " value="sendmail"{SENDMAIL_SELECTED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_WBMAILER_SENDMAIL}</label>
+                              <label class="check-container" for="wbmailer_routine_smtp" >
+                              <input type="radio" name="wbmailer_routine" id="wbmailer_routine_smtp" style="width: 14px; " value="smtp"{SMTPMAIL_SELECTED} />
+                              <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                              {TEXT_WBMAILER_SMTP}</label>
+                          </td>
+                      </tr>
+
+                      <tr id="row_wbmailer_smtp_debug"{SMTP_VISIBILITY}>
+                          <td class="setting_name">{TEXT_WBMAILER_DEBUG}:</td>
+                          <td class="setting_value">
+                              <select class="w3-select w3-border" name="wbmailer_smtp_debug" id="wbmailer_smtp_debug" style="width: 45%;">
+                                  <option value="0">{TEXT_PLEASE_SELECT}</option>
+                                  <!-- BEGIN smtp_debug_list_block -->
+                                      <option value="{DEBUG_VALUE}" {DEBUG_SELECTED}>{DEBUG_NAME}</option>
+                                  <!-- END smtp_debug_list_block -->
+                              </select>
+                              <span onclick="document.getElementById('mailer-settings').style.display='block'" class="w3-badge w3-hover-shadow w3-blue-wb w3-hover-green w3-large w3-dropdown-click">?</span>
+                          </td>
+                          <td>
+
+                            <div class="w3-container">
+                              <div id="mailer-settings" class="w3-modal w3-animate-zoom" style="padding-top: 50px !important;">
+                                <div class="w3-modal-content w3--padding">
+                                  <header class=" w3-theme">
+                                      <div class="w3-row" style="line-height: 1.0;">
+                                          <div class="w3-col w3-container" style="width:75%">
+                                              <span class="w3-btn w3-theme">{TEXT_SSL_DEBUG_INFO}&nbsp;</span>
+                                          </div>
+                                          <div class="w3-col w3-container" style="width:25%">
+                                              <span onclick="document.querySelector('#mailer-settings').style.display='none';" class="w3-closebtn">&times;</span>
+                                          </div>
+                                      </div>
+                                  </header>
+
+                                  <div class="w3-modal-content w3--padding">
+                                      <div class="w3-container">
+                                        <div class="w3-content" style="overflow-y: hidden;overflow-x: auto;">
+                                            <div class="w3-textarea" style="width: 100%;padding:10px; background-color:#fff7e4;">
+                                                <ol class="debug w3-medium">
+                                                    <li>{INFO_SMTP_DEBUG_OFF}</li>
+                                                    <li>{INFO_SMTP_DEBUG_CLIENT}</li>
+                                                    <li>{INFO_SMTP_DEBUG_SERVER}</li>
+                                                    <li>{INFO_SMTP_DEBUG_CONNECTION}</li>
+                                                    <li>{INFO_SMTP_DEBUG_LOWLEVEL} </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                      </div>
+                                  <footer class="w3-container w3-theme" style="height: 4.075em;">
+                                      <div class="w3-row"  style="line-height: 1.5;">
+                                          <div class="w3-col w3-container" style="width:84.0%;">
+                                          <span>&nbsp;</span>
+                                          </div>
+                                          <div class="w3-col w3-container" style="width:15.0%;">
+                                              <button class="w3-btn w3-btn-default w3-theme-d5 w3-round-small w3-hover-red w3-padding-4" type="reset" onclick="document.querySelector('#mailer-settings').style.display='none';">{TEXT_CANCEL}</button>
+                                          </div>
+                                      </div>
+                                  </footer>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            </div>
+                          </td>
+
+                      </tr>
+
+                      <tr id="row_wbmailer_smtp_host"{SMTP_VISIBILITY}>
+                          <td class="setting_name">{TEXT_WBMAILER_SMTP_HOST}:</td>
+                          <td class="setting_value" colspan="2">
+                          <input class="w3-input w3-border" type="text" style="width: 50%;" name="wbmailer_smtp_host" value="{WBMAILER_SMTP_HOST}" />
+                          </td>
+                      </tr>
+
+                      <tr id="row_wbmailer_smtp_port"{SMTP_VISIBILITY}>
+                          <td class="setting_name">Smtp Port:</td>
+                          <td class="setting_value">
+                              <select class="w3-border" name="wbmailer_smtp_port" id="wbmailer_smtp_port" style="width: 45%;">
+                                  <option value="0">{TEXT_PLEASE_SELECT}</option>
+                                  <!-- BEGIN smtp_port_list_block -->
+                                      <option value="{VALUE}" {SELECTED}>{PNAME}</option>
+                                  <!-- END smtp_port_list_block -->
+                              </select>
+                          </td>
+                          <td>&nbsp;</td>
+                      </tr>
+
+                      <tr id="row_wbmailer_smtp_secure"{SMTP_VISIBILITY}>
+                          <td class="setting_name">{TEXT_WBMAILER_SMTP_SECURE}:</td>
+                          <td class="setting_value">
+                              <select class="w3-border" name="wbmailer_smtp_secure" id="wbmailer_smtp_secure" style="width: 45%;">
+                                  <option value="">{TEXT_PLEASE_SELECT}</option>
+                                  <!-- BEGIN smtp_secure_list_block -->
+                                      <option value="{VALUE}" {SELECTED}>{SNAME}</option>
+                                  <!-- END smtp_secure_list_block -->
+                              </select>
+                              <label class="check-container" style="padding-left:30px;">{Check_SSL_SECURE}
+                                  <input class="w3-check" type="checkbox" value="true" name="wbmailer_low_security" id="wbmailer_low_security" {SCHECKED} />
+                                  <span class="checkbtn" style="margin-top: -6px;">&#160;</span>
+                              </label>
+                          </td>
+                          <td>&nbsp;</td>
+                      </tr>
+
+                      <tr id="row_wbmailer_smtp_auth_mode"{SMTP_VISIBILITY}>
+                          <td class="setting_name">{TEXT_WBMAILER_SMTP_AUTH}:</td>
+                          <td class="setting_value" colspan="2">
+                              <label class="check-container" for="wbmailer_smtp_auth">
+                              <input class="w3-border" type="checkbox" name="wbmailer_smtp_auth" id="wbmailer_smtp_auth" value="true" style="width: 14px; " {SMTP_AUTH_CHECKED} />
+                              <span class="checkbtn"><span class="w3-hide">&nbsp;</span></span>
+                              ({TEXT_WBMAILER_SMTP_AUTH_NOTICE})</label>
+                          </td>
+                      </tr>
+
+                      <tr id="row_wbmailer_smtp_username"{SMTP_USER_VISIBILITY}>
+                          <td class="setting_name">{TEXT_WBMAILER_SMTP_USERNAME}:</td>
+                          <td class="setting_value">
+                          <input class="w3-input w3-border" type="text" style="width: 50%;" name="wbmailer_smtp_username" value="{WBMAILER_SMTP_USERNAME}" />
+                          </td>
+                      </tr>
+                      <tr id="row_wbmailer_smtp_password"{SMTP_USER_VISIBILITY}>
+                          <td class="setting_name">{TEXT_WBMAILER_SMTP_PASSWORD}:</td>
+                          <td class="setting_value">
+                            <p style="width: 50%;"><input class="input form-control smtp-password" type="password" name="wbmailer_smtp_password" value="{WBMAILER_SMTP_PASSWORD}" autocomplete="off"/>
+                            <span toggle=".smtp-password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="margin-top: 14px;left: -10px;" ></span></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="setting_value w3-hide" colspan="3">
+                              <div style="min-height: 1.225em; width: 100%;" >&nbsp;</div>
+                          </td>
+                      </tr>
+                      <tr style="line-height:1.5;">
+                          <td colspan="2" class="setting_value_permissions">
+                              <input type="submit" name="submit_mailer" value="{TEXT_SAVE}" class="save w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                              <input type="reset" name="reset" value="{TEXT_RESET}" class="reset w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+                          </td>
+                          <td class="setting_value_permissions" style="text-align: right; white-space: nowrap;">
+                              <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}" class="{DISPLAY_ADVANCED_BUTTON} w3-mobile w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      <!-- END show_access_block -->
+
+      <footer id="settings-header" class="block-outer w3-show" >
+          <div class="w3-cell-row" style="width:100%">
+              <div id="advanced-settings" class=" w3-container" style="margin-bottom: 20px;">
+                  <div class="w3-panel w3-pale-red w3-leftbar w3-border-red" style="min-height: 4.225em; width: 100%;" ><p>{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}</p></div>
+                      <div class="w3-half w3-mobile">
+                          <input type="submit" form="Settings" formaction="{ADMIN_URL}/settings/save.php" formmethod="post" name="submit_settings" value="{TEXT_SAVE}" class="save w3-mobile w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width"  />
+                          <input type="submit" form="Settings" name="reset" value="{TEXT_RESET}" class="reset w3-mobile w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" style="min-width: 6.25em;" />
+                      </div>
+                      <div class="w3-rest w3-mobile" style="float: right;">
+                          <button type="submit" name="advanced" formaction="#" formmethod="post" formtarget="_self" value="{ADVANCED_LINK}" title="{MESSAGE_SETTINGS_MODE_SWITCH_WARNING}" class="{DISPLAY_ADVANCED_BUTTON} w3-mobile w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width">{ADVANCED_BUTTON}</button>
+                      </div>
+              </div>
+          </div>
+      </footer>
+    </form>
+  </article>
+
+
+
+<div id="SettingsId" data-hidden="{SETTINGS_REL}" style="display: none;"></div>
+<!-- BEGIN show_chmod_js_block -->
+<script src="{THEME_URL}/js/chmod.js" ></script>
+<!-- END show_chmod_js_block -->
+<!-- BEGIN show_setting_js_block -->
+<!--
+<script src="{THEME_URL}/js/setting.js" ></script>
+ -->
+<!-- END show_setting_js_block -->
+<script src="{THEME_URL}/js/accordion.js" ></script>
+<script src="{WB_URL}/modules/{WYSIWYG_EDITOR}/ckeditor/ckeditor.js"></script>
+<script src="{WB_URL}/modules/{WYSIWYG_EDITOR}/ckeditor_config/cke_loader.js"></script>
+<!-- END main_block -->

@@ -1,0 +1,288 @@
+{#
+ @version         $Id: sysInfo.twig 344 2019-05-06 18:59:56Z Luisehahne $
+#}
+<!-- BEGIN mainBlock -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ THEME_URL }}css/4/w3.css" media="screen" />
+    <link rel="stylesheet" href="{{ THEME_URL }}css/fontawesome.min.css" media="screen" />
+    <link rel="stylesheet" href="{{ THEME_URL }}css/theme.css" media="screen" />
+    <link rel="stylesheet" href="{{ WB_URL }}include/plugins/default/sweetalert2/dist/sweetalert2.css" id="alertifyCSS" />
+    <script src="{{ WB_URL }}include/jquery/dist/{{ JQUERY_VERSION }}/jquery-min.js"></script>
+    <script src="{{ WB_URL }}include/jquery/dist/{{ JQUERY_VERSION }}/jquery-migrate-min.js"></script>
+    <script src="{{ WB_URL }}include/plugins/default/sweetalert2/dist/sweetalert2.min.js"></script>
+
+<style type="text/css">
+<!--
+body { background: #EAEAEA; }
+.group {
+  background: #f3f3f3 none repeat scroll 0 0;
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #ccc;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+.group ul { padding-left: 0.825em; margin-bottom: 0.825em; }
+.group h2 {
+  background-color: #5C9AB8;
+  box-shadow: 1px 1px 15px #999 inset;
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: normal;
+  margin-top: 0;
+  padding: 0.1em 0.3em;
+  text-shadow: 0 1px 0 #777;
+}
+.icon {
+  background-image: url("{{ THEME_URL }}images/help_16.png") !important;
+  background-position: left top !important;
+  background-repeat: no-repeat !important;
+  height: 16px;
+  margin: 0 0 0 0.3em;
+  padding: 0 !important;
+  width: 16px;
+}
+a img {
+  border: 0 none;
+}
+img, button { vertical-align: middle; padding: 0; }
+.btn-link { background: transparent; border: none; cursor: pointer; color: #676767; font-weight: bold; }
+.btn-link:hover { color: #0A6383; }
+h5{font-size: 1.1em;}
+-->
+</style>
+  </head>
+  <body>
+    <div class="sysinfo-box w3-mobile" style="width: 100%;margin:auto 1.5% auto 1%; width: 98%;">
+
+      <div class="group">
+        <h2>
+          Webserver
+        </h2>
+        <ul>
+          <li id="li_web_server_software">
+            Webserver Software: {{ getOsVersion }}
+          </li>
+          <li id="li_used_php_extension">
+            PHP-Erweiterung: mysqli
+            <a target="documentation" href="https://secure.php.net/manual/de/book.mysqli.php"><img class="icon ic_b_help" alt="Dokumentation" title="Dokumentation" src="{{ THEME_URL }}/images/dot.gif"></a>
+            curl
+            <a target="documentation" href="https://secure.php.net/manual/de/book.curl.php"><img class="icon ic_b_help" alt="Dokumentation" title="Dokumentation" src="{{ THEME_URL }}/images/dot.gif"></a>
+            mbstring
+            <a target="documentation" href="https://secure.php.net/manual/de/book.mbstring.php"><img class="icon ic_b_help" alt="Dokumentation" title="Dokumentation" src="{{ THEME_URL }}/images/dot.gif"></a>
+          </li>
+          <li id="li_used_wb_version">
+            PHP-Version: {{ php_version }}
+          </li>
+        </ul>
+        <h2>
+          WebsiteBaker Updates
+        </h2>
+        <ul class="w3-margin-top">
+          <li id="li_used_php_version">
+            WebsiteBaker-Version: {{ WbVersion }}
+          </li>
+          <li id="li_used_php_version">
+            Last cumulative update-revision: {{ WbUpdateVersion }} - ({{ WbLastUpdateDate }})
+          </li>
+          <li id="li_used_php_version">
+            {% if WbUpdateNewVersion %}
+            New cumulative update-revision: {{ WbUpdateNewVersion }} - ({{ WbUpdateNewVersion }})
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <h2>Webspace writable folders</h2>
+          {% if aWritablePaths %}
+            <ul>
+                  {% for nane, writable in aWritablePaths %}
+                      <li style="color: {% if writable %}#207D12{% else %}#F63513{% endif %};">{{ nane }}</li>
+                  {% else %}
+                      <li><em>no path found</em></li>
+                  {% endfor %}
+            </ul>
+              {% endif %}
+      </div>
+
+      <div class="group">
+        <h2>
+          Maintenances Tools
+        </h2>
+        <form method="post">
+          <ul>
+            {% if REPAIR_URL %}
+            <li><button id="repair" class="btn-link" formaction="{{ REPAIR_URL }}" formmethod="post" > Repair Pages Link Structure <i></i></button></li>
+            {% endif %}
+            <li><button id="rebuild" class="btn-link" formaction="{{ HELPER_URL }}/rebuildAccessFiles.php" formmethod="post"> Rebuild Pages Access Files <i></i></button></li>
+            <li><button id="cache"   class="btn-link" formaction="{{ HELPER_URL }}/clearTranslateCache.php" formmethod="post">Clear Translate Cache <i></i></button></li>
+            {% if IS_ADMIN %}
+            {% if PHPINFO_URL %}
+            <li><a id="phpinfo" style="font-weight: normal;" class="btn-link" href="{{ PHPINFO_URL }}" target="_blank" rel="noopener" >PhpInfo of your Hosting (You have to login as Admin)</a></li>
+            {% else %}
+            <li style="font-weight: bold; color: red;">Missing WebsiteBaker phpinfo script</li>
+            {% endif %}
+            {% if UPGRADE_URL %}
+            <li><a id="upgrade" class="btn-link" href="{{ UPGRADE_URL }}" target="_parent" rel="noopener" >Upgrade WebsiteBaker</a></li>
+            {% else %}
+            <li style="font-weight: bold; color: red;">Missing WebsiteBaker upgrade script</li>
+            {% endif %}
+            {% if UNZIP_URL %}
+            <li><a id="install" class="btn-link" href="{{ UNZIP_URL }}" target="_parent" rel="noopener" >Install WebsiteBaker Full/Fixes</a></li>
+            {% endif %}
+            {% endif %}
+          </ul>
+        </form>
+    </div>
+
+      <div class="group">
+        <h2>
+          Datenbank-Server/Client
+        </h2>
+        <ul>
+          <li id="li_server_info">
+            Server: {{ server.host_info }}
+          </li>
+          <li id="li_server_version">
+            Server-Version: {{ getSqlServer }}
+          </li>
+          <li id="li_mysql_proto">
+            Protokoll-Version: {{ server.protocol_version }}
+          </li>
+          <li id="li_mysql_client_version">
+            Datenbank-Client Version: {{ client_info }}
+          </li>
+          <li id="li_mysql_client_encoding">
+            Datenbank-Client encoding: {{ client_encoding }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(event){
+
+    $("button").click(function(event) {
+//        event = event || window.event;
+        var target = event.target || event.srcElement;
+
+//console.log(target.id);
+        // Prevent the actual sending
+        event.preventDefault();
+        // Specify the sending form and the metadata
+        var form = $(this); // This pointer $ (this) or $ ( 'form'), if the ID form exists in the HTML ;)
+//console.info(form);
+        var action  = form.attr("formaction"), // attr () can either read the current contents of the specified attribute, or set a new value if a second parameter is given
+            method  = form.attr("formmethod"),
+            data    = form.serialize(); // Builds the data to a string after the pattern firstname = max & lastname = Müller & alter = 42. . .
+            sDataString = '?go';
+        // The actual AJAX call
+        $.ajax({
+            url : action,
+            type : method,
+            dataType: 'json',
+            data: sDataString,
+            beforeSend: function( xhr ) {
+//              xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+//console.log(event);
+                if (event.target.id==="repair"){
+                    btn = document.querySelector("#repair");
+                } else
+                if (event.target.id==="rebuild"){
+                    btn = document.querySelector("#rebuild");
+                } else {
+                if (event.target.id==="cache"){
+                    btn = document.querySelector("#cache");
+                }}
+                if (btn){
+                    btn.classList.add("w3-text-green");
+                    btn.firstElementChild.classList.add('fa','fa-spinner','w3-spin',"w3-text-green","fa-lg");
+               }
+            },
+            success: function(json_respond) {
+//console.log(json_respond);
+                if (json_respond.success === true) {
+                    swal.fire({
+                      title: data,
+                      text: '<h5>'+json_respond.message+'</h5>',
+                      showCloseButton: true,
+                      confirmButtonColor: "#3A6FB9",
+//                      animation: "slide-from-top",
+//                      closeOnConfirm: true,
+//                      closeOnCancel: false,
+//                      closeModal: true,
+                      imageUrl: "{{ THEME_URL }}images/thumbs-up-min.png",
+                      html: json_respond.message
+                    },
+                    function(isConfirm){
+                      // do nothing
+                    });
+                } else { // json_respond
+                    swal.fire({
+                      title: data,
+                      icon: 'error',
+//                      text: '<h5>Missing Error Respponse </h5>',
+                      text: '<h5>'+json_respond.message+'</h5>',
+                      showCloseButton: true,
+                      confirmButtonText: 'CANCEL',
+                      confirmButtonColor: "#F51201",
+//                      animation: "slide-from-top",
+//                      closeOnConfirm: true,
+//                      closeOnCancel: false,
+//                      closeModal: true,
+//                      imageUrl: "{{ THEME_URL }}images/thumbs-up-min.png",
+//                      html: true
+                      html:json_respond.message
+                    },
+                    function(isConfirm){
+                      // do nothing
+                    });
+                };
+            },
+            error: function(json_respond) {
+//console.log(json_respond);
+//                  swal.fire(json_respond.message, json_respond.message, "error");
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'warning',
+                    title: '',
+                    text: "Seems to be a missing page_id",
+                    showConfirmButton: true,
+                    timer: 5500
+                  })
+                  if (event.target.id==="repair"){
+                      btn = document.querySelector("#repair");
+                  } else{
+                  if (event.target.id==="rebuild"){
+                      btn = document.querySelector("#rebuild");
+                  }}
+                  if (btn){
+                      btn.classList.remove("w3-text-green");
+                      btn.firstElementChild.classList.remove('fa','fa-spinner','w3-spin',"w3-text-green");
+                  }
+            } // error
+/**/
+        }).done(function() {
+            if (event.target.id==="repair"){
+                btn = document.querySelector("#repair");
+            } else{
+            if (event.target.id==="rebuild"){
+                btn = document.querySelector("#rebuild");
+            }}
+            if (btn){
+                btn.classList.remove("w3-text-green");
+                btn.firstElementChild.classList.remove('fa','fa-spinner','w3-spin',"w3-text-green");
+            }
+       });
+
+    });  // click
+
+}, false);
+</script>
+  </body>
+</html>
+<!-- END mainBlock -->

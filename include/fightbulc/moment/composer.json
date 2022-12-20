@@ -1,0 +1,43 @@
+{
+  "name": "fightbulc/moment",
+  "description": "Parse, validate, manipulate, and display dates in PHP w/ i18n support. Inspired by moment.js",
+  "license": "GPL-2.0-or-later",
+  "type": "library",
+  "keywords": [
+    "date",
+    "time",
+    "parse",
+    "validate",
+    "manipulate",
+    "display",
+    "format",
+    "i18n",
+    "translation",
+    "locale",
+    "moment"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tino Ehrich",
+      "email": "tino@bigpun.me",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.36 || ^5.5 || ^6.5 || ^7.5 || ^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Moment\\": "moment/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Moment\\": "tests/"
+    }
+  }
+}

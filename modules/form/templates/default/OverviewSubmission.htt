@@ -1,0 +1,53 @@
+<!-- BEGIN main_block -->
+<br /><br />
+<h2 id="submissions">{TEXT_SUBMISSIONS}</h2>
+<table summary="" width="100%" cellpadding="2" cellspacing="0" border="0" class="">
+<thead>
+<tr style="background-color: #dddddd; font-weight: bold;">
+    <th width="23" style="text-align: center;">&nbsp;</th>
+    <th width="33" style="text-align: right;"> ID </th>
+    <th width="200" style="padding-left: 10px;">{TEXT_SUBMITTED}</th>
+    <th width="200" style="padding-left: 10px;">{TEXT_USER}</th>
+    <th width="350">{TEXT_EMAIL} {MOD_FORM_FROM}</th>
+    <th width="20">&nbsp;</th>
+    <th width="20">&nbsp;</th>
+    <th width="20">&nbsp;</th>
+    <th width="20">&nbsp;</th>
+</tr>
+</thead>
+<tfoot class="frm-pagination">
+    <tr style="background-color: #dddddd; font-weight: bold;">
+        <td colspan="9" style="text-align: left;">
+{PAGINATION}
+        </td>
+    </tr>
+</tfoot>
+<tbody>
+<!-- BEGIN loop_submmission_block -->
+<tr class="row_{ROW_BIT}">
+    <td width="20" style="padding-left: 5px;text-align: center;">
+        <a href="{WB_URL}/modules/form/view_submission.php?{QUERYSTR}" title="{TEXT_OPEN}">
+            <img src="{THEME_URL}/images/folder_16.png" alt="{TEXT_OPEN}" />
+        </a>
+    </td>
+    <td width="30" style="padding-right: 5px;text-align: right;">{SUBMISSION_ID}</td>
+    <td width="200" style="padding-left: 10px;">{SUBMISSION_CREATE_WHEN}</td>
+    <td width="200" style="padding-left: 10px;">{SUBMISSION_BY}</td>
+    <td width="350">{SUBMISSION_EMAIL}</td>
+    <td width="20" style="text-align: center;">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20" style="text-align: center;cursor: pointer;">
+        <a onclick="javascript:confirm_link('{TEXT_ARE_YOU_SURE}','{WB_URL}/modules/form/delete_submission.php?{QUERYSTR}');" title="{TEXT_DELETE}">
+            <img src="{THEME_URL}/images/delete_16.png" alt="X" />
+        </a>
+    </td>
+    <td width="20">&nbsp;</td>
+</tr>
+<!-- END loop_submmission_block -->
+
+<tr><td colspan="9">{TEXT_NONE_FOUND}</td></tr>
+
+</tbody>
+</table>
+
+<!-- END main_block -->

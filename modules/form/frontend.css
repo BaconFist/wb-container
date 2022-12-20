@@ -1,0 +1,153 @@
+@charset "utf-8 ";.frm-field_table{width:100%;vertical-align:middle;table-layout:auto;border-collapse:separate;border:none;}
+.frm-field_table tbody{font-size:100%;padding:0.4em 0.2em;}
+.frm-field_table tbody td{border:none;}
+.frm-field_table tbody td.field_heading,.frm-field_table tbody td.frm-field_heading{border-bottom:1px solid #666666;border-top:1px solid #666666;color:#666666;font-weight:bold;background:#DADADA;}
+.frm-formular{float:none;}
+.frm-formular .w3-label.frm-radio-label{line-height:26px;margin-right:10px;}
+.frm-field_title{vertical-align:middle;white-space:normal;text-align:left;line-height: 1.2;}
+.frm-table_layout.frm-field_title{max-width:130px;}
+/* ----------------------------------------------------------------- */
+.frm-btn{line-height:2em;padding:0 16px;background-color: #C4C4C4;}
+.frm-btn:hover{background-color: #E3E3E3;}
+
+input.frm-btn,.frm-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap;}
+input.frm-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);}
+.frm-btn,.frm-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+.frm-disabled,.frm-btn:disabled,.frm-button:disabled{cursor:not-allowed;opacity:0.3}.frm-disabled *,:disabled *{pointer-events:none;}
+.frm-btn.frm-disabled:hover,.frm-btn:disabled:hover{box-shadow:none;}
+.frm-button,.frm-input,.frm-select,.frm-textarea{font:inherit;margin:0;}
+.frm input.frm-btn {background-color: #ddd;border:1px solid #ccc;border-radius:4px!important;padding:0 16px;line-height:2em;}
+/* ----------------------------------------------------------------- */
+.frm-textfield{width:100%;}
+.frm-textarea{width:100%;height:100px;}
+optgroup{font-weight:bold;}
+.frm-button,.frm-input{overflow:visible;}
+.frm-button,.frm-select{text-transform:none;}
+.frm-select{width:100%;font-size:100.1%;}
+.frm-select option{padding:4px 0 3px 4px;}
+.frm-select{padding:9px 0;width:100%;color:#999999;border:1px solid transparent;border-bottom:1px solid #009688;}
+.frm-select select:focus{color:#000;border:1px solid #009688;}
+.frm-select option [disabled ]{color:#009688;}
+.frm-field_checkbox{cursor:pointer;width:1.225em;}
+.frm-checkbox_label{cursor:pointer;padding:5px;}
+.frm-radio_label{cursor:pointer;}
+.frm-border-0{border:0!important;}
+.frm-border{border:1px solid #ccc!important;}
+.frm-border-top{border-top:1px solid #ccc!important;}
+.frm-border-bottom{border-bottom:1px solid #ccc!important;}
+.frm-border-left{border-left:1px solid #ccc!important;}
+.frm-border-right{border-right:1px solid #ccc!important;}
+.frm-email{width:100%;height: 36px;}
+.frm-field_heading label{padding-left:0.825em;}
+.frm-label {display: block;font-weight: 500;}
+.frm-select {}
+.frm-margin{margin:16px!important}.frm-margin-top{margin-top:16px!important}.frm-margin-bottom{margin-bottom:16px!important}
+.frm-margin-left{margin-left:16px!important}.frm-margin-right{margin-right:16px!important}
+
+/*
+.frm-header-label  {color: #767676!important;display: block!important;font-size: 1.2em!important;font-weight: 600!important;}
+*/
+/*** Don't remove the class nixhier, this is required for ASP ***/
+.nixhier,.frm-nixhier{display:none;}
+.frm-submission{margin:0 auto;position:relative;width:auto;}
+.print-email{color:#000000;margin:10px auto;}
+.frm-warning{background:#FFEEEE;border:0.1em #884444 solid;color:#E10000;margin-bottom:1em;padding:0.5em 2.8em;font-size:96.5%;font-weight:normal;}
+.frm-note{background:#EEFFEE;border:0.2em #448844 solid;color:#004400;margin-bottom:1em;padding:0.8em;font-size:1.2em;font-weight:bold;}
+.previewprinttop{text-align:right;}
+.previewprinttop img{padding-left:1em;}
+.frm-thankyou{}
+.frm-field_table tbody tr{line-height:1.85;max-height:2.925em;}
+.frm-warning h3{font-size:120%;line-height:1.3em;margin:0.1em;padding:0.1em;}
+.frm-warning ol{color:#333333;margin:0.1em;}
+p.frm-warning{border:none;padding-left:0;}
+.check-container .description{display:inline-block;align-items:flex-start;line-height:inherit;font-size:inherit;user-select:none;cursor:pointer;}
+.frm-field_table input [type= "submit " ]{padding:0.3em 0.8em;}
+.frm-warning a,p.frm-warning a{background:transparent;padding-left:0;}
+fieldset.frm-fieldset{border:none;margin:0 auto;padding:0%;width:90%;}
+.frm-warning-success-email{display:block;}
+.previewPrintTop{text-align:right;}
+.previewPrintTop span{display:none;}
+/* ----------------------------------------------------------------- */
+.frm-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.frm-image{max-width:100%;height:auto;}
+/* Simple Div Selectoren */
+.frm{margin--top:5px;line-height: 2.5;}
+.frm div{text-align:left;}
+.frm-field{border:1px solid #ccc!important;}
+/* --------------------------------------------------------------------------- */
+.frm textarea{border:1px solid #ccc;border-radius:4px!important;padding:0 16px;line-height:2em;}
+.frm .captcha-input input{width:100px;}
+.frm input [type="submit" ]{background:#eee!important;transition:all .2s ease-in-out;}
+.frm input [type="submit" ]:hover{background:#ccc!important;}
+.frm-input{padding:2px;display:block;border:none;border-bottom:1px solid #ccc;width:100%;height: 32px;}
+.frm-select{padding:4px 0;width:100%;border:none;border-bottom:1px solid #ccc;}
+/* --------------------------------------------------------------------------- */
+.frm-dropdown-click,.frm-dropdown-hover{position:relative;display:inline-block;cursor:pointer;}
+.frm-dropdown-hover:hover .frm-dropdown-content{display:block;}
+.frm-dropdown-hover:first-child,.frm-dropdown-click:hover{background-color:#ccc;color:#000;}
+.frm-dropdown-hover:hover >.frm-button:first-child,.frm-dropdown-click:hover >.frm-button:first-child{background-color:#ccc;color:#000;}
+.frm-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1;}
+.frm-check,.frm-radio{width:22px;height:22px;position:relative;top:6px;}
+.frm--hide{display:none;}
+.frm-validate {}
+/* --------------------------------------------------------------------------- */
+#Securimage a{cursor:pointer;}
+.frm-radio-label{display:inline-block;cursor:pointer;position:relative;font-size: inherit;}
+/* ------------------------------------------------------------------- */
+input[readonly^=]{background-color:#ccc;}
+#captcha_code{height: 32px;padding: 0 5px;}
+/* ------------- custom inputs focus blue ----------- */
+.form-block input[type=text],.form-block select,.form-block textarea{padding:1px 3px 1px 3px;margin:5px 1px 3px 0px;border: 1px solid!important;}
+.form-block input[type=text],.form-block select,.form-block textarea{transition:all 0.30s ease-in-out;outline:none;border-color:#dddddd!important;}
+.form-block input[type=text]:focus,.form-block select:focus,.form-block textarea:focus{box-shadow:0 0 5px rgb(81,203,238);border-color:rgb(81,203,238)!important;}
+.form-block .frm-required-star {color: #FE0202;font-size: 140%;vertical-align: middle;padding-left: 4px;display: inline-block;height: 16px;}
+/* ------------- custom inputs focus red ------------ */
+input[type=text].core-required:focus,select.core-required:focus,textarea.core-required:focus{box-shadow:0 0 5px rgb(238,0,0)!important;border-color:rgb(238,0,0)!important;}
+input[type=text].frm-required:focus, select.frm-required:focus, textarea.frm-required:focus{box-shadow:0 0 5px rgb(238,0,0)!important;border-color:rgb(238,0,0)!important;}
+/* -------------------------------------------------- */
+.form-block .frm-field_title,
+.form-block .frm-fieldtitle.frm,
+.form-block .frm-field_title label {display: block;color: #8A8A8A;font-size: 1.0em;font-weight: 600!important;line-height: 1;}
+.form-block .frm-field_title,
+.form-block .frm-fieldtitle.frm,
+.form-block .frm-field_title label {margin-top: 0.8em!important;line-height: 1;}
+/*
+.form-block .frm-field_title label {display: block;font-size: 1.0em;font-weight: 600;margin-top: 0.8em!important;line-height: 1;}
+.form-block .frm-fieldtitle.frm,.form-block .frm-field_title {margin:3px 0px 0px!important;font-size:1.0em!important;font-weight: 600!important;}
+*/
+.form-block  label.frm-header-label {color: #767676!important;display: block!important;font-size: 1.3em!important;font-weight: 600!important;}
+/* -------------------------------------------------- */
+.form-block input[type="radio"] + label::before {border-radius: 50%;}
+.form-block input[type="radio"] + label, .form-block input[type="checkbox"] + label {
+text-decoration: none;color: #646464;cursor: pointer;display: inline-block;font-size: 1em;line-height: 1.5;
+font-weight: 400;padding-left: 2.4em;padding-right: 0.75em;position: relative;}
+.form-block input[type="radio"], .form-block input[type="checkbox"] {
+-moz-appearance: none;-webkit-appearance: none;-ms-appearance: none;appearance: none;
+display: block;float: left;margin-right: -2em;opacity: 0;width: 1em;z-index: -1;}
+/* -------------------------------------------------- */
+.form-block input[type="radio"] + label::before,
+.form-block input[type="checkbox"] + label::before {
+background: rgba(160, 160, 160, 0.55);border: solid 1px rgba(160, 160, 160, 0.3);
+content: '';display: inline-block;font-size: 0.8em;height: 2.0625em;left: 0;line-height: 2.0625em;position: absolute;text-align: center;top: 0;width: 2.0625em;}
+.form-block input[type="radio"]:hover + label::before,
+.form-block input[type="checkbox"]:hover + label::before {background: rgba(160, 160, 160, 0.85);}
+/* -------------------------------------------------- */
+/* blue = #2196F3 org = #3c3b3b; DefaultTemülate = #a90329 */
+.form-block input[type="radio"]:checked + label::before,.form-block input[type="checkbox"]:checked + label::before{background: #046AA9;border-color: #046AA9;color: #ffffff;}
+.form-block input[type="radio"]:hover + label,.form-block input[type="checkbox"]:hover + label{color: #046AA9;}
+/* Style the checkbox indicator */
+.form-block input[type="checkbox"]:checked + label::before{content: '\2713';}
+/* Style the radio indicator (dot/circle) */
+.form-block input[type="radio"]:checked + label::before {
+content: '\2713';
+}
+
+.form-block .input-container {height: 36px !important;display: flex;width: auto;float: right;margin-bottom: 15px;display: -ms-flexbox;}
+.form-block .icon {color: white;min-width: 50px;text-align: center;}
+
+.form-block button, [type="button"], [type="reset"], [type="submit"] {
+-webkit-appearance: button;-moz-appearance: button;-webkit-appearance: button;-ms-appearance: button;appearance: button;
+/*background-color: inherit;*/
+border: none;cursor: pointer;
+}
+.form-block input.round {border-radius: .45rem;}

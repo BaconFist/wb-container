@@ -1,0 +1,230 @@
+<!-- BEGIN main_block -->
+
+<!-- BEGIN headline_block -->
+<h4 style="margin: 0; border-bottom: 1px solid #DDD; padding-bottom: 5px;">
+    <a href="{CANCEL_URL}" title="{ADMINISTRATION_TOOLS}">{ADMINISTRATION_TOOLS}</a>
+    » {TOOL_NAME}
+</h4>
+<!-- END headline_block -->
+<div class="w3-container block-outer">
+  <section class="filter-block w3-conainer w3-row">
+    <h2>{MOD_MAIL_FILTER_HEADING}</h2>
+    <!-- BEGIN core_info_block -->
+    <div class="w3-panel w3-leftbar w3-sand">{COREMSG_TXT}</div>
+    <!-- END core_info_block -->
+    <div id="filter-and-tables" class="filter-options w3-row w3-margin">
+        <div class="w3-container" style="font-size: 1.125em;"></div>
+        <!-- BEGIN info_message_block -->
+        <div class="w3-code w3-leftbar w3-sand"><p>{MSGTXT}</p></div>
+        <!-- END info_message_block -->
+        <!-- BEGIN success_message_block -->
+        <div class="w3-code w3-leftbar w3-border-{MSGCOLOR} w3-pale-{MSGCOLOR}"><p>{MSGTXT}</p></div>
+        <!-- END success_message_block -->
+    </div>
+
+    <form id="form1" action="{ADMIN_URL}admintools/tool.php" method="post">
+        <input type="hidden" name="url" value="{PAGE_ID}" />
+        <input type="hidden" name="section_id" value="{SECTION_ID}" />
+        <input type="hidden" name="tool" value="{MODULE_NAME}" />
+        <input type="hidden" name="SaveSettings" value="1" />
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+        <input type="hidden" value="0" name="filter_forced"/>
+        <div id="selectOutputFilters" class="w3-half w3-container" style="padding-bottom: 180px" >
+            <table class="filter_table_title w3-table-all">
+                <thead>
+                  <tr>
+                    <th class="filter_check_all" style="opacity: 1;">
+                     {MOD_MAIL_FILTER_CLICK_HELP}
+                    </th>
+                    <th>
+                  <!--  <input type="checkbox" id="table_check_all"> -->
+                    </th>
+                    <th style="text-align: right;">{MOD_MAIL_FILTER_SET_ACTIVE}</th>
+                  </tr>
+                </thead>
+                <tbody>
+      <!-- BEGIN filter_block -->
+                  <tr class="tr-height">
+                    <td class="filter_table_name" style="cursor: help;width: 99.66%;">
+                          <label class="w3-validate" for="cb-{FNAME}">
+                          <span id="p_{FNAME}" style="display: none;">{TITLE}</span></label>
+                          <div onclick="TagToTip('p_{FNAME}',TITLE,'{FNAME}',STICKY,true,CLICKCLOSE,true,FOLLOWSCROLL,true,FONTSIZE, '11pt',BGCOLOR, '#F3F6D4',TITLEBGCOLOR,'#215A7A',FONTCOLOR,'#1D7EA4',WIDTH,480, PADDING,8)" onmouseout="UnTip()" >
+                           {FALIAS}</div>
+                    </td>
+                    <td style="width: 33.33%; visibility: hidden;"><span>&nbsp;</span></td>
+                    <td class="filter_table_name">
+                          <label class="check-container {RGMF}">
+                              <input class="w3-check" type="checkbox" {FCHECKED} value="1" name="{FNAME}" id="cb-{FNAME}" />
+                              <span class="checkbtn" style="margin-top: -6px;">&#160;</span>
+                          </label>
+                    </td>
+                  </tr>
+      <!-- END filter_block -->
+                </tbody>
+              </table>
+
+        <div class="w3-container w3-padding-0"></div>
+            <div class="w3--half w3-container">
+                <div class="w3-row">
+                  <div class="w3-half w3-container" style="display: {DISPLAY};">
+                    <button form="form1" name="action" value="save_settings" class="w3-btn w3-blue-wb w3-btn-min-width w3-hover-green" type="submit" >{TEXT_SAVE}</button>
+                  </div>
+                  <div class="w3-half w3-container">
+                    <input class="w3-btn w3-blue-wb w3-btn-min-width w3-hover-red url-close" data-overview="{CANCEL_URL}" type="button" value="{CUSTOM}" />
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-half w3-container" >
+            <div id="selectFilterContent" style="display: none;">
+      <!-- BEGIN filter_email_block -->
+                <div class="w3-code w3-leftbar w3-sand"><span>{MOD_MAIL_FILTER_HOWTO}&#160;</span></div><br />
+                <div class="w3-row cb-emailfilter">
+                    <div class="w3-content w3-cell w3-half w3-mobile">
+                        <label style="vertical-align: middle;">{MOD_MAIL_FILTER_AT_REPLACEMENT}</label>
+                    </div>
+                    <div class="w3-content w3-cell w3-rest w3-mobile">
+                        <input class="w3-input w3-border" type="text" value="{at_replacement}" name="at_replacement"/>
+                    </div>
+                </div>
+                <div class="w3-row cb-emailfilter" style="margin-top: 1.025em;">
+                    <div class="w3-content w3-cell w3-half w3-mobile">
+                        <label style="vertical-align: middle;">{MOD_MAIL_FILTER_DOT_REPLACEMENT}</label>
+                    </div>
+                    <div class="w3-content w3-cell w3-rest w3-mobile">
+                        <input class="w3-input w3-border" type="text" value="{dot_replacement}" name="dot_replacement"/>
+                    </div>
+                </div>
+                <div class="w3-row" style="margin-top: 1.025em;">
+                    <div class="w3-content w3-cell w3-half w3-mobile">
+                        <label for="email_filter" style="vertical-align: middle;">{MOD_MAIL_FILTER_EMAIL_FILTER}</label>
+                    </div>
+                    <div class="w3-content w3-cell w3-rest w3-mobile">
+                        <label class="check-container">
+                            <input id="email_filter" class="w3-check w3-border" type="checkbox" name="email_filter" value="1" {EMAIL_FILTER_CHECK}>
+                            <span class="checkbtn" style="margin-top: -8px;">&#160;</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="w3-row" style="margin-top: 1.025em;">
+                    <div class="w3-content w3-cell w3-half w3-mobile">
+                        <label for="mailto_filter" style="vertical-align: middle;">{MOD_MAIL_FILTER_MAILTO_FILTER}</label>
+                    </div>
+                    <div class="w3-content w3-cell w3-rest w3-mobile">
+                        <label class="check-container">
+                            <input id="mailto_filter" class="w3-check w3-border" type="checkbox" name="mailto_filter" value="1" {MAILTO_FILTER_CHECK}>
+                            <span class="checkbtn" style="margin-top: -8px;">&#160;</span>
+                        </label>
+                    </div>
+                </div>
+      <!-- END filter_email_block -->
+            </div>
+        </div>
+        <div class="w3-half w3-container w3-margin-top" >
+            <div id="selectW3cssFilter" style="display: none;">
+      <!-- BEGIN force_w3css_block -->
+            <div class="w3-code w3-leftbar w3-sand"><span>{MOD_MAIL_FILTER_W3CSS}&#160;</span></div>
+            <div class="w3-row" style="margin-top: 1.025em;">
+                <div class="w3-content w3-cell w3-half w3-mobile">
+                    <label for="W3Css_force" style="vertical-align: middle;">{MOD_MAIL_FILTER_LOAD_W3CSS}</label>
+                </div>
+                <div class="w3-content w3-cell w3-rest w3-mobile">
+                    <label class="check-container">
+                        <input id="tW3Css_force" class="w3-check w3-border" type="checkbox" name="W3Css_force" value="1" {W3Css_force_FILTER_CHECK}>
+                        <span class="checkbtn" style="margin-top: -8px;">&#160;</span>
+                    </label>
+                </div>
+            </div>
+      <!-- END force_w3css_block -->
+            </div>
+        </div>
+
+        <div class="w3-half w3-container w3-margin-top" >
+            <div id="selectShortFilter" style="display: block;"><!-- force_short_block -->
+      <!-- BEGIN force_short_block -->
+            <div class="w3-code w3-leftbar w3-sand"><span>{MOD_MAIL_FILTER_SHORT_URL}&#160;</span></div>
+            <div class="w3-container" style="margin: 1.225em 0;">
+                <div class="w3-content w3-cell w3-half w3-mobile">
+                    <label for="Short_force" style="vertical-align: middle;">{LOAD_SHORT_URL}</label>
+                </div>
+                <div class=" w3-cell w3-rest w3-mobile">
+                    <label class="check-container">
+                        <input id="Short_force" class="w3-check w3-border" type="checkbox" name="Short_force" value="1" {Short_force_FILTER_CHECK}>
+                        <span class="checkbtn" style="margin-top: -8px;">&#160;</span>
+                    </label>
+                    <span>{MOD_MAIL_FILTER_WHITHOUT_HTACCESS}</span>
+                </div>
+            </div>
+      <!-- END force_short_block -->
+            </div>
+            <div class="w3-row">
+              <div class="w3-half w3-container" style="display: {DISPLAY};">
+                <button form="form1" name="action" value="save_settings" class="w3-btn w3-blue-wb w3-btn-min-width w3-hover-green" type="submit" >{TEXT_SAVE}</button>
+              </div>
+              <div class="w3-half w3-container">
+                <input class="w3-btn w3-blue-wb w3-btn-min-width w3-hover-red url-close" data-overview="{CANCEL_URL}" type="button" value="{CUSTOM}" />
+              </div>
+            </div>
+        </div>
+    </form>
+
+      <!-- BEGIN own_list_block -->
+          <div class="w3-border-top"><!-- own_list_block -->
+                <table class="w3-table w3-border-0">
+                    <tbody>
+                        <tr>
+                          <td colspan="2">
+                              <div class="w3-panel w3-leftbar w3-sand w3-small">
+                                <p>{MOD_MAIL_FILTER_WARNING}</p>
+                              </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <textarea class="w3-textarea w3-border" name="own_filter_list" cols="50" rows="5">{LIST_DESCRIPTION}</textarea>
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+          </div>
+      <!-- END own_list_block -->
+
+      <!-- edit_short_block -->
+            <div class="w3-half w3-container" style="margin: 1.25em 0;">
+      <!-- BEGIN edit_short_block -->
+            {INCL_HTACCESS}
+      <!-- END edit_short_block -->
+            </div>
+
+      <!-- BEGIN submit_list_block -->
+            <div class="w3-half w3-container" style="margin: 1.25em 0;"><!-- submit_list_block -->
+                <div class="w3-row">
+                  <div class="w3-third w3-container">
+                    <input name="save_list" class="w3-btn w3-blue-wb w3-btn-min-width w3-hover-green" type="submit" value="{TEXT_SAVE_LIST}" />
+                  </div>
+                  <div class="w3-third w3-container">
+                    <input name="empty_list" class="w3-btn w3-blue-wb w3-btn-min-width w3-hover-green" type="submit" value="{TEXT_EMPTY_LIST}" />
+                  </div>
+                  <div class="w3-third w3-container">
+                    <input class="w3-btn w3-blue-wb w3-hover-red w3-btn-min-width url-close" data-overview="{CANCEL_URL}" type="button" value="{TEXT_READ_MORE}" />
+                  </div>
+                </div>
+            </div>
+      <!-- END submit_list_block -->
+    <!-- /form -->
+
+  </section>
+</div>
+
+<script>
+    var toolTip = (function(elm){
+      return TagToTip(elm,TITLE,COPYCONTENT,STICKY,false,WIDTH,80,FOLLOWSCROLL,true);
+    });
+</script>
+
+<script src="{WB_URL}modules/output_filter/themes/default/js/wz_tooltip.js" ></script>
+<script src="{WB_URL}modules/output_filter/themes/default/js/tip_centerwindow.js"></script>
+<script src="{WB_URL}modules/output_filter/themes/default/js/tip_followscroll.js"></script>
+
+<!-- END main_block -->

@@ -1,0 +1,15 @@
+.addons-block{font-size: 100.1%!important;position: relative;overflow: hidden;}
+.addons-block span.title{display:block;}
+.addons-block .section{margin-top:10px;padding:0px;border:1px solid #999999;width:100%;background-color:#fdfdfd;height:95px;}
+.addons-block .addons{}
+.addons-block .addons td.setting_name{color:#0d4b6e;font-weight:bold;min-width:200px;padding-right:0.525em;text-align:right;width:20%;}
+.addons-block .w3-content{max-width:45em;margin:auto;}
+.addons-block .w3-select{height: 2.58em!important;text-align: left;width: 70%;margin-right: 0.925em;}
+/*------------------------------------------------------------------------------- */
+.addons-block input[type="checkbox"] {position:relative; z-index: -9999;}
+.addons-block input[type="checkbox"] + label:before {border: 1px solid #444; border-radius: 3px; content: "\00a0"; display: inline-block; font: 12px/1.15em sans-serif; font-weight: bold; }
+.addons-block input[type="checkbox"] + label:before {height: 18px; width: 18px; margin: 0 .5em 0 -2.5em; padding: 0; padding: 2px;}
+.addons-block input[type="checkbox"]:checked + label:before {background: #217DA1; color: #fff; content: "\2713"; text-align: center; border-color: #217DA1;}
+.addons-block input[type="checkbox"]:checked + label:after {font-weight: bold;}
+.addons-block input[type="checkbox"]:focus + label::before {outline: rgb(0, 120, 215) auto 1px;}
+.addons-block label,.addons-block label.w3-validate {font-weight: bold!important;color: #AFAEAE;}

@@ -1,0 +1,246 @@
+<!--
+ @version         $Id: account/preferences_form.htt $
+-->
+<!-- BEGIN main_block -->
+<section class="w3-container account-block">
+<!-- BEGIN success_block -->
+    <div class="w3-panel w3-leftbar w3-pale-green w3-border-green w3-padding">
+        <form id="{FORM_TYPE}" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="form account" autocomplete="off">
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <input type="hidden" name="page_id" value="{PAGE_ID}" />
+            <input type="hidden" name="url" value="{URL}" />
+            <input type="hidden" name="action" value="show" />
+            <input type="hidden" name="redirect" value="{REDIRECT}" />
+            <ul class="w3-ul">
+            <!-- BEGIN success_list_block -->
+                <li>{SUCCESS_VALUE}</li>
+            <!-- END success_list_block -->
+            <li><button type="submit" name="start_reset" type="button" class="start_reset w3-btn w3-light-gray" style="min-width: 8.25em;">{TEXT_PAGE_RELOAD}</button></li>
+            </ul>
+        </form>
+    </div>
+<!-- END success_block -->
+<!-- BEGIN error_block -->
+    <div class="w3-panel w3-leftbar w3-pale-red w3-border-red w3-padding">
+        <form id="{FORM_TYPE}" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="form account" autocomplete="off">
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <input type="hidden" name="page_id" value="{PAGE_ID}" />
+            <input type="hidden" name="url" value="{URL}" />
+            <input type="hidden" name="action" value="show" />
+            <input type="hidden" name="redirect" value="{REDIRECT}" />
+            <ul class="w3-ul">
+            <!-- BEGIN error_list_block -->
+            <li>{ERROR_VALUE}</li>
+            <!-- END error_list_block -->
+            <li><button type="submit" name="start_reset" type="button" class="start_reset w3-btn w3-light-gray" style="min-width: 8.25em;">{TEXT_PAGE_RELOAD}</button></li>
+            </ul>
+        </form>
+    </div>
+<!-- END error_block -->
+<div id="account-folder" class="content_box outer-box" data-template="{DATA_TEMPLATE}">
+    <h3>{HEADING_MY_SETTINGS}</h3>
+    <!--
+<form  class="account" id="details" action="{ACTION_URL}" method="post" autocomplete="off">
+-->
+    <form id="details" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="form account" autocomplete="off">
+        <input autocomplete="off" name="hidden" type="text" style="display:none;"/>
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+        <input type="hidden" name="redirect" value="{REDIRECT}" />
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <input type="hidden" name="url" value="{URL}" />
+        <input type="hidden" name="action" value="show" />
+        <input type="hidden" name="redirect" value="{REDIRECT}" />
+        <table class="account" style="width: 95%;">
+            <tbody>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_USERNAME}</label></td>
+                    <td class="setting-value">
+                        <div class="btn-info" id="username" >{USERNAME}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_DISPLAY_NAME}</label></td>
+                    <td class="setting-value">
+                        <input class="w3-input w3-border" type="text" name="display_name" value="{DISPLAY_NAME}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_LANGUAGE}</label></td>
+                    <td class="setting-value">
+                        <select size="4" class="w3-select w3-border" name="language" id="language">
+                    <!-- BEGIN language_list_block -->
+                            <option class="fix-img flag-padding flag-box" value="{CODE}"{LANG_SELECTED} style="background-image:url('{IMAGE_URL}flags/png/{FLAG}-24.png');" >
+                            {LANG_NAME} ({CODE})</option>
+                    <!-- END language_list_block -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_TIMEZONE}</label></td>
+                    <td class="setting-value">
+                        <select class="w3-select w3-border" name="timezone" id="timezone">
+                    <!-- BEGIN timezone_list_block -->
+                            <option value="{ZONE_VALUE}"{ZONE_SELECTED}>{ZONE_NAME}</option>
+                    <!-- END timezone_list_block -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_DATE_FORMAT}</label></td>
+                    <td class="setting-value">
+                        <select class="w3-select w3-border" name="date_format" id="date_format">
+                    <!-- BEGIN date_format_list_block -->
+                            <option value="{DATE_VALUE}"{DATE_SELECTED}>{DATE_NAME}</option>
+                    <!-- END date_format_list_block -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_TIME_FORMAT}</label></td>
+                    <td class="setting-value">
+                        <select class="w3-select w3-border" name="time_format" id="time_format">
+                    <!-- BEGIN time_format_list_block -->
+                            <option value="{TIME_VALUE}"{TIME_SELECTED}>{TIME_NAME}</option>
+                    <!-- END time_format_list_block -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right">&nbsp;</td>
+                    <td class="setting-value">
+                        <button class="btn btn-default" name="action" value="details" style="min-width: 10.25em;">{TEXT_SAVE}</button>
+                        <button type="button" class="btn btn-default" value="" onclick="window.location.href='{HTTP_REFERER}';" style="min-width: 10.25em;">{TEXT_BACK}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="content_box outer-box">
+    <h3>{HEADING_MY_EMAIL}</h3>
+    <!--
+<form class="account" action="{ACTION_URL}" method="post" autocomplete="off">
+-->
+    <form id="email" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="form account" autocomplete="off">
+        <input autocomplete="off" name="hidden" type="text" style="display:none;"/>
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+        <input type="hidden" name="redirect" value="{REDIRECT}" />
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <input type="hidden" name="url" value="{URL}" />
+        <input type="hidden" name="action" value="show" />
+        <input type="hidden" name="redirect" value="{REDIRECT}" />
+        <table class="account" style="width: 95%;">
+            <tbody>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_EMAIL}</label></td>
+                    <td class="setting-value">
+                        <input type="text" name="email" id="email" value="{EMAIL}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_CURRENT_PASSWORD}</label></td>
+                    <td class="setting-value">
+                            <input autocomplete="off" id="current_password" type="password" class="input form-control current_password" name="current_password" value="{EMPTY_STRING}" />
+                            <span toggle=".current_password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right">&nbsp;</td>
+                    <td class="setting-value">
+                    <button class="btn btn-default" name="action" value="email" style="min-width: 10.25em;">{TEXT_SAVE}</button>
+                    <button type="button" class="btn btn-default" value="cancel" onclick="window.location.href='{HTTP_REFERER}';" style="min-width: 10.25em;">{TEXT_BACK}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="content_box outer-box">
+    <h3>{HEADING_MY_PASSWORD}</h3>
+    <!--
+<form class="account" id="password" action="{ACTION_URL}" method="post" autocomplete="off">
+-->
+    <form id="password" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="form account" autocomplete="off">
+        <input autocomplete="off" name="hidden" type="text" style="display:none;"/>
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+        <input type="hidden" name="redirect" value="{REDIRECT}" />
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <input type="hidden" name="url" value="{URL}" />
+        <input type="hidden" name="action" value="show" />
+        <input type="hidden" name="redirect" value="{REDIRECT}" />
+        <table class="account" style="width: 95%;">
+            <tbody>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_NEW_PASSWORD}</label></td>
+                    <td class="setting-value">
+                            <input autocomplete="off" id="new_password_1" type="password" class="input form-control new_password_1" name="new_password_1" value="" />
+                            <span toggle=".new_password_1" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_RETYPE_NEW_PASSWORD}</label></td>
+                    <td class="setting-value ">
+                        <input class="input  form-control" type="password" id="new_password_2" name="new_password_2" value="" autocomplete="off" /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right"><label>{TEXT_CURRENT_PASSWORD}</label></td>
+                    <td class="setting-value">
+                            <input autocomplete="off" id="current_password" type="password" class="input form-control current_password" name="current_password" value="" />
+                            <span toggle=".current_password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right">&nbsp;</td>
+                    <td class="setting-value">
+                        <button class="btn btn-default" name="action" value="password" style="min-width: 10.25em;">{TEXT_SAVE}</button>
+                        <!--
+<button class="btn btn-default resetBtn"  name="reset" value="" style="min-width: 10.25em;">{TEXT_RESET}</button>
+-->
+                        <button type="button" class="btn btn-default" value="" onclick="window.location.href='{HTTP_REFERER}';" style="min-width: 10.25em;">{TEXT_BACK}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+  </div>
+</section>
+
+<script>
+    window.onload = function(){
+        document.getElementById("new_password_1").value = "";
+//        let data = document.querySelectorAll("option[data-icons]");
+//        for (let i=0; i<data.length; i++) {
+//console.log (data[i]);
+//            data[i].style.background-color = '#ccc';//data[i].dataset.icons;
+//        }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+/*
+    let templateUrl = document.querySelector("#account-folder");
+
+    var AccountCss   = templateUrl.dataset.template+"/frontend.css";
+console.log (AccountCss);
+    if (typeof LoadOnFly==='undefined'){
+        $.insert(AccountCss);
+    } else {
+        LoadOnFly('head', AccountCss);
+    }
+
+        let fieldsreset = document.querySelector('.start_reset');
+//console.log (fieldsreset);
+        if (fieldsreset!==null){
+            fieldsreset.addEventListener (
+                "click",
+                function (evt) {
+                    let url = window.location.protocol +'//'+ window.location.host + window.location.pathname;
+                    window.location.href = url;
+                    evt.preventDefault();
+            });
+       }
+*/
+    });
+</script>
+<!-- END main_block -->

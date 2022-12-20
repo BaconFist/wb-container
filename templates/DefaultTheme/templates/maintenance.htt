@@ -1,0 +1,82 @@
+<!-- BEGIN main_block -->
+<!-- BEGIN meta_block -->
+<!DOCTYPE html>
+<html lang="{LANGUAGE}">
+<!--
+ @version         $Id: maintenance.htt 77 2017-03-12 02:46:29Z Luisehahne $
+-->
+<head>
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge'><![endif]-->
+<meta charset="utf-8" />
+<meta name="referrer" content="no-referrer"/>
+<title>{PAGE_TITLE}</title>
+<meta name="description" content="{TEXT_LOGIN}" />
+<meta name="keywords" content="{TEXT_LOGIN}" />
+<link rel="shortcut icon" href="{IMAGES}favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="{IMAGES}apple-touch-icon.png"/>
+<link rel="stylesheet" href="{THEME_URL}css/3/w3.css" type="text/css" />
+<link rel="stylesheet" href="{THEME_URL}css/login.css" type="text/css" />
+
+</head>
+<body >
+<!-- END meta_block -->
+
+<div id="modulesettings" class="w3--modal w3-animate-zoom" style="padding-top: 50px !important;">
+    <div class="w3-modal-content " style="min-width:100%; background-color: transparent !important;">
+      <div class="w3-row w3-section">
+          <div class="w3-col l4 m2 w3-content" >&nbsp;</div>
+          <div class="w3-col l6 m8 s12 w3-content" style="max-width: 580px;">
+              <img style="width: 278px;" class="w3-image w3-padding-bottom " src="{THEME_URL}images/wbLogo.svg" alt="WebsiteBaker Logo" >
+
+              <div class=" w3-content w3-blue-grey w3-card-4" >
+                  <header class="w3-container w3-header-blue-wb w3-row w3-theme-d4">
+                      <div class="w3-content">
+                      <h4 class=" w3-text w3-text-white w3-border-0 w3-large" >{MAINTENANCE} - {WB_URL}</h4>
+                      </div>
+                  </header>
+
+                  <article class="w3-container w3-col w3-white w3-padding-0 w3-margin-bottom">
+                    <div class="w3-container w3-center">
+                        <h4 class=" w3-large">{PAGE_TITLE}</h4>
+                        <img src="{THEME_URL}images/{PAGE_ICON}.png" alt="{PAGE_TITLE}" /><br />
+                        <p class="w3-large">{CHECK_BACK}</p>
+      <!-- BEGIN link_block -->
+                        <p>{LINK_URL}</p>
+      <!-- END link_block -->
+                    </div>
+                  </article>
+                  <footer class="container w3-margin-top w3-light-grey">
+                  </footer>
+              </div>
+              <footer class="w3-text-grey w3-text w3-center w3-small" style=" margin: 1.025em 0;">
+                <!-- Please note: the below reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+                <a href="https://websitebaker.org/" target="_blank" rel="noopener" title="external">WebsiteBaker</a> is released under the
+                <a href="https://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+                <!-- Please note: the above reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+              </footer>
+          </div>
+          <div class=" w3-container w3-quarter" ></div>
+      </div>
+    </div>
+</div>
+
+<script>
+<!--
+    elm = document.getElementsByTagName('form');
+    console.info(elm);
+      for (i=0; elm[i]; i++) {
+        if ( (elm[i].className.indexOf('autocomplete') == -1) ) {
+            elm[i].setAttribute('autocomplete', 'off');
+        }
+        if ( (elm[i].className.indexOf('accept-charset') == -1) ) {
+            elm[i].setAttribute('accept-charset', 'utf-8');
+        }
+      }
+-->
+</script>
+
+<!-- BEGIN html_block -->
+</body>
+</html>
+<!-- END html_block -->
+<!-- END main_block -->

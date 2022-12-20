@@ -1,0 +1,222 @@
+<!-- BEGIN main_block -->
+<!DOCTYPE html>
+<html lang="{LANGUAGE}">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="referrer" content="no-referrer"/>
+<title>{SECTION_FORGOT}</title>
+<meta name="description" content="{SECTION_FORGOT}" />
+<meta name="keywords" content="{SECTION_FORGOT}" />
+
+<link rel="shortcut icon" href="{IMAGES}favicon.ico" type="image/x-icon"/>
+<link rel="apple-touch-icon" href="{IMAGES}apple-touch-icon.png"/>
+
+<link href="{THEME_URL}/css/3/w3.css" rel="stylesheet" media="screen" />
+<link href="{THEME_URL}/css/login.css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" href="{WB_URL}/include/plugins/default/jspanel/4.2.1/dist/jspanel.css" type="text/css" media="screen" />
+
+<style>
+#login-forgot-box1{display: block;opacity: 1;}
+#login-forgot-box1{background-color: #377496;width: 600px;position: fixed;left: 33.33%;top: 140px;opacity: 1;}
+#login-footer1{font-size: 0.925em;width: 100%;height: 32px;color: #fff !important;touch-action: none;cursor: default;}
+</style>
+
+<script>
+    /* inserted by header.htt */
+    var WB_URL = '{WB_URL}';
+    var THEME_URL = '{THEME_URL}';
+    var TEMPLATE = '{TEMPLATE}';
+    var ADMIN_URL = '{ADMIN_URL}';
+    var EDITOR = '{EDITOR}';
+    var LANGUAGE = '{LANGUAGE}';
+</script>
+
+<script src="{WB_URL}/include/jquery/domReady-min.js"></script>
+<script src="{WB_URL}/include/jquery/LoadOnFly.js"></script>
+</head>
+<body onload="document.querySelector('form#forgot_pass').email.focus();">
+
+<!-- BEGIN ForgotBlockNoscript -->
+<div id="login-forgot-box" class="w3-row w3-section">
+    <div class="w3-col l4 m2 w3-content" >&nbsp;</div>
+    <div class="w3-col l6 m8 s12 w3-content" style="max-width: 580px;">
+        <img style="width: 278px;" class="w3-image w3-padding-bottom " src="{THEME_URL}/images/wbLogo.svg" alt="WebsiteBaker Logo" >
+        <div class=" w3-content w3-blue-grey" >
+            <header class="w3-container w3-header-blue-wb w3-row w3-theme-d4">
+                <div class="w3-content">
+                <h4 class=" w3-text w3-text-white w3-border-0 w3-large" >{SECTION_FORGOT} - {WEBSITE_TITLE}</h4>
+                </div>
+            </header>
+
+            <form id="forgot_pass" action="{ACTION_URL}" method="post" class="w3-form w3-white" autocomplete="off">
+                <input type="hidden" name="url" value="{URL}" />
+                <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+                <article class=" w3-row">
+                    <h6 class="w3-center">{MESSAGE}</h6>
+                    <div class="w3-row">
+                        <label class="w3-col l3 w3-padding-top w3-text-blue-wb">{TEXT_EMAIL}</label>
+                        <input class="w3-col l9 w3-input" type="text" placeholder="Enter E-Mail" name="email" value="" required="required" >
+                    </div>
+                    <div class="w3-row w3-padding-8">
+                        <input class="w3-col w3-input w3-white w3-border-0" type="button" >
+                    </div>
+                </article>
+
+                <footer class="container w3-margin-top w3-light-grey">
+                    <div class="w3-row">
+                        <div class="w3-col m5"><button class="w3-padding-4 w3-blue w3-hover-green w3-round" type="submit" name="submit" >{TEXT_SEND_DETAILS}</button></div>
+                        <div class="w3-col m2">&nbsp;</div>
+                        <div class="w3-col m5"><button class="w3-padding-4 w3-blue w3-hover-red w3-round" type="reset" >{TEXT_RESET}</button></div>
+                    </div>
+                    <div class="w3-navbar">
+                        <div class="w3-col m5 w3-center"><a class="w3-hover-text-blue-wb" href="{LOGIN_URL}">{TEXT_NEED_TO_LOGIN}</a></div>
+                        <div class="w3-col m2">&nbsp;</div>
+                        <div class="w3-col m5 w3-center"><a class="w3-hover-text-blue-wb"  href="{WB_URL}/" target="_blank" rel="noopener">{TEXT_HOME}</a></div>
+                    </div>
+                </footer>
+            </form>
+        </div>
+<!-- END ForgotBlockNoscript -->
+<!-- BEGIN ForgotBlockPanel -->
+    <div id="login-forgot-box" class="w3-row w3-section w3-animate-opacity">
+            <form id="forgot_pass" action="{ACTION_URL}" method="post" class="w3-form w3-white" autocomplete="off">
+                <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+                <input type="hidden" name="url" value="{URL}" />
+                <article class=" w3-row">
+                    <h6 class="w3-center">{MESSAGE}</h6>
+                    <div class="w3-row">
+                        <label class="w3-col l3 w3-padding-top w3-text-blue-wb">{TEXT_EMAIL}</label>
+                        <input class="w3-col l9 w3-input" type="text" placeholder="Enter E-Mail" name="email" value="" required="required" >
+                    </div>
+                    <div class="w3-row w3-padding-12">
+                        <label class="w3-col l3 w3-padding-top w3-text-blue-wb">&#160;</label>
+                        <input class="w3-col l9 w3-input w3-white w3-border-0" type="button" />
+                    </div>
+                </article>
+
+                <footer class="container w3-margin-top w3-light-grey" style="margin-top:0.525em!important;">
+                    <div class="w3-row">
+                        <div class="w3-col m5"><button class="w3-padding-4 w3-blue w3-hover-green w3-round" type="submit" name="submit" >{TEXT_SEND_DETAILS}</button></div>
+                        <div class="w3-col m2">&nbsp;</div>
+                        <div class="w3-col m5"><button class="w3-padding-4 w3-blue w3-hover-red w3-round" type="reset" >{TEXT_RESET}</button></div>
+                    </div>
+                    <div class="w3-navbar">
+                        <div class="w3-col m5 w3-center"><a class="w3-hover-text-blue-wb" href="{LOGIN_URL}">{TEXT_NEED_TO_LOGIN}</a></div>
+                        <div class="w3-col m2">&nbsp;</div>
+                        <div class="w3-col m5 w3-center"><a class="w3-hover-text-blue-wb"  href="{WB_URL}/" target="_blank" rel="noopener">{TEXT_HOME}</a></div>
+                    </div>
+                </footer>
+            </form>
+<!-- END ForgotBlockPanel -->
+
+        <footer id="login-footer" class="w3-text w3-center w3-header-blue-wb w3-padding-4" style="font-size:0.825em;width: 100%;">
+          <!-- Please note: the below reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+          <a href="https://websitebaker.org/" target="_blank" rel="noopener" title="external">WebsiteBaker</a> is released under the
+          <a  style="white-space: nowrap;" href="http://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+          <!-- Please note: the above reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+        </footer>
+    </div>
+
+<!-- BEGIN ForgotBlockScript -->
+<script src="{WB_URL}/include/jquery/dist/{JQUERY_VERSION}jquery-min.js"></script>
+<script src="{WB_URL}/include/jquery/dist/{JQUERY_VERSION}jquery-migrate-min.js"></script>
+<script src="{WB_URL}/include/jquery/jquery-insert.js"></script>
+<script src="{WB_URL}/include/plugins/default/jspanel/4.2.1/dist/jspanel-org.js"></script>
+
+<script>
+
+    openForgotBox = function (){
+        var forgotbox = document.getElementById('login-forgot-box'); // querySelector
+//        let forgotbox1 = document.getElementById('login-forgot-box1'); // querySelector
+//        forgotbox1.style.display = "none";
+        if ( forgotbox) {
+        forgotbox.style.display = "block";
+//              modalFrame.style.display = "block";
+            var JsPanelCss = WB_URL+"/include/plugins/default//jspanel/4.2.1/dist/jspanel.css";
+            if (typeof LoadOnFly!=='function' || typeof LoadOnFly==='undefined' || !LoadOnFly){
+                $.getScript(JsPanelCss);
+//                $.insert(JsPanelJs);
+            } else {
+                LoadOnFly('head', JsPanelCss);
+//                LoadOnFly('head', JsPanelJs);
+            }
+
+            jsPanel.create({
+                theme: '#377496',
+//                animateIn:   'w3-animate-opacity', // jsPanelFadeIn  w3-animate-zoom
+                headerLogo:   "{THEME_URL}/images/wb-logo.svg",
+                headerTitle:  "{SECTION_FORGOT} - {WEBSITE_TITLE}",
+                headerControls: {
+                    close: "remove"
+                },
+                header:       true,
+                position: {
+                      my:      "center-top",
+                      at:      "center-top",
+                      offsetX: 0,
+                      offsetY: 140
+                },
+                closeOnEscape: false,
+    //            contentSize: '500 auto',
+                paneltype: "loginfooter",
+                panelSize: {
+                    width: function() {
+                        return '600'; // window.innerWidth/2.4
+                    },
+                    height: function() {
+//                        return window.innerHeight/1.5;
+                        return '400';
+                    }
+                },
+                contentOverflow:'hidden auto',
+                content: forgotbox,
+                footerToolbar: function () {
+                    return document.getElementById('login-footer');
+                 },
+                callback: function () {
+                    // get all focusable elements within the panel content
+                    var focusableElmts = this.content.querySelectorAll('input, button'),
+                        first = focusableElmts[0],
+                        last  = focusableElmts[focusableElmts.length - 1];
+                    // focus first focusable element
+                    first.focus();
+                    // handler to lock focus within the panel
+                    this.addEventListener('keydown', function (e) {
+                        if (e.key === 'Tab') {
+                            if ( e.shiftKey ) /* shift + tab */ {
+                                if (document.activeElement === first) {
+                                    last.focus();
+                                    e.preventDefault();
+                                }
+                            } else /* tab */ {
+                                if (document.activeElement === last) {
+                                    first.focus();
+                                    e.preventDefault();
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        };
+    };   // end of function openForgotBox
+    document.addEventListener('DOMContentLoaded', openForgotBox, false);  //
+</script>
+<!-- END ForgotBlockScript -->
+<script>
+    elm = document.getElementsByTagName('form');
+//    console.info(elm);
+      for (i=0; elm[i]; i++) {
+        if ( (elm[i].className.indexOf('autocomplete') == -1) ) {
+            elm[i].setAttribute('autocomplete', 'off');
+        }
+        if ( (elm[i].className.indexOf('accept-charset') == -1) ) {
+            elm[i].setAttribute('accept-charset', 'utf-8');
+        }
+      }
+</script>
+
+</body>
+</html>
+<!-- END main_block -->

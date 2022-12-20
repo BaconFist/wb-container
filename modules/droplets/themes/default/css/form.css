@@ -1,0 +1,5 @@
+.form-field{border:3px solid #1f3885;background:#EDEDED;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;color:#1f4863;-webkit-box-shadow:rgba(255,255,255,0.4) 0 2px 0,inset rgba(43,106,133,0.4) 0 3px 2px;-moz-box-shadow:rgba(255,255,255,0.4) 0 2px 0,inset rgba(43,106,133,0.4) 0 3px 2px;box-shadow:rgba(255,255,255,0.4) 0 2px 0,inset rgba(43,106,133,0.4) 0 3px 2px;padding:8px;margin-bottom:20px;font-size:1.225em;}
+.form-field:focus{background:#fff;color:#395E96;}
+.form-container h2{text-shadow:#386B92 0 2px 0;font-size:1.225em;margin:0 0 10px 0;font-weight:bold;text-align:center;}
+.form-title{margin-bottom:10px;color:#725129;text-shadow:#fdf2e4 0 1px 0;}
+.rename-input{border:0.025em groove #5492AC;width:90%;margin:auto 4%;}

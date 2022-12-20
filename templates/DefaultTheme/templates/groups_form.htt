@@ -1,0 +1,401 @@
+<span class="w3-hide"><!--
+ @version         $Id: groups_form.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<section class="access-block w3-container">
+<form id="group_add" action="{ACTION_URL}" method="post" class="access {DISPLAY_ADD}">
+    <input type="hidden" name="advanced" value="{ADVANCED_VALUE}" />
+    <input type="hidden" name="group_id" value="{GROUP_ID}" />
+    {FTAN}
+
+    <div class="w3-cell-row w3-display-container ">
+        <div class="w3-container w3-cell">
+        <h2 class="page_titel">{HEADING_MODIFY_GROUP}</h2>
+        </div>
+        <div class="w3-container w3-cell w3-display-right">
+            <!-- BEGIN manage_users_block -->
+                <span><a class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{ADMIN_URL}/users/index.php">{TEXT_MANAGE_USERS}</a></span>
+            <!-- END manage_users_block -->
+        </div>
+    </div>
+
+    <div class="block-outer" style="padding: 0.825em;">
+        <div class="access-wrapper" style="width: 100%; margin: auto 2.225em;" >
+                <div>{DEBUG_MSG}&#160;</div>
+                <table style="margin-bottom:10px; width: 43.5%; border-collapse: collapse; white-space-collapsing: collapse; ">
+                <tr>
+                    <td style=" text-align: right; padding-right: 0.825em;"><h5 >{TEXT_NAME}:</h5></td>
+                    <td>
+                        <input class="w3-input w3-border" type="text" name="group_name" maxlength="255" value="{GROUP_NAME}" style="width:98%" />
+                    </td>
+                </tr>
+                </table>
+    <!-- BEGIN groups_basic_block -->
+                <input type="hidden" name="advanced_extended" value="0" />
+                <table class="groups_basic" style="{DISPLAY_BASIC} width: 100%; ">
+                    <caption style="text-align: left;">
+                        <div class="w3-container">
+                            <ul class="w3-bar">
+                                <li class="w3-bar-item"><b style="font-size: 1.225em; float: left; color: #6E6E6E;">{TEXT_SYSTEM_PERMISSIONS}</b></li>
+                                <li class="w3-bar-item"><button class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3--medium w3-btn-min-width" type="submit" name="reset_system" value="1">{TEXT_DEFAULT_RESET}</button></li>
+                            </ul>
+                        </div>
+                    </caption>
+                    <thead>
+                    <tr>
+                        <th style="width: 5.525em;"></th>
+                        <th style="width: 8.225em;"></th>
+                        <th style="width: 8.225em;"></th>
+                        <th style="width: 8.225em;"></th>
+                        <th style="width: 8.225em;"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >&nbsp;</td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="pages_view" id="pages_view" value="1" {pages_checked} />
+                                <label class="w3-validate" for="pages_view">{SECTION_PAGES}</label>
+                            </td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="media_view" id="media_view" value="1" {media_checked} />
+                                <label class="w3-validate" for="media_view">{SECTION_MEDIA}</label>
+                            </td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="modules_view" id="modules_view" value="1" {modules_checked} />
+                                <label class="w3-validate" for="modules_view">{SECTION_MODULES}</label>
+                            </td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="templates_view" id="templates_view" value="1" {templates_checked} />
+                                <label class="w3-validate" for="templates_view">{SECTION_TEMPLATES}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >&nbsp;</td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="languages_view" id="languages_view" value="1" {languages_checked} />
+                                <label class="w3-validate" for="languages_view">{SECTION_LANGUAGES}</label>
+                            </td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="settings_basic" id="settings_basic" value="1" {settings_checked} />
+                                <label class="w3-validate" for="settings_basic">{SECTION_SETTINGS}</label>
+                            </td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="users_view" id="users_view" value="1" {users_checked} />
+                                <label class="wb-validate" for="users_view">{SECTION_USERS}</label>
+                            </td>
+                            <td>
+                                <input class="w3-check" type="checkbox" name="groups_view" id="groups_view" value="1" {groups_checked} />
+                                <label class="w3-validate" for="groups_view">{SECTION_GROUPS}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >&nbsp;</td>
+                            <td colspan="4">
+                                <input class="w3-check" type="checkbox" name="admintools" id="admintools" value="1" {admintools_checked} />
+                                <label class="w3-validate" for="admintools">{SECTION_ADMINTOOLS}</label>
+                            </td>
+                        </tr>
+                    </tbody>
+              </table>
+    <!-- END groups_basic_block -->
+    <!-- BEGIN groups_extended_block -->
+              <input type="hidden" name="advanced_extended" value="1" />
+              <table class="groups_adv w3-table" style="width: 98%;">
+                  <caption style="text-align: left;">
+                    <div class="w3-container">
+                        <ul class="w3-bar">
+                            <li class="w3-bar-item"><b style="font-size: 1.225em;  color: #6E6E6E;">{TEXT_SYSTEM_PERMISSIONS}</b></li>
+                            <li class="w3-bar-item"><button class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3-btn-min-width" type="submit" name="reset_system" value="1">{TEXT_DEFAULT_RESET}</button></li>
+                        </ul>
+                    </div>
+                  </caption>
+                  <thead>
+                      <tr>
+                          <th style="width: 9.225em;"></th>
+                          <th style="width: 8.225em;"></th>
+                          <th style="width: 0.225em;"></th>
+                          <th style="width: 8.225em;"></th>
+                          <th style="width: 0.225em;"></th>
+                          <th style="width: 8.225em;"></th>
+                          <th style="width: 0.225em;"></th>
+                          <th style="width: 8.225em;"></th>
+                          <th style="width: 0.225em;"></th>
+                          <th style="width: 8.225em;"></th>
+                          <th style="width: 0.225em;"></th>
+                      </tr>
+                  </thead>
+                  <tbody class="group">
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_PAGES}</span></td>
+                      </tr>
+                      <tr>
+                          <td>&nbsp;</td>
+                          <td><input name="pages_view" id="pages_view" class="w3-check" type="checkbox" value="1" {pages_view_checked} />
+                          <label class="w3-validate" for="pages_view">{TEXT_VIEW}</label></td>
+                          <td></td>
+                          <td><input name="pages_add" id="pages_add" class="w3-check" type="checkbox" value="1" {pages_add_checked} />
+                          <label class="w3-validate" for="pages_add">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="pages_add_l0" id="pages_add_l0" class="w3-check" type="checkbox" value="1" {pages_add_l0_checked} />
+                          <label class="w3-validate" for="pages_add_l0">{TEXT_LEVEL} 0</label></td>
+                          <td ></td>
+                          <td><input name="pages_settings" id="pages_settings" class="w3-check" type="checkbox" value="1" {pages_settings_checked} />
+                          <label class="w3-validate" for="pages_settings">{TEXT_MODIFY_SETTINGS}</label></td>
+                          <td></td>
+                          <td><input name="pages_modify" id="pages_modify" class="w3-check" type="checkbox" value="1" {pages_modify_checked} />
+                          <label class="w3-validate" for="pages_modify">{TEXT_MODIFY_CONTENT}</label></td>
+                          <td></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="pages_intro" id="pages_intro" class="w3-check" type="checkbox" value="1" {pages_intro_checked} />
+                          <label class="w3-validate" for="pages_intro">{HEADING_MODIFY_INTRO_PAGE}</label></td>
+                          <td></td>
+                          <td><input name="pages_delete" id="pages_delete" class="w3-check" type="checkbox" value="1" {pages_delete_checked} />
+                          <label class="w3-validate" for="pages_delete">{TEXT_DELETE}</label></td>
+                          <td></td>
+                          <td colspan="6">&nbsp;</td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_MEDIA}</span></td>
+                      </tr>
+                      <tr>
+                          <td>&nbsp;</td>
+                          <td><input name="media_view" id="media_view" class="w3-check" type="checkbox" value="1" {media_view_checked} />
+                          <label class="w3-validate" for="media_view">{TEXT_VIEW}</label></td>
+                          <td></td>
+                          <td><input name="media_upload" id="media_upload" class="w3-check" type="checkbox" value="1" {media_upload_checked} />
+                          <label class="w3-validate" for="media_upload">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="media_rename" id="media_rename" class="w3-check" type="checkbox" value="1" {media_rename_checked} />
+                          <label class="w3-validate" for="media_rename">{TEXT_RENAME}</label></td>
+                          <td></td>
+                          <td><input name="media_create" id="media_create" class="w3-check" type="checkbox" value="1" {media_create_checked} />
+                          <label class="w3-validate" for="media_create">{TEXT_CREATE_FOLDER}</label></td>
+                          <td></td>
+                          <td><input name="media_delete" id="media_delete" class="w3-check" type="checkbox" value="1" {media_delete_checked} />
+                          <label class="w3-validate" for="media_delete">{TEXT_DELETE}</label></td>
+                          <td></td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_MODULES}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="modules_view" id="modules_view" class="w3-check" type="checkbox" value="1" {modules_view_checked} /><label class="w3-validate" for="modules_view">{TEXT_VIEW}</label></td>
+                          <td></td>
+                          <td><input name="modules_install" id="modules_install" class="w3-check" type="checkbox" value="1" {modules_install_checked} /><label class="w3-validate" for="modules_install">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="modules_uninstall" id="modules_uninstall" class="w3-check" type="checkbox" value="1" {modules_uninstall_checked} /><label class="w3-validate" for="modules_uninstall">{TEXT_DELETE}</label></td>
+                          <td></td>
+                          <td><input name="modules_settings" id="modules_settings" class="w3-check" type="checkbox" value="1" {modules_settings_checked} /><label class="w3-validate" for="modules_settings">{TEXT_MODIFY_SETTINGS}</label></td>
+                          <td></td>
+                          <td colspan="2">&nbsp;</td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_TEMPLATES}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="templates_view" id="templates_view" class="w3-check" type="checkbox" value="1" {templates_view_checked} /><label class="w3-validate" for="templates_view">{TEXT_VIEW}</label></td>
+                          <td></td>
+                          <td><input name="templates_install" id="templates_install" class="w3-check" type="checkbox" value="1" {templates_install_checked} /><label class="w3-validate" for="templates_install">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="templates_uninstall" id="templates_uninstall" class="w3-check" type="checkbox" value="1" {templates_uninstall_checked} /><label class="w3-validate" for="templates_uninstall">{TEXT_DELETE}</label></td>
+                          <td></td>
+                          <td colspan="4">&nbsp;</td>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_LANGUAGES}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td>
+                          <input name="languages_view" id="languages_view" class="w3-check" type="checkbox" value="1" {languages_view_checked} />
+                          <label class="w3-validate" for="languages_view">{TEXT_VIEW}</label>
+                          </td>
+                          <td></td>
+                          <td><input name="languages_install" id="languages_install" class="w3-check" type="checkbox" value="1" {languages_install_checked} /><label class="w3-validate" for="languages_install">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="languages_uninstall" id="languages_uninstall" class="w3-check" type="checkbox" value="1" {languages_uninstall_checked} /><label class="w3-validate" for="languages_uninstall">{TEXT_DELETE}</label></td>
+                          <td></td>
+                          <td colspan="4">&nbsp;</td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_SETTINGS}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="settings_basic" id="settings_basic" class="w3-check" type="checkbox" value="1" {settings_basic_checked} /><label class="w3-validate" for="settings_basic">{TEXT_BASIC}</label></td>
+                          <td></td>
+                          <td><input name="settings_advanced" id="settings_advanced" class="w3-check" type="checkbox" value="1" {settings_advanced_checked} /><label class="w3-validate" for="settings_advanced">{TEXT_ADVANCED}</label></td>
+                          <td></td>
+                          <td colspan="6">&nbsp;</td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_ADMINTOOLS}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="admintools" id="admintools_settings" class="w3-check" type="checkbox" value="1" {admintools_checked} />
+                          <label class="w3-validate" for="admintools_settings">{TEXT_MODIFY_SETTINGS}</label></td>
+                          <td></td>
+                          <td colspan="8">&nbsp;</td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_USERS}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="users_view" id="users_view" class="w3-check" type="checkbox" value="1" {users_view_checked} />
+                          <label class="w3-validate" for="users_view">{TEXT_VIEW}</label></td>
+                          <td></td>
+                          <td><input name="users_add" id="users_add" class="w3-check" type="checkbox" value="1" {users_add_checked} /><label class="w3-validate" for="users_add">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="users_modify" id="users_modify" class="w3-check" type="checkbox" value="1" {users_modify_checked} /><label class="w3-validate" for="users_modify">{TEXT_MODIFY}</label></td>
+                          <td></td>
+                          <td><input name="users_delete" id="users_delete" class="w3-check" type="checkbox" value="1" {users_delete_checked} /><label class="w3-validate" for="users_delete">{TEXT_DELETE}</label></td>
+                          <td></td>
+                          <td colspan="2">&nbsp;</td>
+                      </tr>
+                      <tr class="group-header w3-light-grey">
+                          <td colspan="11"><span class="group-header">{SECTION_GROUPS}</span></td>
+                      </tr>
+                      <tr>
+                          <td >&nbsp;</td>
+                          <td><input name="groups_view" id="groups_view" class="w3-check" type="checkbox" value="1" {groups_view_checked} />
+                          <label class="w3-validate" for="groups_view">{TEXT_VIEW}</label></td>
+                          <td></td>
+                          <td><input name="groups_add" id="groups_add" class="w3-check" type="checkbox" value="1" {groups_add_checked} /><label class="w3-validate" for="groups_add">{TEXT_ADD}</label></td>
+                          <td></td>
+                          <td><input name="groups_modify" id="groups_modify" class="w3-check" type="checkbox" value="1" {groups_modify_checked} /><label class="w3-validate" for="groups_modify">{TEXT_MODIFY}</label></td>
+                          <td></td>
+                          <td><input name="groups_delete" id="groups_delete" class="w3-check" type="checkbox" value="1" {groups_delete_checked} /><label class="w3-validate" for="groups_delete">{TEXT_DELETE}</label></td>
+                          <td></td>
+                          <td colspan="2">&nbsp;</td>
+                      </tr>
+                  </tbody>
+              </table>
+        <table class="w3-table">
+            <tbody>
+                <tr style="text-align:center;width:100%;">
+                    <td style=" padding-left: 5.125em;">&nbsp;</td>
+                    <td style="padding: 16px; text-align: left;">
+                        <input class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3-btn-min-width" type="submit" name="save" value="{SUBMIT_TITLE}" />
+                        <input class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3-btn-min-width" type="reset" name="reset" value="{TEXT_RESET}" />
+                    </td>
+                    <td style="text-align:left;">
+                    </td>
+                    <td>
+                        <input class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3-btn-min-width" type="submit" name="cancel" value="{TEXT_BACK}" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <!-- END groups_extended_block -->
+        </div>
+    </div>
+<div class="block-outer" style="padding: 0.825em;">
+    <div class="access-wrapper" style="width: 100%; margin: auto 2.225em;" >
+        <table class="w3-table" style="width: 48%; float: left;">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                      <div class="w3-container">
+                      <ul class="w3-bar">
+                          <li class="w3-bar-item"><b style="font-size: 1.225em; color: #6E6E6E;">{SECTION_MODULES}:</b></li>
+                          <li class="w3-bar-item"><button  class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3-btn-min-width" type="submit" name="reset_modules" value="1">{TEXT_DEFAULT_RESET}</button></li>
+                      </ul>
+                      </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style=" padding-left: 5.225em;">&nbsp;</td>
+                    <td>
+                        <ul class="group-header">
+                            <!-- BEGIN module_list_block -->
+                                <!-- BEGIN module_function_block -->
+                                <li class="group-title w3-light-grey {MODULE_TEST}">
+                                    <span class="group-header">{OPTGROUP}</span>
+                                </li>
+                                <!-- END module_function_block -->
+                                <li>
+                                    <input class="w3-check" type="checkbox" class="w3-check" name="module_permissions[]" id="m_{VALUE}" value="{VALUE}" {CHECKED} />
+                                    <label class="w3-validate" for="m_{VALUE}">{NAME}</label>
+                                </li>
+                            <!-- END module_list_block -->
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="w3-table" style=" width: 48%; float: left;">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                      <div class="w3-container">
+                      <ul class="w3-bar">
+                          <li class="w3-bar-item"><b style="font-size: 1.225em; color: #6E6E6E;">{SECTION_TEMPLATES}:</b></li>
+                          <li class="w3-bar-item"><button  class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-hover-green w3-btn-min-width" type="submit" name="reset_templates" value="1">{TEXT_DEFAULT_RESET}</button></li>
+                      </ul>
+                     </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style=" padding-left: 5.225em;">&nbsp;</td>
+                    <td>
+                        <ul class="group-header">
+                            <!-- BEGIN template_list_block -->
+                                <!-- BEGIN template_function_block -->
+                                <li class="group-title w3-light-grey">
+                                    <span class="group-header">{OPTGROUP}</span>
+                                </li>
+                                <!-- END template_function_block -->
+                            <li>
+                                <input class="w3-check" type="checkbox" class="w3-check" name="template_permissions[]" id="t_{VALUE}" value="{VALUE}" {CHECKED} />
+                                <label class="w3-validate" for="t_{VALUE}">{NAME}</label>
+                            </li>
+                            <!-- END template_list_block -->
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="padding-top: 15px; padding-bottom: 5px;width: 100%; border-collapse: collapse;">
+            <tbody>
+                <tr style="text-align:center;width:100%;">
+                    <td style=" padding-left: 5.125em;">&nbsp;</td>
+                    <td style="padding: 16px; text-align: left;">
+                        <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="save" value="{SUBMIT_TITLE}" />
+                        <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="reset" name="reset" value="{TEXT_RESET}" />
+                    </td>
+                    <td style="text-align:left;">
+                    </td>
+                    <td>
+                        <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="cancel" value="{TEXT_CLOSE}" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</form>
+<!--  -->
+    <table style="width: 100%; border-collapse: collapse;" >
+    <tr style="text-align:center;width:100%; margin: 1.225em auto;">
+        <td >&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align:left;">
+          <form id="advanced" action="{ADVANCED_LINK}" method="post">
+              <input type="hidden" name="group_id" value="{GROUP_ID}" />
+              <input type="hidden" name="action" value="modify" />
+              {FTAN}
+              <button class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="advanced" onclick="window.location='{ADVANCED_LINK}';" value="{ADVANCED_VALUE}" >{ADVANCED_BUTTON}</button>
+              </form>
+        </td>
+    </tr>
+    </table>
+</section>
+<!-- END main_block -->

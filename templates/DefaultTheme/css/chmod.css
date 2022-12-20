@@ -1,0 +1,102 @@
+/** * http://tools.andreknieriem.de/chmod_calculator */
+.spacer{clear:both;height:20px;width:100%;}
+.chmod{background-color:#DCDCDC;display:block;margin:0.625em 0.525em;min-width:25.225em;}
+.chmodbox{width:100% !important;max-width:360px;}
+.half{padding:0.125em;width:30%;min-width:360px;position:relative;}
+.chmod-box {font-size: 1.2em;}
+.chmod .labelbox{margin-left:100px;}
+.chmod .labelbox label{margin-left:2px!important;padding:0.425em!important;}
+
+.chmod .boxes{float:left;margin:0.525em 0;}
+.chmod .boxes label{display:block;margin:26px 0;font-weight:bold;padding:0 !important;}
+/*   */
+.chmod .modbtn{float:left;margin:0.125em 0;}
+.chmod .modbtn label{display:block;margin:18px 0;font-weight:bold;padding:0 !important;}
+
+.chmod .checkboxThree  input.cb{visibility: hidden;}
+
+div.label label{float:left;margin:0.325em 0;}
+div.label label{display:block;margin:20px 0;font-weight:bold;padding:0 !important;}
+
+.chmod .labelbox{font-weight:bold;margin-left:6.925em;}
+.clear{clear:both;}
+#chmodDirCode,#chmodDirValue,#chmodFileCode,#chmodFileValue{color:tomato;font-size:1.125em;font-weight:bold;}
+.disabled{opacity:0.5;}
+.reformed-form input[type= "text " ],.reformed-form input[type= "password " ]{width:49%;min-width:140px;}
+.chmod h4{width: 98%;}
+
+input.formInput{width: 49%;}
+
+/* SLIDE THREE */
+.checkboxThree {
+width:5.25em!important;
+height: 26px;
+background: #333;
+margin: 25px 5px;
+
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px;
+position: relative;
+
+-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.checkboxThree:after {
+content: 'OFF';
+font: 12px/26px Arial, sans-serif;
+color: #FC6B6B;
+position: absolute;
+right: 10px;
+z-index: 0;
+font-weight: bold;
+text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+}
+
+.checkboxThree:before {
+  content: 'ON';
+  font: 12px/26px Arial, sans-serif;
+  color: #00bf00;
+  position: absolute;
+  left: 10px;
+  z-index: 0;
+  font-weight: bold;
+}
+
+.checkboxThree label {
+display: block;
+width: 32px;
+height: 20px;
+
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px;
+
+-webkit-transition: all .4s ease;
+-moz-transition: all .4s ease;
+-o-transition: all .4s ease;
+-ms-transition: all .4s ease;
+transition: all .4s ease;
+cursor: pointer;
+position: absolute;
+top: -15px;
+left: 3px;
+z-index: 1;
+
+-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+background: #fcfff4;
+
+background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.checkboxThree input[type=checkbox]:checked + label {left: 36px!important;}
+

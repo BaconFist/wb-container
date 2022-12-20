@@ -1,0 +1,47 @@
+<!--
+ @version         $Id: $
+-->
+<!-- BEGIN main_block -->
+<section class="access-block w3-container">
+<form class="access" id="users" action="{ADMIN_URL}/users/users.php" method="post">
+    <input type="hidden" name="userstatus" value="{USER_STATUS}" />
+    {FTAN}
+    <div class="w3-cell-row w3-display-container ">
+        <div class="w3-container w3-cell">
+        <h2 class="page_titel">{HEADING_MODIFY_DELETE_USER}</h2>
+        </div>
+        <div class="w3-container w3-cell w3-display-right">
+                <!-- BEGIN manage_users_block -->
+                    <span><a class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{ADMIN_URL}/groups/index.php">{TEXT_MANAGE_GROUPS}</a></span>
+                <!-- END manage_users_block -->
+        </div>
+    </div>
+
+    <label class="switch tooltip" title="{TEXT_USERS}">
+        <input class="w3-check url-status" type="checkbox" name="status" style="width: 1.825em; background: {STATUS_ICON} no-repeat center" value="{USER_STATUS}" data-status="?status={USER_STATUS}" class="status {DISPLAY_MODIFY}" {USER_CHECKED} />
+        <span class="slider round"><span role="tooltip">{TEXT_USERS}</span></span>
+    </label>
+    <select class="w3-border w3-select" name="user_id" size="1" style="width: 30.855em;height: 36px!important;">
+<!-- BEGIN list_block -->
+        <option value="{VALUE}" {STATUS}>{NAME}</option>
+<!-- END list_block -->
+    </select>
+
+    <input class="w3-btn w3-blue-wb w3-hover-green w3--medium w3-btn-min-width {DISPLAY_MODIFY}" type="submit" name="modify" value="{TEXT_MODIFY}" />
+    <input class="w3-btn w3-blue-wb w3-hover-green w3--medium w3-btn-min-width {DISPLAY_DELETE}" type="submit" name="delete" value="{TEXT_DELETE}" onclick="return confirm('{CONFIRM_DELETE}');" />
+
+<!-- BEGIN show_confirmed_activation_block -->
+<h3 class="bold">{DISPLAY_WAITING_ACTIVATION}</h3>
+     <select name="activation_user_id" class="w3-border w3-select user-activation" style="width: 30.855em;height: 36px!important; margin-left: 4.525em;">
+    <!-- BEGIN list_confirmed_activation_block -->
+        <option value="{CVALUE}" {CSTATUS}>{CNAME}</option>
+    <!-- END list_confirmed_activation_block -->
+    </select>
+    <input type="submit" name="delete_outdated" class="w3-btn w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" value="{TEXT_DELETE}" onclick="return confirm('{CONFIRM_DELETE}');" class="{DISPLAY_DELETE}" />
+    <input type="submit" name="enable_outdated" class="w3-btn w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" value="{TEXT_USER_ACTIVATE}" onclick="return confirm('{CONFIRM_DELETE}');" class="{DISPLAY_DELETE}" />
+<!-- END show_confirmed_activation_block -->
+
+</form>
+<h2 style="margin-top: 1.825em;" class="{DISPLAY_ADD}">{HEADING_ADD_USER}</h2>
+</section>
+<!-- END main_block -->

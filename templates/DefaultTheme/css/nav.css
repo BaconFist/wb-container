@@ -1,0 +1,78 @@
+
+#main-container .menu {
+    font-size: 1.025em;
+}
+#main-container .menu ul, #main-container .menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 5px;
+}
+#main-container .menu ul ul {
+    padding-left: 10px;
+}
+#main-container .menu a:link, #main-container .menu a:visited, #main-container .menu a:active,
+#main-container .menu a:hover {
+    display: block;
+    padding: 6px;
+    text-decoration: none;
+}
+#main-container .menu-default a:link, #main-container .menu-default a:visited,
+#main-container .menu-default a:active {
+    border-bottom: 1px dashed #999;
+}
+#main-container .menu-default a:hover {
+    border-bottom: 0px dashed #333;
+    background: #BEBFBF;
+    color: #306082;
+}
+
+#main-container .menu-current  {
+    border-bottom: 1px dashed #999;
+    font-weight:bold;
+    background: #355D84;
+    color: #FFF;
+}
+
+#main-container .menu fieldset {
+   /* border: 0px solid #D0D0D0;*/
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+#main-container .menu legend {
+    color: #603;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+#main-container .menu fieldset label{
+  min-width: 6.5em;
+}
+#main-container .menu input {
+    text-transform: uppercase;
+    font-size: 0.625em;
+    margin: 5px 0px 1px 0px;
+    width: 100px;
+}
+
+#main-container .content {
+    padding: 4px 10px 14px 10px;
+    clear: right;
+}
+#main-container .footer {
+    background-color: #FFF;
+    clear: both;
+    height: 20px;
+    font-size: 0.825em;
+    color: #666;
+    text-align: center;
+    line-height: 18px;
+}
+ .powered_by {
+    text-align: center;
+    font-size: 0.625em;
+    padding-top: 2px;
+}

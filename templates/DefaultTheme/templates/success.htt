@@ -1,0 +1,27 @@
+<!--
+ @version         $Id: success.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+<div class="msg-box rounded" style="margin: 1.225em auto;">
+    <div class="message wrapper" style="margin: 1.225em auto;">
+        <div class="w3-text-grey w3--medium">{MESSAGE}</div>
+    </div>
+<!-- BEGIN show_redirect_block -->
+    <script>
+        setTimeout(function () {
+           location.href='{REDIRECT}';
+        }, {REDIRECT_TIMER});
+
+    </script>
+<!-- END show_redirect_block -->
+        <div class="message wrapper" style="margin: 1.225em auto">
+            <input type="submit" id="submit" name="submit" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" value="{TEXT_CLOSE}" />
+        </div>
+</div>
+<script>
+    let redirect = document.getElementById("submit");
+    redirect.addEventListener("click", function(){
+        window.location.href='{REDIRECT}';
+    }, false);
+</script>
+<!-- END main_block -->

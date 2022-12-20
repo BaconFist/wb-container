@@ -1,0 +1,123 @@
+<article id="addons" class="w3-margin-0 addons-block">
+    <div class="title-line ">
+      <div class="w3-display-container w3-margin-left" style="height: 3.25em!important;">
+        <div class="w3-display-left"><h2>{{ aLang.MENU_ADDONS }}</h2></div>
+        <div class="w3-display-right">
+        <a class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" style="padding: 5px 16px; margin-right: 7px;" href="{{ system.ADVANCED_URL }}">{{ aLang.TEXT_ADVANCED }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-right-align w3-padding-0">
+        <label class="check-container" for="fr1">
+            <input id="fr1" class="w3-radio" type="radio" name="fr" value="1" {{ fr1_CHECKED }}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-bars fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr2">
+            <input id="fr2" class="w3-radio" type="radio" name="fr" value="2" {{ fr2_CHECKED }}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-grip-vertical fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr3">
+        <input id="fr3" class="w3-radio" type="radio" name="fr" value="3" {{ fr3_CHECKED }}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-th fa-0x w3-baseline"></i></span>
+        </label>
+    </div>
+    <div id="equal-addons" class="equal-container" style="grid-template-columns:  1fr 1fr;"><!-- begin grid-container -->
+{% if modules_block %}
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-addon-menu="/modules/index.php" >
+          <a class="w3-cell" href="{{ system.ADMIN_URL }}modules/index.php">
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                        <img src="{{ system.THEME_URL }}icons/modules.png" alt="{{ MODULES }}" />
+                </span>
+                <span class="w3-margin-left">
+                    <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{{ aLang.MENU_MODULES }}</span><br />
+                    <span>{{ aLang.OVERVIEW_MODULES }}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+          </a>
+        </div><!-- end modules -->
+{% endif %}
+
+{% if templates_block %}
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-addon-menu="/templates/index.php" >
+          <a class="w3-cell" href="{{ system.ADMIN_URL }}templates/index.php">
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                  <img src="{{ system.THEME_URL }}icons/templates.png" alt="{{ TEMPLATES }}" />
+                </span>
+                <span class="w3-margin-left">
+                  <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{{ aLang.MENU_TEMPLATES }}</span><br />
+                  <span>{{ aLang.OVERVIEW_TEMPLATES }}</span>
+                  <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+          </a>
+        </div><!-- end templates -->
+{% endif %}
+
+{% if languages_block %}
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-addon-menu="/languages/index.php" >
+          <a class="w3-cell" href="{{ system.ADMIN_URL }}languages/index.php">
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                  <img src="{{ system.THEME_URL }}icons/languages.png" alt="{{ aLang.MENU_LANGUAGES }}" />
+                </span>
+                <span class="w3-margin-left">
+                  <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue ">{{ aLang.MENU_LANGUAGES }}</span><br />
+                  <span>{{ aLang.OVERVIEW_LANGUAGES }}</span>
+                  <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+          </a>
+        </div><!-- end languages -->
+{% endif %}
+    </div><!-- end grid-container -->
+
+{% if reload_block %}
+    <div class="w3-container w3-card" style="margin: auto 1.2%;">
+      <table class="w3-table" {{ DISPLAY_RELOAD }} >
+        <tbody>
+          <tr>
+            <td class="graphic" ><img src="{{ system.THEME_URL }}/icons/admintools.png" alt="{{ aLang.TXT_ADMIN_SETTINGS }}" /> </td>
+            <td class="description"><span class="title">{{ aLang.TXT_ADMIN_SETTINGS }}</span>
+                <form action="{{ system.RELOAD_URL }}" method="post">
+                    <input type="hidden" name="{{ system.FTAN.name }}" value="{{ system.FTAN.value }}" />
+                    <span>{{ aLang.MESSAGE_RELOAD_ADDONS }}</span>
+                    <div class="reload" style="margin-bottom: 0.5em" >
+                      <input class="w3-check" {{ DISPLAY_LANGUAGES }} type="checkbox" name="reload_languages" id="reload_languages" value="true" />
+                      <label class="w3-padding" {{ DISPLAY_LANGUAGES }} for="reload_languages">{{ aLang.MENU_LANGUAGES }}</label>
+                      <input class="w3-check"  {{ DISPLAY_MODULES }} type="checkbox" name="reload_modules" id="reload_modules" value="true" />
+                      <label {{ DISPLAY_MODULES }} for="reload_modules">{{ aLang.MENU_MODULES }}</label>
+                      <input class="w3-check"  {{ DISPLAY_TEMPLATES }} type="checkbox" name="reload_templates" id="reload_templates" value="true" />
+                      <label {{ DISPLAY_TEMPLATES }} for="reload_templates">{{ aLang.MENU_TEMPLATES }}</label>
+                      <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{{ aLang.TEXT_RELOAD }}" />
+                    </div>
+                </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- end reload -->
+{% endif %}
+
+</article><!-- end addons -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let widget = document.querySelectorAll('[data-addon-menu]');
+        if (widget){
+            for (var i=0; i<widget.length; i++){
+                let link = widget[i].dataset.addonMenu;
+//console.log (widget[i]);
+                widget[i].addEventListener (
+                    "click",
+                    function (evt) {
+//console.log (link);
+                        let url = window.location.protocol +'//'+ window.location.host + dirname(dirname(window.location.pathname)) + link;//
+                        window.location.href = url;
+                        evt.preventDefault();
+                });
+            }
+        }
+    });
+</script>

@@ -1,0 +1,149 @@
+<!-- BEGIN main_block -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Set Upload Parameters</title>
+<meta name="Referrer-Policy" content="no-referrer | same-origin"/>
+<link href="{THEME_URL}/css/3/w3.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_URL}/css/fontawesome.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_URL}/css/theme.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_URL}/css/tableScroll.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+/*-------------------------------------------------------------------------------*/
+input [type= "checkbox" ]{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+input[type="checkbox"] {vertical-align: baseline!important;line-height: 2;}
+input.switch {
+-webkit-appearance: none;-moz-appearance: none;-o-appearance: none;
+width:40px!important;height:20px!important;vertical-align: top;line-height: 1.5;
+background-color:#fff;border:1px ridge  #B4B5B5;border-radius:50px;cursor: pointer;
+-webkit-box-shadow: inset -20px 0px 0px 0px #D9DADC;box-shadow: inset -20px 0px 0px 0px #C9C9C9;-webkit-transition-duration: 200ms;transition-duration: 400ms;}
+input.switch:checked {-webkit-box-shadow: inset 20px 0px 0px 1px #4ed164;box-shadow: inset 20px 0px 0px 1px #4ed164;}
+input.switch > i:hover{background-color: #028F02!important;}
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:checked + td label {color: #446FB3;font-weight: bold;}
+input[type="checkbox"]:hover + label,
+input[type="checkbox"]:hover + td label {color: #E7AA02;font-weight: bold;}
+</style>
+</head>
+<body style="overflow: hidden;position: fixed;width:100%;" class="w3-small">
+
+<div style="width:100%;display: block;" class="w3-cell-row">
+  <form method="post" action="{ADMIN_URL}/media/setparameter.php" id="myForm">
+    {FTAN}
+
+    <div style="display:block;">
+        <table class="w3-table-all w3-border-0" style="border-bottom: 0px solid #666;">
+        <tr>
+          <td><span class="w3-hide">&nbsp;</span></td>
+        </tr>
+    <!-- BEGIN table_message_block -->
+            <tr style="line-height: 2;">
+                <td class="w3-panel w3-pale-red w3-leftbar w3-border-red">{MESSAGE}</td>
+            </tr>
+    <!-- END table_message_block -->
+        </table>
+
+        <table  class="{DISPLAY_LIST_TABLE} border-0" style="width: 100%;">
+          <tbody style="width: 100%;">
+            <tr class="{DISPLAY_ADMIN}" style="line-height: 2;"><td><span class="w3-margin w3-transparent">{SETTINGS}</span></td>
+                <td style="margin-right: 0.5em;">
+                    <input class="switch w3-border-grey w3-nowrap" type="checkbox" name="show_thumbs" id="show_thumbs"{NO_SHOW_THUMBS_CHECKED}/>
+                    <label for="show_thumbs" class="tooltip w3-medium" title="{NO_SHOW_THUMBS}"><i class="w3-medium">{NO_SHOW_THUMBS}</i></label><br />
+                </td>
+            </tr>
+            <tr class="{DISPLAY_ADMIN}" style="line-height: 2;"><td>&nbsp;</td>
+                <td style="margin-right: 0.5em;">
+                    <input class="switch w3-border-grey w3-nowrap" type="checkbox" name="admin_only" id="admin_only"{ADMIN_ONLY_CHECKED}/>
+                    <label for="admin_only" class="tooltip w3-medium" title="{ADMIN_ONLY}"><i class="w3-medium">{ADMIN_ONLY}</i></label><br />
+                </td>
+            </tr>
+            <tr class="{DISPLAY_ADMIN} w3-hide" style="line-height: 2;"><td>&nbsp;</td>
+                <td style="margin-right: 0.5em;">
+                    <input class="switch w3-border-grey w3-nowrap" type="checkbox" name="resize_up" id="resize_up" disabled="disabled"/>
+                    <label for="resize_up" class="tooltip w3-medium" title="{RESIZE_UP}"><i class="w3-medium">{RESIZE_UP}</i></label><br />
+                  </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border-bottom: 1px solid #666; line-height: 1px;">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border-bottom: 1px solid #666; width: 100%;position: relative;">
+            <thead style="position: relative;">
+              <tr style="background-color: #DDD;width: 100%;">
+                  <th style="text-align: center;" colspan="3">{TEXT_HEADER}</th>
+              </tr>
+    <!-- BEGIN table_save_block -->
+              <tr>
+                  <td><input class="w3-btn w3-btn-default w3-blue-wb w3-hover-red w3-medium w3-btn-min-width" type="button" onclick="window.location = 'browse.php'" value="{BACK}"/></td>
+                  <td><input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3-medium w3-btn-min-width" type="submit" name="save" value="{SAVE_TEXT}"/></td>
+                  <td><button id="bottom" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3-medium w3-btn-min-width w3-hide">scroll to bottom</button></td>
+              </tr>
+            </thead>
+    <!-- END table_save_block -->
+        </table>
+    </div>
+
+    <button id="view" class="w3-hide"></button>
+    <div class="smoothie read" style="margin-bottom: 10px;">
+        <table class="{DISPLAY__LIST_TABLE} w3-table-all w3-striped w3-hoverable upload-table" style="width: 100%;">
+        <tbody>
+    <!-- BEGIN list_block -->
+        <tr>
+            <td class="w3-padding-2" colspan="2">{PATH_NAME}</td>
+            <td class="" style="white-space: nowrap;">
+            <label>{WIDTH}</label><input size="5" type="text" name="{FIELD_NAME_W}" value="{CUR_WIDTH}" id="W{FILE_ID}" onblur="BlurFunction(this.id)" onfocus="FocusFunction(this.id)" />
+            <label>{HEIGHT}</label><input size="5" type="text" name="{FIELD_NAME_H}" value="{CUR_HEIGHT}" id="H{FILE_ID}" onblur="BlurFunction(this.id)" onfocus="FocusFunction(this.id)" />
+            </td>
+        </tr>
+    <!-- END list_block -->
+            </tbody>
+    <!-- BEGIN table_tfoot_block -->
+            <tfoot>
+                <tr>
+                    <td><input class="w3-btn w3-btn-default w3-blue-wb w3-hover-red w3-medium w3-btn-min-width" type="button" onclick="window.location = 'browse.php'" value="{BACK}"/></td>
+                    <td><input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3-medium w3-btn-min-width" type="submit" name="save" value="{SAVE_TEXT}"/></td>
+                    <td id="up"><button id="top" class="w3-btn w3-btn-default w3-blue-wb w3-hover-red w3-medium w3-btn-min-width w3-hide">back to top</button></td>
+                </tr>
+            </tfoot>
+    <!-- END table_tfoot_block -->
+        </table>
+    </div>
+  </form>
+
+</div>
+</body>
+  <!-- Template Main JS File -->
+<script src="{THEME_URL}/js/smoothscroll.js"></script>
+
+<script>
+/*
+var x = document.getElementById("myForm");
+x.addEventListener("focus", FocusFunction, true);
+x.addEventListener("blur", BlurFunction, true);
+*/
+    function FocusFunction(id) {
+//        document.getElementById("myInput").style.backgroundColor = "yellow";
+        var el2 = document.getElementById(id),
+            tmp = el2.value;
+        el2.style.backgroundColor  = '';
+        if (tmp === '-'){
+            el2.value  = ''
+        }
+    }
+
+    function BlurFunction(id) {
+        var el1 = document.getElementById(id);
+            tmp = el1.value;
+        el1.style.backgroundColor  = '';
+        if (tmp === ''){
+            el1.value  = '-'
+        }
+    }
+
+</script>
+
+</html>
+
+<!-- END main_block -->

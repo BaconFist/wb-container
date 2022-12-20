@@ -1,0 +1,133 @@
+<span class="w3-hide"><!--
+ @version         $Id: preferences.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<article class="preferences-block w3-container w3-margin">
+<h2 class="w3-margin-bottom">{HEADING_MY_SETTINGS}</h2>
+<div class="block-outer" style="padding: 0.825em;">
+<div class="content_box">
+    <form id="{FORM_NAME}" action="{ACTION_URL}" method="post">
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_USERNAME}:</label>
+                </div>
+                <div class="c60l btn-info" style="line-height: 1;">
+                    <div class="w3-input w3-disabled w3-border w3-padding-small" id="username" >{USERNAME}</div>
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_DISPLAY_NAME}:</label>
+                </div>
+                <div class="c60l">
+                    <input class="w3-input w3-border w3-padding-small" type="text" id="display_name" name="display_name" value="{DISPLAY_NAME}" autocomplete="off" />
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_LANGUAGE}:</label>
+                </div>
+                <div class="c60l">
+                <select size="2" class="w3-select w3-border w3-padding-small js-select-templating" name="language" id="language" style="min-height: 10.25em;">
+                    <!-- BEGIN language_list_block -->
+                        <option class="fix-img flag-padding flag-box" value="{CODE}"{SELECTED} style="background-image:url('{ADDON_LANG_URL}flags/png/{PAGE_LANG}-24.png');" >
+                        {NAME} ({CODE})
+                        </option>
+                    <!-- END language_list_block -->
+                    </select>
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_TIMEZONE}:</label>
+                </div>
+                <div class="c60l">
+                    <select class="w3-select w3-border w3-padding-small" name="timezone" id="timezone">
+                        <!-- BEGIN timezone_list_block -->
+                            <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                        <!-- END timezone_list_block -->
+                    </select>
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_DATE_FORMAT}:</label>
+                </div>
+                <div class="c60l">
+                    <select class="w3-select w3-border w3-padding-small" name="date_format" id="date_format">
+                        <!-- BEGIN date_format_list_block -->
+                            <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                        <!-- END date_format_list_block -->
+                    </select>
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_TIME_FORMAT}:</label>
+                </div>
+                <div class="c60l">
+                    <select class="w3-select w3-border w3-padding-small" name="time_format" id="time_format">
+                        <!-- BEGIN time_format_list_block -->
+                            <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                        <!-- END time_format_list_block -->
+                    </select>
+                </div>
+            </div>
+
+            <hr />
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_EMAIL}:</label>
+                </div>
+                <div class="c60l">
+                    <input class="w3-input w3-border w3-padding-small" type="text" id="email" name="email" value="{EMAIL}" />
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_NEW_PASSWORD}:</label>
+                </div>
+                <div class="c60l">
+                    <input autocomplete="off" id="new_password_1" type="password" class="w3-input w3-border w3-padding-small form-control new_password_1" name="new_password_1" value="{EMPTY_STRING}" />
+                    <span toggle=".new_password_1" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_RETYPE_NEW_PASSWORD}:</label>
+                </div>
+                <div class="c60l">
+                    <input class="w3-input w3-border w3-padding-small" type="password" id="new_password_2" name="new_password_2" value="{EMPTY_STRING}" autocomplete="off" />
+                </div>
+            </div>
+            <div class="subcolumns">
+                <div class="c33l">
+                    <label>{TEXT_NEED_CURRENT_PASSWORD}:</label>
+                </div>
+                <div class="c60l">
+                    <input autocomplete="off" id="current_password" type="password" class="w3-input w3-border w3-padding-small form-control current_password" name="current_password" value="{EMPTY_STRING}" />
+                    <span toggle=".current_password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
+                </div>
+            </div>
+            <div class="w3-container save_section w3-bar">
+                <div class="w3-bar-item w3-padding">
+                    <input type="submit" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" id="submitBtn" name="submit" value="{TEXT_SAVE}" />
+                </div>
+                <div class="w3-bar-item w3-padding">
+                    <input type="reset" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" id="resetBtn" name="reset" value="{TEXT_RESET}" />
+                </div>
+                <div class="w3-bar-item w3-padding">
+                    <button formaction="{ADMIN_URL}/start/index.php" type="submit" class="w3-btn w3-btn-default w3-blue-wb w3-hover-red w3--medium w3-btn-min-width" id="closeBtn" name="close" value="" >{TEXT_CLOSE}</button>
+                </div>
+            </div>
+        {FTAN}
+    </form>
+</div>
+</div>
+</article>
+<!-- END main_block -->
+<script>
+    window.onload = function(){
+     document.getElementById("new_password_1").value = "";
+    }
+</script>

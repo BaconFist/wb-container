@@ -1,0 +1,115 @@
+<span class="w3-hide"><!--
+ @version         $Id: pages.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<!-- BEGIN add_block -->
+<h2>{HEADING_ADD_PAGE}</h2>
+<div class="{DISPLAY_ADD} block-outer wb-checkbox" style="float: left; width: 100%; padding-top: 1.925em;">
+<form id="add" action="add.php" method="post">
+{FTAN}
+    <table style="border-collapse: separate; width: 45%; float: left;" class="pages_add" >
+        <tbody>
+            <tr style="margin: 0.525em 0;">
+              <td  style="width: 13.525em;">{TEXT_TITLE}:</td>
+              <td  style="width: 22.525em;">
+              <input class="w3-input w3-border w3-padding" type="text" name="title" />
+              </td>
+            </tr>
+            <tr>
+              <td >{TEXT_TYPE}:</td>
+              <td >
+                  <select class="w3-select w3-border w3-padding" name="type">
+                      <!-- BEGIN module_list_block -->
+                          <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                      <!-- END module_list_block -->
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td >{TEXT_PARENT}:</td>
+              <td >
+                  <select class="w3-select w3-border w3-padding" name="parent" onchange="return disabled_hack_for_ie(this);">
+                      <!-- BEGIN page_list_block2 -->
+                      <option value="{ID}"{DISABLED} >{TITLE}</option>
+                      <!-- END page_list_block2 -->
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td >{TEXT_VISIBILITY}:</td>
+              <td >
+                  <select title="" class="w3-border w3-select tooltip w3-padding" id="visibility" name="visibility" style="width: 100%;">
+                      <option id="public" data-tooltip="{TEXT_MARKED_PUBLIC}" value="public">{TEXT_PUBLIC}</option>
+                      <option id="private" data-tooltip="{TEXT_MARKED_PRIVATE}" value="private">{TEXT_PRIVATE}</option>
+                      <option id="registered" data-tooltip="{TEXT_MARKED_REGISTERED}" value="registered">{TEXT_REGISTERED}</option>
+                      <option id="hidden" data-tooltip="{TEXT_MARKED_HIDDEN}" value="hidden">{TEXT_HIDDEN}</option>
+                      <option id="none" data-tooltip="{TEXT_MARKED_NONE}" value="none">{TEXT_NONE}</option>
+                  </select>
+                  <div id="tooltip" class="w3-panel w3-{COLOR}"><span></span></div>
+              </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+              <td colspan="2" class="w3--medium">
+                  <div class="w3-col s12 l12" style="margin: 0 0 20px 0;">
+                  <input class="w3-col l5 w3-btn btn-page w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{TEXT_ADD}"/>
+                  <span class="w3-col l2">&nbsp;</span>
+                  <input class="w3-col l5 w3-btn btn-page w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="reset" name="reset" value="{TEXT_RESET}" />
+                  </div>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="border-collapse: separate; width: 45%; padding-left: 1.225em;" class="pages_groups" >
+        <tbody>
+            <tr>
+              <td style=" width: 55%; vertical-align: top;">{TEXT_ADMINISTRATORS}:
+                  <ul style="list-style-type: none; margin: 0; padding: 0;">
+                      <!-- BEGIN group_list_block -->
+                      <li>
+                      <input class="w3-check" type="checkbox" name="admin_groups[]" id="admin_group_{ID}" value="{ID}"{CHECKED}{DISABLED} />
+                      <label class="w3-validate" for="admin_group_{TOGGLE}">{NAME}</label>
+                      </li>
+                      <!-- END group_list_block -->
+                  </ul>
+              </td>
+              <td style=" vertical-align: top;">
+                  <div id="viewers" style="display: none;">{TEXT_REGISTERED_VIEWERS}:
+                      <ul style="list-style-type: none; margin: 0; padding: 0;">
+                          <!-- BEGIN group_list_block2 -->
+                          <li>
+                          <input class="w3-check" type="checkbox" name="viewing_groups[]" id="viewing_group_{ID}" value="{ID}"{CHECKED}{DISABLED} />
+                          <label class="w3-validate" for="viewing_group_{TOGGLE}">{NAME}</label>
+                          </li>
+                          <!-- END group_list_block2 -->
+                      </ul>
+                  </div>
+              </td>
+            </tr>
+            <tr><td colspan="2">&#160;</td></tr>
+        </tbody>
+    </table>
+</form>
+</div>
+<!-- END add_block -->
+
+<!-- BEGIN intro_block -->
+<div class="{DISPLAY_INTRO}" style="padding-top: 10px;">
+<h2>{HEADING_MODIFY_INTRO_PAGE}</h2>
+  <div class="block-outer w3-padding">
+    <a href="intro.php">{INTRO_LINK}</a>
+  </div>
+</div>
+<!-- END intro_block -->
+</div> <!-- end div of pages_tree -->
+</article>
+
+<!-- Addition for remembering expanded state of pages -->
+<script>
+var THEME_URL = '{THEME_URL}';
+var WB_URL = '{WB_URL}';
+</script>
+<script src="{ADMIN_URL}/pages/page_index.js"></script>
+<script src="{WB_URL}/include/plugins/default/sweetalert2/09.17.2/dist/sweetalert2.all.min.js"></script>
+<!-- END main_block -->

@@ -1,0 +1,100 @@
+/** Allgemeine Formatierungen *
+
+body {
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0px;
+}
+ */
+
+/** Formatierung für mobile Ansicht **/
+
+/** Navigation wird als vertikale Liste über die komplette Breite dargestellt **/
+
+nav {
+    display: none;
+}
+
+nav ul {
+     padding: 0px;
+     margin: 0px;
+     width: 100%;
+}
+ 
+nav ul li {
+    list-style: none;
+    padding: 20px 10px;
+    border: 1px solid white;
+    background: #b0d4e3; /* Old browsers */
+    background: -moz-linear-gradient(top, #b0d4e3 0%, #88bacf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0d4e3), color-stop(100%,#88bacf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #b0d4e3 0%,#88bacf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #b0d4e3 0%,#88bacf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #b0d4e3 0%,#88bacf 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #b0d4e3 0%,#88bacf 100%); /* W3C */
+}
+
+/** Anpassungen Checkbox+Label (Button) **/
+
+input#open-menu {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ nav {
+    display: block;
+}
+    
+label.open-menu-label {
+    background: #63b6db; /* Old browsers */
+    background: -moz-linear-gradient(top, #63b6db 0%, #309dcf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63b6db), color-stop(100%,#309dcf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #63b6db 0%,#309dcf 100%); /* W3C */
+    padding: 20px 10px;
+    border: 1px solid white;
+    display: block;
+
+}
+
+/** Formatierung für Tablet und Desktopansicht **/
+
+@media only screen and (min-width: 760px) {
+
+    /** Navigation wird als einfarbiger, horizontaler Balken dargestellt **/
+    
+    nav {
+        display: block;
+        text-align: center;
+        padding: 20px;
+        background: #63b6db; /* Old browsers */
+        background: -moz-linear-gradient(top, #63b6db 0%, #309dcf 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63b6db), color-stop(100%,#309dcf)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #63b6db 0%,#309dcf 100%); /* W3C */
+    }
+    
+    nav ul li {
+        display:inline;
+        width: 25%;
+        border: 1px solid white;
+        background: #63b6db; /* Old browsers */
+        background: -moz-linear-gradient(top, #63b6db 0%, #309dcf 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63b6db), color-stop(100%,#309dcf)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #63b6db 0%,#309dcf 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #63b6db 0%,#309dcf 100%); /* W3C */
+    }
+    
+    /** Label wird ausgeblendet **/
+    label.open-menu-label {
+        display: none;
+    }
+}
+

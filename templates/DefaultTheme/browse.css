@@ -1,0 +1,28 @@
+body,td,th,input,textarea {font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height: 1.2!important;}
+
+/*
+body {background-color:#fff;margin:0;}
+hr {margin:0;color:#003366;height:1px;}
+iframe {overflow: hidden;}
+.w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}
+.w3-table th:first-child,.w3-table td:first-child,.w3-table-all th:first-child,.w3-table-all td:first-child{padding-left:50px;}
+.w3-table-all{border:1px solid #ccc}
+.w3-table-all tr:nth-child(odd){background-color:#fff}
+.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+*/
+
+a:link, a:visited, a:active {color:#003366;text-decoration:none;}
+a:hover {text-decoration:none;color:#336699;cursor: pointer;}
+.hide {display:none;}
+.w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {padding: 4px 2px;display: table-cell;text-align: left;vertical-align: middle;}
+.w3-hoverable tbody tr:hover,.w3-ul.w3-hoverable li:hover{background-color:#ccc!important;}
+.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+/*
+*/
+.w3-centered tr th,.w3-centered tr td{text-align:center}
+.upload-table th,.upload-table td {padding:3px 3px;border:0px solid #ccc;}
+/*--------------------- scroll table -----------------------------*/
+.upload-table thead,.upload-table tfoot{display:table;width:100%;}
+.upload-table tbody{height:100%;overflow:auto;overflow-x:hidden;display:block;width:100%;}
+.upload-table tbody tr{display:table;width:100%;table-layout: auto;}
+.upload-table tbody tr:hover {background:#E3E3E3;cursor:default;}

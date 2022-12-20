@@ -1,0 +1,120 @@
+<span class="w3-hide">
+<!--
+ @version         $Id: addons.htt 379 2017-03-10 14:44:36Z Luisehahne $
+-->
+</span>
+<!-- BEGIN main_block -->
+<article id="addons" class="addons-block w3-margin-0">
+    <div class="title-line">
+        <table class="w3-table  w3-margin-0">
+            <tbody>
+                <tr>
+                    <td style="float: left;"><h2>{MENU_ADDONS}</h2></td>
+                    <td style="float: right; line-height: 1.225em;margin-top:1.4em;">
+                        <a class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{ADVANCED_URL}">{TEXT_ADVANCED}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="w3-right-align w3-padding-0 w3-margin-0">
+        <label class="check-container" for="fr1">
+            <input id="fr1" class="w3-radio" type="radio" name="fr" value="1" {fr1_CHECKED}/>
+            <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+            <span style="padding:0 5px!important;"><i class="fa fa-custom fa-bars fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr2">
+            <input id="fr2" class="w3-radio" type="radio" name="fr" value="2" {fr2_CHECKED}/>
+            <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+            <span style="padding:0 5px!important;"><i class="fa fa-custom fa-grip-vertical fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr3">
+        <input id="fr3" class="w3-radio" type="radio" name="fr" value="3" {fr3_CHECKED}/>
+        <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+            <span style="padding:0 5px!important;"><i class="fa fa-custom fa-th fa-0x w3-baseline"></i></span>
+        </label>
+    </div>
+    <div id="equal-addons" class="equal-container" style="grid-template-columns:  1fr 1fr;"><!-- begin grid-container -->
+    <!-- BEGIN modules_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/modules/index.php">
+                        <img src="{THEME_URL}/icons/modules.png" alt="{MODULES}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/modules/index.php">
+                        <span class="w3-cell w3-large w3-text-dark-blue w3-hover-text-blue">{MENU_MODULES}</span><br />
+                    </a>
+                    <span>{OVERVIEW_MODULES}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div><!-- end modules -->
+    <!-- END modules_block -->
+    <!-- BEGIN templates_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/templates/index.php">
+                        <img src="{THEME_URL}/icons/templates.png" alt="{TEMPLATES}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/templates/index.php">
+                        <span class="w3-cell w3-large w3-text-dark-blue w3-hover-text-blue">{TEMPLATES}</span><br />
+                    </a>
+                    <span>{OVERVIEW_TEMPLATES}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div><!-- end templates -->
+    <!-- END templates_block -->
+    <!-- BEGIN languages_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/languages/index.php">
+                        <img src="{THEME_URL}/icons/languages.png" alt="{LANGUAGES}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/languages/index.php">
+                        <span class="w3-cell w3-large w3-text-dark-blue w3-hover-text-blue">{LANGUAGES}</span><br />
+                    </a>
+                    <span>{OVERVIEW_LANGUAGES}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div><!-- end languages -->
+    <!-- END languages_block -->
+    </div><!-- end grid-container -->
+<!-- BEGIN reload_block -->
+    <div class="w3-container w3-card" style="margin: auto 1.2%;">
+      <table class="w3-table" {DISPLAY_RELOAD} >
+        <tbody>
+          <tr>
+            <td class="graphic" ><img src="{THEME_URL}/icons/admintools.png" alt="{TXT_ADMIN_SETTINGS}" /> </td>
+            <td class="description"><span class="title">{TXT_ADMIN_SETTINGS}</span>
+                <form action="{RELOAD_URL}" method="post">
+                    <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+                    <span>{MESSAGE_RELOAD_ADDONS}</span>
+                    <div class="reload" style="margin-bottom: 0.5em" >
+                      <input class="w3-check" {DISPLAY_LANGUAGES} type="checkbox" name="reload_languages" id="reload_languages" value="true" />
+                      <label class="w3-padding" {DISPLAY_LANGUAGES} for="reload_languages">{MENU_LANGUAGES}</label>
+                      <input class="w3-check"  {DISPLAY_MODULES} type="checkbox" name="reload_modules" id="reload_modules" value="true" />
+                      <label {DISPLAY_MODULES} for="reload_modules">{MENU_MODULES}</label>
+                      <input class="w3-check"  {DISPLAY_TEMPLATES} type="checkbox" name="reload_templates" id="reload_templates" value="true" />
+                      <label {DISPLAY_TEMPLATES} for="reload_templates">{MENU_TEMPLATES}</label>
+                      <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{TEXT_RELOAD}" />
+                    </div>
+                </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- end reload -->
+<!-- END reload_block -->
+</article><!-- end addons -->
+<!-- END main_block -->

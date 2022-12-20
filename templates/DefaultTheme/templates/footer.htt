@@ -1,0 +1,411 @@
+<!-- BEGIN footer_block -->
+    </div> <!-- isMobile -->
+  <!-- BEGIN show_debug_block -->
+    <div class="w3-container default-content"><!-- debug_block -->
+      <div class="w3-row w3-card w3-panel w3-pale-green w3-margin">
+        <div class="w3-margin w3-leftbar w3-border-green">
+            <div class="w3-row w3-center w3--medium">
+              <div class="w3-container">
+                <span class="">Memory Limit: {FILESIZE}&nbsp;|&nbsp;</span>
+                <span class="">Used Memory: {MEMORY}&nbsp;|&nbsp;</span>
+                <span>Session Maxlifetime: {SESSION_TIME}&nbsp;|&nbsp;</span>
+                <span>Max Excecution Time: {MAX_EXECUTION_TIME}&nbsp;&nbsp;</span>
+              </div>
+              <div class="w3-container">
+                <span class="">Upload Max Filesize: {UPLOAD_MAX_FILESIZE}&nbsp;|&nbsp;</span>
+                <span class="">Post Max Size: {POST_MAX_SIZE}&nbsp;|&nbsp;</span>
+                <span class="">Max Input Time: {MAX_INPUT_TIME}&nbsp;&nbsp;</span>
+              </div>
+              <div class="w3-container">
+                <span class="">Script loaded in: {PAGE_LOAD_TIME} Sec&nbsp;|&nbsp;</span>
+                <span class="">{QUERIES} SQL-Queries executed &nbsp;|&nbsp;</span>
+                <span class="">{CLASSES} declared classes&nbsp;&nbsp;</span>
+              </div>
+              <span>Summary size of {INCLUDES} included files: {SUM_FILESIZE}</span>
+         <!-- BEGIN show_block_list -->
+              <div class="w3-container">
+              <div class="w3-row w3-left-align">
+                <ul style="margin-left: 27px; margin-top: 0;">
+              <!-- BEGIN include_block_list -->
+                   <li style="color: #336699; list-style:decimal-leading-zero;">{INCLUDES_ARRAY} ({FILESIZE})</li>
+              <!-- END include_block_list -->
+                </ul>
+              </div>
+              </div>
+         <!-- END show_block_list -->
+            </div>
+          </div>
+        </div>
+    </div>
+  <!-- END show_debug_block -->
+    </div>
+</div>
+
+<table class="w3-table">
+<tr>
+    <td style="font-size: 12px; text-align:center;">
+      <!-- Please note: the below reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+      <a href="https://websitebaker.org/" target="_blank" rel="noopener" title="external">WebsiteBaker</a> is released under the
+      <a href="https://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+      <!-- Please note: the above reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+    </td>
+</tr>
+</table>
+<!--  -->
+<script src="{THEME_URL}js/jquery-plugins.js"></script>
+<!-- BEGIN show_script_block -->
+<script src="{THEME_URL}js/{SCRIPT}.js"></script>
+<!-- END show_script_block -->
+
+<!-- {SCRIPT} -->
+<script>
+// header id="wb-header" style min-heigt 7.25em
+<!-- confirm_link -->
+     var confirm_link = function (message, url) {
+        if (loadScript("{WB_URL}include/plugins/default/sweetalert2/dist/sweetalert2.all.min.js"))
+        {}
+//console.log(message);
+            swal.fire({
+              title: message,
+              html: '{TEXT_NO_REVERT}',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: '{TEXT_YES}',
+              cancelButtonText: '{TEXT_CANCEL}'
+            }).then((result) => {
+              if (result.value) {
+//console.log(result.value);
+                window.location.href = url;
+                event.preventDefault();
+                }
+            })
+    };
+
+
+//console.log(form);
+    var confirm_form = function (elm) {
+        message  = elm.dataset.message;
+        url = elm.dataset.url;
+        if (loadScript("{WB_URL}include/plugins/default/sweetalert2/dist/sweetalert2.all.min.js"))
+        { }
+            swal.fire({
+                title: message,
+                html: '{TEXT_NO_REVERT}',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '{TEXT_YES}',
+                cancelButtonText: '{TEXT_CANCEL}'
+            }).then((result) => {
+              if (result.value) {
+                window.location.href = url;
+                event.preventDefault();
+              }
+            })
+    };
+
+var elm = document.getElementById("isMobile");
+var deviceAgent = navigator.userAgent.toLowerCase();
+
+var isTouchDevice = is_touch_device() ||
+    (deviceAgent.match(/(iphone|ipod|ipad)/) ||
+    deviceAgent.match(/(android)/)  ||
+    deviceAgent.match(/(iemobile)/) ||
+    deviceAgent.match(/iphone/i) ||
+    deviceAgent.match(/ipad/i) ||
+    deviceAgent.match(/ipod/i) ||
+//    deviceAgent.match(/apple/i) ||
+    deviceAgent.match(/blackberry/i) ||
+    deviceAgent.match(/tablet/i) ||
+    deviceAgent.match(/bada/i));
+//alert(deviceAgent);
+    var att = document.createAttribute("data-device");  // Create a "draggable" attribute
+    if (isTouchDevice) {
+        include_file("{THEME_URL}js/DragDropTouch.js");
+        att.value = "mobile";       // Set the value of the draggable attribute
+        elm.setAttributeNode(att);  // Add the draggable attribute to item
+    } else {
+        att.value = "desktop";      // Set the value of the draggable attribute
+        elm.setAttributeNode(att);  // Add the draggable attribute to item
+//console.log(elm);
+    }
+</script>
+<!-- jsPanel JavaScript -->
+<script src="{WB_URL}include/plugins/default/jspanel/4.2.1/dist/jspanel-org.js"></script>
+<script src="{WB_URL}include/plugins/default/jspanel/4.2.1/dist/extensions/modal/jspanel.modal.min.js"></script>
+
+<script>
+    loadScript = (function (file) {
+    "use strict";
+    var data    = [];
+    var data2   = [];
+    var retVal  = false;
+//console.log(file);
+    if (typeof file === 'object')
+    {
+        data = file;
+        file = ((data.src !== undefined) ? data.src : false);
+        file = file === (false && (data.href !== undefined) ? data.href : file);
+        file = file === (false ? file2 : false);
+    }
+
+    if ((typeof file === 'string') && file.length)
+    {
+        var index    = file.lastIndexOf('.');
+        var index2   = file.replace('\\', '/').lastIndexOf('/') + 1;
+        var ext      = file.substring(index + 1, file.length);
+    }
+/*
+console.log(" - "+index+" => "+index2);
+    let script = document.createElement('script');
+      script.src = src;
+      script.async = false;
+      document.body.append(script);
+    });
+*/
+    switch(ext)
+    {
+        case 'js':
+            data2 = {
+                elm:    'script',
+                src:    file,
+               /* type:   'text/javascript',*/
+            };
+        break;
+
+        case 'css':
+            data2 = {
+                elm:    'link',
+                rel:    'stylesheet',
+                type:   'text/css',
+                href:   file
+            };
+        break;
+
+        default:
+            data2 = {elm: 'link'};
+        break;
+    }
+
+    data2.id = 'script-' + (((typeof file === 'string') && file.length) ?
+        file.substring(index2, index) : (Math.round(Math.rand() * 100)));
+    for (var i in data)
+    {
+        data2[i] = data[i];
+    }
+//console.log(file.substring(index2, index));
+    data    = data2;
+
+console.log(data);
+    var tag    = document.createElement(data.elm);
+    delete data.elm;
+    for (i in data)
+    {
+        tag.setAttribute(i, data[i]);
+    }
+
+    document.getElementsByTagName('body')[0].appendChild(tag);
+      tag.onload = function(){
+        // callback
+//console.log(data);
+        retVal = true;
+      };
+      return retVal;
+    });
+</script>
+    <!-- begin backend_body.js -->
+
+{BACKEND_BODY_MODULE_JS}
+
+<!-- begin error log handling -->
+<script>
+    function delete_error_log(ev){
+        var action = "show";
+        var img = document.querySelector("#delete-error-log");
+        if (img.classList.contains("w3-red")) {
+            var action = "delete";
+        } else {
+            var action = "delete";
+        }
+        $.ajax({
+            url: "{HELPER_URL}delete_errorlog.php",
+            type: "POST",
+            data: "action="+action,
+            dataType: "json",
+            success: function(data) {
+                if(data.success === "true") {
+                    img.classList.remove("w3-red");
+  //                      img.classList.add("w3-header-blue-wb");
+                    img.classList.remove("w3-header-blue-wb");
+                    img.classList.add("w3-green");
+                    img.title = data.message;
+                } else {
+                    alert(data.message);
+                }
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    var errorModal = document.getElementById("delete-error-log");
+    if (errorModal) {
+        var isAdmin = "{IS_ADMIN}";
+        errorModal.addEventListener("click", function() {
+            if (isAdmin) {
+                var ftbError = [
+                    '<div class="error-modal-footer">',
+                        '<button id="delete_php_error-log" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" >Delete php_error.log<\/button>',
+                        '<button id="closeErrorBox" class="w3-btn w3-btn-default w3-blue-wb w3-hover-red w3--medium w3-btn-min-width" type="button" data-dismiss="modal" >Close<\/button>',
+                    '<\/div>'
+                ];
+            } else {
+                var ftbError = [
+                    '<div class="error-modal-footer">',
+                        '<span id="delete_php_error-log" class="w3-hide" >&nbsp;<\/span>',
+                        '<button id="closeErrorBox" class="w3-btn w3-btn-default w3-blue-wb w3--medium w3-btn-min-width" type="button" data-dismiss="modal" >Close<\/button>',
+                    '<\/div>'
+                ];
+            }
+            var errorConfig = {
+                id: "errorpanel-1",
+                theme: "steelblue",
+                animateIn: "w3-animate-top",
+                contentOverflow: "scroll",
+                closeOnEscape: true,
+                headerLogo:   "{THEME_URL}images/apple-touch-icon.png",
+                headerTitle:  "WebsiteBaker Error log",
+                headerControls: "closeonly",
+                header: true,
+                position: {
+                    my: "center-top",
+                    at: "center-top",
+                    modify: function(){
+                        this.top = window.getComputedStyle(document.querySelector('#wb-header')).height;
+                        return this;
+                    }
+                },
+                border: "1px solid",
+                paneltype: "errorpanel",
+                panelSize: {
+                    width: function() {
+                        return window.innerWidth/2;
+                    },
+                    height: function() {
+                        return window.innerHeight/1.5;
+                    }
+                },
+                footerToolbar: ftbError,
+                contentAjax: {
+                    method: "POST",
+                    url:    "{HELPER_URL}LoadErrorlog.php",
+//                    data:   "", // note that data type is set with setRequestHeader()
+                    done:   function (panel) {
+                        panel.content.innerHTML = this.responseText;
+                    }
+                },
+                callback: function (panel) {
+                    // handlers for the toolbar items like:
+                    jsPanel.pointerup.forEach(function (evt) {
+                        panel.footer.querySelector("#delete_php_error-log").addEventListener(evt, function () {
+                            delete_error_log(evt);
+                            panel.contentRemove(function () {
+                                panel.close();
+                                errorConfig.id= "errorpanel-2";
+                            });
+                        }),
+                        panel.footer.querySelector("#closeErrorBox").addEventListener(evt, function () {
+                            panel.close();
+                        });
+                    });
+                }
+            }; //  end hintConfig
+
+            jsPanel.modal.create({
+                config: errorConfig
+            });
+        }); // end delete-error-log
+    };
+
+    var infoModal = document.getElementById('custom-modal-template');
+    if (infoModal) {
+        infoModal.addEventListener('click', function() {
+            var ftbInfo = [
+              '<div class="info-modal-footer">',
+                '<button id="closeModalBox" class="btn btn-default" type="button" data-dismiss="modal" >Close<\/button>',
+              '<\/div>'
+            ];
+            var infoConfig = {
+                id: "infopanel-1",
+                theme: "steelblue",
+                animateIn: "w3-animate-top",
+                contentOverflow: 'scroll',
+                closeOnEscape: true,
+                headerLogo:   "{THEME_URL}images/apple-touch-icon.png",
+                headerTitle:  'WebsiteBaker System & Maintenance',
+                headerControls: "closeonly",
+                position: {
+                    my: "center-top",
+                    at: "center-top",
+                    modify: function(){
+                        this.top = window.getComputedStyle(document.querySelector('#wb-header')).height;
+                        return this;
+                    }
+                },
+                border:       '1px solid',
+                header:       true,
+                paneltype: "infopanel",
+                panelSize: {
+                    width: function() {
+                        return window.innerWidth/2;
+                    },
+                    height: function() {
+                        return window.innerHeight/1.4;
+                    }
+                },
+                footerToolbar: ftbInfo,
+                callback: function (panel) {
+                    // handlers for the toolbar items like:
+                    jsPanel.pointerup.forEach(function (evt) {
+                        panel.footer.querySelector('#closeModalBox').addEventListener(evt, function () {
+                        panel.close();
+                        });
+                    });
+                },
+                content: '<iframe class="w3-rest w3-mobile" style="width: 100%; height: 100%;" src="{HELPER_URL}wb_info.php" allowfullscreen><\/iframe>',
+            }; //  end hintConfig
+
+            jsPanel.modal.create({
+                config: infoConfig
+            });
+        }); // end custom-modal-template
+    };
+
+    let toggle = document.querySelectorAll("span.toggle-password");
+    if (toggle){
+        for (var i = 0; i < toggle.length; i++) {
+            if (typeof toggle[i] === "object"){
+                toggle[i].addEventListener("click", function(){
+                    var attr  = this.getAttribute("toggle");
+                    var input = document.querySelector("input"+attr)
+                    if (input.getAttribute("type") === "password") {
+                        this.classList.remove('fa-eye-slash');
+                        this.classList.add('fa-eye');
+                        input.setAttribute("type", "text");
+                    } else {
+                        this.classList.remove('fa-eye');
+                        this.classList.add('fa-eye-slash');
+                        input.setAttribute("type", "password");
+                    }
+                });
+            }// toggle[i] is object
+        }// for
+    }
+
+</script>
+</body>
+</html>
+<!-- END footer_block -->

@@ -1,0 +1,164 @@
+{#
+/**
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * index.twig
+ *
+ * @category     Templates
+ * @package
+ * @author       M.v.d.Decken <wkl@isteam.de>
+ * @author       Dietmar Wöllbrink <dietmar.woellbrink@websiteBaker.org>
+ * @copyright    M.v.d.Decken <wkl@isteam.de>
+ * @license      http://www.gnu.org/licenses/gpl.html   GPL License
+ * @version      1.6.8
+ * @revision     $Revision: 68 $
+ * @link         $HeadURL: svn://isteam.dynxs.de/wb/2.12.x/branches/main/templates/DefaultTemplate/templates/index.html.twig $
+ * @lastmodified $Date: 2018-09-17 18:26:08 +0200 (Mo, 17. Sep 2018) $
+ * @since        File available since 09.01.2013
+ */
+#}
+<!DOCTYPE HTML>
+<html lang="{{ Reg.Language |lower }}">
+<head>
+    <meta charset="{{ Reg.DefaultCharset }}">
+    <title>{{ sTmpHeaderTitle|trim }}</title>
+    <meta name="description" content="{{ Reg.WebsiteDescription }}" >
+    <meta name="keywords" content="{{ Reg.WebsiteKeywords }}" >
+    <!-- Mobile viewport optimisation -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;maximum-scale=1, user-scalable=0;target-densitydpi=device-dpi" >
+    <meta name="generator" content="WebsiteBaker 2.8 CMS; {{ Reg.AppUrl }}">
+
+    <meta name="author" content="WebsiteBaker Org e.V." >
+    <meta name="robots" content="index,follow" >
+    <meta name="revisit-after" content="7 days" >
+
+    <link href="{{ Reg.TemplateUrl }}css/normalize.css" rel="stylesheet" media="screen" >
+    <link href="{{ Reg.TemplateUrl }}css/w3.css" rel="stylesheet" media="screen" >
+    <link href="{{ Reg.TemplateUrl }}css/CookieNotice.css" rel="stylesheet" media="screen" >
+    <link href="{{ Reg.TemplateUrl }}css/print.css" rel="stylesheet" media="print" >
+    <link href="http://addon.websitebaker.org/modules/wb_addview/rss.php?page_id=3" rel="alternate" type="application/rss+xml" title="WebsiteBaker Addons - Last 20 updated addons" >
+    <link href="http://websitebaker.org/modules/news/rss.php?page_id=9" rel="alternate" type="application/rss+xml" title="WebsiteBaker Ankündigungen/Pressemitteilungen" >
+    <link rel="shortcut icon" href="{{ Reg.AppUrl }}favicon.ico"/>
+    {{ register_frontend_css }}
+    <script src="{{ Reg.TemplateUrl }}scripte/domReady.js" charset="UTF-8"></script>
+    <script src="{{ Reg.TemplateUrl }}scripte/LoadOnFly.js" charset="UTF-8"></script>
+    {{ register_frontend_jquery }}
+    {{ register_frontend_js }}
+
+</head>
+
+<body>
+
+  <div id="wb-site">
+    <div id="wb-top">
+      <div id="wb-logo">
+        <a href="{{ Reg.AppUrl }}"><img class="img" src="{{ Reg.TemplateUrl }}/img/WB-logo.png" alt="logo" title="WebsiteBaker" ></a>
+      </div>
+      {% if MultiLingual != '' %}
+      <div id="wb-lang">
+        <div id="text_lang">
+        </div>
+        <div id="wb-flag">
+                {{ MultiLingual }}
+              </div>
+            </div>
+            {% endif %}
+            <div id="wb-navi">
+                <div id="navimain" class="shadow round-top">
+                    {{ navimain }}
+            </div>
+            <div id="wb-search">
+
+        </div>
+      </div>
+    </div>
+    <!-- Start wrap -->
+    <div id="wb-wrap" class="shadow-inner">
+      <!-- Start Slider -->
+      {% if PageContent6 != '' %}
+      <div id="slider_container">
+             {{ PageContent6 }}
+      </div>
+      {% endif %}
+      {{ breadcrumb }}
+      <div id="left">
+        <!-- Start Main Block -->
+          [[iEditThisPage]]
+      {% if PageContent5 != '' %}
+        <div id="block2">
+          <div id="text2" class="rounded">
+             {{ PageContent5 }}
+          </div>
+        </div>
+      {% endif %}
+      </div>
+
+      <div id="block1">
+        <div id="text1">
+              {{ PageContent1 }}
+        </div>
+      </div>
+
+      <div id="right">
+        <!-- Start right -->
+      {% if PageContent4 != '' %}
+        <div id="quicklinks">
+            {{ QuickLinkNavi }}
+        </div>
+      {% else %}
+      {% if subnavi2 %}
+        <div id="subnavi" class="round-top">
+          <div class="heading-subnavi">
+            {{ HeadingSubnavi }}
+          </div>
+          <div id="submenu">
+            {{ subnavi }}{{ subnavi2 }}
+          </div>
+        </div>
+      {% endif %}
+     {% endif %}
+      {{ PageContent3 }}
+      </div>
+    </div>
+
+  </div>
+
+  <div id="bg_footer">
+    <div id="footer_inner" class="shadow-inner round-bottom">
+      <div id="navi2">
+        {{ footnavi }}
+      </div>
+    </div>
+
+    <div id="site_footer">
+      <div id="powered_by">
+        {{ Reg.WebsiteHeader }}
+      </div>
+
+      <div id="wb_footer">
+        {{ Reg.WebsiteFooter }}
+      </div>
+    </div>
+  </div>
+
+<script src="{{ Reg.TemplateUrl }}js/CookieNotice.js" charset="UTF-8"></script>
+<script src="{{ Reg.TemplateUrl }}javascript.function.js" ></script>
+    {{ register_frontend_body_jquery }}
+    {{ register_frontend_body_js }}
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- BEGIN main_block -->
+<div id="openHelpBox" class="modal-Dialog" draggable="true">
+    <div>
+        <span id="customConfirm" style="display: block;">
+            <header class="modal-label">
+                <h2 class="w3-h2">Droplet {DR_TEXT_HELP}</h2>
+            </header>
+            <button id="closeHelpBox" class="close w3-badge" name="cancel" type="button">X</button>
+            <div class="modal-inner">
+                <iframe  src="{sAddonUrl}/DOC/readme.html" style="width: 100%;"></iframe>
+                <div class="footer">
+                    <button style="padding: 5px 0;" class="cancel btn btn-danger url-reset" data-overview="{ToolRel}" name="cancel" type="button">{TEXT_CLOSE}</button>
+                </div>
+            </div>
+            <footer class="modal-label">
+            </footer>
+        </span>
+    </div>
+</div>
+<script >
+<!--
+domReady(function() {
+    if (typeof LoadOnFly ==='defin ded') {
+        LoadOnFly('head', "{sAddonThemeUrl}/css/dialogBox.css");
+        LoadOnFly('head', "{sAddonThemeUrl}/css/customAlert.css");
+    } else {
+        $.insert("{sAddonThemeUrl}/css/dialogBox.css");
+        $.insert("{sAddonThemeUrl}/css/customAlert.css");
+    }
+
+    var openHelpBox  = document.getElementById('openHelpBox');
+    var closeHelpBox = document.getElementById("closeHelpBox");
+//  When the user clicks on <close button> (x), close the modal
+    closeHelpBox.onclick = function() {
+        openHelpBox.style.display = "none";
+    }
+//  When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(e) {
+        if (e.target === openHelpBox) {
+            openHelpBox.style.display = "none";
+        }
+    }
+    document.addEventListener('keyup', function(e) {
+        if (e.keyCode == 27) {
+            openHelpBox.style.display = "none";
+        }
+});
+
+});
+-->
+</script>
+<!-- END main_block -->

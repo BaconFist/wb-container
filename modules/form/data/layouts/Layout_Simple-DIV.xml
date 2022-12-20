@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <title>Layout_Simple-DIV</title>
+  <description>Form with div-container. To use only with div fields</description>
+  <fields>
+    <header>&lt;div class="frm frm-field_table"&gt;&#13;
+&#13;
+    </header>
+    <field_loop>
+    &lt;div&gt;&#13;
+        &lt;div class="frm-field_title"&gt;{TITLE}{REQUIRED}&lt;/div&gt;&#13;
+        &lt;div&gt;{FIELD}&lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+    </field_loop>
+    <extra>
+    &lt;div&gt;{CALL_DSGVO_LINK}&lt;/div&gt;
+    &lt;div class="frm-field_title"&gt;{TEXT_VERIFICATION}{REQUIRED}&lt;/div&gt;&#13;
+    &lt;div&gt;{CALL_CAPTCHA}&lt;/div&gt;&#13;
+    </extra>
+    <footer>
+     &lt;div class="w3-margin"&gt;&lt;/div&gt;&#13;
+     &lt;div&gt;&#13;
+        &lt;input class="frm-btn" type="submit" name="submit" value="{SUBMIT_FORM}" /&gt;&#13;
+     &lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="w3-margin"&gt;&lt;/div&gt;&#13;
+    </footer>
+  </fields>
+</root>

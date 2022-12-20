@@ -1,0 +1,65 @@
+<span class="w3-hide">
+<!--
+ @version         $Id: access.htt 75 2017-03-10 10:47:06Z manu $
+-->
+<!-- BEGIN main_block -->
+</span>
+<article id="access" class="access-block w3-margin">
+    <h2 style="margin-bottom: 0.0em;">{MENU_ACCESS}</h2>
+    <div class="w3-right-align w3-padding-0 w3-margin-0">
+        <label class="check-container" for="fr1">
+            <input id="fr1" class="w3-radio" type="radio" name="fr" value="1" {fr1_CHECKED}/>
+            <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+            <span style="padding:0 5px!important;"><i class="fa fa-custom fa-bars fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr2">
+            <input id="fr2" class="w3-radio" type="radio" name="fr" value="2" {fr2_CHECKED}/>
+            <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+            <span style="padding:0 5px!important;"><i class="fa fa-custom fa-grip-vertical fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr3">
+        <input id="fr3" class="w3-radio" type="radio" name="fr" value="3" {fr3_CHECKED}/>
+        <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+            <span style="padding:0 5px!important;"><i class="fa fa-custom fa-th fa-0x w3-baseline"></i></span>
+        </label>
+    </div>
+    <div id="equal-access" class="equal-container" style="grid-template-columns:  1fr 1fr;"><!-- begin grid-container -->
+        <!-- BEGIN users_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/users/index.php">
+                        <img src="{THEME_URL}/icons/users.png" alt="{MENU_USERS}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/users/index.php">
+                        <span class="w3-cell w3-large w3-text-dark-blue w3-hover-text-blue">{MENU_USERS}</span><br />
+                    </a>
+                    <span>{OVERVIEW_USERS}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END users_block -->
+        <!-- BEGIN groups_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/groups/index.php">
+                        <img src="{THEME_URL}/icons/groups.png" alt="{MENU_GROUPS}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/groups/index.php">
+                        <span class="w3-cell w3-large w3-text-dark-blue w3-hover-text-blue">{MENU_GROUPS}</span><br />
+                    </a>
+                    <span>{OVERVIEW_GROUPS}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END groups_block -->
+    </div><!-- end grid-container -->
+</article><!-- end access -->
+<!-- END main_block -->

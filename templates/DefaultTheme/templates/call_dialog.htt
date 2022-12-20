@@ -1,0 +1,33 @@
+<span class="w3-hide"><!--
+ @version         $Id: call_dialog.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<div id="openModal" class="modal-Dialog" draggable="true">
+    <div>
+        <span id="customConfirm" style="display: block;">
+            <button class="close" name="cancel" type="button" onclick="window.location='{ADMIN_URL}';">X</button>
+            <header class="modal-label"><h2>{TITLE_INFO}</h2></header>
+            <div class="modal-inner">
+                <iframe  src="{INFO_URL}" style="width: 100%;"></iframe>
+                <div class="footer">
+                    <button name="cancel w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width btn-danger" class="cancel" type="button" onclick="window.location='{ADMIN_URL}';">{CANCEL}</button>
+                </div>
+            </div>
+            <footer class="modal-label">
+<!--
+            <a href="http://websitebaker.org/" target="_blank" rel="noopener" title="external">WebsiteBaker</a> is released under the
+            <a href="http://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+-->
+            </footer>
+        </span>
+    </div>
+</div>
+<script >
+<!--
+domReady(function() {
+    LoadOnFly('head', "{sAddonThemeUrl}/css/dialogBox.css");
+    LoadOnFly('head', "{sAddonThemeUrl}/css/customAlert.css");
+});
+-->
+</script>
+<!-- END main_block -->

@@ -1,0 +1,18 @@
+Change Log
+===============================================================================
+Please note: This change log may not be accurate
+
+$Id: CHANGELOG 65 2017-03-03 21:38:16Z manu $
+
+Legend:
++ = Added
+- = Removed
+# = Bugfix
+! = Update/Change
+===============================================================================
+
+17 Dec-2015 Build 0001 Manuela v.d.Decken(DarkViper)
++ Initialize project
+
+end of file
+

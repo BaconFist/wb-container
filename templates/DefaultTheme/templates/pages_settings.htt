@@ -1,0 +1,355 @@
+<!--
+ @version         $Id: pages_settings.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+<div class="header-settings right w3-margin-8">
+    <div class="col-settings right">
+        <div class="w3-row">
+            <div class="w3-col m8">
+              <span class="btn w3-border-0 w3-white w3-round-small w3--medium w3-padding-4 w3-margin-0" title="{PAGE_TITLE}">{TEXT_CURRENT_PAGE}:<b>{MENU_TITLE}</b></span>
+            </div>
+            <div class="w3-col m2">
+        <!-- BEGIN show_modify_block -->
+              <a class="btn w3-sand btn-large w3-light-gray w3-hover-light-gray w3-round-small w3--medium w3-padding-4 w3-margin-0" href="{ADMIN_URL}/pages/modify.php?page_id={PAGE_IDKEY}" >{HEADING_MODIFY_PAGE}</a>
+        <!-- END show_modify_block -->
+            </div>
+            <div class="w3-col m2">
+        <!-- BEGIN show_section_block -->
+              <a class="btn w3-sand btn-large w3-light-gray w3-hover-light-gray w3-round-small w3--medium w3-padding-4 w3-mmargin-0" href="{ADMIN_URL}/pages/sections.php?page_id={PAGE_IDKEY}">{TEXT_MANAGE_SECTIONS}</a>
+        <!-- END show_section_block -->
+            </div>
+        </div>
+    </div>
+
+    <table class="header-info">
+        <tbody>
+            <tr >
+               <td class="header-modify-page" ><h2>{HEADING_MODIFY_PAGE}</h2></td>
+               <td class="header-page_id">ID: {PAGE_ID}</td>
+               <td class="c60 right" style="line-height: 0;">
+                  <span style="color:#999;" class="{CLASS_DISPLAY_MODIFIED}"><br />
+                  {MESSAGE_PAGES_LAST_MODIFIED} {MODIFIED_BY}, {MODIFIED_WHEN}
+                  </span>
+               </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pages-setting w3-row w3-margin">
+    <form id="settings" action="settings2.php" method="post">
+    {FTAN}
+     <div class="w3-col s6 l6 w3-mobile w3--green block-outer ">
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <div class="wb-checkbox" id="setting--half">
+            <table class="table pages-settings" >
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <label>{TEXT_PAGE_TITLE}</label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td>
+                            <input class="w3-border" type="text" name="page_title" value="{PAGE_TITLE}" style="width: 99%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>{TEXT_MENU_TITLE}</label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td>
+                            <input class="w3-border" type="text" name="menu_title" value="{MENU_TITLE}" style="width: 99%;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label id="parent">{TEXT_PARENT}</label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td>
+                            <select class="w3-border" name="parent" style="width: 100%;" onchange="return disabled_hack_for_ie(this);">
+                                <!-- BEGIN page_list_block2 -->
+                                <option class="fix-img" value="{ID}"{SELECTED} >{TITLE}</option>
+                                <!-- END page_list_block2 -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>{TEXT_SEO_TITLE}</label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td>
+                            <input class="w3-border" type="text" id="seo_title" name="seo_title" value="{SEO_TITLE}" style="width: 99%;"/>
+                        </td>
+                    </tr>
+                <!-- BEGIN show_page_oldstyle_block -->
+                    <tr id="{NEW_STYLE}" class="show-help">
+                        <th>
+                            <label class="fbTooltip fbOptions" style="margin-top: -50px;">
+                                <a target="_blank" rel="noopener" href="{HELP_URL}?page_id={PAGE_ID}" class="floatbox modern" data-fb-options="
+                                    type:ajax width:666 height:360,
+                                    language : {LANGUAGE},
+                                    contentScroll:true,
+                                    instanceName: {SECTION_ID},
+                                    shadowType:none,
+                                    doAnimations:false,
+                                    outsideClickCloses:true,
+                                    showControlsText:true,
+                                    controlsPos:br;
+                                    showPrint:true,
+                                    printLinkPos:bl,
+                                    showHints:true,
+                                    panelPadding:10,
+                                    padding:8,
+                                    boxColor:#1B6AAE,
+                                    topPanel:#1B6AAE,
+                                    outerBorderColor:#1B6AAE,
+                                    boxColor:#1B6AAE,
+                                    TopPanel:#1B6AAE,
+                                    caption:{TEXT_SEO_NEWSTYLE_FORMAT},
+                                    captionPos:tc;
+                                    resizeTool:both,
+                                    enableDragResize:true,
+                                    cornerRadius:0,
+                                    colorTheme:silver,
+                                    contentBackgroundColor:#ffffe7,
+                                    autoFit:false,
+                                    boxScroll:false,
+                                    enableDragMove:true,
+                                    enableKeyboardNav:true,
+                                    outerBorder:2,
+                                    innerBorderColor:#1B6AAE
+                                ">
+                                <span style="padding-left: 5px;"><i class="fa fa-question-circle fa-fw fa-2x" >&nbsp;</i></span>
+                                </a>
+                            <span class="w3--medium" >{TEXT_PAGE_NEWSTYLE}</span>
+                            </label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td style="line-height: 1.5;" >
+                            <input class="w3-check pages-switch w3-border-grey w3--nowrap" type="checkbox" id="page_newstyle" name="page_newstyle" value="1" style="padding: 0 !important;vertical-align: middle !important;z-index:0;margin: -4px 0 0 -1px;" {CHECKED__STYLE}/>
+                            <label class="w3-validate" style="" for="page_newstyle">{TEXT_SEO_NEWSTYLE}</label>
+                        </td>
+                    </tr>
+                <!-- END show_page_oldstyle_block -->
+                    <tr>
+                        <th>
+                            <label>{TEXT_WEBSITE_DESCRIPTION}</label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td>
+                            <textarea class="w3-border" name="description" rows="3" cols="1" style="width: 99%; ">{DESCRIPTION}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label>{TEXT_WEBSITE_KEYWORDS}</label>
+                            <span>&nbsp;</span>
+                        </th>
+                        <td>
+                            <textarea class="w3-border" name="keywords" rows="3" cols="1" style="width: 99%; ">{KEYWORDS}</textarea>
+                        </td>
+                    </tr>
+                    <tr class="border-top">
+                        <th style="vertical-align: top;">
+                            <label for="visibilities">{TEXT_VISIBILITY}</label>
+                            <input class="checkbox hide-inherit" id="visibilities" name="inherit[]" type="checkbox" value="visibility" {DISPLAY_ADVANCED} />
+                        </th>
+                        <td>
+                            <select title="" class="w3-border w3-select tooltip" id="visibility" name="visibility" style="width: 100%;">
+                            <!-- BEGIN show_visibility_block -->
+                                <option id="public" data-tooltip="{TEXT_MARKED_PUBLIC}" value="public"{PUBLIC_SELECTED}>{TEXT_PUBLIC}</option>
+                                <option id="private" data-tooltip="{TEXT_MARKED_PRIVATE}" value="private"{PRIVATE_SELECTED}>{TEXT_PRIVATE}</option>
+                                <option id="registered" data-tooltip="{TEXT_MARKED_REGISTERED}" value="registered"{REGISTERED_SELECTED}>{TEXT_REGISTERED}</option>
+                                <option id="hidden" data-tooltip="{TEXT_MARKED_HIDDEN}" value="hidden"{HIDDEN_SELECTED}>{TEXT_HIDDEN}</option>
+                                <option id="none" data-tooltip="{TEXT_MARKED_NONE}" value="none"{NO_VIS_SELECTED}>{TEXT_NONE}</option>
+                            <!-- END show_visibility_block -->
+                            <!-- BEGIN show_deleted_block -->
+                                <option data-tooltip="{TEXT_MARKED_DELETED}" value="deleted"{DELETED_SELECTED}>{TEXT_MARKED_DELETED}</option>
+                            <!-- END show_deleted_block -->
+                            </select>
+                            <div id="tooltip" class="w3-panel w3-note"><span></span></div>
+                        </td>
+                    </tr>
+
+                    <tr class="border-top">
+                        <th>
+                            <label>{TEXT_TARGET}</label>
+                            <span class="checkbox hide-inherit">&nbsp;</span>
+                        </th>
+                        <td>
+                            <select class="w3-border" name="target" style="width: 100%;" ><!--  value="{TARGET}" -->
+                                <option value="_blank"{BLANK_SELECTED}>{TEXT_NEW_WINDOW}</option>
+                                <option value="_self"{SELF_SELECTED}>{TEXT_SAME_WINDOW}</option>
+                                <option value="_top"{TOP_SELECTED}>{TEXT_TOP_FRAME}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="template">{TEXT_TEMPLATE}</label>
+                            <input class="checkbox hide-inherit" id="template" name="inherit[]" type="checkbox" value="template" {DISPLAY_ADVANCED} />
+                        </th>
+                        <td>
+                            <select class="w3-border" name="template" style="width: 100%;">
+                                <option value="">{TEXT_SYSTEM_DEFAULT}</option>
+                                <option value="">----------------------</option>
+                                <!-- BEGIN template_list_block -->
+                                <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                                <!-- END template_list_block -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="{DISPLAY_MENU_LIST}">
+                        <th>
+                            <label for="menu">{TEXT_MENU}</label>
+                            <input class="checkbox hide-inherit" id="menu" name="inherit[]" type="checkbox" value="menu" {DISPLAY_ADVANCED} />
+                        </th>
+                        <td>
+                            <select class="w3-border" name="menu" style="width: 100%;">
+                                <!-- BEGIN menu_list_block -->
+                                <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                                <!-- END menu_list_block -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="{DISPLAY_LANGUAGE_LIST}">
+                        <th >
+                            <label for="language">{TEXT_LANGUAGE}</label>
+                            <input class="checkbox hide-inherit" id="language" name="inherit[]" type="checkbox" value="language" {DISPLAY_ADVANCED} />
+                        </th>
+                        <td >
+                            <select class="w3-border" name="language" style="width: 100%;">
+                                <!-- BEGIN language_list_block -->
+                                <option class="fix-img" value="{VALUE}"{SELECTED} >{NAME}</option>
+                                <!-- END language_list_block -->
+                            </select>
+                        </td>
+                    </tr>
+                <!-- insert page_code 20090904-->
+                    <tr{DISPLAY_CODE_PAGE_LIST}>
+                        <th >
+                            <label title="{TEXT_LANGUAGE} {TEXT_PAGE_REORG}">{TEXT_PAGE_CODE}</label>
+                            <span class="checkbox hide-inherit">&nbsp;</span>
+                        </th>
+                        <td class="list_page_code">
+                            <select name="page_code" class="w3-border value_page_code" style="width: 100%;">
+                                <!-- BEGIN page_code_list_block -->
+                                <option class="fix-img" value="{VALUE}"{SELECTED} >{PAGE_VALUE}</option>
+                                <!-- END page_code_list_block -->
+                            </select>
+                        </td>
+                    </tr>
+                <!-- page code -->
+                    <tr>
+                        <th>
+                            <label for="searching">{TEXT_SEARCHING}</label>
+                            <input class="checkbox hide-inherit" id="searching" name="inherit[]" type="checkbox" value="searching" {DISPLAY_ADVANCED} />
+                        </th>
+                        <td>
+                            <select class="w3-border" name="searching" style="width: 100%;">
+                                <option value="1">{TEXT_ENABLED}</option>
+                                <option value="0"{SEARCHING_DISABLED}>{TEXT_DISABLED}</option>
+                            </select>
+                        </td>
+                    </tr>
+    <!--
+                    <tr>
+                        <td>Inherit Settings:</td>
+                        <td><input name="inherit" type="checkbox" value="all"></td>
+                    </tr>
+    -->
+                    <tr class="w3-small">
+                        <td >
+                            <input type="submit" name="submit" value="{TEXT_SAVE} {SECTION_SETTINGS}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3-small w3-btn-min-width"  />
+                        </td>
+                        <td class="w3-small">
+                            <input type="submit" name="pagetree" value="{TEXT_SAVE} &amp; {TEXT_BACK}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3-small w3-btn-min-width"  />
+                            <input type="reset" name="reset" value="{TEXT_RESET}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3-small w3-btn-min-width" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+     <div class="w3-col s6 l6 w3-mobile block-outer w3--green">
+        <div class="wb-checkbox" id="setting-half-group">
+            <table class="access pages-settings" style="width: 100%;">
+                <tbody>
+                <tr>
+                <td style="padding-left: 0.925em; padding-top: 0.525em; width: 48%;">
+                    <label class="access" id="admin_groups">{TEXT_ADMINISTRATORS}</label>
+                    <ul style="list-style-type: none; margin: 0; padding: 0;">
+                        <!-- BEGIN group_list_block -->
+                        <li>
+                        <input class="w3-check" type="checkbox" name="admin_groups[]" id="admin_group_{ID}" value="{ID}"{CHECKED}{DISABLED} />
+                        <label class="w3-validate" for="admin_group_{ID}">{NAME}</label>
+                        </li>
+                        <!-- END group_list_block -->
+                    </ul>
+                </td>
+                <td style="padding-left: 0.925em; padding-top: 0.525em; border-left: solid .0125em #ccc; width: 49%;">
+                    <div id="allowed_viewers" style="{DISPLAY_VIEWERS}">
+                        <label class="access" id="viewing_groups">{TEXT_ALLOWED_VIEWERS}</label>
+                        <ul style="list-style-type:none;margin:0;padding:0;">
+                            <!-- BEGIN group_list_block2 -->
+                            <li>
+                            <input class="w3-check" type="checkbox" name="viewing_groups[]" id="viewing_group_{ID}" value="{ID}"{CHECKED}{DISABLED} />
+                            <label class="w3-validate" for="viewing_group_{ID}">{NAME}</label>
+                            </li>
+                            <!-- END group_list_block2 -->
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </form>
+</div>
+<!--
+<script src="{WB_URL}/include/plugins/default/floatbox/floatbox.js"></script>
+<script src="{WB_URL}/include/plugins/default/floatbox/fbOptions.js"></script>
+<script src="{WB_URL}/include/plugins/default/floatbox/core.js"></script>
+-->
+<script>
+    var help = document.querySelector(".floatbox");
+    if (help && (typeof fb === "undefined")){
+//console.log(help);
+/* console.log(typeof fb); */
+        let elm  = help.dataset;
+        let FloatboxCss = '{WB_URL}/include/plugins/default/floatbox/floatbox.css';
+        include_file(FloatboxCss);
+        let FloatboxJs  = '{WB_URL}/include/plugins/default/floatbox/floatbox.js';
+        include_file(FloatboxJs);
+        let FloatboxFJs = '{WB_URL}/include/plugins/default/floatbox/fbOptions.js';
+        include_file(FloatboxFJs);
+        let FloatboxCJs = '{WB_URL}/include/plugins/default/floatbox/core.js';
+        include_file(FloatboxCJs);
+        let FloatboxLJs = '{WB_URL}/include/plugins/default/floatbox/languages/{LANGUAGE}.js';
+        include_file(FloatboxLJs);
+/*
+*/
+    } else if (help){
+        let elm  = help.dataset;
+        let FloatboxCss = '{WB_URL}/include/plugins/default/floatbox/floatbox.css';
+        include_file(FloatboxCss);
+//console.log(fb.data.strings);
+    }
+    if (help &&(typeof fb === "object")){
+//        help.addEventListener("click", function(event){
+//        });
+    }
+</script>
+<script src="{ADMIN_URL}/pages/page_settings.js"></script>
+
+<!-- END main_block -->

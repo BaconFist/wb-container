@@ -1,0 +1,48 @@
+<!-- BEGIN main_block -->
+<div class="w3-container">
+
+    <div class="previewPrintTop w3-margin-bottom w3-row">
+        <a title="{TEXT_PRINT_PAGE} ({TEXT_REQUIRED_JS})" onclick="window.print()" style="cursor: pointer;">
+        <span>{TEXT_PRINT_PAGE}</span><img width="16" height="14" alt="" src="{MODULE_URL}/templates/default/img/print.gif" />
+        </a>
+    </div>
+
+    <section class="frm-submission print-email">
+        <header style="margin-top: 10px;position: relative;">
+            <div class="frm-thankyou">
+                <h2 class="w3-medium w3-transparent">{SUCCESS_EMAIL_TEXT}</h2>
+            </div>
+        </header>
+        <main class="frm-tbody">
+            <div class=" {NIX_HIER}">
+               <p class="frm-note frm-warning-success-email w3-center w3-medium">{SUCCESS_PRINT}</p>
+            </div>
+            <div class="frm-submission_submission_id">
+                <label>{TEXT_SUBMISSION_ID}:</label>
+                <span>{submission_submission_id}</span>
+            </div>
+            <div class="frm-submission_submitted_when">
+                <label>{TEXT_SUBMITTED}: </label>
+                <span>{submission_submitted_when}</span>
+            </div>
+            <div class="frm-user_display_name">
+                <label class="w3-bold">{TEXT_USER}:
+                <span>{user_display_name}</span></label>
+            </div>
+            <div class="frm-submission_body">
+                <span>{submission_body}</span>
+            </div>
+        </main>
+    </section>
+    <div class="w3-display-container " style="height:80px;">
+        <div class="w3-display-left frm-field_table">
+            <!--
+<button class="w3-btn w3-left w3-light-grey w3-hover-grey w3-btn-min-width" onclick="document.location.href='{SUCCESS_LINK}'">{TEXT_BACK}</button>
+-->
+            <input id="form-submessage" class="w3-padding" onclick="window.location.href='{SUCCESS_LINK}';" type="submit" name="submit" value="{TEXT_BACK_TO_FORM}" />
+
+        </div>
+    </div>
+
+</div>
+<!-- END main_block -->

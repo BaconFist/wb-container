@@ -1,0 +1,43 @@
+<!-- BEGIN main_block -->
+
+<!-- available replacements
+    WB_URL
+    THEME_URL
+    THEME_PATH
+    SAVE_URL
+    TEXT_URL
+    CANCEL_URL
+    TEXT_HEIGHT
+    TEXT_SAVE
+    TEXT_CANCEL
+    HEIGHT
+    URL
+    FTAN
+-->
+
+<form action="{SAVE_URL}" method="post">
+    <input type="hidden" name="page_id" value="{PAGE_ID}" />
+    <input type="hidden" name="section_id" value="{SECTION_ID}" />
+    <input type="hidden" name="cmd" value="save" />
+    {FTAN}
+    <table class="frm-table">
+        <tr>
+            <td >{TEXT_URL}:</td>
+            <td><input type="text" name="url" value="{URL}" style="width: 100%;" /></td>
+        </tr>
+        <tr>
+            <td >{TEXT_HEIGHT}:</td>
+            <td><input type="text" name="height" value="{HEIGHT}" maxlength="4" style="width: 100%;" /></td>
+        </tr>
+    </table>
+    <table class="frm-table">
+        <tr>
+            <td ><input type="submit" value="{TEXT_SAVE}" style="width: 200px; margin-top: 5px;" /></td>
+            <td >
+                <input type="button" value="{TEXT_CLOSE}" onclick="window.location='{CANCEL_URL}';" style="width: 100px; margin-top: 5px;" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<!-- END main_block -->

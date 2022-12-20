@@ -1,0 +1,101 @@
+@import url(dialogBox.css);
+@import url(fileupload.css);
+div.droplets { width: 100%; margin: auto; padding: 1.225em; padding-bottom: 2.525em; }
+div.droplets table { border-collapse: collapse; width: 100%; }
+.droplets ul, .droplets li { list-style: none; margin: 0; padding: 0; }
+.droplets .setting_name { vertical-align: top; }
+.droplets .newsection { border-top: 1px dashed #FFFFFF; }
+div.droplets table.droplets_data thead tr { font-weight: bold; font-size: 1.2525em; height: 3.225em; padding: 0.525em 0; background: #A0A0A0; }
+div.droplets table.droplets_data tbody tr { line-height: 1.225em; background: #CCD5DD; }
+div.droplets table.droplets_data tbody td { padding: 0.2525em 0; font-weight: normal; }
+div.droplets table.droplets_data tbody td:nth-child(5) { font-weight: normal; }
+
+div.droplets table.droplets_data thead th.sortierbar { vertical-align: middle; cursor: pointer; }
+div.droplets table.droplets_data thead th:first-child,
+div.droplets table.droplets_data tbody td:first-child { padding: 0 0.2525em; text-align: center; }
+div.droplets table.droplets_data tbody td:nth-child(2) { text-align: center; }
+div.droplets table.droplets_data tbody td:nth-child(3) { padding-bottom: 0.3525em; }
+div.droplets table.droplets_data tbody td:last-child { padding: 0 0.4525em; text-align: center; }
+div.droplets table.droplets_data tbody td div { margin: 0.4525em auto; padding: 0.3525em 0; height: 1.625em; }
+div.droplets table.droplets_data tbody tr:nth-child(odd) { background: #FFFFFF; }
+div.droplets table.droplets_data tbody tr:hover { background: #E1F8B3; cursor: default; }
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+div.droplets table.droplets_data thead tr ,
+div.droplets table.droplets_import thead tr { font-weight: bold; font-size: 1.2525em; height: 2.225em; padding: 0.525em 0; background: #C1C0C0; 
+background: -moz-linear-gradient(top, rgba(96,96,96,0) 0%, rgba(0,0,0,0.51) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(96,96,96,0) 0%,rgba(0,0,0,0.51) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(96,96,96,0) 0%,rgba(0,0,0,0.51) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00606060', endColorstr='#82000000',GradientType=0 ); /* IE6-9 */}
+div.droplets table.droplets_import tbody tr { line-height: 1.625em; background: #DDD6CE; }
+div.droplets table.droplets_import tbody td { padding: 0.2525em 0; font-weight: bold; }
+div.droplets table.droplets_import tbody td:nth-child(5) { font-weight: normal; }
+div.droplets table.droplets_import thead th { vertical-align: middle; }
+div.droplets table.droplets_import thead th:first-child,
+div.droplets table.droplets_import tbody td:first-child { padding: 0 0.2525em; text-align: center; }
+div.droplets table.droplets_import tbody td:nth-child(2) { text-align: center; }
+div.droplets table.droplets_import tbody td:nth-child(3) { padding-bottom: 0.3525em; }
+div.droplets table.droplets_import tbody td:last-child { padding: 0 0.4525em; text-align: center; font-weight: normal; }
+div.droplets table.droplets_import tbody td div { margin: 0.4525em auto; padding: 0.3525em 0; height: 1.625em; }
+div.droplets table.droplets_import tbody tr:nth-child(odd) { background: #FFFFFF; }
+div.droplets table.droplets_import tbody tr:hover { background: #E1F8B3; cursor: default; }
+
+div.droplets img { vertical-align: middle; }
+
+div.droplets .noButton { color: #434343; border: none; background: transparent; width: 100%; text-align: left; font-weight: bold; cursor: pointer; }
+section.droplets.drop-outer { padding: 1px; border: 1px solid #DEE5F8; border-radius: 5px; margin: 0.925em auto; box-shadow: 1px 1px 5px #666666; }
+section.droplets .button:hover { color: #000000; }
+header.droplets { margin: 1.1525em 0; }
+
+div.drop-backup .btn,
+div.droplets .btn { color: #003366; -moz-user-select: none; border: 1px solid #AAAAAA; border-radius: 4px; display: inline-block; font-size: 1.0925em; font-weight: normal; margin-bottom: 2px; padding: 0.455em 1.125em; text-align: center; vertical-align: middle; white-space: nowrap; background: #E1E1E1 none; }
+div.drop-backup .btn { font-size: 0.8925em; font-weight: bold; margin-left: 0.525em; }
+div.drop-backup .btn:hover,
+div.droplets .btn:hover { cursor: pointer; border: 1px solid #5D819F; -webkit-box-shadow: inset 1px -10px 10px -11px rgba(77,106,179,0.51); -moz-box-shadow: inset 1px -10px 10px -11px rgba(77,106,179,0.51); box-shadow: inset 1px -10px 10px -11px rgba(77,106,179,0.51); background: #FFFFFF; }
+.drop-backup { margin: 1.8525em 0.925em; }
+div.drop-backup button.btn { padding: 0.165em 1.125em; }
+
+div.droplet-import,
+div.droplet-import div { padding-top: 0.125em; }
+div.droplet-import span,
+div.droplet-import div span { font-weight: normal; font-size: 1.025em; }
+div.droplet-import span select,
+div.droplet-import div span input { line-height: 1.525em; padding: 0.125em; }
+div.droplets div.success { font-size: 1.525em; color: #3D6F8A; text-align: left; }
+div.droplets h2 { font-size: 1.825em; color: #3D6F8A; }
+div.droplets h4 {
+  border-bottom: 0px solid #dddddd;
+  margin: 0;
+  padding-bottom: 5px;
+  color: #3D6F8A;
+}
+.fileUpload { position: relative; overflow: hidden; margin: 10px; }
+.fileUpload input.upload-file { position: absolute; top: 0; right: 0; margin: 0; padding: 0; font-size: 20px; cursor: default; opacity: 0; filter: alpha(opacity=0); }
+
+.droplets button span.tooltip { display: none; }
+.droplets button:hover span.tooltip { position: absolute; display: block; top: 1.5em; left: 2em; border: 1px solid black; background-color:#D9D093; padding: 0.2em; }
+/* */ 
+input.upload-file {border: medium none; cursor: pointer; margin: 0; opacity: 1; padding: 0.525em; right: 0; top: 0;}
+
+select.selectOrder { 
+width: 35%; 
+height: 2.125em; 
+border-radius: 0.225em; 
+font-size: 1.225em;
+font-weight: bold; 
+text-overflow: ellipsis;
+border: 1px solid #15697B;
+color: #28659A;
+background-color: #fff;
+}
+select.selectOrder optgroup { 
+color: #F00101;
+font-weight: bold;
+}
+select.selectOrder optgroup option { 
+color: #000;
+background-color: #fff;
+font-weight: bold;
+font-size: 0.925em;
+padding: 0.225em 1.825em;
+}

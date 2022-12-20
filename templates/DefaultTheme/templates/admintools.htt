@@ -1,0 +1,70 @@
+<p class="w3-hide">
+<!--
+ @version $Id: admintools.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+</p>
+<!-- BEGIN main_block -->
+<article id="admintools" class="w3-margin-0 admintools-block">
+    <div class="title-line ">
+      <div class="w3-display-container w3-margin-left" style="height: 3.25em!important;">
+        <div class="w3-display-left"><h2>{HEADING_ADMINISTRATION_TOOLS}</h2></div>
+      </div>
+    </div>
+
+    <div class="w3-right-align w3-padding-0">
+        <label class="check-container" for="fr1">
+            <input id="fr1" class="w3-radio" type="radio" name="fr" value="1" {fr1_CHECKED}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-bars fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr2">
+            <input id="fr2" class="w3-radio" type="radio" name="fr" value="2" {fr2_CHECKED}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-grip-vertical fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr3">
+            <input id="fr3" class="w3-radio" type="radio" name="fr" value="3" {fr3_CHECKED}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-th fa-0x w3-baseline"></i></span>
+        </label>
+    </div>
+    <div id="equal-tools" class="equal-container w3--medium" style="grid-template-columns: repeat(3, 1fr);"><!-- begin grid-container -->
+        <!-- BEGIN tool_list_block -->
+        <div class="w3-card w3-white w3-margin equal w3--medium w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-dropdown-hover" data-admin-tool="/tool.php?tool={TOOL_DIR}" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/admintools/tool.php?tool={TOOL_DIR}">
+                        <img src="{TOOL_ICON}" alt="{TOOL_NAME}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/admintools/tool.php?tool={TOOL_DIR}">
+                        <span class="wb-bold-16 w3-cell w3-text-dark-blue w3-hover-text-blue">{TOOL_NAME}</span><br />
+                    </a>
+                    <span>{TOOL_DESCRIPTION}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END tool_list_block -->
+    </div><!-- end equal-tools -->
+        {TOOL_LIST}
+</article><!-- end admintools -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let widget = document.querySelectorAll('[data-admin-tool]');
+        if (widget){
+            for (var i=0; i<widget.length; i++){
+                let link = widget[i].dataset.adminTool;
+//console.log (widget[i]);
+                widget[i].addEventListener (
+                    "click",
+                    function (evt) {
+//console.log (link);
+                        let url = window.location.protocol +'//'+ window.location.host + dirname(window.location.pathname) + link;//
+                        window.location.href = url;
+                        evt.preventDefault();
+                });
+            }
+        }
+    });
+</script>
+
+<!-- END main_block -->

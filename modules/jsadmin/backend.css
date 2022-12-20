@@ -1,0 +1,19 @@
+@charset "utf-8 ";
+/* Fix for funky spacing on page listing */
+body.jsadmin_busy td.content{background:url(images/busy.gif) 4px 4px no-repeat;}
+body.jsadmin_success td.content{background:url(images/success.gif) 4px 4px no-repeat;}
+body.jsadmin_failure td.content{background:url(images/failure.gif) 4px 4px no-repeat;}
+.jsadmin_drag{cursor:move;}
+.jsadmin_drag a,.jsadmin_drag input,.jsadmin_drag select{cursor:pointer;cursor:hand;}
+ul.jsadmin_drag_area{border:solid 1px #99f;}
+.jsadmin_drag img{cursor:pointer;}
+.label {color: #217DA1!important;}
+.pages-block .pages_list, .pages_list li{margin-bottom:2px;}
+/* */
+input.w3-check[type="checkbox"] {position:relative; z-index: -9999;}
+input.w3-check[type="checkbox"] + label:before {border: 1px solid #444; border-radius: 3px; content: "\00a0"; display: inline-block; font: 12px/1.15em sans-serif; font-weight: bold; }
+input.w3-check[type="checkbox"] + label:before {height: 18px; width: 18px; margin: 0 .5em 0 -2.5em; padding: 0; padding: 2px;}
+input.w3-check[type="checkbox"]:checked + label:before {background: #217DA1; color: #fff; content: "\2713"; text-align: center; border-color: #217DA1;}
+input.w3-check[type="checkbox"]:checked + label:after {font-weight: normal;}
+input.w3-check[type="checkbox"]:focus + label::before {outline: rgb(0, 120, 215) auto 1px;}
+input[type="checkbox"].w3-check:checked + .w3-validate, input[type="radio"].w3-radio:checked + .w3-validate {color: #6893B3;}

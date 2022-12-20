@@ -1,0 +1,6 @@
+.start-block {font-size: 100.1%!important;position: relative;overflow: hidden;}
+.start-block span.title { display :block; }
+.start-block .section { margin-top :10px; padding :0px; border :1px solid #999999; font-size :1em; width :100%; background-color :#fdfdfd; height :95px; }
+.start-block div#start-block { margin : auto 1%; }
+.start-block div#start-block ul { padding : 0;  width :100%; margin: 1.525em;}
+.start-block div#start-block li { list-style-type :none; display :inline; float :left; width :47%; margin :0 1%; }

@@ -1,0 +1,14 @@
+@charset "utf-8 ";
+/* switch path to default or ownstyle */
+@import url("themes/default/css/default.css");
+label.check-container, label.w3-validate {padding: 0.1em 0 0 0 !important;vertical-align: middle !important;}
+label, label.w3-validate {font-weight: bold !important;color: #3D6F8A;}
+.check-container .checkbtn::after {left: 5px;top: 0px!important;width: 5px;height: 10px;content: "\2713";color: #fff;font-size: 20px;font-weight: bold;}
+/* Show the checkmark when checked */
+.check-container input:checked ~.checkbtn:after{display:block;}
+/* Show the indicator (dot/circle) when checked */
+.check-container input:checked ~.radiobtn:after{display:block;}
+/* Style the checkmark/indicator */
+.check-container .checkbtn::after{left:5px;top:-16px;width:5px;height:10px;content: "\2713";color:#fff;font-size:20px;font-weight:bold;}/* Style the indicator (dot/circle) */
+.check-container .radiobtn:after{top:8px;left:8px;width:9px;height:9px;border-radius:50%;background:white;}
+

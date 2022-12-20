@@ -1,0 +1,199 @@
+<!--
+ @version         $Id: modules.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+<div class="title-line" style="margin:2px 15px 15px 0; width: 100%;">
+<table class="w3-table">
+    <tbody>
+        <tr>
+            <td style="float: right; line-height: 1.225em;">
+    <!-- BEGIN addon_template_block -->
+                <span><a  class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{URL_TEMPLATES}">{MENU_TEMPLATES}</a> </span>
+                <span class="w3-text-white">-</span>
+    <!-- END addon_template_block -->
+    <!-- BEGIN addon_language_block -->
+                <span><a  class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{URL_LANGUAGES}">{MENU_LANGUAGES}</a></span>
+                <span class="w3-text-white">-</span>
+    <!-- END addon_language_block -->
+
+    <!-- BEGIN addon_module_block -->
+                <span>
+                <a class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{URL_ADVANCED}">{TEXT_ADVANCED}</a>
+                </span>
+    <!-- END addon_module_block -->
+
+            </td>
+         </tr>
+    </tbody>
+</table>
+</div>
+
+<article class="addons-block w3-container">
+<div class="block-outer w3-padding">
+<h3 class="w3-margin-0" style="line-height: 0;">&nbsp;</h3>
+<!-- BEGIN addon_install_block -->
+<form id="install" enctype="multipart/form-data" action="install.php" method="post" class="{DISPLAY_INSTALL}">
+    <input type="hidden" name="action" value="install" />
+    <input type="hidden" name="advanced" value="{INSTALL_ADVANCED}" />
+    <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+    <h2>{HEADING_INSTALL_MODULE}</h2>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+              <td>
+                <input class="w3-blue-wb w3-hover-green w3-large w3-padding-right" type="file" name="userfile" />
+                <script>
+                document.querySelector('form#install').userfile.focus();
+                </script>
+              </td>
+              <td style="width: 10%;">
+                <input type="submit" name="submit" value="{TEXT_INSTALL}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="w3-bar w3-padding">
+                <input id="overwrite" class="w3-check" type="checkbox" name="overwrite" value="false" checked="checked" />
+                <label for="overwrite">{MESSAGE_ADDON_OVERWRITE_NEWER_FILES}</label>
+                </div>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+</form>
+<!-- END addon_install_block -->
+
+<!-- BEGIN addon_uninstall_block -->
+<form id="uninstall" action="uninstall.php" method="post" class="{DISPLAY_UNINSTALL}">
+    <input type="hidden" name="action" value="uninstall" />
+    <input type="hidden" name="advanced" value="{UNINSTALL_ADVANCED}" />
+    <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+    <h2>{HEADING_UNINSTALL_MODULE}</h2>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+              <td>
+                <select name="file" class="w3-select w3-border w3--medium">
+                    <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+                <!-- BEGIN addon_uninstall_select_block -->
+                    <option value="{UNINSTALL_VALUE}">{UNINSTALL_NAME}</option>
+                  <!-- END addon_uninstall_select_block -->
+                </select>
+              </td>
+              <td style="width: 10%;">
+                <input type="submit" name="submit" value="{TEXT_UNINSTALL}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+              </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+</form>
+<!-- END addon_uninstall_block -->
+
+<!-- BEGIN addon_detail_block -->
+<form id="details" action="details.php" method="post" class="{DISPLAY_LIST}">
+    <input type="hidden" name="action" value="details" />
+    <input type="hidden" name="advanced" value="{DETAIL_ADVANCED}" />
+    <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+    <h2>{HEADING_MODULE_DETAILS}</h2>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+              <td>
+                <select name="file" class="w3-select w3-border w3--medium">
+                <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+                <!-- BEGIN addon_detail_select_block -->
+                    <option value="{DETAIL_VALUE}">{DETAIL_NAME}</option>
+                  <!-- END addon_detail_select_block -->
+                </select>
+              </td>
+              <td style="width: 10%;">
+                <input type="submit" name="submit" value="{TEXT_VIEW_DETAILS}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+              </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+</form>
+<!-- END addon_detail_block -->
+</div>
+<!-- BEGIN addon_advanced_block -->
+<div class="block-outer w3-padding">
+    <h2>{HEADING_INVOKE_MODULE_FILES}</h2>
+    <div class="w3-panel w3-leftbar w3-sand {DISPLAY_MANUAL_INSTALL}" style="margin-bottom: 1.525em;">
+        <p>{MESSAGE_ADDON_MANUAL_INSTALLATION}</p>
+    </div>
+    <!-- BEGIN manuell_install_block -->
+        <form id="manual_install" action="manual_install.php" method="post" class="w3-section {INSTALL_VISIBLE}" >
+            <input type="hidden" name="action" value="install" />
+            <input type="hidden" name="advanced" value="{ADVANCED}" />
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <div class="w3-row w3-container w3-bold w3-text-grey" style="white-space: nowrap;">
+                <div class="w3-content" style="float: left; width: 25%;">
+                <span>{TEXT_FILE}: "install"</span> <span class="w3-text-grey"> {INSTALL_FILES}</span>
+                </div>
+                <div class="w3-content w3-threequarter" style="width: 40%;">
+                    <select class="w3-select w3-light-gray w3-border w3-col w3--medium" name="file">
+                    <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+                    <!-- BEGIN manuell_install_select_block -->
+                    <option value="{INSTALL_VALUE}">{INSTALL_NAME}</option>
+                    <!-- END manuell_install_select_block -->
+                    </select>
+                    <button type="submit" name="submit" value="install" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" >{TEXT_EXECUTE}</button>
+                </div>
+           </div>
+        </form>
+    <!-- END manuell_install_block -->
+
+    <!-- BEGIN manuell_upgrade_block -->
+        <form id="manual_upgrade" action="manual_install.php" method="post" class="w3-section {UPGRADE_VISIBLE}">
+            <input type="hidden" name="action" value="upgrade" />
+            <input type="hidden" name="advanced" value="{ADVANCED}" />
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <div class="w3-row w3-container w3-bold w3-text-grey" style="white-space: nowrap;">
+                <div class="w3-content w3-quarter" style="float: left; width: 25%;">
+                <span>{TEXT_FILE}: "upgrade"</span> <span class="w3-text-grey"> {UPGRADE_FILES}</span>
+                </div>
+                <div class="w3-content w3-threequarter" style="width: 40%;">
+                    <select class="w3-select w3-light-gray w3-border w3-col w3--medium" name="file">
+                    <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+                    <!-- BEGIN manuell_upgrade_select_block -->
+                    <option value="{UPGRADE_VALUE}">{UPGRADE_NAME}</option>
+                    <!-- END manuell_upgrade_select_block -->
+                    </select>
+                    <button type="submit" name="submit" value="upgrade" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" >{TEXT_EXECUTE}</button>
+                </div>
+           </div>
+        </form>
+    <!-- END manuell_upgrade_block -->
+
+    <!-- BEGIN manuell_uninstall_block -->
+        <form id="manual_uninstall" action="uninstall.php" method="post" class="w3-section {UNINSTALL_VISIBLE}">
+            <input type="hidden" name="action" value="uninstall" />
+            <input type="hidden" name="advanced" value="{ADVANCED}" />
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <div class="w3-row w3-container w3-text-grey" style="white-space: nowrap;">
+                <div class="w3-content" style="float: left; width: 25%;">
+                <span class="w3-bold">{TEXT_FILE}: "uninstall"</span> <span class="w3-text-grey"> {UNINSTALL_FILES}</span>
+                </div>
+                <div class="w3-content w3-threequarter" style="width: 40%;">
+                    <select class="w3-select w3-light-gray w3-border w3-col w3--medium" name="file">
+                    <option value="" selected="selected">{TEXT_PLEASE_SELECT}...</option>
+                    <!-- BEGIN manuell_uninstall_select_block -->
+                    <option value="{UNINSTALL_VALUE}">{UNINSTALL_NAME}</option>
+                    <!-- END manuell_uninstall_select_block -->
+                    </select>
+                    <button type="submit" name="submit" value="uninstall" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" >{TEXT_EXECUTE}</button>
+                </div>
+           </div>
+        </form>
+    <!-- END manuell_uninstall_block -->
+</div>
+<div style="width: 100%; ">
+    <div class="w3-panel w3-pale-red w3-leftbar w3-border-red" style="min-height: 4.225em; width: 100%;" ><p>{MESSAGE_ADDON_MANUAL_INSTALLATION_WARNING}</p></div>
+</div>
+</article>
+<!-- END addon_advanced_block -->
+
+<!-- END main_block -->

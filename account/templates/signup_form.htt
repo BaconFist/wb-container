@@ -1,0 +1,164 @@
+<!-- BEGIN main_block -->
+<section class="w3-container account-block account">
+    <!-- BEGIN success_block -->
+    <div class="w3-panel w3-leftbar w3-pale-green w3-border-green w3-padding">
+        <p class="account-success">
+
+            <ul style="list-style-type: square;">
+        <!-- BEGIN success_list_block -->
+                <li>{SUCCESS_MESSAGE}</li>
+        <!-- END success_list_block -->
+            </ul>
+
+        </p>
+    </div>
+    <!-- END success_block -->
+    <!-- BEGIN back_block -->
+    <div style="margin: 2em auto;">
+        <button type="button" class="w3-btn w3-btn-default w3-light-grey" value="" onclick="window.location.href='{REDIRECT}';">{TEXT_BACK}</button>
+    </div>
+    <!-- END back_block -->
+    <h2><span class="w3-hide">{MESSAGE_TITLE}</span></h2>
+<!-- BEGIN display_form_block -->
+  <div class="content_box outer-box">
+    <!-- BEGIN error_block -->
+    <div class="w3-panel w3-leftbar w3-pale-red w3-border-red w3-padding">
+        <form id="password" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="form account" autocomplete="off">
+            <input autocomplete="off" name="hidden" type="text" style="display:none;"/>
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <input type="hidden" name="redirect" value="{REDIRECT}" />
+            <input type="hidden" name="page_id" value="{PAGE_ID}" />
+            <input type="hidden" name="url" value="{URL}" />
+            <input type="hidden" name="action" value="show" />
+            <input type="hidden" name="redirect" value="{REDIRECT}" />
+            <ol>
+      <!-- BEGIN error_list_block -->
+                <li>{ERROR_MESSAGE}&#160;</li>
+      <!-- END error_list_block -->
+            </ol>
+            <button type="submit" name="start_reset" class="start_reset w3-btn w3-light-gray" style="min-width: 8.25em;">{TEXT_PAGE_RELOAD}</button>
+        </form>
+    </div>
+    <!-- END error_block -->
+<div id="account-folder" class="content_box" data-template="{DATA_TEMPLATE}"></div>
+    <div class="w3-panel w3-leftbar w3-sand w3-large w3-serif">
+        <p class="padding">{MESSAGE_TITLE}</p>
+    </div>
+    <form id="{FORM_TYPE}" action="{WB_URL}account/{FORM_TYPE}.php" method="post" class="account" autocomplete="off">
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <input type="hidden" name="action" value="send" />
+        <input type="hidden" name="redirect" value="{REDIRECT_URL}" />
+        <input type="hidden" name="{FORM_TYPE}_pass" />
+    <!-- BEGIN honeypot_block -->
+        <div style="display:none;">
+        <input type="hidden" name="submitted_when" value="{SESSION_SUBMITTED_WHEN}" />
+        <p class="nixhier">
+        email-address:
+        <label for="email-address">Leave this field email-address blank:</label>
+        <input id="email-address" name="email-address" size="60" value="" /><br />
+        username (id):
+        <label for="name">Leave this field name blank:</label>
+        <input id="name" name="name" size="60" value="" /><br />
+        Full Name:
+        <label for="full_name">Leave this field full_name blank:</label>
+        <input id="full_name" name="full_name" size="60" value="" /><br />
+        </p>
+        </div>
+    <!-- END honeypot_block -->
+        <table class="account" style="width: 100%;">
+            <tbody>
+                <tr style="line-height: 0.1;">
+                    <td colspan="2">&#160;</td>
+                </tr>
+            <!-- BEGIN heading_block -->
+                <tr>
+                    <td colspan="2">
+                       <div class="heading-block">
+                            <ul>
+                    <!-- BEGIN heading_list_block -->
+                              <li>{MESSAGE}</li>
+                    <!-- END heading_list_block -->
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+          <!-- END heading_block -->
+                <tr>
+                    <td class="setting-name setting-right">{TEXT_USERNAME}</td>
+                    <td class="setting-value">
+                        <input type="text" name="username" maxlength="30" style="width:300px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right">{TEXT_DISPLAY_NAME}</td>
+                    <td class="setting-value">
+                        <input type="text" name="display_name" maxlength="255" style="width:300px;" />
+                        <label> ({TEXT_FULL_NAME})</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-name setting-right">{TEXT_EMAIL}</td>
+                    <td class="setting-value">
+                        <input type="text" name="email" maxlength="255" style="width:300px;"/>
+                    </td>
+                </tr>
+        <!-- BEGIN display_captcha_block -->
+                <tr>
+                    <td class="setting-name setting-right setting-top">{TEXT_VERIFICATION}</td>
+                    <td>{CALL_CAPTCHA}</td>
+                </tr>
+        <!-- END display_captcha_block -->
+        <!-- BEGIN use_data_protection_block -->
+                <tr class="DSGVO">
+                    <td colspan="2">
+                      <div class="w3-bar" style="margin-top: 1.5225em;">
+                          <input class="w3-bar-item w3-check w3-border" id="data_protection" name="data_protection" value="1" type="checkbox"/>
+                          <label for="data_protection" class="description w3-bar-item" style="width: 95%;line-height: 1.5;">
+                              {CALL_DSGVO_LINK}
+                          </label>
+                      </div>
+                   </td>
+                </tr>
+        <!-- END use_data_protection_block -->
+            </tbody>
+        </table>
+        <div class="login_form w3-center">
+            <button style="min-width: 8.225em;cursor: pointer;" class="w3-btn w3-light-grey" name="submit" value="login" >{TEXT_SIGNUP}</button>
+            <button style="min-width: 8.225em;cursor: pointer;" class="w3-btn w3-light-grey" id="resetBtn" name="reset" value="" >{TEXT_RESET_INPUTS}</button>
+            <button type="button" style="min-width: 8.225em;cursor: pointer;" class="w3-btn w3-light-gray" value="" onclick="window.location.href='{REDIRECT}';">{TEXT_BACK}</button>
+        </div>
+    </form>
+
+    </div>
+<!-- END display_form_block -->
+  </section>
+    <table class="account-footer" style="width: 100%;">
+        <tbody>
+            <tr>
+                <td>
+                    <div style="text-align: center; font-size: 0.825em;">
+                    <!-- Please note: the below reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+                    <a href="https://websitebaker.org/" target="_blank" rel="noopener" title="external">WebsiteBaker</a> is released under the
+                    <a href="https://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+                    <!-- Please note: the above reference to the GNU GPL should not be removed, as it provides a link for users to read about warranty, etc. -->
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let fieldsreset = document.querySelector('.start_reset');
+        if (fieldsreset!==null){
+            fieldsreset.addEventListener (
+                "click",
+                function (evt) {
+                    let url = window.location.protocol +'//'+ window.location.host + window.location.pathname;
+                    window.location.href = url;
+                    evt.preventDefault();
+              });
+        }
+    });
+</script>
+<!-- END main_block -->

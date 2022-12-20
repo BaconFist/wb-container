@@ -1,0 +1,58 @@
+<!-- BEGIN main_block -->
+<div id="openDelete" class="modal-Dialog" draggable="true">
+    <div>
+        <form action="{ActionUrl}" method="post">
+            <input type="hidden" name="tool" value="{MODULE_NAME}" />
+            <input type="hidden" name="DropletsToDelete" value="{sDropletsToDelete}" />
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <div id="customConfirm" style="display: block;">
+                <button name="cancel" class="close w3-badge" type="button">X</button>
+                <header class=" modal-label">{DROPLET_MESSAGE_DELETE_DROPLETS}</header>
+                <div class="body">
+                    <h4>{DROPLET_MESSAGE_CONFIRM_DROPLET_DELETING}</h4>
+                    <p>{inDroplets}</p>
+                </div>
+                <div class="footer">
+                    <button name="command" type="submit" value="delete_droplet?droplet_id={iDropletIdKey}" class="confirm btn btn-success w3-padding-8">{DR_TEXT_DELETE}</button>
+                    <button name="cancel" class="cancel btn btn-danger w3-padding-8 url-reset" data-overview="{ToolRel}" type="button">{TEXT_CANCEL}</button>
+                </div>
+              <footer class="modal-label">
+<!--
+          <a href="http://websitebaker.org/" title="external">WebsiteBaker</a> is released under the
+          <a href="http://www.gnu.org/licenses/gpl.html" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+-->
+              </footer>
+            </div>
+        </form>
+    </div>
+</div>
+<script >
+<!--
+domReady(function() {
+    LoadOnFly('head', "{sAddonThemeUrl}/css/dialogBox.css");
+    LoadOnFly('head', "{sAddonThemeUrl}/css/customAlert.css");
+
+    var deleteFrame = document.getElementById('openDelete');
+    var span_close  = document.getElementsByClassName("close")[0];
+// When the user clicks on <close button> (x), close the modal
+//  When the user clicks on <span> (x), close the modal
+    span_close.onclick = function(e) {
+       deleteFrame.style.display = "none";
+    }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(e) {
+  if (e.target === deleteFrame) {
+    deleteFrame.style.display = "none";
+  }
+}
+    document.addEventListener('keyup', function(e) {
+      if (e.keyCode == 27) {
+        deleteFrame.style.display = "none";
+      }
+    });
+});
+
+-->
+</script>
+<!-- END main_block -->

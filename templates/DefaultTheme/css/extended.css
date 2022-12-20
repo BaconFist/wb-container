@@ -1,0 +1,50 @@
+.combobox > .downarrow, .dropdown > .downarrow {
+  display: block;     /* Allow margin/border/padding/size */
+  position: absolute; /* Outside normal flow */
+  top: 0;    /* Align top of downarrow with top edge of combobox */
+  bottom: 0; /* Align bottom of downarrow with bottom of combobox */
+  right: 0; /*Align right edge of downarrow with right of combobox*/
+  width: 1.25em;
+
+  cursor: default; /* Use arrow cursor instead of I-beam */
+  nav-index: -1; /* sets tabindex, nonfunctional in most browsers */
+
+  border-width: 0;        /* disable by default */
+  border-color: inherit;  /* copy parent border */
+  border-left: inherit;   /* copy parent border */
+}
+
+.downarrow::before, .downarrow > *:only-child {
+  text-align: center; /* Center horizontally */
+  /* vertical centering trick */
+  position: relative; /* Allow the element to be shifted */
+  top: 50%;           /* Move down by 50% of container size */
+  transform: translateY(-50%); /* Move up by 50% of element size */
+  display: block;     /* `transform` requires block/inline-block */
+}
+
+.dropdown > *:last-child,
+.combobox > *:last-child {
+  display: none;          /* hidden by default */
+  position: absolute;     /* outside document flow */
+  left: 0;          /* Left side of popup = left side of parent */
+  top: 100%;        /* Top of popup = 100% below top of parent */
+  border: 1px solid #999; /* gray border */
+  background-color: #fff; /* white background */
+  box-shadow: 1px 2px 4px 1px #4448; /* shadow behind */
+  z-index: 9999;          /* draw on top of everything else */
+  min-width: 100%;        /* >= 100% as wide as its container */
+  box-sizing: border-box; /* width includes border & padding */
+}
+
+
+
+
+
+
+
+
+
+
+
+

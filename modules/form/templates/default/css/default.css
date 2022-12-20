@@ -1,0 +1,62 @@
+.frm-field_table { width :100%; vertical-align :middle; table-layout :auto; border-collapse :separate; border :none; }
+.frm-field_table tbody { font-size :100%; padding :0.4em 0.2em; }
+.frm-field_table tbody td { border :none; }
+.frm-field_table tbody td.field_heading,
+.frm-field_table tbody td.frm-field_heading { border-bottom :1px solid #666666; border-top :1px solid #666666; color :#666666; font-weight :bold; background: #DADADA; }
+.frm-formular { float: none; }
+.frm-required { color :#FF0000; }
+.frm-field_title { width :25%; vertical-align :top; white-space :nowrap; text-align :right; }
+.frm-textfield { width : 100%; }
+.frm-textarea { width :100%; height :100px; }
+.frm-button,.frm-input,.frm-select,.frm-textarea{font:inherit;margin:0}optgroup{font-weight:bold}
+.frm-button,.frm-input{overflow:visible}.frm-button,.frm-select{text-transform:none}
+.frm-select { width :100%; }
+.frm-select option { width :95%; }
+.frm-select{padding:9px 0;width:100%;color:#000;border:1px solid transparent;border-bottom:1px solid #009688}
+.frm-select select:focus{color:#000;border:1px solid #009688}.frm-select option[disabled]{color:#009688}
+.frm-field_checkbox { cursor :pointer; width : 1.225em; }
+.frm-checkbox_label { cursor :pointer; padding: 5px; }
+.frm-radio_label { cursor :pointer; }
+.frm-email { width : 100%; }
+.frm-field_heading label { padding-left: 0.825em; }
+/*** Don't remove the class nixhier, this is required for ASP ***/
+.nixhier,
+.frm-nixhier { display :none; }
+.frm-submission { margin :0 auto; position :relative; width :auto; }
+.print-email { color :#000000; margin :10px auto; }
+.frm-warning { background :#FFEEEE; border :0.1em #884444 solid; color :#E10000; margin-bottom :1em; padding :0.5em 2.8em; font-size :96.5%; font-weight :normal; }
+.frm-note { background :#EEFFEE; border :0.2em #448844 solid; color :#004400; margin-bottom :1em; padding :0.8em; font-size :1.2em; font-weight :bold; }
+.previewprinttop { text-align :right; }
+.previewprinttop img { padding-left :1em; }
+.frm-thankyou { }
+.frm-field_table tbody tr { line-height: 1.955; height: 1.925em; }
+.frm-warning h3 { font-size :120%; line-height :1.3em; margin :0.1em; padding :0.1em; }
+ .frm-warning ol { color :#333333; margin :0.1em; }
+.frm-field_table input[type="submit"] { padding :0.1em 0.8em; }
+ .frm-warning a,
+ p.frm-warning a { background :transparent; padding-left :0; }
+ fieldset.frm-fieldset { border :none; margin :0 auto; padding :0%; width: 90%; }
+.frm-warning-success-email { display :block; }
+.previewPrintTop { float :right; }
+.previewPrintTop span { display : none; }
+/**/
+.frm-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.frm-image{max-width:100%;height:auto}
+.frm-border-0{border:0!important}.frm-border{border:1px solid #ccc!important}
+.frm-border-top{border-top:1px solid #ccc!important}.frm-border-bottom{border-bottom:1px solid #ccc!important}
+.frm-border-left{border-left:1px solid #ccc!important}.frm-border-right{border-right:1px solid #ccc!important}
+/* Simple Div Selectoren */
+.frm{margin-top:20px;}
+.frm div{text-align:left;}
+.frm .frm-field_title{margin:10px 0 5px;}
+.frm input{}
+.frm input,.frm textarea{border:1px solid #ccc;border-radius:4px!important;padding:0 5px;line-height:2em;}
+.frm .captcha-input input{width:100px;}
+.frm input[type="submit"]{background:#eee!important;transition: all .2s ease-in-out;}
+.frm input[type="submit"]:hover{background:#ccc!important;}
+/**/
+.tableresp { width: 100%;overflow: auto;}
+.tableresp::-webkit-scrollbar{webkit-appearance: none;width: 14px;height: 14px;}
+.tableresp::-webkit-scrollbar-thumb{border-radius: 8px;border: 3px solid #fff;background-color: rgba(0, 0, 0, .3);}
+
+

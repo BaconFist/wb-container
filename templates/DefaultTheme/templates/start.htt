@@ -1,0 +1,187 @@
+<span class="w3-hide">
+<!--
+ @version         $Id: start.htt 75 2017-03-10 10:47:06Z manu $
+-->
+</span>
+<!-- BEGIN main_block -->
+<article id="start" class="w3-margin-0 start-block">
+    <div class="title-line ">
+      <div class="w3-display-container w3-margin-top" style="height: 4.25em!important;">
+        <div class="w3-display-middle">
+            <h4 class="w3-center w3-text-grey w3-border-0 w3--margin">{WELCOME_MESSAGE}<br />{CURRENT_USER} {DISPLAY_NAME}</h4>
+
+<!-- BEGIN show_date_block -->
+            <div id="showDate" class="w3-container w3-auto w3-center">
+            <span id="date-stamp" data-lang="{LANGUAGE}" data-timezone="{TIMEZONE}">{SHOW_DATE} </span>
+            <span id="time-stamp" data-period="{PERIOD}"> {SHOW_TIME}</span>
+            </div>
+<!-- END show_date_block -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-right-align w3-padding-0" style="margin-top: -2.125em!important;">
+        <label class="check-container" for="fr1">
+            <input id="fr1" class="w3-radio" type="radio" name="fr" value="1" {fr1_CHECKED}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-bars fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr2">
+            <input id="fr2" class="w3-radio" type="radio" name="fr" value="2" {fr2_CHECKED}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-grip-vertical fa-0x w3-baseline"></i></span>
+        </label>
+        <label class="check-container" for="fr3">
+            <input id="fr3" class="w3-radio" type="radio" name="fr" value="3" {fr3_CHECKED}/>
+            <span style="padding:0 5px!important;"><i class="fa w3-text-grey fa-th fa-0x w3-baseline"></i></span>
+        </label>
+    </div>
+
+    <div id="equal-start" class="equal-container" style="grid-template-columns: 1fr 1fr;"><!-- begin grid-container -->
+        <!-- BEGIN show_pages_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/pages/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                    <a class="w3-cell" href="{ADMIN_URL}/pages/index.php">
+                <span>
+                        <img src="{THEME_URL}/icons/pages.png" alt="{PAGES}" />
+                </span>
+                <span class="w3-margin-left">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{PAGES}</span><br />
+                    <span>{PAGES_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+                    </a>
+            </div>
+        </div>
+        <!-- END show_pages_block -->
+        <!-- BEGIN show_media_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/media/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/media/index.php">
+                        <img src="{THEME_URL}/icons/media.png" alt="{MEDIA}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/media/index.php">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{MEDIA}</span><br />
+                    </a>
+                    <span>{MEDIA_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END show_media_block -->
+        <!-- BEGIN show_addons_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/addons/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/addons/index.php">
+                        <img src="{THEME_URL}/icons/addons.png" alt="{ADDONS}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/addons/index.php">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{ADDONS}</span><br />
+                    </a>
+                    <span>{ADDONS_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END show_addons_block -->
+        <!-- BEGIN show_preferences_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/preferences/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/preferences/index.php">
+                        <img src="{THEME_URL}/icons/preferences.png" alt="{PREFERENCES}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/preferences/index.php">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{PREFERENCES}</span><br />
+                    </a>
+                    <span>{PREFERENCES_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END show_preferences_block -->
+        <!-- BEGIN show_settings_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/settings/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/settings/index.php">
+                        <img src="{THEME_URL}/icons/settings.png" alt="{SETTINGS}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/settings/index.php">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{SETTINGS}</span><br />
+                    </a>
+                    <span>{SETTINGS_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END show_settings_block -->
+        <!-- BEGIN show_admintools_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/admintools/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/admintools/index.php">
+                        <img src="{THEME_URL}/icons/admintools.png" alt="{ADMINTOOLS}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/admintools/index.php">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{ADMINTOOLS}</span><br />
+                    </a>
+                    <span>{ADMINTOOLS_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END show_admintools_block -->
+        <!-- BEGIN show_access_block -->
+        <div class="w3-card w3-margin equal w3-mobil w3-text-grey w3-hover-light-grey w3-mobile w3-white w3-dropdown-hover" data-start-menu="/access/index.php" >
+            <div class="w3-container w3-text-align w3-padding">
+                <span>
+                    <a class="w3-cell" href="{ADMIN_URL}/access/index.php">
+                        <img src="{THEME_URL}/icons/access.png" alt="{ACCESS}" />
+                    </a>
+                </span>
+                <span class="w3-margin-left">
+                    <a href="{ADMIN_URL}/access/index.php">
+                        <span class="w3-cell wb-bold-16 w3-text-dark-blue w3-hover-text-blue">{ACCESS}</span><br />
+                    </a>
+                    <span>{ACCESS_OVERVIEW}</span>
+                    <span style="line-height:.1;">&nbsp;</span>
+                </span>
+            </div>
+        </div>
+        <!-- END show_access_block -->
+    </div><!-- end grid-container -->
+    <div style="min-height: 1.525em;">{START_LIST}</div>
+</article><!-- end start -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let widget = document.querySelectorAll('[data-start-menu]');
+        if (widget){
+            for (var i=0; i<widget.length; i++){
+                let link = widget[i].dataset.startMenu;
+//console.log (widget[i]);
+                widget[i].addEventListener (
+                    "click",
+                    function (evt) {
+//console.log (link);
+                        let url = window.location.protocol +'//'+ window.location.host + dirname(dirname(window.location.pathname)) + link;//
+                        window.location.href = url;
+                        evt.preventDefault();
+                });
+            }
+        }
+    });
+</script>
+
+<!-- END main_block -->

@@ -1,0 +1,94 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1] General information about version 2.13.0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+2.13.0 is the compatible successor of the WB-2.8.3 to WB-2.12 versions.
+This package contains everything you need to run a website.
+Besides the core package you also get a basic set of modules and required 3rd party packages like PHPMailer, pclzip, phplib, Twig, JQuery and more.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2] Requirements
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+WebsiteBaker was developed on a Linux & Apache environment, so we cannot guarantee that it will work properly in a Windows (R) environment.
+
+Operating system: Linux (recommended), Windows (maybe)
+Database : MySQL 5 / MariaDB 5 and up
+Web server : Apache
+PHP : from 7.2 up to and including PHP-7 (FastCGI, FPM) we recommend PHP 7.4
+Diskspace : 25MB or more
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3] Installation guide for WebsiteBaker 2.13.0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The installation package contains a complete WebsiteBaker version 2.13.0 and can be installed on all compatible hosts.
+
+a) Make sure that your webspace meets the requirements described above!
+
+b) Make sure that you have a MySQL database available including the access data!
+
+c) Switch the PHP version of the web server to at least PHP 7.2 or higher. We recommend PHP 7.4
+
+d) - download WB ZIP package & unzip.php.zip from https://wiki.websitebaker.org/doku.php/downloads
+   - rename unzip.php.zip to unzip.php
+   - upload WB ZIP package & unzip.php to your WB root folder (documentroot)
+   - run unzip.php in your browser (https://yourdomain.com/unzip.php) (replace yourdomain.com with your own domain)
+   - after unzip click the button Backend in bottom right corner and follow the installation instructions OR use point e)
+
+   The unzip.php and the WB ZIP can delete themselves after the successful execution of the unzip.php if the checkboxes are ticked.
+
+
+e) Now simply run your installation as in the example http://example.com/ and follow the instructions of the installation script.
+
+Have fun with your new WebsiteBaker installation! 
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4] Update of a WebsiteBaker version 2.8.3 or higher
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This update package contains a complete WebsiteBaker version 2.13.0 and can be updated from any WebsiteBaker version 2.8.3 or higher.
+
+Additional instructions for upgrading WebsiteBaker versions older than 2.8.3 can be found in [6].
+
+a) IMPORTANT :: Always make a backup of the webspace and the database !!!
+
+b) Download the WebsiteBaker package to your workstation and extract everything into an empty folder.
+
+c) - download WB ZIP package & unzip.php.zip
+   - rename unzip.php.zip to unzip.php
+   - upload WB ZIP package & unzip.php to your WB root folder (documentroot)
+   - run unzip.php in your browser (https://yourdomain.com/unzip.php) (replace yourdomain.com with your own domain)
+   - after unzip click the button Backend in bottom right corner
+
+   The unzip.php and the WB ZIP can delete themselves after the successful execution of the unzip.php if the checkboxes are ticked.
+
+d) Switch the PHP version of the web server to at least PHP 7.2 or higher. We recommend PHP 7.4
+
+e) Sign up as SuperAdmin (ID 1) in the backend and start the upgrade script by clicking on the link and follow the instructions.
+
+f) Some add-on packages do not come with this version and must be updated manually.
+   Some new versions are available at https://addon.websitebaker.org/
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6] Update WebsiteBaker from older versions before WB-2.8.3
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Before upgrading from an older version prior to WB-2.8.3, you must first upgrade to [WB 2.8.3 of Feb.2012].
+This version can be downloaded from any of these links:
+https://addon.websitebaker.org/pages/en/browse-add-ons.php?id=0EA85F12
+or
+https://wiki.websitebaker.org/doku.php/en/downloads#websitebaker_283
+
+Instructions for upgrading WebsiteBaker can be found in our forum:
+English: https://forum.websitebaker.org/index.php/topic,23412
+German:  https://forum.websitebaker.org/index.php/topic,23658
+
+

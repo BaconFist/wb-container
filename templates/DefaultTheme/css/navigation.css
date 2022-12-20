@@ -1,0 +1,28 @@
+/* old style */
+.menu li { padding-right : 0.1225em; list-style-type :none; display :inline; }
+.menu a, .menu a:link,.menu a:active, .menu a:visited {border-bottom :0; padding : 0.425em 1.225em; color :#ffffff; }
+.current a,.current a:link,.current a:active, .current a:visited {background : none/* #217DA1*/; background-repeat :repeat-x; color :#ffffff; }
+.current a:hover,.menu a:hover{color :#fff; background : none #217DA1;text-decoration :none; }
+.menu li,.current a,.menu a,.menu a:link,.menu a:active,.menu a:visited,.menu a:hover{border-radius: 0.325em;}
+
+.menu { margin :0; padding : 0.0em ; background : none #215A7A;overflow: hidden; white-space: nowrap; }
+.menu ul { margin :0; padding : 0.525em ; overflow: hidden; white-space: nowrap;display: block; }
+.menu li {/* padding-right : 0.1225em; */display :inline;}
+.current a, .current a:link, .current a:active, .current a:visited {}
+/* --------------------------- */
+/* */
+.w3-ul li {border-bottom: 0px solid #ddd;}
+.menu > ul > li a {
+padding: 16px 25px!important;font-size: 1.0em;letter-spacing: 1px;text-decoration: none;
+font-weight: normal;text-decoration: none;color: #fff;line-height: 2;}
+
+.menu > ul> li.current a, /* old #0170CA */
+.menu > ul > li a:hover,
+.menu > ul > li a:active, .menu > ul > li a:focus,
+/*
+.menu ul li.has-sub.current:hover {background:#347EA6;-webkit-transition: background .3s ease;-ms-transition: background .3s ease;transition: background .3s ease;}
+.menu > ul > li:hover,
+*/
+.menu > ul > li a:hover {background: #0483B5;} /* old #06589b */
+/* --------------------------- */
+

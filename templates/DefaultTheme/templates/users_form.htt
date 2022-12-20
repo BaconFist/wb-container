@@ -1,0 +1,188 @@
+<span class="w3-hide"><!--
+ @version         $Id: users_form.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<section class="access-block w3-container">
+<form id="user" action="{ACTION_URL}" method="post" class="{DISPLAY_ADD} access" style="margin: auto; width: 100%;" >
+    <input type="hidden" name="user_id" value="{USER_ID}" />
+    <input type="hidden" name="username_fieldname" value="{USERNAME_FIELDNAME}" />
+    {FTAN}
+    <h2 style="{DISPLAY_EXTRA}">{HEADING_MODIFY_USER}&nbsp;</h2>
+    <div class="block-outer" style="padding: 0.825em;">
+    <table class="w3-table" style=" border-collapse: collapse; border-spacing: 0; width: 100%;" >
+        <thead class="value_label">
+        <tr>
+        <th style=" width: 30%;"></th>
+        <th style=" width: 70%;"></th>
+        </tr>
+        </thead>
+        <tbody class="value_label">
+            <tr>
+                <td>{TEXT_USERNAME}:</td>
+                <td class="value_input">
+            <!-- BEGIN user_add_block -->
+                    <input class="w3-input w3-border" type="text" name="{USERNAME_FIELDNAME}" maxlength="30" value="{USERNAME}" style="width: 52%;" />
+            <!-- END user_add_block -->
+            <!-- BEGIN user_display_block -->
+                    <div id="username" style="width: 52%;" >{USERNAME}</div>
+            <!-- END user_display_block -->
+                </td>
+
+            </tr>
+            <tr class="ui-helper-clearfix">
+                <td class="setting_name">
+                    <label for="pwLen" >Password Length:</label>
+                </td>
+                <td class="value_input">
+                <div class="w3-row">
+                      <div class="w3-col m2 l2">
+                      <input class="w3-input w3-border" type="text" onchange="onChange(this);" id="pwLen" value="8" name="length" style="width: 95%;" />
+                      </div>
+                      <div class="w3-col m10 l10">
+                      <input class="w3-padding w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" min="6" type="button" value="generate" onclick="onClick(this);" style="width: 42.5%;" />
+                      </div>
+                  </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>{TEXT_PASSWORD}:</td>
+                <td class="value_input">
+                    <div  style="width: 52%;">
+                    <input autocomplete="off" id="password" type="password" class="w3-input w3-border form-control password" name="password" value="" style="width: 100%;" />
+                    <span toggle=".password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="left: -15px;"></span>
+                    </div>
+          </td>
+            </tr>
+            <tr>
+                <td>{TEXT_RETYPE_PASSWORD}:</td>
+                <td class="value_input">
+                    <input class="w3-input w3-border" type="password" id="password2" name="password2" maxlength="30" value="" autocomplete="off" style="width: 52%;" />
+                </td>
+            </tr>
+            <tr style="{DISPLAY_EXTRA}">
+                <td>&nbsp;</td>
+                <td >
+                  <div class="w3-panel w3-pale-red w3-leftbar w3-border-red  w3-left-align" style="min-height: 4.225em; width: 100%; text-align: left;" >
+                      <p>{CHANGING_PASSWORD}</p>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <td>{TEXT_DISPLAY_NAME}:</td>
+                <td class="value_input">
+                    <input class="w3-input w3-border" type="text" name="display_name" maxlength="255" value="{DISPLAY_NAME}" style="width: 52%;" />
+                </td>
+            </tr>
+            <tr>
+                <td>{TEXT_EMAIL}:</td>
+                <td class="value_input">
+                    <input class="w3-input w3-border" type="text" name="email" maxlength="255" value="{EMAIL}" style="width: 52%;" />
+                </td>
+            </tr>
+
+            <tr {DISPLAY_HOME_FOLDERS}>
+                <td>{TEXT_HOME_FOLDER}:</td>
+                <td class="value_input">
+                    <select class="w3-border w3-select" name="home_folder" style="width: 52%;" >
+                        <option value="">{TEXT_NONE}</option>
+                        <!-- BEGIN folder_list_block -->
+                        <option class="level-{LEVEL}" value="{FOLDER}"{SELECTED}>{NAME}</option>
+                        <!-- END folder_list_block -->
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>{TEXT_GROUP}:</td>
+                <td class="value_input ">
+                    <select class="w3-border w3-select-multi" name="groups[]" multiple="multiple" size="5" style="width: 52%;" >
+                    <!-- BEGIN group_list_block -->
+                        <option value="{ID}" {SELECTED}>{NAME}</option>
+                    <!-- END group_list_block -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td style="text-align: left;">
+                  <label class="check-container" for="active" >
+                  <input type="radio" name="active[]" id="active"  style="width: 14px; height: 14px;" value="1" {ACTIVE_CHECKED} />
+                  <span class="radiobtn"><span class="w3-hide">&nbsp;</span></span>
+                  <span style="padding-left:10px!important;">{TEXT_ACTIVE}</span></label>
+                  <label class="check-container" for="disabled" >
+                  <input type="radio" name="active[]" id="disabled"  style="width: 14px; height: 14px;" value="0" {DISABLED_CHECKED} />
+                  <span class="radiobtn"><span class="w3-hide" style="margin-left: 0.9em;">&nbsp;</span></span>
+                  <span style="padding-left:10px!important;">{TEXT_DISABLED}</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td style="text-align: left;">
+                    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{SUBMIT_TITLE}" />
+                    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="reset" name="reset" value="{TEXT_RESET}" />
+                    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="button" onclick="window.location='{BACK_LINK}';" value="{TEXT_CLOSE}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</form>
+</section>
+<script>
+    function toggle_radio(radio_on, radio_off) {
+       document.getElementById(radio_on).checked = true;
+       document.getElementById(radio_off).checked = true;
+    }
+</script>
+<script src="{ADMIN_URL}/users/PasswordGenerator.js"></script>
+<script>
+    var _options = _options || window._options || { };
+            _options.length = 8;
+            _options.lowercase = true;
+            _options.uppercase = true;
+            _options.numbers = true;
+            _options.special_character = true;
+            _options.brackets = true;
+            _options.minus = true;
+            _options.underscore = true;
+            _options.space = true;
+/*
+    passwort.set({
+        length: 50,
+        lowercase: false,
+        uppercase: false,
+        numbers: false,
+        special_character: true,
+        brackets: false,
+        minus: false,
+        underscore: false,
+        space: false
+    });
+ */
+
+    _options.el   = document.querySelector('#password');
+    _options.el2  = document.querySelector('#password2');
+    var passwort  = new PasswordGenerator(_options);
+//console.info( _options.el );
+//console.info( _options.el2 );
+//console.info( passwort.get() );
+//    passwort.render();
+    //set option with onChange event
+    function onChange(e) {
+        var obj = {};
+        if(e.name == 'length') {
+            obj[e.name] = parseInt(e.value);
+        } else {
+            obj[e.name] = e.checked ? true : false;
+        }
+        passwort.set(obj);
+        passwort.render();
+    }
+    function onClick(e){
+        passwort.render();
+        return false;
+    }
+</script>
+
+<!-- END main_block -->

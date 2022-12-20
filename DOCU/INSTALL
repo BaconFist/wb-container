@@ -1,0 +1,25 @@
+WebsiteBaker 2.13.0 Installation Instructions
+=================================================
+
+Step 1  - Preparing your existing webspace:
+        - Login to your webspace account and create a new database and documentroot
+        - with or without an apllication path
+Step 2  - Download WebsiteBaker 2.13.0 from https://wiki.websitebaker.org/doku.php/downloads
+Step 3  - Download file unzip.php.zip and rename unzip.php.zip to unzip.php,
+        - because it's not really a arcive file
+        - change favicon to your own
+Step 4  - upload the unzip.php and WebsiteBaker full or fix package archive
+        - to the application path of your webspace.
+        - Run unzip.php in your browser (https://yourdomain.com/unzip.php).
+        - if checked the unzip.php and the WebsietBaker archive will be delete themselves after successful execution of the unzip.php.
+        - after extracting the archive click the button backend, and follow the Installation Instructions
+
+Step 5  - Installation folder and upgrade-script:
+        - Never don't delete folder install and file upgrade-script.php,
+
+Tutorial video on the WebsiteBaker channel
+https://youtu.be/EszPdireY80
+
+Have fun with WB 2.13.0
+
+

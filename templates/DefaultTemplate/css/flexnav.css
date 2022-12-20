@@ -1,0 +1,59 @@
+
+.menu-button {
+  background: #a6a6a2 none repeat scroll 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: #222222;
+  cursor: pointer;
+  display: block;
+  padding: 1em;
+  position: relative;
+}
+
+.menu-button .touch-button {
+  background: transparent none repeat scroll 0 0;
+  display: inline-block;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 50px;
+  z-index: 999;
+}
+
+.menu-button .touch-button .navicon {
+  color: #666;
+  font-size: 16px;
+  position: relative;
+  top: 1em;
+}
+
+.flexnav li ul li a {
+  background: #b2b2af none repeat scroll 0 0;
+  display: block;
+}
+
+.flexnav li a {
+  background: #a6a6a2 none repeat scroll 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  color: #222222;
+  display: block;
+  overflow: hidden;
+  padding: 0.96em;
+  position: relative;
+  z-index: 2;
+}
+
+.flexnav li ul li {
+  font-size: 100%;
+}
+
+.flexnav li {
+  font-size: 100%;
+}
+
+.flexnav li ul li a {
+  background: #b2b2af none repeat scroll 0 0;
+  display: block;
+}
+

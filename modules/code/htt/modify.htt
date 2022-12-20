@@ -1,0 +1,28 @@
+<!-- BEGIN main_block -->
+<section class="code-block w3-container">
+    <form action="{WB_URL}/modules/{ADDON_NAME}/save.php" method="post">
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <input type="hidden" name="section_id" value="{SECTION_ID}" />
+        {FTAN}
+        <textarea cols="120" rows="16" id="content{SECTION}" name="content" style="width: 100%;height: 24.225em">{CONTENT}</textarea>
+        {REGISTER_EDIT_AREA}
+        <div class="w3-bar " style="padding: 8px 8px 4px 0px;">
+            <label class="w3-bar-item" style="margin-left: -1.25em!important;">
+                <input class="w3-btn w3-blue-wb w3-hover-green w3-btn-min-width" type="submit" value="{TEXT_SAVE}" />
+            </label>
+            <label class="w3-bar-item">
+                <input class="w3-btn w3-blue-wb w3-hover-green w3-btn-min-width" name="pagetree" type="submit" value="{TEXT_SAVE} &amp; {TEXT_BACK}" />
+            </label>
+            <label class="w3-bar-item w3-right">
+                <input class="w3-btn w3-blue-wb w3-hover-red w3-btn-min-width" type="button" value="{TEXT_CANCEL}" onclick="window.location='index.php';" />
+            </label>
+        </div>
+    </form>
+</section>
+<p>&nbsp;</p>
+<script>
+    elm = document.querySelector("textarea");
+    id  = elm.id;
+//console.log(elm); // .nextSibling.iframe
+</script>
+<!-- END main_block -->

@@ -1,0 +1,109 @@
+<!-- BEGIN main_block -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="Referrer-Policy" content="no-referrer | same-origin"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2" />
+  <title>Browse Media</title>
+  <link href="{THEME_URL}/css/3/w3.css" rel="stylesheet" type="text/css" />
+  <link href="{THEME_URL}/css/browse.css" rel="stylesheet" type="text/css" />
+
+<script>
+  function confirmLink(message, url) {
+      if (confirm(message)){ location.href = url;}
+  }
+</script>
+<script src="overlib.js"></script>
+</head>
+<body id="set_browser" style="overflow: hidden;" data-path="{PARENT_DIR}">
+
+<div style="position: fixed;"></div>
+<div id="filter-and-tables" class="filter-options w3-row">
+    <table class="{DISPLAY__LIST_TABLE} w3-table-all w3-striped w3-hoverable upload-table">
+        <thead style="position:fixed;">
+            <tr style="background-color: #a8bccb; width: 100%;">
+                <th  style="text-align: left;  padding-left: 1.0525em; width: 0.725em; ">
+                    <a href="{PARENT_DIR_LINK}"><img src="{THEME_URL}/images/up_folder_16.png" class="{DISPLAY_UP_ARROW}" alt="^" /></a>
+                </th>
+                <th style="padding: 0.825em;" id="parentdir" data-path="{PARENT_DIR}">
+                    <a href="{PARENT_DIR_LINK}" class="{DISPLAY_UP_ARROW}">{TEXT_UP}</a>
+                </th>
+                <th colspan="5" style="float: left; padding: 0.925em 0; padding-left: 0.725em; ">
+                    <strong>{TEXT_CURRENT_FOLDER}: {MEDIA_DIRECTORY}{CURRENT_DIR}</strong>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="scrollable" style="margin-top: 36px;">
+        <!-- BEGIN list_block -->
+            <tr>
+                <td style="width: 18px;">
+                    <a href="{LINK}" target="{LINK_TARGET}" rel="noopener"><img {MOUSEOVER} src="{FT_ICON}" class="{DISPLAY_ICON}"  style="width: 16px;" alt="&#160;" /></a>
+                </td>
+                <td style="max-width: 300px;">
+                    <a {MOUSEOVER} href="{LINK}" target="{LINK_TARGET}" rel="noopener" title="{SHORT_NAME}" class="link_target">{NAME}</a>
+                </td>
+                <td style="width: 130px; white-space: nowrap;">
+                    <span>{DATE}</span>
+                </td>
+                <td style="width: 130px; text-align: center;">
+                    <span>{SIZE}<br />{IMAGEDETAIL}</span>
+                </td>
+                <td class="{DISPLAY_RENAME}" style="width: 30px;">
+                    <a href="rename.php?dir={CURRENT_DIR}&amp;id={TEMP_ID}">
+                    <img style="margin-bottom: -5px!important;" src="{THEME_URL}/images/modify_16.png" alt="{TEXT_RENAME}" />
+                    </a>&#160;&#160;
+                </td>
+                <td class="{DISPLAY_RENAME}" style="width: 30px;">
+                    <a onclick="confirmLink('{MEDIA_CONFIRM_DELETE}', 'delete.php?dir={CURRENT_DIR}&amp;id={TEMP_ID}');">
+                    <img src="{THEME_URL}/images/delete_16.png" alt="{TEXT_DELETE}"  />
+                    </a>&#160;&#160;
+                </td>
+               <td style="display:none; width: 16px;">
+                   <img src="{THEME_URL}/images/{IMAGE_EXIST}" title="{IMAGE_TITLE}" alt="{IMAGE_TITLE}" />
+               </td>
+            </tr>
+        <!-- END list_block -->
+        <!-- BEGIN none_found_block -->
+            <tr>
+              <td class="{DISPLAY_NONE_FOUND} w3-border-0 w3-text-gray w3--medium">
+                  <div>{NONE_FOUND}&#160;</div>
+              </td>
+            </tr>
+        <!-- END none_found_block -->
+        </tbody>
+    </table>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+    let parent_create = parent.document.querySelector('form#create');
+    let parent_upload = parent.document.querySelector('form#upload');
+    let body = document.querySelector('body#set_browser');
+    let dir = document.querySelector('th#parentdir');
+    window.addEventListener('load',
+        function (event){
+        var elm = dir.dataset.path;
+//console.log("media_browse 86 "+elm);
+        var query = body.dataset.path;
+//console.log("Alle Ressourcen haben das Laden beendet!");
+//console.log("media_browse 91 "+query);
+          parent_upload.upload_target.value = query;
+          parent_create.create_target.value = query;
+//          url = window.location.protocol +'//'+ window.location.host + window.location + "?dir="+query;
+          urlMain = window.location.protocol +'//'+ window.location.host + window.frames.top.location.pathname + "?dir="+query;
+          tmpQuery = urlMain.search;
+console.log(urlMain);
+//          window.frames.top.location.href = url;
+          event.preventDefault();
+//console.log(parent_upload.upload_target);
+        },false);
+
+    });
+</script>
+
+</body>
+</html>
+
+<!-- END main_block -->

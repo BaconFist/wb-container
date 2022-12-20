@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <section_id>3</section_id>
+  <page_id>2</page_id>
+  <layout>DE_FieldDiv_with_subjext</layout>
+  <description>Beschreibung des Formulars…</description>
+  <fields>
+    <field id="7">
+      <position>1</position>
+      <title>Ihre Nachricht</title>
+      <type>heading</type>
+      <required>0</required>
+      <value/>
+      <extra>&lt;div class="w3-padding-0 w3-topbar w3-bottombar w3-large"&gt;{TITLE}{FIELD}&lt;/div&gt;</extra>
+    </field>
+    <field id="8">
+      <position>2</position>
+      <title>Name</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="11">
+      <position>3</position>
+      <title>E-Mail Adresse</title>
+      <type>email</type>
+      <required>1</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="9">
+      <position>4</position>
+      <title>Vorname</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra>0</extra>
+    </field>
+    <field id="10">
+      <position>5</position>
+      <title>Telefon</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="15">
+      <position>6</position>
+      <title>Auswahl</title>
+      <type>select</type>
+      <required>0</required>
+      <value>Teil 1,Teil 2,Teil 3</value>
+      <extra>2,</extra>
+    </field>
+    <field id="14">
+      <position>7</position>
+      <title>Betreff</title>
+      <type>subject</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="12">
+      <position>8</position>
+      <title>Ihre Nachricht  an uns!</title>
+      <type>textarea</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+  </fields>
+</root>

@@ -1,0 +1,65 @@
+<!-- BEGIN main_block -->
+<div id="renameDroplet" class="modal-Dialog">
+    <div>
+        <form id="modify" action="{ActionUrl}" method="post" style="margin: 0;">
+            <input type="hidden" name="tool" value="{MODULE_NAME}" />
+            <input type="hidden" name="command" value="save_droplet" />
+            <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+            <input type="hidden" name="subCommand" value="{action}" />
+            <input type="hidden" name="data_codepress" value="" />
+            <input type="hidden" name="droplet_id" value="{iDropletIdKey}" />
+            <input type="hidden" name="existingTitle" value="{DropletName}" />
+            <input type="hidden" name="CopyDropletId" value="{iDropletAddId}" />
+            <input type="hidden" name="show_wysiwyg" value="{show_wysiwyg}" />
+            <span id="customConfirm" style="display: block;">
+                <button name="cancel" class="close w3-badge" type="button">X</button>
+                <header class="modal-label"><h3>{HEADER_DROPLET}</h3></header>
+                <div class="modal-inner ">
+                    <h4 style="padding-left: 1.825em;">{sDropletHelp}</h4>
+                    <div class="subcolumn" class="block-outer" >
+                        <input class="rename-input form-field" type="text" name="title" value="{DropletName}" maxlength="32" />
+                    </div>
+                    <div class="footer">
+            <!-- BEGIN show_admin_edit_block -->
+                        <button name="command" class="confirm btn w3-blue-wb w3-hover-green" type="submit" value="save_rename?droplet_id={iDropletIdKey}">{sSubmitButton}</button>
+            <!-- END show_admin_edit_block -->
+                        <button name="cancel" class="cancel btn w3-blue-wb w3-hover-red url-reset" data-overview="{ToolRel}" type="button">{TEXT_CANCEL}</button>
+                    </div>
+                </div>
+                <footer class="modal-label">
+                </footer>
+            </span>
+        </form>
+    </div>
+</div>
+<script >
+<!--
+domReady(function() {
+    LoadOnFly('head', "{sAddonThemeUrl}/css/dialogBox.css");
+    LoadOnFly('head', "{sAddonThemeUrl}/css/customAlert.css");
+    LoadOnFly('head', "{sAddonThemeUrl}/css/form.css");
+
+    var renameDroplet = document.getElementById('renameDroplet');
+    var span_close    = document.getElementsByClassName("close")[0];
+// When the user clicks on <close button> (x), close the modal
+//  When the user clicks on <span> (x), close the modal
+    span_close.onclick = function() {
+       renameDroplet.style.display = "none";
+    }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(e) {
+  if (e.target === renameDroplet) {
+    renameDroplet.style.display = "none";
+  }
+}
+    document.addEventListener('keyup', function(e) {
+      if (e.keyCode == 27) {
+        renameDroplet.style.display = "none";
+      }
+    });
+});
+
+-->
+</script>
+<!-- END main_block -->

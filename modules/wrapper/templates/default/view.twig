@@ -1,0 +1,19 @@
+
+{#
+- available replacements
+    URL
+    HEIGHT
+    NOTICE
+#}
+
+<iframe id="wrapper{{ SECTION_ID }}"
+data-sid={{ SECTION_ID }}
+height="{{ HEIGHT }}"
+{% if ATTRIBUTE %} class="{{ ATTRIBUTE }}"{% endif %}
+style="width: 100%;min-height:{{ HEIGHT }}px;"
+src="{{ URL }}">
+    {NOTICE}
+    <a href="{{ URL }}" target="_blank" rel="noopener">{{ URL }}</a>
+</iframe>
+
+{# end of file #}

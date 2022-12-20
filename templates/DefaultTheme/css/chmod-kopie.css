@@ -1,0 +1,31 @@
+.spacer{clear:both;height:20px;width:100%;}
+.chmod{background-color:#DCDCDC;display:block;margin:0.625em 0.525em;min-width:25.225em;}
+.chmodbox{width:100% !important;max-width:280px;}
+.half{padding:0.125em;width:30%;min-width:380px;position:relative;}
+*,*::before,*::after{box-sizing:border-box;}
+.chmod .boxes{float:left;margin:0.625em;}
+.chmod .labelbox{margin-left:100px;}
+.chmod .labelbox label{margin-left:2px!important;padding:0.425em!important;}
+.chmod .boxes label{display:block;margin:12px 0;font-weight:bold;padding:0 !important;}
+.chmod .boxes .cb{margin:2px 0px;}
+input [type= "checkbox " ],input [type= "radio " ]{box-sizing:border-box;padding:0;}
+input.formInput{border:1px solid #d3d3d8 !important;margin-bottom:5px;padding:7px;width:300px;}
+input{line-height:normal;}
+.chmod .labelbox{font-weight:bold;margin-left:6.925em;}
+.clear{clear:both;}
+#chmodDirCode,#chmodDirValue,#chmodFileCode,#chmodFileValue{color:tomato;font-size:1.125em;font-weight:bold;}
+/** * http://www.paulund.co.uk/style-checkboxes-with-css * Checkbox Four */
+/** * Start by hiding the checkboxes */
+input [type=checkbox ]{visibility:hidden;}
+/** * Checkbox Three */
+.checkboxThree{width:4.275em;height:1.3625em;background:#333;margin:1.425em 0.0em;border-radius:0px;position:relative;}
+/** * Create the text for the On position 26ca28 */
+.checkboxThree:before{content: 'On ';position:absolute;top:-4px;left:3px;height:2px;color:#26ca28;font-weight:bold;}
+/** * Create the label for the off position */
+.checkboxThree:after{content: 'Off ';position:absolute;top:-4px;left:32px;height:2px;color:#fff;font-weight:bold;}
+/** * Create the pill to click */
+.checkboxThree label{display:block;width:30px;height:18px;border-radius:0px;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;-ms-transition:all .5s ease;transition:all .5s ease;cursor:pointer;position:absolute;top:-12px;z-index:1;left:0px;background:#fff;}
+/** * Create the checkbox event for the label */
+.checkboxThree input [type=checkbox ]:checked + label{left:2.1125em;background:#26ca28;}
+.disabled{opacity:0.5;}
+.reformed-form input [type= "text " ],.reformed-form input [type= "password " ]{width:49%;min-width:140px;}

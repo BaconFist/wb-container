@@ -1,0 +1,81 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[1] General Information about version 2.10.x
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+WB-2.10 is the compatible follow up of all previous WB-2.8.3 releases.
+This packet includes all you need to run a website. In addition to the core you get a basic
+collection of add-ons.
+You also get all needed 3rd party packages like PHPMailer, pclzip, phplib, Twig, JQuery and more.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[2] Requirements
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+WebsiteBaker is developed in a Linux & Apache environment, therefore we can not give any
+guarantee that it will work without any problem in a Windows(r) Environment.
+
+Operating system: Linux (recommended), Windows (maybe)
+Database        : MySQL 5.5 / MariaDB 5.5 and up
+Webserver       : Apache
+PHP             : 5.6 and up, PHP-7 up (FastCGI, FPM) recommended
+   !!! PHP running as Apache-Module (mod_php) can produce malfunctions in WebsiteBaker !!!
+Diskspace       : 25MB and up
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[3] Instructions for Installing WebsiteBaker 2.10
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This install pack includes a complete WebsiteBaker version 2.10.0 and can be installed
+on all compatible hosts.
+
+a) Check that your webspace meets the requirements described above!
+
+b) Make sure that you have a MySQL database available and obtain the access data!
+
+c) Download the packet to your workstation and unzip all into an empty folder.
+
+d) Move all to your webspace using ftp and 'overwrite all' setting.
+
+e) switch the PHP version to 5.6 or 7.x if it's not already done.
+
+f) now simply call your installation like  http://example.com/ and follow the
+   instructions of the install script.
+
+
+Enjoy your new WebsiteBaker installation!
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[4] Upgrade WebsiteBaker from any versions of WB-2.8.3
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This install pack includes a complete WebsiteBaker version 2.10.0 and can be installed
+on all previously published WB 2.8.3 versions (with or without Service Pack). Additional
+Instructions for upgrading WebsiteBaker versions older than 2.8.3 can be found at [5].
+
+a) IMPORTANT::  in any case make a backup of your webspace and the database too !!!
+
+b) Download the packet to your workstation and unzip all into an empty folder.
+
+c) Move all to your webspace using ftp and 'overwrite all' setting.
+
+d) switch the PHP version to 5.6 or 7.x if it's not already done.
+
+e) now start the upgrade-script.php file and follow possible instructions.
+
+f) some add-on pakets are not delivered with this version and must be upgraded manually.
+   Some new versions are available on http://addon.websitebaker.org/
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[5] Upgrade WebsiteBaker from older versions before WB-2.8.3
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Before you upgrade from an older version, first you must upgrade to [WB 2.8.3 from Feb.2012].
+That version is downloadable from either of these links:
+http://addon.websitebaker.org/pages/en/browse-add-ons.php?id=0EA85F12    or
+http://wiki.websitebaker.org/doku.php/en/downloads#websitebaker_283
+
+Instructions for upgrading to WB-2.8.3 can be found in our forum:
+english: http://forum.websitebaker.org/index.php/topic,23412
+german:  http://forum.websitebaker.org/index.php/topic,23658
+
+

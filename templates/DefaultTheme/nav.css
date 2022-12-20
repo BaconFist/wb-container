@@ -1,0 +1,34 @@
+.FXgradOrange,
+.removeButton,
+.sf-menu li.current,
+.sf-menu li.sfHover,
+.sf-menu li:hover,
+.gridView div.priceBox:hover,
+.gridView div.titleBox:hover,
+.featuredList a:hover,
+.featuredList li.articleImage:hover + li.articleTitle >a,
+#footer .list a:hover,
+#currencies a:hover,
+#languages a:hover,
+.flyoutMenu a:hover,
+.submitButton:hover,
+.basketFlyout li a:hover,
+.dropDown ul a:hover,
+div.anythingSlider span.arrow:hover,
+.thumbNav a:hover,
+.itemSlider .prevItem:hover span.slideBg,
+.itemSlider .nextItem:hover span.slideBg,
+a.viewAllHover,
+.itemSlider li a.viewAllHover,
+.specBoxTitles a.title:hover,
+.actionLinks li:hover {
+background:#e2e2e2 none repeat scroll 0 0;
+}
+
+#navigation > li > a {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+

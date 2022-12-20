@@ -1,0 +1,116 @@
+@import url("core.css");
+@import url("content.css");
+@import url("navigation.css");
+
+#wb-top-icons .w3-bar-item  {
+    width: 33px;
+    height: 33px;
+    color: #fff;
+    background: #215A7A;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 7px;
+    line-height: 30px;
+    font-size: 22px;
+}
+#wb-top-icons .info.w3-bar-item {background:#215A7A!important; margin:0;}
+#wb-top-icons i {color:#fff!important;}
+#wb-top-icons .w3-bar-item:hover {background:#217DA1;}
+#wb-top-icons .info.w3-bar-item:hover {background:#217DA1!important;}
+#wb-top-icons .logout.w3-bar-item:hover {background: #cc3b30!important; }
+
+label{cursor:pointer;}
+input:focus,input:active,select:focus,textarea:focus{background:#f1f8fd;}
+iframe{border:1px solid #aaaaaa;}
+.title{text-align:left;padding:4px 5px 0px 3px;font-weight:bold;font-size:14px;margin-bottom:5px;}
+select option.disabled{color:#aaaaaa;}
+.jsadmin_drag img{padding:3px 0;margin-top:0px;vertical-align:top;cursor:pointer;}
+.save,.reset,.input_narrow{}/*min-width:10%;*/
+#hide2,.hide,.page_list{display:none;}
+.right{text-align:right;}
+.left{text-align:left;}
+/* set div layers in dead tables */
+.subcolumns{width:100%;overflow:hidden;margin:10px 0;}
+.subcolumns_oldgecko{width:100%;float:left;margin:10px 0;}
+.c2l,.c10l,.c20l,.c25l,.c33l,.c40l,.c38l,.c50l,.c60l,.c62l,.c66l,.c75l,.c80l{float:left;}
+.c2r,.c10r,.c20r,.c25r,.c33r,.c40r,.c38r,.c50r,.c60r,.c66r,.c62r,.c75r,.c80r{float:right;margin-left:-5px;}
+.c2l,.c2r{width:2%;line-height:2em;}
+.c10l,.c10r{width:10%;}
+.c20l,.c20r{width:20%;line-height:1.525em;}
+.c40l,.c40r{width:40%;}
+.c60l,.c60r{width:60%;line-height:1.525em;}
+.c25l,.c25r{width:30%;}
+.c33l,.c33r{width:33.333%;}
+.c50l,.c50r{width:50%;}
+.c66l,.c66r{width:66.666%;}
+.c38l,.c38r{width:38.2%;}
+.c62l,.c62r{width:61.8%;}
+.subc{padding:0 0.5em;}
+.subcl{padding:0 1em 0 0;}
+.subcr{padding:0 0 0 1em;}
+.c80l,.c80r,.c90l,.c90r{width:80%;}
+.c75l,.c75r,.c80l,.c80r{width:75%;}
+input.submitBtn{height:2.125em;}
+.save_section{margin:1.925em auto;height:4.125em;}
+#section-info{margin:1.5em 0;line-height:1.429;}
+button.status{cursor:pointer;border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}
+.button{font-weight:bold;cursor:pointer;background:#C9C9C9;padding:0.425em 0.8525em;border-radius:4px;-khtml-border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;}
+button[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,input[type="button"]:hover{cursor:pointer;}
+button.href{background:transparent;border:none;cursor:pointer;}
+button.href:hover{color:#166F82;}
+/* ----------------------------------------------------------------------- */
+input[type="checkbox"], input[type="radio"] {top: 4px !important;position: relative !important;}
+input[type="checkbox"] + label,input[type="checkbox"] + td label{font-weight:normal;padding:0 1.325em 0 0.825em;vertical-align:middle;}
+input[type="checkbox"],input[type="radio"]{top:4px !important;position:relative;}
+input[type="checkbox"]:checked + label,input[type="checkbox"]:checked + td label{color:#6385AF;font-weight:bold;vertical-align:middle;padding:0 0.825em 0 0.825em;}
+/* ----------------------------------------------------------------------- */
+div[id^=edit_area_toggle_reg_syntax]{margin: 5px 8px ;line-height: 3;}
+div[id^=edit_area_toggle_reg_syntax] input[type="checkbox"], div[id^=edit_area_toggle_reg_syntax] input[type="radio"] {height: 18px !important; top: 4px !important;width: 24px !important;position: relative !important;}
+div[id^=edit_area_toggle_reg_syntax] input[type="checkbox"]:checked + label, div[id^=edit_area_toggle_reg_syntax] input[type="checkbox"]:checked + td label {color: #6385AF;font-weight: bold;vertical-align: baseline;padding: 0 0.825em 0 0.825em;}
+/* ----------------------------------------------------------------------- */
+.w3-textarea{width:100%;}
+/* */
+.mod-pre{overflow:auto;width:98%;}
+/* Customize the label (the container) */
+.check-container{display:inline;position:relative;padding-left:0px;margin:0px 0;cursor:pointer;font-size:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+/* Customize the label (the container)
+.check-container{display:inline-block;position:relative;padding-left:35px;margin:2px 0;cursor:pointer;font-size:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+*/
+/* Hide the browser's default checkbox */
+.check-container input{position:absolute;opacity:0;cursor:pointer;}
+/* Hide the browser's default radio button */
+.check-container input{position:absolute;opacity:0;cursor:pointer;}
+
+/* Create a custom checkbox */
+.checkbtn{position:absolute;top:0;left:0;height:25px;width:25px;background-color:#ccc;border-radius: 5px;}
+/* Create a custom radio button */
+.radiobtn{position:absolute;top:0;left:0;height:25px;width:25px;background-color:#ccc;border-radius:50%;}
+.radio {width: 14px;}
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~.checkbtn{background-color:#ccc;}
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~.radiobtn{background-color:#ccc;}
+
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~.checkbtn{background-color:#217DA1; border-radius: 5px;}
+/* When the radio button is checked, add a blue background */
+.check-container input:checked ~.radiobtn{background-color:#217DA1;}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbtn:after{content: " ";position:absolute;display:none;}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radiobtn:after{content: " ";position:absolute;display:none;}
+
+/* Show the checkmark when checked */
+.core-container input:checked ~.checkbtn:after{display:block;}
+/* Show the indicator (dot/circle) when checked */
+.core-container input:checked ~.radiobtn:after{display:block;}
+/* Style the checkmark/indicator */
+.core-container .checkbtn::after{left:5px;top:-16px;width:5px;height:10px;content: "\2713";color:#fff;font-size:20px;font-weight:bold;}/* Style the indicator (dot/circle) */
+.core-container .radiobtn:after{top:8px;left:8px;width:9px;height:9px;border-radius:50%;background:white;}
+
+.w3-panel > p {line-height: 1.5;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .jsPanel-content iframe {height:56vh!important;}
+}

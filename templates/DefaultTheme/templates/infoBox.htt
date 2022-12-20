@@ -1,0 +1,5 @@
+<!-- BEGIN main_block -->
+    <div id="message-box" class="msg-box rounded {BOX_STATUS}-box w3-mobile w3-half" style="margin: 1.225em auto;">
+        <p class="w3-text-grey">{MESSAGE}</p>
+    </div>
+<!-- END main_block -->

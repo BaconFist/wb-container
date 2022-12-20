@@ -1,0 +1,60 @@
+<!--
+ @version         $Id: htaccess_form.htt $
+-->
+        <!-- BEGIN show_modal_block -->
+            <div class="w3-code w3-leftbar w3-sand"><span>{MOD_MAIL_FILTER_HTACCESS_URL}&#160;</span></div>
+              <span class="w3-medium w3-padding w3-circle w3-ripple w3-theme-l3 w3-hover-green w3-round-small" style="width: 50%;line-height: 2.9;cursor: pointer;" onclick="document.querySelector('#editsettings').style.display='block';return false;" data-modal="editsettings"><i class="fa fa-question-circle" aria-hidden="true">&nbsp;</i>{MOD_MAIL_FILTER_HTACCES}</span>
+            <div class=" modalsettings">
+            <div id="editsettings" class="w3-modal w3-animate-zoom" style="padding-top: 50px !important;">
+              <form id="form2" action="{ADMIN_URL}admintools/tool.php" method="post">
+                  <input type="hidden" name="tool" value="{MODULE_NAME}" />
+                  <input type="hidden" name="page_id" value="{PAGE_ID}" />
+                  <input type="hidden" name="section_id" value="{SECTION_ID}" />
+                  <input type="hidden" name="SaveSettings" value="1" />
+                  <input type="hidden" name="send_htaccess" value="1" />
+                  <input type="hidden" name="Short_force" value="1" />
+                  <input type="hidden" name="Edit_force" value="1" />
+                  {FTAN}
+                  <div class="w3-modal-content w3--padding">
+                      <header class=" w3-theme">
+                          <div class="w3-row">
+                            <div class="w3-col w3-container" style="width:40%">
+                            <span class="w3-btn w3-theme">{EDIT_HTACCESS_FILE}</span></div>
+                            <div class="w3-col w3-container" style="width:35%">
+                            <select name="select_htaccess" style="margin: 6px 0;" onchange="insert(this.form.content_output_filter, this.value);this.value = '';">
+                                <option value="" selected="selected">{TEXT_PLEASE_SELECT_HTACCESS}</option>
+                                {OPTION}
+                            </select>
+                            </div>
+                            <div class="w3-col w3-container" style="width:25%">
+                                <span onclick="document.querySelector('#editsettings').style.display='none';" class="w3-closebtn">&times;</span></div>
+                          </div>
+                      </header>
+                    <!-- form save htaccess -->
+                      <div class="w3-content" style="overflow-y: hidden;overflow-x: auto;">
+                          <textarea id="content_output_filter" name="content_output_filter" class="w3-textarea" style="height: 450px;width: 100%;padding:10px; background-color:#fff7e4;">{CONTENT}</textarea>
+                          {REGISTER_EDIT_AREA}
+                      </div>
+                      <footer class="w3-container w3-theme">
+                          <div class="w3-row">
+                            <div class="w3-col w3-container" style="width:25.0%">
+                                <p><button id="hide_submit" form="form2" class="w3-btn w3-btn-default w3-theme-d5 w3-round-small w3-hover-green w3-padding-4" type="submit">{TEXT_SAVE}</button></p>
+                                <p><button id="import_htaccess" form="form2" name="import_htaccess" value="1" type="submit" class="w3-btn w3-btn-default w3-theme-d5 w3-round-small w3-hover-green w3-padding-4" style="margin: 4px 0;display: none;">{TEXT_IMPORT_HTACCESS}</button></p>
+                            </div>
+                            <div class="w3-col w3-container" style="width:25.0%;">
+                            <p><button id="input_reset" class="w3-btn w3-btn-default w3-theme-d5 w3-round-small w3-hover-green w3-padding-4" type="reset">{TEXT_RESET_HTACCESS}</button></p>
+                            </div>
+                            <div class="w3-col w3-container" style="width:25.0%;">
+                            <input type="hidden" name="action" value="save_settings" />
+                            <p><button form="form2" id="delete_force" name="delete_force" value="1" class="w3-btn w3-btn-default w3-theme-d5 w3-round-small w3-hover-green w3-padding-4 {W3_HIDE}" type="submit">{TEXT_DELETE_HTACCESS}</button></p>
+                            </div>
+                            <div class="w3-col w3-container" style="width:25.0%;">
+                            <p style="float: right;"><button class="w3-btn w3-btn-default w3-theme-d5 w3-round-small w3-hover-red w3-padding-4" type="reset" onclick="document.querySelector('#editsettings').style.display='none';">{TEXT_CANCEL}</button></p>
+                            </div>
+                          </div>
+                      </footer>
+                  </div>
+              </form>
+            </div>
+            </div>
+        <!-- END show_modal_block -->

@@ -1,0 +1,158 @@
+<article class="form-block">
+<!-- BEGIN main_block -->
+<h2 style="display: none;">&nbsp;</h2>
+<div class="form w3-container w3-medium">
+    <form id="{SECTION_ID}_import" action="{MODULE_URL}/field_import.php" method="post" enctype="multipart/form-data" >
+        <input type="hidden" name="page_id" value="{PAGE_ID}" />
+        <input type="hidden" name="section_id" value="{SECTION_ID}" />
+        <input type="hidden" name="frm_id" value="{SECT_ID}" />
+        <!--
+<input type="hidden" name="cmd" value="" />
+        <input type="hidden" name="xml_file" value="{XML_LAYOUT}" />
+-->
+        <input type="hidden" name="max_file_size" value="{MAX_FILE_SIZE}" />
+        {FTAN}
+<!-- -->
+        <input type="hidden" id="input_xml" name="file" value="{XML_LAYOUT}" />
+
+<!-- BEGIN show_import_block -->
+        <div class="w3-panel w3-note">
+          <ol class="w3-medium w3-padding-0">
+            <li>{FORM_HELP_IMPORT_FIELDS}</li>
+          </ol>
+        </div>
+
+        <div class="w3-row">
+            <div class="w3-col m12">
+                <div class="w3-col m2 setting_name"><label class="frm-valign-middle">{TEXT_XML_FILES}</label></div>
+                <div class="w3-col m4 w3-padding-2">
+                    <select id="layout" class="w3-select w3-border" name="file" >
+                        <option value="">{TEXT_PLEASE_SELECT}</option>
+        <!-- BEGIN file_list_block -->
+                        <option value="{IMPORT_FILENAME}"{XML_FILE_SELECTED}>{IMPORT_LAYOUT}</option>
+        <!-- END file_list_block -->
+                    </select>
+                </div>
+        <!-- BEGIN show_input_import_block -->
+                <div class="w3-col m2 w3-center w3-padding-0">
+                    <!--
+<input type="hidden" id="input_xml" name="title" value="" />
+-->
+                    <input type="hidden" name="cmd" value="field_import" />
+                    <input class="w3-input w3-blue-wb w3-round w3-hover-green w3-pointer" name="import" type="submit" value="{TEXT_IMPORT}" />
+                </div>
+                <div class="w3-col m2 w3-center">
+                    <button id="download_xml" class="w3-input w3-blue-wb w3-round w3-hover-green w3-pointer" type="application/xml" formaction="{MODULE_URL}/field_download.php">{FORM_MESSAGE_GENERIC_LOCAL_DOWNLOAD}</button>
+                </div>
+                <div class="w3-col m2 w3-center">
+                    <label>
+                    <input id="delete_layout" {PREVENT_DELETE_LAYOUT} class="url-delete w3-input w3-blue-wb w3-round w3-hover-red w3-pointer" type="submit" name="delete" type="submit" value="{TEXT_DELETE}" />
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- END show_input_import_block -->
+
+        <!-- BEGIN show_upload_import_block -->
+        <div class="w3-panel w3-note">
+          <ol class="w3-padding-0">
+            <li>{FORM_HELP_ADD_FIEDS}</li>
+          </ol>
+        </div>
+        <div class="w3-row">
+            <div class="w3-col m12">
+                <div class="w3-col m2 setting_name"><label>&nbsp;</label></div>
+                <div class="w3-col m4">
+                    <input class="w3-row w3-round w3-border w3-large" name="upload_file" type="file" accept="application/xml" value="" />
+                </div>
+                <div class="w3-col m3 w3-center">
+                    <input class="w3-input w3-round w3-blue-wb w3-hover-green w3-padding-4 w3-pointer" name="import" type="submit" value="{TEXT_IMPORT}" />
+                </div>
+                <div class="w3-col m3 w3-center">
+                    <label>
+                    <input class="url-close w3-input w3-blue-wb w3-round w3-hover-red w3-pointer" type="button" value="{TEXT_CLOSE}" data-overview="{ADMIN_DIR}/pages/modify.php?page_id={PAGE_ID}#{SECTIONID_PREFIX}" />
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- END show_upload_import_block -->
+<!-- END show_import_block -->
+
+<!-- BEGIN show_export_block -->
+                <div class="w3-col m3 w3-center">
+                    <button id="download_xml" type="application/xml" formaction="{MODULE_URL}/field_download.php" class="w3-input w3-blue-wb w3-round w3-hover-green w3-pointer">{FORM_MESSAGE_GENERIC_LOCAL_DOWNLOAD}</button>
+                </div>
+                <div class="w3-col m3 w3-center">
+                    <label>
+                    <input id="delete_layout" {PREVENT_DELETE_LAYOUT} class="url-delete w3-input w3-blue-wb w3-round w3-hover-red w3-pointer" type="submit" name="delete" type="submit" value="{TEXT_DELETE}" />
+                    </label>
+                </div>
+            </div>
+
+    <div style="margin-top: 42px;"></div>
+    <div class="w3-panel w3-success ">
+    <ol class="w3-padding-0">
+        <li>{MOD_FORM_FIELD_EXPORT}</li>
+    </ol>
+    </div>
+
+        <div class="w3-row">
+            <div class="w3-col m12">
+                <div class="w3-col m2 setting_name"><label class="frm-valign-middle">{TEXT_NEW_XML_FILE}</label></div>
+                <div class="w3-col m4 w3-padding-2">
+                    <input type="hidden" name="cmd" value="field_export" />
+                    <input id="LayoutTitle" class="w3-input w3-border" name="title" value="{XML_LAYOUT}" />
+                </div>
+                <div class="w3-col m3 w3-center w3-padding-2">
+                    <input class="w3-input w3-blue-wb w3-round w3-hover-green w3-padding-4 w3-pointer" formaction="{MODULE_URL}/field_export.php" type="submit" value="{TEXT_EXPORT}" />
+                </div>
+                <div class="w3-col m3 w3-center w3-padding-2">
+                    <input class="w3-input w3-blue-wb w3-round w3-hover-red w3-padding-4 w3-pointer" type="button" value="{TEXT_CLOSE}" onclick="window.location.href = '{ADMIN_URL}/pages/modify.php?page_id={PAGE_ID}#{SECTIONID_PREFIX}'" />
+                </div>
+            </div>
+        </div>
+        <div class="w3-row w3-margin" >
+            <div class="w3-col m12">
+                <div class="w3-col m2 setting_name"><label>{TEXT_DESCRIPTION}</label></div>
+                <div class="w3-col m10">
+                    <textarea id="LayoutDescription" class="w3-textarea w3-border" name="description" style="width: 100%; margin-left: 0px;" >{XML_DESCRIPTION}</textarea>
+                </div>
+            </div>
+        </div>
+<!-- END show_export_block -->
+    </form>
+    <div class="w3-margin"></div>
+</div>
+</article>
+
+<script>
+    var section_id ='{SECTION_ID}';
+    var aDefaultLayout ='{PREVENT_DEFAULT}';
+</script>
+<script>
+    var sel = document.getElementById('layout');
+    var xhttp = new XMLHttpRequest();
+    var title ='';
+//console.log(sel);
+    sel.onchange = function() {
+        path   = this.value;
+        var m = path.match(/([^:\\/]*?)(?:\.([^ :\\/.]*))?$/)
+        var fileName = (m === null)? "" : m[1]
+        var show     = document.getElementById('LayoutTitle');
+        if (show) {
+          show.value   = fileName;
+          xhttp.open("GET", "/modules/form/data/fields/"+fileName+".xml", true);
+          xhttp.send();
+        }
+    }
+/*-----------------------------------------------------*/
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var xmlDoc = this.responseXML;
+            document.getElementById("LayoutDescription").innerHTML =
+            xmlDoc.getElementsByTagName("description")[0].childNodes[0].nodeValue
+        }
+    };
+</script>
+
+<!-- END main_block -->

@@ -1,0 +1,18 @@
+#close{display:none;}
+.modalDialog{position:fixed;font-family:Arial,Helvetica,sans-serif;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,0.6);z-index:99999;opacity:0;-webkit-transition:opacity 400ms ease-in;-moz-transition:opacity 400ms ease-in;transition:opacity 400ms ease-in;pointer-events:none;}
+.modalDialog:target{opacity:1;pointer-events:auto;}
+.modalDialog >div{width:60.525em;position:relative;margin:10% auto;border-radius:10px;background:-moz-linear-gradient(#fff,#999);background:-webkit-linear-gradient(#fff,#999);background:-o-linear-gradient(#fff,#999);background:#FFFFFF;}
+.closeDelete,.close{font-size:1.225em;background:#215A7A;color:#FFFFFF !important;line-height:3.025em;position:absolute;right:-12px;text-align:center;top:-10px;width:3.025em;text-decoration:none;font-weight:bold;-webkit-border-radius:1.925em;-moz-border-radius:1.925em;border-radius:1.925em;-moz-box-shadow:1px 1px 3px #000000;-webkit-box-shadow:1px 1px 3px #000000;box-shadow:1px 1px 3px #000000;}
+.closeDelete:hover,.close:hover{background:#FF1100;}
+/* .modal-Dialog .close { font-size: 1.225em; background: #215A7A; color: #FFFFFF !important; line-height: 3.025em; position: absolute; top: 1.125em; right: 0; text-align: center; width: 3.025em; text-decoration: none; font-weight: bold; -webkit-border-radius: 1.925em; -moz-border-radius: 1.925em; border-radius: 1.925em; -moz-box-shadow: 1px 1px 3px #000000; -webkit-box-shadow: 1px 1px 3px #000000; box-shadow: 1px 1px 3px #000000; } */
+.modal-Dialog .closeDelete:hover,.modal-Dialog .close:hover{background:#FF1100;}
+.modal-Dialog{background:rgba(0,0,0,0.6) none repeat scroll 0 0;position:fixed;top:0;right:0;bottom:0;left:0;height:100%;z-index:99999;}
+.modal-Dialog{-webkit-transition:opacity 800ms ease-in;-moz-transition:opacity 800ms ease-in;transition:opacity 800ms ease-in;}
+.modal-Dialog >div{-webkit-transition:width 2s,height 2s,background-color 2s,-webkit-transform 2s;transition:width 2s,height 2s,background-color 2s,transform 2s;}
+.modal-Dialog form{}
+.modalDialog form,.modalDialog iframe{width:50.225em;height:25.525em;border:none;}
+footer.modal-label, header.modal-label{background:-moz-linear-gradient(#fff,#999);/*height: 3.525em;*/padding:0 0.525em 0.525em;}
+footer.modal-label{padding:0.525em 0;}
+div.modal-inner{padding:0.825em 0.525em 0;margin:auto 1%;overflow:hidden;}
+div.modal-inner iframe{border:none;height:20.225em;} [draggable=true ]{-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;user-select:none;/* Required to make elements draggable in old WebKit */-khtml-user-drag:element;-webkit-user-drag:element;} [draggable=true ]header{cursor:move;}
+/**/

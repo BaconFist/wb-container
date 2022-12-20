@@ -1,0 +1,23 @@
+<?php
+/*
+ * Copyright (C) 2022 Dietmar Wöllbrink
+ *
+ * DO NOT ALTER OR REMOVE COPYRIGHT OR THIS HEADER
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License 2 for more details.
+ *
+ * You should have received a copy of the GNU General Public License 2
+ * along with this program.
+ */
+
+$admin_version   = '2.13.2';
+$admin_revision  = '133';
+$admin_timestamp = 1657621150;
+$admin_date = '12.07.2022 10:19';

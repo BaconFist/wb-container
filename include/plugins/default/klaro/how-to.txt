@@ -1,0 +1,15 @@
+- Dateien in den plugins Ordner
+- klaro-config.js anpassen.
+
+- 2 Skripte im head laden
+    <?php // https://klaro.kiprotect.com/ ?>
+    <script defer src="[[wb_url]]/[[plugins_url]]/klaro/klaro-config.js"></script>
+    <script defer src="[[wb_url]]/[[plugins_url]]/klaro/klaro.js"></script>
+    
+- zu ladende Scripte müssen so aufgerufen werden. data-name ist wie name in der config
+    <script type="text/plain" data-type="application/javascript" data-name="matomo" data-src="[[wb_url]]/pfad_zum_Script.js"></script>
+
+- oder bei inline Scripten
+    <script type="text/plain" data-type="application/javascript" data-name="matomo">
+        //...
+    </script>

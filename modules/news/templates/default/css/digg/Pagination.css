@@ -1,0 +1,793 @@
+
+div.digg {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.digg a {
+    border: 1px solid #aaaadd;
+    color: #000099;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.digg a:hover, div.digg a:active {
+    border: 1px solid #000099;
+    color: #000000;
+}
+div.digg span.current {
+    background-color: #000099;
+    border: 1px solid #000099;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.digg span.disabled {
+    border: 1px solid #eeeeee;
+    color: #dddddd;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.yahoo {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.yahoo a {
+    border: 1px solid #ffffff;
+    color: #000099;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: underline;
+}
+div.yahoo a:hover {
+    border: 1px solid #000099;
+    color: #000000;
+}
+div.yahoo a:active {
+    border: 1px solid #000099;
+    color: #ff0000;
+}
+div.yahoo span.current {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.yahoo span.disabled {
+    border: 1px solid #eeeeee;
+    color: #dddddd;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.meneame {
+    color: #ff6500;
+    font-size: 80%;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.meneame a {
+    background-image: url("meneame.jpg");
+    background-position: center bottom;
+    border: 1px solid #ff9600;
+    color: #ff6500;
+    margin-right: 3px;
+    padding: 5px 7px;
+    text-decoration: none;
+}
+div.meneame a:hover, div.meneame a:active {
+    background-color: #ffc794;
+    background-image: none;
+    border: 1px solid #ff9600;
+    color: #ff6500;
+}
+div.meneame span.current {
+    background-color: #ffbe94;
+    border: 1px solid #ff6500;
+    color: #ff6500;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 5px 7px;
+}
+div.meneame span.disabled {
+    border: 1px solid #ffe3c6;
+    color: #ffe3c6;
+    margin-right: 3px;
+    padding: 5px 7px;
+}
+div.flickr {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.flickr a {
+    background-position: center bottom;
+    border: 1px solid #dedfde;
+    color: #0061de;
+    margin-right: 3px;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+div.flickr a:hover, div.meneame a:active {
+    background-color: #0061de;
+    background-image: none;
+    border: 1px solid #000000;
+    color: #ffffff;
+}
+div.flickr span.current {
+    color: #ff0084;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 2px 6px;
+}
+div.flickr span.disabled {
+    color: #adaaad;
+    margin-right: 3px;
+    padding: 2px 6px;
+}
+div.sabrosus {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.sabrosus a {
+    border: 1px solid #9aafe5;
+    color: #2e6ab1;
+    margin-right: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.sabrosus a:hover, div.pagination a:active {
+    background-color: #ffffe0;
+    border: 1px solid #2b66a5;
+    color: #000000;
+}
+div.sabrosus span.current {
+    background-color: #2e6ab1;
+    border: 1px solid #000080;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.sabrosus span.disabled {
+    border: 1px solid #929292;
+    color: #929292;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.scott {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.scott a {
+    border: 1px solid #dddddd;
+    color: #88af3f;
+    margin-right: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.scott a:hover, div.scott a:active {
+    background-color: #f1ffd6;
+    border: 1px solid #85bd1e;
+    color: #638425;
+}
+div.scott span.current {
+    background-color: #b2e05d;
+    border: 1px solid #b2e05d;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.scott span.disabled {
+    border: 1px solid #f3f3f3;
+    color: #cccccc;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.quotes {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.quotes a {
+    border: 1px solid #dddddd;
+    color: #aaaaaa;
+    margin-right: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.quotes a:hover, div.quotes a:active {
+    border: 1px solid #a0a0a0;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.quotes span.current {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    color: #aaaaaa;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.quotes span.disabled {
+    border: 1px solid #f3f3f3;
+    color: #cccccc;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.black {
+    background-color: #000000;
+    color: #a0a0a0;
+    font-size: 80%;
+    margin: 3px;
+    padding: 10px 3px;
+    text-align: center;
+}
+div.black a {
+    background-image: url("bar.gif");
+    background-position: center bottom;
+    border: 1px solid #909090;
+    color: #c0c0c0;
+    margin-right: 3px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.black a:hover, div.black a:active {
+    background-color: #404040;
+    background-image: url("invbar.gif");
+    border: 1px solid #f0f0f0;
+    color: #ffffff;
+}
+div.black span.current {
+    background-color: #606060;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 2px 5px;
+}
+div.black span.disabled {
+    border: 1px solid #606060;
+    color: #808080;
+    margin-right: 3px;
+    padding: 2px 5px;
+}
+div.black2 {
+    margin: 3px;
+    padding: 7px;
+    text-align: center;
+}
+div.black2 a {
+    border: 1px solid #000000;
+    color: #000000;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.black2 a:hover, div.black2 a:active {
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+}
+div.black2 span.current {
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.black2 span.disabled {
+    border: 1px solid #eeeeee;
+    color: #dddddd;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.black-red {
+    background-color: #3e3e3e;
+    color: #ffffff;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+div.black-red a {
+    background-color: #3e3e3e;
+    color: #ffffff;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.black-red a:hover, div.black-red a:active {
+    background-color: #ec5210;
+    color: #ffffff;
+}
+div.black-red span.current {
+    background-color: #313131;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.black-red span.disabled {
+    background-color: #3e3e3e;
+    color: #868686;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.grayr {
+    background-color: #c1c1c1;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    padding: 2px;
+}
+div.grayr a {
+    background-color: #c1c1c1;
+    color: #000000;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.grayr a:hover, div.grayr a:active {
+    background-color: #99ffff;
+    color: #000000;
+}
+div.grayr span.current {
+    background-color: #ffffff;
+    color: #303030;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.grayr span.disabled {
+    background-color: #c1c1c1;
+    color: #797979;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.yellow {
+    margin: 3px;
+    padding: 7px;
+    text-align: center;
+}
+div.yellow a {
+    border: 1px solid #cccccc;
+    color: #000000;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.yellow a:hover, div.yellow a:active {
+    border: 1px solid #f0f0f0;
+    color: #000000;
+}
+div.yellow span.current {
+    background-color: #d9d300;
+    border: 1px solid #d9d300;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.yellow span.disabled {
+    border: 1px solid #eeeeee;
+    color: #dddddd;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.jogger {
+    font-family: "Lucida Sans Unicode","Lucida Grande",LucidaGrande,"Lucida Sans",Geneva,Verdana,sans-serif;
+    margin: 7px;
+    padding: 2px;
+}
+div.jogger a {
+    background-color: #ee4e4e;
+    color: #ffffff;
+    margin: 2px;
+    padding: 0.5em 0.64em 0.43em;
+    text-decoration: none;
+}
+div.jogger a:hover, div.jogger a:active {
+    background-color: #de1818;
+    color: #ffffff;
+    margin: 2px;
+    padding: 0.5em 0.64em 0.43em;
+}
+div.jogger span.current {
+    background-color: #f6efcc;
+    color: #6d643c;
+    margin: 2px;
+    padding: 0.5em 0.64em 0.43em;
+}
+div.jogger span.disabled {
+    display: none;
+}
+div.starcraft2 {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13.5pt;
+    font-weight: bold;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.starcraft2 a {
+    background-color: #000000;
+    color: #ffaa00;
+    margin: 2px;
+    text-decoration: none;
+}
+div.starcraft2 a:hover, div.starcraft2 a:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+div.starcraft2 span.current {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+}
+div.starcraft2 span.disabled {
+    background-color: #000000;
+    color: #444444;
+    margin: 2px;
+}
+div.tres {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13.2pt;
+    font-weight: bold;
+    margin: 3px;
+    padding: 7px;
+    text-align: center;
+}
+div.tres a {
+    background-color: #dd9900;
+    border: 2px solid #d9d300;
+    color: #ffffff;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.tres a:hover, div.tres a:active {
+    background-color: #ffff00;
+    border: 2px solid #ffff00;
+    color: #000000;
+}
+div.tres span.current {
+    border: 2px solid #ffffff;
+    color: #000000;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.tres span.disabled {
+    display: none;
+}
+div.megas512 {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.megas512 a {
+    background-position: center bottom;
+    border: 1px solid #dedfde;
+    color: #99210b;
+    margin-right: 3px;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+div.megas512 a:hover, div.megas512 a:active {
+    background-color: #777777;
+    background-image: none;
+    border: 1px solid #000000;
+    color: #ffffff;
+}
+div.megas512 span.current {
+    color: #99210b;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 2px 6px;
+}
+div.megas512 span.disabled {
+    color: #adaaad;
+    margin-right: 3px;
+    padding: 2px 6px;
+}
+div.technorati {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.technorati a {
+    background-position: center bottom;
+    border: 1px solid #cccccc;
+    color: #4261de;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+div.technorati a:hover, div.technorati a:active {
+    background-color: #4261df;
+    background-image: none;
+    color: #ffffff;
+}
+div.technorati span.current {
+    color: #000000;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 2px 6px;
+}
+div.technorati span.disabled {
+    display: none;
+}
+div.youtube {
+    background-color: #cecfce;
+    border-top: 1px dotted #9c9a9c;
+    color: #313031;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    padding: 4px 6px 4px 0;
+    text-align: right;
+}
+div.youtube a {
+    color: #0030ce;
+    font-weight: bold;
+    margin: 0 1px;
+    padding: 1px 3px;
+    text-decoration: underline;
+}
+div.youtube a:hover, div.youtube a:active {
+}
+div.youtube span.current {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1px 2px;
+}
+div.youtube span.disabled {
+    display: none;
+}
+div.msdn {
+    background-color: #ffffff;
+    color: #313031;
+    font-family: Verdana,Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    padding: 4px 6px 4px 0;
+    text-align: right;
+}
+div.msdn a {
+    border: 1px solid #b7d8ee;
+    color: #0030ce;
+    margin: 0 3px;
+    padding: 5px 6px 4px 5px;
+    text-decoration: none;
+}
+div.msdn a:hover, div.pagination a:active {
+    background-color: #d2eaf6;
+    border: 1px solid #b7d8ee;
+    color: #0066a7;
+}
+div.msdn span.current {
+    background-color: #d2eaf6;
+    border: 1px solid #b7d8ee;
+    color: #444444;
+    font-weight: bold;
+    margin: 0 3px;
+    padding: 5px 6px 4px 5px;
+}
+div.msdn span.disabled {
+    display: none;
+}
+div.badoo {
+    background-color: #ffffff;
+    color: #48b9ef;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+}
+div.badoo a {
+    border: 2px solid #f0f0f0;
+    color: #48b9ef;
+    margin: 0 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.badoo a:hover, div.badoo a:active {
+    border: 2px solid #ff5a00;
+    color: #ff5a00;
+}
+div.badoo span.current {
+    background-color: #ff6c16;
+    border: 2px solid #ff5a00;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+div.badoo span.disabled {
+    display: none;
+}
+.manu {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+.manu a {
+    border: 1px solid #eeeeee;
+    color: #036cb4;
+    margin: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+.manu a:hover, .manu a:active {
+    border: 1px solid #999999;
+    color: #666666;
+}
+.manu .current {
+    background-color: #036cb4;
+    border: 1px solid #036cb4;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+    padding: 2px 5px;
+}
+.manu .disabled {
+    border: 1px solid #eeeeee;
+    color: #dddddd;
+    margin: 2px;
+    padding: 2px 5px;
+}
+div.green-black {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.green-black a {
+    background: #2c2c2c url("image1.gif") repeat scroll 0 0;
+    border: 1px solid #2c2c2c;
+    color: #ffffff;
+    margin-right: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.green-black a:hover, div.green-black a:active {
+    background: #aad83e url("image2.gif") repeat scroll 0 0;
+    border: 1px solid #aad83e;
+    color: #ffffff;
+}
+div.green-black span.current {
+    background: #aad83e url("image2.gif") repeat scroll 0 0;
+    border: 1px solid #aad83e;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.green-black span.disabled {
+    border: 1px solid #f3f3f3;
+    color: #cccccc;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.viciao {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+div.viciao a {
+    border: 1px solid #8db5d7;
+    color: #000000;
+    margin-right: 2px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+div.viciao a:hover, div.viciao a:active {
+    border: 1px solid #ff0000;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.viciao span.current {
+    background-color: #ffca7d;
+    border: 1px solid #e89954;
+    color: #000000;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.viciao span.disabled {
+    border: 1px solid #cccccc;
+    color: #cccccc;
+    margin-right: 2px;
+    padding: 2px 5px;
+}
+div.yahoo2 {
+    font-family: Tahoma,Helvetica,sans-serif;
+    font-size: 0.85em;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+div.yahoo2 a {
+    background-position: center bottom;
+    border: 1px solid #ccdbe4;
+    color: #0061de;
+    margin-right: 3px;
+    padding: 2px 8px;
+    text-decoration: none;
+}
+div.yahoo2 a:hover, div.yahoo2 a:active {
+    background-color: #3666d4;
+    background-image: none;
+    border: 1px solid #2b55af;
+    color: #ffffff;
+}
+div.yahoo2 span.current {
+    color: #000000;
+    font-weight: bold;
+    margin-right: 3px;
+    padding: 2px 6px;
+}
+div.yahoo2 span.disabled {
+    display: none;
+}
+div.yahoo2 a.next {
+    border: 2px solid #ccdbe4;
+    margin: 0 0 0 10px;
+}
+div.yahoo2 a.next:hover {
+    border: 2px solid #2b55af;
+}
+div.yahoo2 a.prev {
+    border: 2px solid #ccdbe4;
+    margin: 0 10px 0 0;
+}
+div.yahoo2 a.prev:hover {
+    border: 2px solid #2b55af;
+}
+
+div.pagination {
+    padding: 3px;
+    margin: 3px;
+}
+
+div.pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #AAAADD;
+    zoom: 100%;
+    text-decoration: none; /* no underline */
+    color: #000099;
+}
+div.pagination a:hover, div.pagination a:active {
+    border: 1px solid #000099;
+
+    color: #000;
+}
+div.pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #000099;
+
+    * zoom: 100%;
+
+    font-weight: bold;
+    background-color: #000099;
+    color: #FFF;
+}
+div.pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #EEE;
+
+    * zoom: 100%;
+
+    color: #DDD;
+}
+
+* span.elipsis {zoom:100%}
+

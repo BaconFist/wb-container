@@ -1,0 +1,51 @@
+@charset "utf-8 ";
+#filter_and_tables{width:100%;margin:auto;}
+#selectOutputFilters{}
+#selectW3cssFilter{margin-top:0.225em;}
+#selectFilterContent{margin-top:1.425em;}
+#selectShortFilter {margin-top: -12px!important;}
+/*
+.filter_table_list_container{display:inline-block;max-height:20.225em;overflow-y:scroll;width:23.525em;}
+.filteroptions h3 h3{border-bottom:1px solid #999;font-size:110%;}
+input,select{outline:medium none;}
+*/
+div.filter_table_list_container table{border-collapse:collapse;width:100%;}
+.filter_table_select th{text-align:center;vertical-align:middle;}
+.filter_table_select table caption,.filter_table_select table th,.filter_table_select table td{margin:0.1em;padding:0.3em;text-shadow:0 1px 0 #fff;vertical-align:top;}
+.filter_table_name{font-weight:normal;width:100%;}
+.filter_table_title thead th{border-right:1px solid #f1f1f1;}
+.filter_table_title{margin:1.425em 0.125em 1.825em;width:100%;/*font-size:1.225em;*/}
+.filter_table_title thead tr{background:rgba(0,0,0,0) -moz-linear-gradient(center top,#ffffff,#cccccc) repeat scroll 0 0;color:#000;font-weight:bold;line-height:1.925em;}
+.msg-box{background:#e5ffe6 none repeat scroll 0 0;border:0.225em solid #009900;color:#336600;margin-bottom:1em;padding:0.63em;text-align:center;}
+.error-box{background:#ffeeee none repeat scroll 0 0;border:0.225em solid #884444;color:#440000;margin-bottom:1em;padding:0.63em;text-align:center;}
+.info-box{background:#FFFFFF none repeat scroll 0 0;border:0.225em solid #374F68;color:#497698;margin-bottom:1em;padding:0.63em;text-align:center;}
+.msg-box p,.error-box p{font-size:120%;}
+div.filter_table_list_container table.filter_table_select tbody tr{line-height:0.925em;background:#f1f1f1;}
+div.filter_table_list_container table.filter_table_select tbody tr:nth-child(odd){background:#FFFFFF;}
+div.filter_table_list_container table.filter_table_select tbody tr:hover{background:#E3E3E3;cursor:default;}
+table{max-width:980px;table-layout:fixed;margin:auto;}
+/*-------------------------------------------------------------------------------
+.w3-panel {padding: 0.01em 16px; margin-top: 16px !important;margin-bottom: 14px !important;} */
+.w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {padding: 4px;display: table-cell;text-align: left;vertical-align: top;}
+/*-------------------------------------------------------------------------------*/
+input[type="checkbox"] {position: relative;z-index: 1;}
+.wb-check input[type="checkbox"]{position:relative;z-index:-9999;}
+.wb-check input[type="checkbox"]+ label:before{border:1px solid #444;border-radius:3px;content: "\00a0 ";display:inline-block;font:12px/1.15em sans-serif;font-weight:bold;}
+.wb-check input[type="checkbox"]+ label:before{height:18px;width:18px;margin:0 .5em 0 -2.5em;padding:0;padding:2px;}
+.wb-check input[type="checkbox"]:checked + label:before{background:#217DA1;color:#fff;content: "\2713";text-align:center;border-color:#217DA1;}
+.wb-check input[type="checkbox"]:checked + label:after{font-weight:bold;}
+.wb-check input[type="checkbox"]:focus + label::before{outline:rgb(0,120,215) auto 1px;}/*--------------------- scroll table -----------------------------*/
+/*-------------------------------------------------------------------------------*/
+.filter_table_title th,.filter_table_title td {padding:5px 10px;border-bottom:1px solid #ccc;height: 30px;}
+.filter_table_title thead,.filter_table_title tfoot{display:table;width:100%;}
+.filter_table_title tbody{overflow:auto;overflow-x:hidden;display:block;}
+.filter_table_title tbody{width:100%;height:100%;height: 32.825em;}
+.filter_table_title tbody tr{display:table;width:100%;table-layout: auto;}
+.filter_table_title tbody tr:hover {background:#E3E3E3;cursor:default;}
+/* ---------------------------------------------------------------*/
+.w3-code {line-height: 1.5;width: auto;background-color: #fff;padding: 4px 12px!important;border-left: 4px solid #4CAF50;word-wrap: break-word;font-size: 1.205em!important;margin: 0!important;}
+.filter_table_title .w3-table td, .filter_table_title .w3-table th, .filter_table_title.w3-table-all td, .filter_table_title.w3-table-all th {padding: 0px 8px!important;display: table-cell;text-align: left;vertical-align: middle;}
+/* ---------------------------------------------------------------*/
+.filter-block {}
+
+

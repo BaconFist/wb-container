@@ -1,0 +1,72 @@
+<!-- BEGIN main_block -->
+<div class="droplets">
+    <form action="{ActionUrl}" method="post" id="droplets_form" >
+        <input type="hidden" name="tool" value="{MODULE_NAME}" />
+        <input name="ArchiveFile" type="hidden" value="{sArchiveFile}" />
+        <input type="hidden" name="{FTAN_NAME}" value="{FTAN_VALUE}" />
+        <div class="msg-box rounded">
+            <div class="w3-container">
+              <div class="w3-row">
+                  <div class="success w3-medium" style="line-height: 0.5;"><p>{sArchiveFilename}</p></div>
+                  <div class="success w3-medium"><p style="line-height: 0.5;">{DROPLET_IMPORT_ARCHIV_LOADED}</p>
+                    <div class="w3-twothird">
+                      <label style="display: block; width: 70%;" class="check-container w3-medium" for="enabled_overwrite_droplet">
+                      <input type="checkbox" id="enabled_overwrite_droplet" name="enabled_overwrite_droplet" value="1" checked="checked" />
+                      <span class="checkbtn"></span>
+                      {DROPLET_IMPORT_UPATE_EXISTING_DROPLETS}
+                      </label>
+                    </div>
+                    <div class="w3-third">
+                      <div style="float: right; vertical-align: middle;margin--top: -50px;">
+                          <button class="btn w3-blue-wb w3-hover-green " name="command" value="restore_droplets" type="submit">{TEXT_EXECUTE}</button>
+                          <button class="btn w3-blue-wb w3-hover-red url-reset" data-overview="{ToolRel}" type="button">{TEXT_CANCEL}</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="cb-import" id="cb-droplets" >
+            <table class="droplets droplets_data w3-table-all" id="tableData">
+                <thead>
+                    <tr class="w3-header-blue-wb">
+                      <th style="width: 3%;text-align: center;">
+                          <label style="padding-top: 3px;">
+                              <input name="select_all" id="select_all" type="checkbox" value="1" />
+                          </label>
+                      </th>
+                      <th style="width: 3%;"></th>
+                      <th style="width: 3%;"></th>
+                      <th style="width: 20%;">{DROPLET_HEADER_FILENAME}</th>
+                      <th style="width: 40%;">{DROPLET_HEADER_DESCRIPTION}</th>
+                      <th style="width: 8%;text-align: right;">{DROPLET_HEADER_SIZE}</th>
+                      <th style="width: 12%;text-align: right;padding-right: 0.525em;">{DROPLET_HEADER_DATE}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- BEGIN list_archiv_block -->
+                    <tr>
+                      <td style="text-align: center;">
+                         <input type="checkbox" name="restore_id[{index}]" id="L{index}cb" value="{index}" />
+                      </td>
+                      <td style="text-align: center; font-weight: normal;">{index}</td>
+                      <td style="text-align: center;">
+                <!-- BEGIN show_archiv_folder_block -->
+                      <img src="{THEME_URL}/images/folder_16.png" alt=""/>
+                <!-- END show_archiv_folder_block -->
+                      </td>
+                      <td style="text-align: left;">{filename}</td>
+                      <td style="text-align: left;">{comment}</td>
+                      <td style="text-align: right;">{size} Byte(s)</td>
+                      <td style="text-align: right;">{created_when}</td>
+                    </tr>
+                <!-- END list_archiv_block -->
+                    <tr id="import">
+                        <td colspan="7"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </form>
+</div>
+<!-- END main_block -->

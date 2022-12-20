@@ -1,0 +1,22 @@
+<!--
+ @version         $Id: error.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+<div class="error-box rounded" style="margin: 1.225em auto;">
+    <div class="message wrapper" style="margin: 1.225em auto;">
+        <div class="w3-text-grey w3--medium{W3HIDE}">{SCRIPT_NAME}</div>
+        <div class="w3-text-grey w3--medium{W3HIDE}">{REDIRECT_INFO}</div>
+        <div class="w3-text-grey w3--medium{W3HIDE}">{ADDON_Path}</div>
+        <div class="w3-text-grey w3--medium">{MESSAGE}</div>
+    </div>
+    <div class="message wrapper" style="margin: 1.225em auto">
+        <input type="submit" id="submit" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" name="submit" value="{TEXT_CLOSE}" />
+    </div>
+</div>
+<script>
+    let redirect = document.getElementById("submit");
+    redirect.addEventListener("click", function(){
+        document.location.href = '{REDIRECT}';
+    }, false);
+</script>
+<!-- END main_block -->

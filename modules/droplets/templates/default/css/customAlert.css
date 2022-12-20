@@ -1,0 +1,72 @@
+/**
+ * customAlert
+ * Author: Philippe Assis
+ * Doc and repo: https://github.com/PhilippeAssis/custom-alert
+ *
+ * Alert e confirm personalizados.
+ * FF, Chromer, IE(>=9)
+ *
+ *                              ATENÇÂO
+ * window.customAlert e window.customConfirm devem permanecer com esses nomes,
+ * a não ser que você saiba o que esta fazendo.
+ */
+#customAlert-overlay, 
+#customConfirm-overlay { display: none; opacity: 0.5; position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 99999; background: #000000; }
+#customAlert { background: #FFFFFF; }
+#customAlert button { color: #5E5E5E; background: #BABABA; }
+#customAlert button:hover { color: #E6E6E6; background: #666666; }
+#customConfirm { background: #FFFFFF; }
+#droplets-delete.modal-Dialog { background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0; bottom: 0; left: 0; opacity: 1.0; /*pointer-events: none;*/ position: fixed; right: 0; top: 0; }
+
+#customConfirm button.cancel,
+#customConfirm button.confirm { font-weight: bold; }
+
+#customConfirm button.confirm { margin-right: 10px; color: #204625; background: #68BB74; }
+#customConfirm button.confirm:hover { color: #DCEFDF; background: #3F8D4B; }
+#customConfirm button.cancel { color: #F8D8D3; background: #E2614B; }
+#customConfirm button.cancel:hover { color: #F8D8D3; background: #B0321C; }
+
+#customAlert,
+#customConfirm { border-radius: 5px; width: 40%; font-size: 1.125em; /*display: none;*/ position: fixed; max-width: 100vw; max-height: 100vh; /*z-index: 1000;*/ top: 5%; left: 50%; padding: 0.125em; box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); -webkit-transition: opacity 400ms ease-in 0s; -moz-transition: opacity 400ms ease-in 0s; transition: opacity 400ms ease-in 0s; margin-left: -275px; }
+
+#customAlert header,
+#customConfirm header { color: #3E6D86; text-align: left; font-size: 1.125em; font-weight: bold; background: rgba(0, 0, 0, 0) linear-gradient(#fff, #999) repeat scroll 0 0; height: 1.925em; }
+
+#customAlert .body,
+#customConfirm .body { padding: 0; color: #5C5C5C; font-size: 1.125em; background: #FFFFFF; text-align: center; opacity: 1; }
+#customConfirm .body p { font-weight: bold; color: #F00606; }
+
+#customAlert .footer,
+#customConfirm .footer { background: #FFFFFF; text-align: center; margin-bottom: 0.925em; }
+#customAlert button,
+#customConfirm button { width: 100px; margin-top: 5px; margin-bottom: 5px; padding: 5px; font-size: 0.9em; word-wrap: break-word; border: none; }
+#customAlert button:hover,
+#customConfirm button:hover { cursor: pointer; }
+
+#customAlert button.close,
+#customConfirm button.close {
+  background: #215a7a none repeat scroll 0 0;
+  border-radius: 1.925em;
+  box-shadow: 1px 1px 3px #000000;
+  color: #ffffff !important;
+  font-size: 1.225em;
+  font-weight: bold;
+  line-height: 2.025em;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  text-decoration: none;
+  top: -10px;
+  width: 3.025em;
+}
+#customAlert button.close:hover,
+#customConfirm button.close:hover { background: #FE0606 none repeat scroll 0 0; }
+
+@media (min-width: 321px) {
+    #customAlert,
+    #customConfirm { top: 25%; }
+}
+@media (max-width: 550px) {
+    #customAlert,
+    #customConfirm { margin-left: -50vw; }
+}

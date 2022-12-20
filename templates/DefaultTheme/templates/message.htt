@@ -1,0 +1,84 @@
+<!-- BEGIN main_block -->
+    <div id="message-box" class="msg-box rounded {BOX_STATUS}-box" style="margin: 0.225em auto;display: none;line-height: 2.5;">
+        <div class="w3-text-grey medium">{MESSAGE}</div>
+      <a id="submit_redirect" class="btn w3-{BOX_COLOR} w3-hover-pale-{BOX_COLOR} w3-border" >{TEXT_CLOSE}</a>
+<!-- BEGIN show_redirect_block -->
+    <script>
+        setTimeout(function () {
+           location.href='{REDIRECT}';
+        }, {REDIRECT_TIMER});
+    </script>
+<!-- END show_redirect_block -->
+    </div>
+    <script>
+        let redirect = document.getElementById("submit_redirect");
+        redirect.addEventListener("click", function(){
+            window.location.href='{REDIRECT}';
+        }, false);
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(event){
+            let messagebox = document.getElementById('message-box'); // querySelector
+            messagebox.style.display = "block";
+            if (messagebox) {
+    //              modalFrame.style.display = "block";
+                var JsPanelCss = WB_URL+"/include/plugins/default/jspanel/4.2.1/dist/jspanel.css";
+                if (typeof LoadOnFly!=='function' || typeof LoadOnFly==='undefined' || !LoadOnFly){
+                    $.getScript(JsPanelCss);
+    //                $.insert(JsPanelJs);
+                } else {
+                    LoadOnFly('head', JsPanelCss);
+    //                LoadOnFly('head', JsPanelJs);
+                }
+                jsPanel.create({
+                    id: "messagebox-1",
+                    theme: "{BOX_COLOR}",
+                    animateIn:   'w3-animate-top',
+                    headerLogo:   "{THEME_URL}/images/wb-logo.svg",
+                    headerTitle:  "{PAGE_TITLE}",
+                    headerControls: {
+                        close: "remove"
+                    },
+                    header:       false,
+                    border:   "0px solid",
+                    boxShadow: "0",
+                    position: "center-top down",
+                    closeOnEscape: false,
+                    contentSize: "300 180",
+                    paneltype: "messagebox",
+                    panelSize: {
+                        width: function() {
+                            return window.innerWidth/2;
+                        },
+                        height: function() {
+                            return "200";
+                        }
+                    },
+    //                contentOverflow:"hidden auto",
+                    content: messagebox,
+                    footerToolbar: function () {
+                        let elmt = document.createElement('P');
+                        elmt.textContent = "";
+                        elmt.style.height = '0.8rem';
+                        elmt.style.background = 'transparent';
+                        return elmt;
+                     }
+                });
+            };
+    //    window.setTimeout(function () {
+    //    },2000);
+        elm = document.getElementsByTagName('form');
+    //    console.info(elm);
+          for (i=0; elm[i]; i++) {
+            if ( (elm[i].className.indexOf('autocomplete') == -1) ) {
+                elm[i].setAttribute('autocomplete', 'off');
+            }
+            if ( (elm[i].className.indexOf('accept-charset') == -1) ) {
+                elm[i].setAttribute('accept-charset', 'utf-8');
+            }
+          }
+    }, false);
+</script>
+
+<!-- END main_block -->

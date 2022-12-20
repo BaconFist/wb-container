@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <section_id>19</section_id>
+  <page_id>1</page_id>
+  <layout>EN_FieldDivMap</layout>
+  <description>Description of the Form can only use div layouts…</description>
+  <fields>
+    <field id="211">
+      <position>1</position>
+      <title>Contact Us</title>
+      <type>heading</type>
+      <required>0</required>
+      <value/>
+      <extra>&lt;div class="w3-padding-0 w3-topbar w3-bottombar w3-large"&gt;{TITLE}{FIELD}&lt;/div&gt;</extra>
+    </field>
+    <field id="212">
+      <position>2</position>
+      <title>Last Name</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="213">
+      <position>3</position>
+      <title>First Name</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra>0</extra>
+    </field>
+    <field id="214">
+      <position>4</position>
+      <title>Phone</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="215">
+      <position>5</position>
+      <title>E-Mail-Address</title>
+      <type>email</type>
+      <required>1</required>
+      <value/>
+      <extra/>
+    </field>
+    <field id="216">
+      <position>6</position>
+      <title>Your Message</title>
+      <type>textarea</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+    </field>
+  </fields>
+</root>

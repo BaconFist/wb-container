@@ -1,0 +1,38 @@
+<!--
+ @version         $Id: pages_modify.htt 96 2017-04-11 15:31:04Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+<div class="header-settings right w3-margin-8">
+    <div class="col-settings right">
+        <div class="w3-row">
+            <div class="w3-col m7">
+              <span class="btn w3-border-0 w3-white w3--medium w3-padding-4 w3-margin-0" title="{PAGE_TITLE}">{TEXT_CURRENT_PAGE}:<b>{MENU_TITLE}</b></span>
+            </div>
+            <div class="w3-col m3">
+        <!-- BEGIN show_settings_block -->
+              <a class="btn w3-sand btn-large w3-light-gray w3-hover-light-gray w3--medium w3-padding-4 w3-mmargin-0" href="{ADMIN_URL}/pages/settings.php?page_id={PAGE_IDKEY}">{TEXT_CHANGE_SETTINGS}</a>
+        <!-- END show_settings_block -->
+            </div>
+            <div class="w3-col m2">
+        <!-- BEGIN show_section_block -->
+              <a class="btn w3-sand btn-large w3-light-gray w3-hover-light-gray w3--medium w3-padding-4 w3-mmargin-0" href="{ADMIN_URL}/pages/sections.php?page_id={PAGE_IDKEY}">{TEXT_MANAGE_SECTIONS}</a>
+        <!-- END show_section_block -->
+            </div>
+        </div>
+    </div>
+
+<table class="header-info">
+    <tbody>
+        <tr >
+           <td class="header-modify-page" ><h2>{HEADING_MODIFY_PAGE}</h2></td>
+           <td class="header-page_id" style="">ID: {PAGE_ID}</td>
+           <td class="c60 right" style="line-height: 0;">
+              <span style="color:#999;" class="{CLASS_DISPLAY_MODIFIED}"><br />
+              {MESSAGE_PAGES_LAST_MODIFIED} {MODIFIED_BY}, {MODIFIED_WHEN}
+              </span>
+           </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<!-- END main_block -->

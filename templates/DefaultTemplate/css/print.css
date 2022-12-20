@@ -1,0 +1,65 @@
+body,td,th {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #000000;
+}
+body {
+    background-color: #FFFFFF;
+    margin: 0px;
+}
+a:link, a:visited, a:active {
+    color: #660033;
+    text-decoration: none;
+}
+a:hover {
+    color: #993366;
+    text-decoration: none;
+}
+hr {
+    margin: 15px 0px 15px 0px;
+    color: #660033;
+    height: 1px;
+    width: 100%;
+}
+h1 {
+    font-size: 15px;
+    color: #993366;
+    margin: 5px 0px 5px 0px;
+}
+form {
+    margin: 0;
+}
+.main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+header,
+.banner {
+    display: none;
+}
+#lang,
+.search_box {
+    display: none;
+}
+#left-col,
+.teasera,
+.menu {
+    display: none;
+}
+.menu ul, .menu li {
+    display: none;
+}
+.login_table {
+    display: none;
+}
+.content {
+    margin: 0;
+    text-align: justify;
+}
+.footer,
+.powered_by {
+    clear: both;
+    display: none;
+}
+

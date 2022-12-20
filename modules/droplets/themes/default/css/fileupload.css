@@ -1,0 +1,48 @@
+@font-face { font-weight: normal; font-style: normal; font-family: 'codropsicons'; src: url('../fonts/codropsicons/codropsicons.eot'); src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'), url('../fonts/codropsicons/codropsicons.woff') format('woff'), url('../fonts/codropsicons/codropsicons.ttf') format('truetype'), url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg'); }
+
+*:after,
+*:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before,
+.clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+.inputfile { width: 0.1px; height: 0.1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1; }
+.input-file { opacity: 1; overflow: hidden; height: 2.625em; right: 11.225em; margin-top: -2.825em; }
+.js .inputfile { width: 0.1px; height: 0.1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1; }
+.inputfile + label { max-width: 80%; white-space: nowrap; cursor: pointer; overflow: hidden; padding: 0.625rem 1.25rem; /* 10px 20px */ }
+.no-js .inputfile + label { display: none; }
+.inputfile:focus + label,
+.inputfile.has-focus + label { outline: -webkit-focus-ring-color auto 5px; outline: 1px dotted #000000; }
+.inputfile + label * { }
+.inputfile + label svg { width: 1em; height: 1em; vertical-align: middle; fill: currentColor; margin-top: -0.25em; /* 4px */ margin-right: 0.25em; /* 4px */ }
+/* style 6 */
+.inputfile-6 + label { color: #D3394C; }
+.inputfile-6 + label { border: 1px solid #1E5582; height: 2.625em; padding: 0; background: #e3f1f6; }
+.inputfile-6:focus + label,
+.inputfile-6.has-focus + label,
+.inputfile-6 + label:hover { border-color: #1E5582; }
+/*
+.inputfile-6 + label span,
+.inputfile-6 + label strong { padding: 0.3525rem 0.45rem; font-weight: normal;  }
+.inputfile-6 + label strong { color: #F1E5E6; background: #1E5582; }
+*/
+.inputfile-6 + label span { width: 0.525em; min-height: 2.525em; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; vertical-align: top; border-radius: 0.125em; }
+.inputfile-6:focus + label strong,
+.inputfile-6.has-focus + label strong,
+.inputfile-6 + label:hover strong { background: transparent; }
+div.file-select-box span select { width: 35%; height: 1.925em; border-radius: 0.125em; text-overflow: ellipsis; border: 1px solid #1E5582; color: #1E5582; background: #E3F1F6; }
+div.file-select-box span select option{ color: #000000; font-weight: normal; font-size: 0.925em; background: #FFFFFF; }
+div.file-box { padding-top: 1.525em !important; white-space: normal; }
+div.file-box span button { margin: -1.925em auto; }
+input[type="file"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+@media screen and (max-width: 50em) {
+    .inputfile-6 + label strong { display: block; }
+}

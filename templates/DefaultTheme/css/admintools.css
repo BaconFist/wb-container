@@ -1,0 +1,18 @@
+.admintools-block {font-size: 100.1%!important;position: relative;overflow: hidden;}
+.admintools-block {}
+span.title{display:block;}
+.section{margin-top:10px;padding:0px;border:1px solid #999999;width:100%;background-color:#fdfdfd;height:105px;}
+#admintools{font-size: 100.1%!important;}
+#admintools ul{padding:0;width:100%;margin:1.1125em;}
+#admintools li{list-style-type:none;display:inline;float:left;width:47%;margin:0 1%;}
+.tool_table td{text-align:left;vertical-align:top;}
+input#admintools{margin:auto 0.225em;}
+.tool_table ul{margin:0;padding:0;margin-left:20px;margin-bottom:2px;}
+.tool_table li{padding:1px;list-style-type:disc;}
+.description span{display:block;
+/* Fallback for non-webkit */
+display:-webkit-box;max-width:100%;height:4.825em;
+/* Fallback for non-webkit */
+margin:0 auto;line-height:1.5;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;}
+.description a span{height:30px;}
+label,label.w3-validate {font-weight: bold!important;color: #AFAEAE;}

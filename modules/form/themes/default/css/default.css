@@ -1,0 +1,73 @@
+.frm-table{border-collapse:collapse;width:100%;white-space:normal;}
+.frm-setting_name{vertical-align:top;width:25%;white-space:normal;}
+.frm-setting_name label,
+.frm-setting_name,table.form tbody td.setting_name{color:#0d4b6e;font-weight:bold;min-width:250px;padding-right:0.00em;text-align:right !important;width:25%;vertical-align: middle;}
+.frm-setting_value{vertical-align:top;width:70%;line-height:1.5;}
+.frm-newsection{border-top:1px dashed #ffffff;}
+.frm-warning{background:#FFEEEE;border:0.1em #884444 solid;color:#E10000;margin-bottom:1em;padding:0.5em 0.8em;font-size:inherit;font-weight:normal;}
+.frm-note{background:#EEFFEE;border:0.2em #448844 solid;color:#004400;margin-bottom:1em;padding:0.8em;font-size:1.2em;font-weight:bold;}
+table.frm-table tbody tr{line-height:1.425;height: 2.925em;}
+table.frm-table tbody tr td select,table.frm-table tbody tr td input{line-height:1.725 !important;font-size: 1.025em !important;}
+table.form caption.form-header{background:#215a7a none repeat scroll 0 0;color:#fff;font-size:1.425em;height:2.225em;text-align:left;}
+table.form caption.form-header{line-height:2.225em;margin:0 0 0.825em;white-space:normal;padding-left:0.925em;}
+/* .row_a { background : transparent; } .row_b { background : #dfebff; } The definitions below provide the style for the edit CSS button Required CSS class name: input.mod_moduledirectory_edit_css */
+/*****************************************/
+/* thead th.frm-Scroll { text-align: left; } tbody.scrolling { float: left; width: 100%; } tbody tr.frm-Scroll { display: table; width: 100%; } */
+table.mod_form td a{background:transparent none 0 0 no-repeat;color:#000;font-weight:bold;opacity:.7;padding:3px 0;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;}
+table.mod_form thead{
+/* background:#215a7a; background: linear-gradient(#215a7a 0%, #507279 100%); */
+background:#507279;color:#fff;}
+table.mod_form tr{background:#46919A;}
+table.mod_form th{
+/* background:#215a7a; background: linear-gradient(#7EB7BF 0%, #507279 100%);  */
+border-bottom:1px solid rgba(255,255,255,.7);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.2);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.2);-o-box-shadow:inset 0 1px 0 rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.2);padding:6px 10px;color:#fff;}
+table.mod_form td{border-bottom:1px solid #fafafa;border-bottom:1px solid rgba(0,0,0,.05);
+/* padding:6px 10px;*/
+color:rgba(0,0,0,.7);}
+table.mod_form tbody tr{line-height:1.225em;background:#e8e8e8;}
+table.mod_form tbody tr:nth-child(odd){background:#FFFFFF;}
+table.mod_form tbody tr:hover{background:#FBFCE0;}
+/* The Modal (background) */
+.frm-modal{display:none;/* Hidden by default */position:fixed;/* Stay in place */z-index:1;/* Sit on top */left:0;top:0;width:100%;/* Full width */height:100%;/* Full height */overflow:auto;/* Enable scroll if needed */background-color:rgb(0,0,0);/* Fallback color */background-color:rgba(0,0,0,0.4);/* Black w/ opacity */}
+/* Modal Content/Box */
+.frm-modal-content{background-color:#fefefe;margin:15% auto;/* 15% from the top and centered */padding:20px;border:1px solid #888;width:80%;/* Could be more or less, depending on screen size */}
+/* The Close Button */
+/*
+.close{color:#aaa;float:right;font-size:28px;font-weight:bold;}
+.close:hover,.frmclose:focus{color:black;text-decoration:none;cursor:pointer;}
+*/
+.frm_table tr{white-space:normal;line-height:2.125em;}
+.frm-modalDialog{position:fixed;font-family:Arial,Helvetica,sans-serif;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,0.8);z-index:99999;opacity:0;-webkit-transition:opacity 400ms ease-in;-moz-transition:opacity 400ms ease-in;transition:opacity 400ms ease-in;pointer-events:none;}
+.frm-modalDialog:target{opacity:1;pointer-events:auto;}
+.frm-modalDialog >div{width:400px;position:relative;margin:10% auto;padding:5px 20px 13px 20px;border-radius:10px;background:#fff;background:-moz-linear-gradient(#fff,#999);background:-webkit-linear-gradient(#fff,#999);background:-o-linear-gradient(#fff,#999);}
+.frm-close{background:#606061;color:#FFFFFF;line-height:25px;position:absolute;right:-12px;text-align:center;top:-10px;width:24px;text-decoration:none;font-weight:bold;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;-moz-box-shadow:1px 1px 3px #000;-webkit-box-shadow:1px 1px 3px #000;box-shadow:1px 1px 3px #000;}
+.frmclose:hover{background:#00d9ff;}
+.form-block .w3-select,.form-block .w3-input {display: block;border: 1px solid #808080;width: 98%;margin: 0 0.125em;}
+.form-block .select, .form-block .w3-select, .form-block .w3-input {line-height: 1.3 !important;}
+.form-block .w3-select {height: 36px;padding: 6px!important;}
+.form-block .w3-input  {height: 36px!important;padding:0px 3px!important;margin-left: 0.1em;}
+.w3-medium {font-size: 16px!important;}
+.w3-border{}
+.level  { color: #FF0702; font-weight: bold; }
+.level0 { color: #1A4B8F; font-weight: bold; }
+.level1 { color: #1A8F49; font-weight: bold; }
+.level2 { color: #8F781A; font-weight: bold; }
+.level3 { color: #681A8F; font-weight: bold; }
+.level4 { color: #F32201; font-weight: bold; }
+.btn-size { min-width: 13.5em;}
+/* */
+.input-container {height: 36px !important;display: flex;width: auto;float: right;margin-bottom: 15px;display: -ms-flexbox;}
+#dsgvoInput {margin: 0px 0;}
+.icon {padding: 12px 4px 4px;background: #0078d7;color: white;min-width: 50px;text-align: center;}
+/*
+.form-block input.w3-check[type="checkbox"],.form-block input.w3-radio[type="radio"],
+.form-block input[type="checkbox"],
+*/
+.form-block input[type="radio"] {z-index: 1;width: 32px !important;height: 48px !important;}
+.form-block .radiobtn {position: absolute;top: 10px;left: 0;height: 25px;width: 25px;background-color: #ccc;border-radius: 50%;}
+.form-block input[type="checkbox"],.form-block input[type="radio"]{top: 4px !important;position: relative;margin-left:0.8em;}
+.form-block input[type="radio"]{width: 32px !important;}
+/* */
+.form-block .radio-btn{vertical-align: super;padding-right: 4px!important;}
+.form-block .radiobtn{}
+

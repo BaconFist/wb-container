@@ -1,0 +1,105 @@
+/* */
+iframe html {
+	overflow-y: unset !important;
+}
+table {
+    table-layout:fixed;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+/*For mobile phones I leave the table width but assign an additional CSS
+class to the table to enable horizontal scrolling (table will not go over
+the mobile screen anymore):*/
+
+@media only screen and (max-width: 480px) {
+    /* horizontal scrollbar for tables if mobile screen */
+    .tablemobile {
+        overflow-x: auto;
+        display: block;
+    }
+}
+.media-block .w3-centered tr th,.w3-centered tr td{text-align:center}
+.media-block .upload-table th,.upload-table td{padding:3px 3px;border:0px solid #ccc;}
+/*--------------------- scroll table -----------------------------*/
+.media-block .upload-table thead,.upload-table tfoot{display:table;width:100%;}
+.media-block .upload-table tbody{height:100%;overflow:auto;overflow-x:hidden;display:block;width:100%;}
+.media-block .upload-table tbody tr{display:table;width:100%;table-layout:auto;}
+.media-block .upload-table tbody tr:hover{background:#E3E3E3;cursor:default;}
+/*------------------------------------------------------------------------------- */
+
+/*-------------------------------------------------------------------------------*/
+.media-block input [type= "checkbox" ]{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+.media-block input[type="checkbox"] {vertical-align: baseline!important;line-height: 2;}
+.media-block input.switch {-webkit-appearance: none;-moz-appearance: none;-o-appearance: none;width:40px!important;height:22px!important;vertical-align: top;line-height: 1.5;background-color:#fff;border:1px ridge  #B4B5B5;border-radius:50px;cursor: pointer;-webkit-box-shadow: inset -20px 0px 0px 0px #D9DADC;box-shadow: inset -20px 0px 0px 0px #C9C9C9;-webkit-transition-duration: 200ms;transition-duration: 400ms;}
+.media-block input.switch:checked {-webkit-box-shadow: inset 20px 0px 0px 1px #4ed164;box-shadow: inset 20px 0px 0px 1px #4ed164;}
+.media-block input.switch > i:hover{background-color: #028F02;}
+.media-block input[type="checkbox"]:checked + label,
+.media-block input[type="checkbox"]:checked + td label {color: #446FB3;font-weight: bold;}
+.media-block input[type="checkbox"]:hover + label,
+.media-block input[type="checkbox"]:hover + td label {color: #E7AA02;font-weight: bold;}
+.media-block label, label.w3-validate {font-weight: bold !important;color: #7A7A7A;}
+.media-block .iframe-browse {width:100%;min-height:55em!important;max--height:50em!important;margin-top:0.0em!important;overflow-y: hidden!important;scrollbar-width:none!important;}
+/*--------------------- scroll table -----------------------------*/
+.media-block .scrollable th,.scrollable td{padding:5px 5px;border-bottom:1px solid #ccc;}
+.media-block .scrollable thead,.scrollable tfoot{display:table;width:100%;}
+.media-block .scrollable tbody{overflow:auto;overflow-x:hidden;display:block;}
+.media-block .scrollable tbody{width:100%;height:100%;max-height:41.825em;}
+.media-block .scrollable tbody tr{display:table;width:100%;table-layout:fixed;}
+.media-block .scrollable tbody tr:hover{background:#E3E3E3;cursor:default;}
+/*-------------------------------------------------------------------------------*/
+.media-block .up-arrow{transform:rotate(-135deg);-webkit-transform:rotate(-135deg);}
+.media-block .down-arrow{transform:rotate(45deg);-webkit-transform:rotate(45deg);}
+.media-block select{height: 36px!important;}
+.media-block select option:first-child{font-size:18px!important;}
+.media-block option.level-0,.media-block option.level-1,.media-block option.level-2,
+.media-block option.level-3,.media-block option.level-4,.media-block option.level-5{appearance:option progress chunk;font-weight:bold!important;}
+.media-block option.level-0{color:#589CCF!important;font-variant:historical-forms!important;}
+.media-block option.level-1{color:#6F6F6F!important;}
+.media-block option.level-2{color:#389887!important;}
+.media-block option.level-3{color:#BF170E!important;}
+.media-block option.level-4{color:#1A7598!important;}
+.media-block option.level-5{color:#6F6F6F!important;}
+.media-block option.level-6{color:#0C95A4!important;}
+.media-block option.level-7{color:#6F6F6F!important;}
+.media-block option.level-8{color:#6F6F6F!important;}
+.media-block option.level-9{color:#6F6F6F!important;}
+/*-------------------------------------------------------------------------------*/
+.media-browse {
+background-color: #eee;
+width: 100%;
+height: 520px;
+border: 1px dotted black;
+overflow-y: hidden; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.media-browse::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.media-browse {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+scrollbar-style: none;
+}
+/*-------------------------------------------------------------------------------*/
+.media-block .block-outer{border:1px solid #DEE5F8;border-radius:5px;margin-bottom:25px;box-shadow:1px 1px 5px #666;font-size:100%;}
+.media-block #menu{margin:0;padding:0.525em;background:none #215A7A;background-repeat:repeat-x;overflow:hidden;white-space:nowrap;}
+.media-block .default-content{padding:0.525em 1.925em 1.925em;background:none #ffffff;}
+/*
+.rounded{border-radius:4px;-khtml-border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;}
+.msg-box{background:#C6F5C8;border:0.2em #028F02 solid;color:#336600;margin-bottom:1em;padding:0.63em;text-align:center;}
+.error-box{background:#FAD5D5;border:0.2em #982020 solid;color:#440000;margin-bottom:1em;padding:0.63em;text-align:center;}
+.warning-box{background:#FAD5D5;border:0.2em #982020 solid;color:#440000;margin-bottom:1em;padding:0.63em;text-align:center;}
+.msg-box p,.error-box p{font-size:120%;}
+.note{border-left:2px solid #9B9;background-color:#E6FFE6;color:#050;padding:.5em 1em;}
+.message.wrapper{word-wrap:normal!important;white-space:normal!important;}
+*/
+.media-rename-block table {font-size: 86%!important;}
+/*-------------------------------------------------------------------------------*/

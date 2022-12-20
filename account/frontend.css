@@ -1,0 +1,120 @@
+
+.account-block form.account div div label{float:right;padding-right:0.525em;font-weight:bold;color:#0D4B6E;line-height:2.525;}
+form#preferences_save div#username{width:100%;background-color:#e9e9e9;min-width:250px;border:0px groove #6799c4;text-align:left;font-weight:bold;margin:0;line-height:1.1;}
+.account-block i[id^=refresh]{vertical-align: middle;font-size: 24px!important;}
+.account-block .w3-ul li {padding: 2px 4px;border-bottom: 1px solid #ddd;}
+.account-block select, .account-block select option {font-size: 100.1% !important;font-weight: normal !important;font-family: 'Open Sans ',sans-serif !important;}
+.account-block option.flagbox {min-height: 6.25em!important;}
+.account-block option.flag-box {background-repeat: no-repeat !important;background-position: left !important;}
+.account-block option.flag-padding {padding-left: 40px !important;}
+
+.account-block .login-box form fieldset p input.dbutton {width: 100% !important;cursor: pointer;}
+.account-block .field-icon.toggle-password {margin-left: -30px;margin-top: 0px;position: relative;z-index: 2;cursor: pointer;}
+.account-block .redirect-btn {cursor: pointer;font-weight: bold;}
+
+.account-block #display_name, #username,
+.account-block #email,.account-block .form-control {min-width: 25%;width: 100%;line-height: 1.6;}
+.account-block #language {height: 5.25em;}
+.account-block form#preferences_save div#username {width: 100%;background-color: #e9e9e9;min-width: 250px;border: 0 groove #6799c4;text-align: left;font-weight: bold;margin: 0;line-height: 1.1;}
+.account-block #timezone, .account-block #date_format, .account-block #time_format {width: 100%;height: 32px;}
+.account-block .w3-check, .account-block .w3-radio {width: 24px!important;height: 24px!important;position: relative!important;top: 6px!important;}
+.account-block .w3-ul li {padding: 2px 4px;border-bottom: 1px solid #ddd;}
+.account-block select {padding: 0 !important;}
+.account-block select, .account-block select option {font-size: 100.1% !important;font-weight: normal !important;font-family: 'Open Sans ',sans-serif !important;}
+.account-block option.flagbox {min-height: 6.25em !important;}
+.account-block option.flag-box {background-repeat: no-repeat !important;background-position: left !important;}
+.account-block option.flag-padding {padding-left: 40px !important;}
+
+.account-block .setting-name {width: 30%;white-space: nowrap;font-weight: bold;color: #528eb3;}
+.account-block .setting-value {white-space: nowrap;padding: 0 .025em;}
+.account-block .setting-value input {height: 32px;}
+.account-block .btn {
+-moz-user-select: none;
+border: 1px solid transparent;
+border-radius: 4px;
+cursor: pointer;
+display: inline-block;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.22857;
+margin-bottom: 0;
+padding: 3px 6px;
+vertical-align: middle;
+white-space: nowrap;
+min-width: 8.25em;
+}
+.account-block button, .account-block [type="button"], .account-block [type="reset"],
+.account-block .btn-default {border-color: #ccc;color: #333;background: #dfdfdf;}
+.account-block .account-block [type="submit"] {-webkit-appearance: button!important;cursor: pointer!important;}
+
+.account-block .w3-text-dark-grey, .account-block .w3-hover-text-dark-grey:hover,
+.account-block .w3-text-dark-gray, .account-block .w3-hover-text-dark-gray:hover {color: #3a3a3a !important;}
+.account-block .w3-light-grey, .account-block .w3-hover-light-grey:hover, .account-block .w3-light-gray,
+.account-block .w3-hover-light-gray:hover {color: #000 !important;background-color: #D9D9D9 !important;}
+.account-block .w3-btn, .account-block .w3-button {
+border: none;display: inline-block;padding: 8px 16px;vertical-align: middle;
+overflow: hidden;text-decoration: none;color: inherit;background-color: inherit;
+text-align: center;cursor: pointer;white-space: nowrap;}
+
+.account-block .outer-box {border: 1px solid #dee5f8;border-radius: .925em;box-shadow: 1px 1px 3px #4e4e4e;
+margin-bottom: 25px;overflow: hidden;padding: 3px 12px;}
+
+.account-block .w3-sand, .account-block .w3-hover-sand:hover {color: #000 !important;background-color: #fdf5e6 !important;}
+.account-block .w3-leftbar {border-left: 6px solid #ccc !important;}
+.account-block .w3-panel {margin-top: 16px;margin-bottom: 16px;}
+.account-block .w3-container, .account-block .w3-panel {padding: 0.01em 16px;}
+.account-block .w3-panel p.padding {margin-top: 16px;margin-bottom: 16px;}
+
+.account-block .w3-large {font-size: 18px !important;}
+.account-block .w3-container::after, .account-block .w3-container::before,
+.account-block .w3-panel::after, .account-block .w3-panel::before,
+.account-block .w3-row::after, .account-block .w3-row::before,
+.account-block .w3-row-padding::after, .account-block .w3-row-padding::before,
+.account-block .w3-cell-row::before, .account-block .w3-cell-row::after,
+.account-block .w3-clear::after, .account-block .w3-clear::before,
+.account-block .w3-bar::before, .account-block .w3-bar::after {content: "";display: table;clear: both;}
+.account-block .w3-bar {width: 100%;overflow: hidden;}
+.account-block .w3-bar .account-block .w3-bar-item {padding: 8px 20px;float: left;/*width: auto;*/border: none;display: block;outline: 0;}
+.account-block .w3-container::after, .account-block .w3-container::before,
+.account-block .w3-panel::after, .account-block .w3-panel::before,
+.account-block .w3-row::after, .account-block .w3-row::before,
+.account-block .w3-row-padding::after, .account-block .w3-row-padding::before,
+.account-block .w3-cell-row::before, .account-block .w3-cell-row::after,
+.account-block .w3-clear::after, .account-block .w3-clear::before,
+.account-block .w3-bar::before, .account-block .w3-bar::after {content: "";display: table;clear: both;}
+.account-block .w3-btn:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);}
+.account-block .w3-center {text-align: center !important;}
+
+.account-block .w3-transparent, .account-block .w3-hover-none:hover {background-color: transparent !important;}
+.account-block .w3-border-0 {border: 0 !important;}
+.account-block .w3-text-dark-grey, .account-block .w3-hover-text-dark-grey:hover,
+.account-block .w3-text-dark-gray, .account-block .w3-hover-text-dark-gray:hover {color: #3a3a3a !important;}
+.account-block .w3-text-deep-purple, .account-block .w3-hover-text-deep-purple:hover {color: #673ab7 !important;}
+.account-block .w3-margin-top {margin-top: 16px !important;}
+.account-block .w3-border-red, .account-block .w3-hover-border-red:hover {border-color: #f44336 !important;}
+.account-block .w3-padding {padding: 8px 16px !important;}
+.account-block .w3-pale-red, .account-block .w3-hover-pale-red:hover {color: #000 !important;background-color: #ffdddd !important;}
+
+.account-block .account ul {list-style-type: none;}
+.account-block form.account {width: 100%;}
+.account-block table.account tr {line-height: 2.525;width: 95% !important;border-collapse: collapse;}
+.account-block form.accountdiv div  label.captcha_expl {text-align: left;float: none;}
+.account-block form.accountdiv div label {float: right;padding-right: .525em;font-weight: bold;color: #0d4b6e;line-height: 2.525;}
+.account-block table.account .setting-name {width: 33%;padding-right: 10px;}
+
+.account-block .w3-border-0{border:0!important} .account-block .w3-border{border:1px solid #ccc!important}
+.w3-border-top{border-top:1px solid #ccc!important} .account-block .w3-border-bottom{border-bottom:1px solid #ccc!important}
+.w3-border-left{border-left:1px solid #ccc!important} .account-block .w3-border-right{border-right:1px solid #ccc!important}
+ /* Drolet Login Box ------------------------------------------------ */
+.login-box {display: inline-block;}
+.login-box {width: 100%;}
+.login-box form {width: 100%;}
+.login-box form fieldset {border: none;}
+.login-box form fieldset p input {width: 100% !important;}
+.login-box form fieldset p span.field-icon {margin-left: -30px;margin-top: 0px;position: relative;z-index: 2;cursor: pointer;}
+.login-box ul {font-size: 101%;width: 100%;list-style: none;}
+.login-box ul li {line-height: 1.925em;border-bottom: 1px dashed #333;}
+.login-box ul li a:link {padding: .225em .125em;color: #4b4a4a !important;}
+.login-box ul li:hover {background: #f9d5a8;}
+.login-box input.dbutton {cursor: pointer;}
+/*----------------------------------------------------------------------------- */

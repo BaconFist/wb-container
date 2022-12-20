@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <section_id>11</section_id>
+  <page_id>11</page_id>
+  <layout>DE_FieldDivMap</layout>
+  <description>Description of the form…</description>
+  <fields>
+    <field id="320">
+      <position>1</position>
+      <title>Ihre Nachricht</title>
+      <type>heading</type>
+      <required>0</required>
+      <value/>
+      <extra>&lt;div class="w3-padding-0 w3-topbar w3-bottombar w3-large"&gt;{TITLE}{FIELD}&lt;/div&gt;</extra>
+      <active>1</active>
+    </field>
+    <field id="321">
+      <position>2</position>
+      <title>Name</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+      <active>1</active>
+    </field>
+    <field id="322">
+      <position>3</position>
+      <title>Vorname</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra>0</extra>
+      <active>1</active>
+    </field>
+    <field id="323">
+      <position>4</position>
+      <title>Telefon</title>
+      <type>textfield</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+      <active>1</active>
+    </field>
+    <field id="324">
+      <position>5</position>
+      <title>E-Mail Adresse</title>
+      <type>email</type>
+      <required>1</required>
+      <value/>
+      <extra/>
+      <active>1</active>
+    </field>
+    <field id="325">
+      <position>6</position>
+      <title>Ihre Nachricht  an uns!</title>
+      <type>textarea</type>
+      <required>0</required>
+      <value/>
+      <extra/>
+      <active>1</active>
+    </field>
+  </fields>
+</root>

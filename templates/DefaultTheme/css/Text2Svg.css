@@ -1,0 +1,7 @@
+/* RESET STYLES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.chart-skills{margin:0 auto;padding:0;list-style-type:none;font:normal 14vw/0.5 'Roboto ',sans-serif;}
+.chart-skills *,.chart-skills::before{box-sizing:border-box;}
+/* CHART-SKILLS STYLES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.chart-skills{position:relative;height:1.4rem;overflow:hidden;display:block;}
+.chart-skills::before,.chart-skills::after{position:absolute;}
+.chart-skills::after{content: 'support@example.com ';left:50%;bottom:10px;transform:translateX(-50%);font-size:1.1rem;font-weight:bold;color:cadetblue;}

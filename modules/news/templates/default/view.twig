@@ -1,0 +1,43 @@
+
+{# header #}
+<div class="news-loop-header">
+{# loop #}
+        <div id="NL[POST_ID]" class="post-top">
+            <div class="post-title"><a href="[LINK]">[TITLE]</a></div>
+            <div class="post-date">[PUBLISHED_DATE], [PUBLISHED_TIME]</div>
+        </div>
+        <div>
+            <div class="post-short">[SHORT]
+                <span style="visibility:[SHOW_READ_MORE];">
+                  <a class="readmore" href="[LINK]">[TEXT_READ_MORE]</a>
+                </span>
+           </div>
+        </div>
+{# footer #}
+    <div class="news-container news-loop-footer" style="display: [DISPLAY_PREVIOUS_NEXT_LINKS]">
+          <div class="news-third news-left-align"><a class="news-prev" href="[PREVIOUS_PAGE]" style="visibility:[DISPLAY_PREV];">&#171; [PREVIOUS_LABEL]</a></div>
+          <div class="news-third news-center">[OF]</div>
+          <div class="news-third news-right-align"><a class="news-next" href="[NEXT_PAGE]" style="visibility:[DISPLAY_NEXT];">[NEXT_LABEL] &#187;</a></div>
+    </div>
+</div>
+
+{# post header #}
+<div id="NH[POST_ID]" class="news-post-header">
+    <div>
+        <div><h3>[TITLE]</h3></div>
+        <div style="display: [DISPLAY_IMAGE]">[GROUP_IMAGE]</div>
+    </div>
+    <div>
+        <div class="public-info">
+            <b>[TEXT_POSTED_BY] [DISPLAY_NAME] [TEXT_ON] [PUBLISHED_DATE]</b>
+        </div>
+    </div>
+    <div style="display: [DISPLAY_GROUP]">
+        <div class="group-page">
+            <a href="[BACK]">[PAGE_TITLE]</a> &raquo; <a href="[GROUP_BACK]">[GROUP_TITLE]</a>
+        </div>
+    </div>
+</div>
+{# post footer #}
+<p>[TEXT_LAST_CHANGED]: [MODI_DATE] [TEXT_AT] [MODI_TIME]</p>
+<a href="[BACK]">[TEXT_BACK]</a>

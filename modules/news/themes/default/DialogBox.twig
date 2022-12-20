@@ -1,0 +1,22 @@
+<div id="openModal" class="modal-Dialog" draggable="true">
+    <div>
+        <span id="customConfirm" style="display: block;">
+            <header class="modal-label">
+                <h2>Droplet {{ DR_TEXT_HELP }}</h2>
+            </header>
+            <button id="" class="close" name="cancel" type="button" onclick="window.location='{{ ToolUrl }}';">X</button>
+            <div class="modal-inner">
+                <iframe  src="{{ sAddonUrl }}/DOC/readme.html" style="width: 100%;"></iframe>
+                <div class="footer">
+                    <button class="cancel btn btn-danger" name="cancel" type="button" onclick="window.location='{{ ToolUrl }}';">{{ TEXT_CANCEL }}</button>
+                </div>
+            </div>
+            <footer class="modal-label">
+<!--
+            <a href="http://websitebaker.org/" title="external">WebsiteBaker</a> is released under the
+            <a href="http://www.gnu.org/licenses/gpl.html" title="WebsiteBaker is released under the GNU General Public License">GNU General Public License</a>
+-->
+            </footer>
+        </span>
+    </div>
+</div>

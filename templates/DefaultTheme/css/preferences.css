@@ -1,0 +1,17 @@
+.preferences-block #language,.preferences-block #timezone,
+.preferences-block #date_format,.preferences-block #time_format{width:90%;}
+.preferences-block #display_name,.preferences-block #username,#email,
+.preferences-block #new_password_1,.preferences-block #new_password_2,
+.preferences-block #current_password{width:90%;}
+.preferences-block #display_name,.preferences-block #username,.preferences-block #email,
+.preferences-block #new_password_1,.preferences-block #new_password_2,.preferences-block #current_password{min-width:250px;}
+.preferences-block form#preferences_save div div label{float:right!important;padding-right:0.525em!important;padding-top:0.425em!important;font-weight:bold!important;color:#0D4B6E!important;}
+.preferences-block form#preferences_save div#username{width:90%!important;background-color:#e9e9e9;min-width:250px;border:0px groove #6799c4!important;text-align:left!important;font-weight:bold!important;margin:0!important;line-height:2.125!important;}
+.preferences-block option.flag-padding{padding-left: 40px!important;}
+.preferences-block option.flag-box {background-repeat: no-repeat!important;background-position: left!important;}
+.preferences-block option.flag-box:hover {background-repeat: no-repeat!important;background-position: left!important;}
+.preferences-block .subcolumns {width: 90%!important;overflow: hidden!important;margin: 10px 0!important;/* line-height: 2!important; */}
+
+/*
+.preferences-block select,.preferences-block  select option {font-size: 1.1em!important;font-weight: normal!important;font-family: 'Open Sans ',sans-serif!important;height: 36px!important;}
+*/

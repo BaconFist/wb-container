@@ -1,0 +1,34 @@
+
+.form-block label {color: #3c3b3b;display: block;font-size: 0.9em;font-weight: 700;margin: 0 0 1em 0;}
+.form-block input[type="radio"] + label::before {border-radius: 50%;}
+.form-block input[type="radio"] + label, .form-block input[type="checkbox"] + label {
+text-decoration: none;color: #646464;cursor: pointer;display: inline-block;font-size: 1em;
+font-weight: 400;padding-left: 2.4em;padding-right: 0.75em;position: relative;}
+.form-block input[type="radio"], input[type="checkbox"] {
+-moz-appearance: none;-webkit-appearance: none;-ms-appearance: none;appearance: none;
+display: block;float: left;margin-right: -2em;opacity: 0;width: 1em;z-index: -1;}
+
+.form-block input[type="radio"] + label::before,
+.form-block input[type="checkbox"] + label::before {
+background: rgba(160, 160, 160, 0.075);border: solid 1px rgba(160, 160, 160, 0.3);
+content: '';display: inline-block;font-size: 0.8em;height: 2.0625em;left: 0;line-height: 2.0625em;position: absolute;text-align: center;top: 0;width: 2.0625em;}
+
+/* blue = #2196F3 org = #3c3b3b; DefaultTemülate = #a90329 */
+.form-block input[type="radio"]:checked + label::before,.form-block input[type="checkbox"]:checked + label::before{background: #a90329;border-color: #a90329;color: #ffffff;}
+.form-block input[type="radio"]:hover + label,.form-block input[type="checkbox"]:hover + label{color: #a90329;}
+/* Style the checkbox indicator */
+.form-block input[type="checkbox"]:checked + label::before{content: '\2713';}
+/* Style the radio indicator (dot/circle) */
+.form-block input[type="radio"]:checked + label::before {
+content: '\2713';
+}
+
+.input-container {height: 36px !important;display: flex;width: auto;float: right;margin-bottom: 15px;display: -ms-flexbox;}
+.icon {color: white;min-width: 50px;text-align: center;}
+
+.form-block button, [type="button"], [type="reset"], [type="submit"] {
+-webkit-appearance: button;-moz-appearance: button;-webkit-appearance: button;-ms-appearance: button;appearance: button;
+background-color: transparent;
+border: none;
+}
+input.round {border-radius: .45rem;}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <title>HTML Less Simple Layout</title>
+  <description>Simple contact form without HTML elements</description>
+  <fields>
+    <header/>
+    <field_loop>{FIELD}&#13;
+</field_loop>
+    <extra>{CALL_DSGVO_LINK}&#13;
+{CALL_CAPTCHA}&#13;
+</extra>
+    <footer>&lt;p&gt;&lt;input type="submit" name="submit" value="{SUBMIT_FORM}" class="dbutton" /&gt;&lt;/p&gt;&#13;
+</footer>
+  </fields>
+</root>

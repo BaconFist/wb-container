@@ -1,0 +1,661 @@
+Changelog since Version 2.12.0 (most important changes)
+-------------------------------------------------------
+
+  - Upgrade now possible from any WB 2.8.x version to 2.13.0
+  - Bugfixes published by forum users (e.g. password too short or bin/replace or bin/admin error)
+  - Further checks and changes to compatibility with php 7.x without losing backward compatibility with older add-ons.
+  - Some mysqli statements have been changed for strict mode.
+  - Added flags in language dropdown boxes
+  - the WB installation process is now prevented if the PHP version is less than 7.2.
+  - No longer in the package, the core will create following directories and files itself:
+    /pages, /media, /temp, /var/log and config.php
+  - Now displays a hint if modules are no longer installed but registered (without WebsiteBaker crashing)
+  - Following custom files are not overwritten by the core:
+    - frontendUser.css, frontendUser.js (frontend.css/js are loaded first)
+    - backendUser.css, backendUser.js (backend.css/js are loaded first)
+    - Twig updated to version 3, Twig Version 3.x Migration von Verdion 1.x. oder 2.x
+        Remove Twig Autoloader in your add-on
+          Twig_Autoloader::register();
+        search for
+          $loader = new Twig_Loader_Filesystem(..)
+        change to
+          $loader = new \Twig\Loader\FilesystemLoader(..)
+        search for
+          $twig = new Twig_Environment(...)
+        change to
+          $twig   = new \Twig\Environment(...)
+        search for
+          Twig_Extension_Debug()
+        change to
+          \Twig\Extension\DebugExtension()
+        search for
+          $twig->addFilter(new Twig_SimpleFilter('strftime', 'strftime_filter'));
+        change to
+          $twig->addFilter(new \Twig\TwigFilter('strftime', 'strftime_filter'));
+        search for
+          $tpl = $twig->loadTemplate(...)
+        change to
+          tpl = $twig->load(...)
+        More help you found in Twig Documentation
+        https://twig.symfony.com/doc/3.x/
+
+    - jQuery updated to 1.12.4 and version 3.3.1 added
+    - Select jQuery version under Admin Tools > Server Settings
+    - Users can add more jQuery versions that are never removed by the core (in include/jquery/dist).
+    - New creation of access files extended
+    - Rebuild all access files from any add-on that creates access files without changing the add-on code.
+    - (via Rebuild Access Files; only one optional script WBReorg required)
+    - Dialog and hint window with more options replaced by a new plugin
+    - CKeditor updated to version 4.15.1
+    - fixed: after 3 invalid login attempts the login is now locked again until the WB session cookie is deleted or the browser is closed
+    - Adjustments to the backend theme (e.g. uniform icons in the top menu)
+
+
+In addition
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ see anything what's changed and also how exactely it's done
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Fixed Tickets from project page
+    97 -- Wrapper iframe bad value width="100%"
+    101 - Settings Login EN (Smart Login gibt es im Core noch, muss vorerst bleiben)
+    102 - animated gifs loose animation after uploading
+    add - animated gifs in zips are also considered
+    103 - Typo in form view
+    104 - Bild nach upload 4mal größer als das Original
+
+upgrading  media management
+    after successful uploading files the current folder remains open
+    JEPG Quality slider settings in settings->extended->server
+    added exendet Header if calling core messagebox in an iframe
+
+added adminrights if checking groups advanced settings
+
+upgrading phplib
+    added setter instead of direct setting of properties
+    $template->setDebug(0);
+    suppresses given of an array of varkeys output in set_block methode if debugmodus == 8
+    $template->setHideVarArray([]);
+
+Security fixes,
+    Replace the call of the global server variables with the requester class
+    Will be finished in WB Version 2.13.x
+
+Upgraded
+    PHPMailer 5.2 (which is compatible with PHP 5.0 - 7.0) is no longer being supported, even for security updates.
+    https://github.com/PHPMailer/PHPMailer
+    Last Version 6.1.4
+
+Test Scenario
+-------------
+Menu Optionen
+    1) als Superadmin
+    2) als Administrator
+    3) User mit Gruppenrecht Optionen basic
+    4) User mit Gruppenrecht Optionen erweitert
+
+
+Upgrading WBLingual
+    added function getLangStartPageIds() for Frontend
+    without Parameter return an array with page_ids langugaes in level 0
+    solution wihtout const PAGE_ID in Frontend Template
+    replace const with if (in_array(LANGUAGE, getLangStartPageIds()){...code}
+
+    mit Parameter z.b. DE oder EN die entsprechende page_id damit kann zur Startseite der aktuellen Sprache springen
+    statt
+    a href="WB_URL"
+    mit
+    a href="[wblink<?php echo getLangStartPageIds(LANGUAGE); ?>]"
+
+
+added 20200304
+    new function in WbLingual
+        get page_id for showing all  childtree in show_menu2 with Parameter $aStart = page_id
+        $aStart       = getLangChildPageId(LANGUAGE, parent menu_title);
+        menu_title e.g. "FooterChilds" should be equal in all languages
+
+fixed 20200304
+    Issue CKEditor adds space after "linked" word (forum post)
+
+fixed menu_link  20200304
+    save looks for INSERT INTO or UPDATE an entry
+
+upgrade 20200306
+    Methode print_header in class.admin Title Preview Text Button
+    adin/pages/section add checkbox with class attribute input field to
+    enable the anchor div container if sec_anchor is setting to none
+    Example
+    <div id="none99" class="section m_wysiwyg col-lg-4 col-sm-12 ml-lg-auto mr-lg-auto">
+
+added 20200308
+    expert mode in area change pages
+    dev info setting in server settings
+    shows some core infos in footer,
+
+fixed 20200308
+    add missing javascript folder select2
+    prevent 404 Error missing files in preferences
+
+fixed 20200309
+    CSS-Fix Form Export options corrected v-align:middle Button labels
+
+add versions_compare in installer, in manuell_install/upgrade too
+
+fixed 20200314
+    fixed duplicated index error in database tables
+
+fixed 20200316
+    adding filter ShortUrl indeed droplet
+    looks for short.php to enable
+
+fixed 20200318
+    change class.wb to abstract
+    add some getter to WbAdaptor
+    check and fix class.frontend, multilingual Fix with shorturl
+    class.admin, class.login
+
+fixed 20200321
+    Security Fix Admintools form action only request post
+    not mixed with get request
+
+upgraded calling classes by use fqn namespaces
+
+fixed 20200402
+    upgrade form templates folder name like frontend templates
+    create client tempplates files.htt for corporate design
+    never overwrite by upgrade
+
+    addons css and js now loads both
+    frontend.css and frontendUser.css
+    frontend.js and frontendUser.js
+
+fixed 20200423
+    class idna_convert curly braces
+    add twig Version 3 and fixed registered namespaces to work with coreautoloder
+    class Database methode get_one Trying to access array offset on value of type null
+
+fixed 20200425
+    Creating Zipfilename with dropletname if archving a single droplet
+
+fixed 20200502
+    don't check inactive Droplets to find droplets that have eval error
+
+added 20200506
+    Expert Mode in modify Toggle Sections to enable or disable
+
+fixed 20200520
+    css fixes in pages_sections and settings
+
+added 20200531
+    media management add error messages if upload failed
+
+added 20200605
+    exented devinfo with showing
+    upload_max_filesize
+    post_max_size
+    max_execution_time
+    max_input_time
+
+fixed 20200605
+    typofix in initialize.php install-settings.sql
+
+
+fixed 20200605
+    updated PHPMailer to Version 6.1.6
+
+fixed 20200710
+    updating newsmodul, remove adding empty posts and groups table rows
+    new posts and groups will be insert into table when saving
+    known issues
+        drag and drop in backend modify
+
+fixed 20200705
+    updating form modul
+    TODO same insert/update handling like news modul
+
+fixed 20200711
+    CKEditor smiley Dialogbox
+
+fixed 20200713
+    updating installer session handling
+    app_name => session_name created with uniqueId SecureToken
+    fixed session_destroy  wb-installer after finishing install before backend login
+    checking and fix installing all modules in package
+    proof clean install, that you have 23 tables in database
+
+    adding some missing languages vars
+
+updated 20200717
+    Font Awesome from 4.7.0 to Free 5.13.1
+    begins looking for upgrading icons
+
+update 20200721
+    added choosing cells in start-, addons-, admintools- and access-overviews
+    begins updating checkboxes to switch slider
+    begins optimzing css and change to w3-css if possible
+
+fixed 20200725
+    News updated save logic for posts and groups,
+    never needed an empty db data row
+    News fixed view pagination
+    Form add active setting to fields,
+    Form fixed show success message after e-mail send
+    begins updating calling javascript at bodyend
+    begins changing templates to twig
+    begins adding an article container around html content
+    with addon selector name in class attribute (not id)
+    e.g class="name-block" as prefix for css selectoren
+
+fixed 20200729
+     news upgrade layout table prevent from double entries
+
+upgrade 20200730
+    /**
+     * admin::register_backend_modfiles()
+     *
+     * @param string $file_id
+     * @return meta link  or script
+     * @description
+     * Function to add optional module Javascript or CSS stylesheets
+     * into the head section of the backend.
+     * User style or script loading only if default style or script load first
+     */
+upgrade 20200730
+
+    /**
+     * admin::register_backend_modfiles_body()
+     *
+     * @param string $file_id
+     * @return meta script
+     * backend_body.js and backendUser_body.js
+     * @description
+     * Function to add optional module Javascript
+     * into the body section of the backend.
+     * User Script loading only if default script load first
+     */
+
+upgrade 20200730
+    add handling for frontendUser_body.js
+
+added 202080
+    handling load themeUser.css if exist
+
+fixed 20200806
+         evalDroplets :: Fixed recursive call
+
+added 20200808
+    public methodes to static PreCheck class
+    1.) PreCheck::getAddonVariable for WB fom Buffer
+    2.) PreCheck::readIniFile from default.ini else defaultUser.ini
+    3.) PreCheck::createTwigEnv, add twig-loader-file an twig-envireonment
+        to ini file if sections don't exists
+    4.) PreCheck::writeIniFile, create ini file from an array
+
+fixed 20200811
+    drag and drop executed by wrapper admin
+
+added 20200815
+    new image classes to framework/media/
+
+fixed 20200817
+    sanitize directory media_filename remove invalide chars
+
+upgraded 20200818
+    updated $admin->page_link($link) return shorturl if aktiv
+
+added 20200818
+    add missing search folder to package
+
+fixed 20200818
+    missing lang flags in select boxes
+
+remove 20200819
+   delete folder include/Paragonie/ not needed in php 7
+
+updated 20200819
+    Translate Class renamed cachedir to temp/cache/Translate/
+    removed file extension from cache files
+    ::clearCache() selection mask fixed to new environment
+    Errorlog remove backslashes stripped off from string.
+    remove deprecated Twig Autoloader
+
+fixed 20200825
+    news post offset commenting if not active
+    remove methodes :
+    get_permission,get_user_details,get_page_permission,get_link_permission from class admin to class wb
+    renamed equal methodes name in class Frontend and class wb
+
+20200828
+    updated unzip.php to remove
+    1) /include/PHPMailer folder
+    2) /include/Sensio folder
+    updated phpmailer to version 6.1.7
+    updated twig to version 3.0.5
+
+20200906
+    remove invalide plugin wboemed, crashed if languages other than german
+    recoding news modul with default addon interface settings
+
+202009144
+    output_filter fixing filter InsertW3CSS removing linefeeds
+    add /vendor/autoload_classmap.php to register classes autoloading during initializing WebsiteBaker
+    recoding form modul change sendmail handling, inputs in contact form
+    submission_form added email adress in header if user not logged in
+    fixed user management wrong backlink in user mask
+    upgrade settings added more smtp debug settings and add a modal help box with explanation
+    fixed url to /install/index.php in /admin/index.php, /admin/start/index.php, /admin/login/index.php
+
+
+20200922
+  SQL injection vulnerability in WebsiteBaker
+  WebsiteBaker allows (time based blind) SQL Injection
+  via parameter 'display_name' in /websitebaker/admin/preferences/save.php
+
+20200923
+  uprade /news/modify.php
+  1) fixed toggle_active post status
+  2) add toggle_active groups status
+  widget upgrade, redirect click on the whole widgets window
+  output_filter upgrade, rename some filter for a better reading
+
+20201019
+  fixed drag and drop in news and form
+  recoded delete confirm Box
+
+20201021
+  fixed mime-type upload xml files in data-fields
+  added file mimeTypes.php in /ckeditor/filemanager/connectors/php
+  to simple adding mime-types for your own use
+  Feature TODO create a CKEditor Admin SettingsTool
+
+20201107
+  database::replace() 'sanitize value records' fixed when one record only given
+  added plausibility check for numbers of fields and values
+  trigger session_gc() at defined intervals to delete obsolete Sessions
+  reinstall captcha table if not exists
+
+20201202 fixed
+    Maintenance mode not working in 2.13.0 r7
+    create addon template folder if not default
+
+20201205 fixed
+    IPV6 Handling in crsfTokens, IpAddress
+
+20201210 upgrade
+    WB installer handling fixed paths, urls and install in right path
+    Addon Install error exception if addon archive has wrong format or structure
+    Add Addon Install error exception if info.php is missing
+
+20201213 upgrade
+    renamed hardcoded admin to other folder name for safety reasons without exceptions
+
+20201214 fixes
+    upgrade CKEditor to version 4.15.1 that fixes an XSS vulnerability
+
+20201216 fixes
+    Redirection error fixed when language was changed
+
+20201217 fixes
+    access to filesystems for Unix Structure in output_filter Addon
+    fixed double top navigation
+
+2020-12-26 new
+    add class Upload to /framework/helpers/
+
+2020-12-31 fixes
+    Fix doubleslashes in url if page directory is the application path
+    too tested with existing /pages and short url
+
+2021-01-01 fixes
+    Typofix in DefaultTemplate in show_menu2 call
+    add forgotten selector in icon-list
+    Fixed captcha save settings
+
+2021-01-02 notices
+    set methodes preprocess, menu and show_menu to obsolete
+    and will be removed in the next version
+
+2021-01-10 fixes
+    modules/form/printForm.php Line 98 remove double class attribute
+    templates/DefaultTheme/js/menuSettings.js
+    templates/DefaultTheme/js/menuMedia.js
+    change delimiter in ParentList::build_sectionlist and calling modules
+
+2021-01-20 fixes
+    fixed multilingual call in DefaultTemplate
+    fixed captcha regex select background and fonts in class secureform
+
+2021-01-21
+    add WB_REL to script vars
+    fixed wrong captcha javascript to url.fontawesome.css
+    upgrade account templates
+    search Templates in FrontendTemplate/templates otherwise in account/templates
+
+-----------------------------------------------------------------------------------
+
+2021-01-25 fixes for 2.13.0 as r31
+    user management increase default password length to 20
+    File /admin/users/PasswordGenerator.js and /templates/DefaultTheme/templates/groups_form.htt
+    form index typofix - set to Version Form_Modul_v3_2_2
+    -  /modules/form/languages/DE.PHP
+    -  /modules/form/languages/EN.PHP
+    -  /modules/form/modfiy_settings.php
+
+2021-01-25 fixes
+    stops signup if empty display name
+
+2021-01-29 r33 updates PHPMAILER to version 6.2
+    With this release, PHPMailer gains official PHP 8 compatibility; earlier versions worked in PHP 8 pre-releases,
+    form addon fixed wrong output for checkbox fields
+    add input for seperator char inkl linefeed for labels/titles in bodytext
+
+2021-02-01 r34
+    add new droplet [[ShowRootParent]] to show menu_title or page_title from root_parent or parent
+    reworked  RegisterModFiles for backward compatibility
+    small css fix in form/frontend.css
+
+2021-02-02 r35
+    small css fix in /modules/form/frontend.css
+    change/add languages vars
+    reworked  E-Mail Filter for a better overview
+
+2021-02-13 r36
+    Beginning reworked manuell install
+    Beginning replacing all Constant to Register class
+    Beginning replacing all global languages vars to Translate class
+    Change error color icon, filesize no entry its green icon, amber icon, greater 8,5KByte red icon
+    Add two new public methodes to class.wb
+        1) function removeExtension like the name say, remove extension from filename
+        2) function getDirNamespace  return a string like modulename\\addonname from a given file- or dirname
+    Add new classes
+        1) Spatie\ArrayToXml - Convert an array to xml
+        2) Spatie\Color - A little library to handle color conversions. Currently supports rgb, rgba, hex, hsl and hsla formats
+        3) Spatie\ImageOptimizer - Easily optimize images using PHP
+    Beginning reworked addon form,
+        1) better field handling export/import
+        2) reworked upgrade to set layout element in all exisiting fields.xml
+           to prevent deleting if layout in use
+        3) new settings title as placeholder
+        4) new settings requiered directly in input fields or serverside check
+        5) add search filter to find success page
+        6) add button to disable loading frontend.css
+           don't forget to add stylesheets to your frontend template styles
+    TODO
+        1) Add Field without empty data row
+        2) export/import Layout handling
+        3) remove double content and optimizing code
+        4) Search for interactions and fix them
+        5) allow more than one email adress but only one (required) for replyto
+        6) allow attachement
+        7) add button to create a frontendUser.css and edit it
+    Searched for interactions and corrected
+
+2021-02-19 r37
+    Mediamanagement
+      Disabled excuting media homefolder handling until new media mangement is published
+      Added new permission request for media/delete and media/rename (print_error output)
+    Form Addon
+      Frontend: Required fields focus become a red shadow Border otherwise a blue one
+
+20210220 r38
+    Fix sql statement in form/modif_settings
+    reworked fronten view
+
+20210221 r39
+    Form renoved deprecated data table layouts and fields,
+    fixed Notice Message if page multilang not active
+
+20210223 r40
+    output_filter
+      1) remove Filter ReduceMwst
+      2) update w3Css language var
+      3) set W3Css default off
+    installer
+      1) small design fix
+      2) remove trailing slash in url
+      3) replaced logo.png with wbLogosvg
+    Captcha change output add selectors for own design
+      1) div container class="captcha_table"
+      2) create captcha img class="image-captcha name of the type"
+      3) result input field class="captcha-code
+      4) Fill in result text as lang var in a span tag
+      5) Preparing for secure check
+
+20210224 r41
+    Different typofixes
+
+20210225 r42
+    Different typofixes
+
+20210226 r43
+    Different typofixes
+
+20210227 r44
+    Typofix in /form/frontend.css zn 19
+
+20210301 r45
+    Typofix in w3-medium
+
+20210301 r46
+    fix dounleslash in capactha url
+    typofix edit css button in module.functions.php
+
+20210302 r47
+    typofix /news/commentar
+    remove /form/data/layouts/Layout_Simple-DIV_Placeholder.xml
+
+20210308 r48
+    fixed time section management
+
+20210315 r49
+    1) news
+       fixed shorturl postlinks
+    2) output_filter
+       fixed filter overview list
+       add new filter shorturl
+    3) core server settings
+       add enable/disable button php session Garbage handling
+
+20210317 r50
+    output_filter prevent admin/pages from shorturl
+
+20210318 r51/52
+    1)phpmailer
+      upgrading to version 6.0.3
+      Compatible with PHP 5.5 and later, including PHP 8.0
+      Protects against header injection attacks
+      Namespaced to prevent name clashes
+    2)ckeditor (An upgrade is highly recommended!)
+      upgrading to version 4.16
+      Fixed ReDoS vulnerability in the Autolink plugin.
+      Fixed ReDoS vulnerability in the Advanced Tab for Dialogs plugin.
+    3)ckeditor add charset parameter for function show_wysiwyg_editor to edit/add 4Byte char in given content
+    4)set DB to utf8mb4
+
+
+Fix No1 2021-03-23
+    templates install  add allowed dasboard char in template directory
+    framework/frontend.functions.php fixed function page_footer
+
+Fix No2 2021-03-25
+    ckeditor fixed required parameter CKEditorPlus.php
+    news fixed Private methods NewsLib.php
+    news fixed wrong toolbar modify_post.php
+
+Fix No3 2021-03-25
+    framework/frontend.functions.php fixed function page_title
+
+Fix No4 2021-03-28
+    Beginning PHP8 fix deprecated: Required parameter value follows optional parameter
+    Upgraded Floatbox 8.5.1 - 2021-03-23
+    fixed enabled page file 2.8.x or wb 2.13.x structure
+    and write the corrected link to pages link column
+    Upgrading Structure Help DialogBox in pages settings
+    Update upgrade-script.php DefaultSettings
+
+Fix No5 2021-03-29
+    Continue PHP8 fix deprecated: Required parameter value follows optional parameter
+    included fixes No1 until No4
+
+2021-04-01 r54
+    Undefined constant "PAGE_OLDSTYLE" in settings/index.php
+    Undefined variable $create_date" /modules/news/view.php
+
+2021-04-02 r55
+    fix droplet modify exception for php8
+    change output login footer if exisiting unzip.php and archivefile in Applicationpath
+
+2021-04-03 r56
+    fix an uncatched exception by adding a groups
+    fix saving DSGVO values in admin/settings
+    fix news installer remove settings layout columns news_layout table
+    add missing var to EN language
+
+2021-04-05 r57
+    recoded shortUrl Filter
+    renewed backlinks in news/comment files
+    renewed form delete_fields
+
+2021-04-06 r58
+    add new class DbRepair to repair link structure in pages table
+    Filter ShortUrl renewed, for proper work, disable all ShortUrl Droplets
+    fix upgrade-script output during upgrade addons and templates
+
+2021-04-07 r59
+    CKEditor
+      fixed source url to version.json if WB is installed in an Application Path that is not Document Root
+      Javascript variable WB_URL needed
+
+2021-04-08 r60
+    form
+      fixed captcha query if user logged in, tks to dbs
+
+2021-04-15 r61
+
+    \App\DbRepair::buildLinkFromTrail() adapted for use with PHP-7.4
+    fallback to function page_link() in /framework/functions.php
+    remove double slashes in backend dashbords
+
+------------- Fixes for Relase 62 --------------------------------
+2021-04-30
+    output_filter Fixed Filter CleanUp
+    Templates add user defined favicon call in imagesUser Folder
+
+2021-05-12
+    news/upgrade and rebuild post files in news/WBReorg
+      solved save post accessfile exeception if missing page_id
+    admin/media upload and create folder
+      solved check directory traversal for media dir
+
+2021-05-15
+    admin/users typofix deactivated users info
+    account/signup2.php
+      Security fix username, displayname
+      Fixed invalid Displayname
+      add domain to admin email-subject
+
+------------- End Fixes for Relase 62 ----------------------------
+
+2021-05-20 R63
+    include/editarea fixed fullscreen

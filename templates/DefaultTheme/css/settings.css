@@ -1,0 +1,68 @@
+.options-block {font-size: 0.87em;}
+.options-block .settings_table td.setting_name{width:25%!important;min-width:340px;max-width:300px;color:#0d4b6e;text-align:right;font-weight:bold;padding-right:0.525em;padding-top: 2px;}
+.options-block .setting_name{width:25%!important;color:#0d4b6e!important;text-align:right!important;font-weight:bold!important;padding-right:0.525em!important;}
+.options-block .settings_table{width:100%;}
+.options-block div.settings_table{margin:0 auto;width:90%;}
+.options-block .settings_table td{text-align:left;vertical-align:top;}
+.options-block .settings_table td.setting_value{width:80%;}
+.settings_table td.setting_value textarea{}
+.options-block h4,.options-block .warning{margin:0 auto;}
+.options-block .settings_table tr{white-space:normal;line-height:2.8;}
+.options-block #file_mode input,#dir_mode input{color:#205979;}
+.options-block .header_title,.setting_value input,.setting_value select,
+.options-block .setting_value textarea,.value_input input,.value_input text,
+.options-block .value_input select,.form_submit,.input_full{width:100%;}
+/* --------------------------------------------------------------------------
+div.mbox{margin:0 auto;}
+div.mbox select,div.mbox textarea,div.mbox input{display:block;float:left;}
+div.mbox label{color:#0d4b6e;font-weight:bold;min-width:200px;padding-right:0.525em;text-align:right;width:20%;padding-right:5px;display:block;}
+*/
+.options-block .settings_table p.note{line-height:1.4em;margin:auto;font-size:1.025em;}
+.options-block .setting_value_permissions dl{
+/* min-width: 60.225em!important ;*/}
+.options-block form.settings_table label.setting_name{clear:left;color:#333333;display:block;float:left;font-size:1.025em;font-weight:bold;margin:3px auto;min-height:1.9em;padding-right:5px;vertical-align:top;width:30.115em;}
+.options-block form#Settings{}
+.options-block form#Settings fieldset legend h2{font-size:1.255em;}
+.options-block form#Settings dd{margin-left:0.525em;}
+.options-block form#Settings dd select{font-size:inherit;min-width:21.125em;}
+.options-block form#Settings dd textarea{overflow:auto;width:100%;}
+
+.options-block .reformed-form dl{margin:auto;}
+.options-block .chmod h4{font-size:1.225em;background:#215a7a;line-height:1.925em;padding-left:0.525em;color:#fff;}
+.options-block .inline-columns >div{float:left;width:50%;}
+/*
+select {-moz-appearance: none;-webkit-appearance: none;appearance: none;border: none;}
+*/
+.options-block select, .options-block select option {font-family: 'Open Sans ',sans-serif;font-size: 100%;}
+.options-block .flag-padding{padding-left: 40px;}
+.options-block .flag-box {background-repeat: no-repeat;background-position: left;}
+.options-block .flag-box:hover {background-repeat: no-repeat;background-position: left;}
+.options-block select[attr=size] {width:auto;line-height: 1.5;}
+.options-block label.post-label{vertical-align: unset!important;}
+.options-block .fa-search:before{content: " \f002 ";}
+/* ----------------------------------------- */
+.options-block #dsgvoInput{margin: 0px 0;}
+.options-block .input-container {height: 36px!important;display: flex;width: auto;float: right;margin-bottom: 15px;display: -ms-flexbox; /* IE10 */}
+.options-block .icon {padding: 12px 4px 4px;background: #0078d7;color: white;min-width: 50px;text-align: center;}
+.options-block .input-field {width: 100%;padding: 8px;outline: none;}
+.options-block .input-field:focus {border: 2px solid #0078d7;}
+.options-block select, .options-block select option {font-size: 1.1em !important;font-weight: normal !important;font-family: 'Open Sans ',sans-serif !important;}
+.options-block select { height: 36px!important;padding: 2px 0!important;}
+#options-block .w3-select {padding: 2px;width: 100%;border: none;border-bottom: 1px solid #ccc;}
+/* -----------------------------------------
+.options-block input[type=checkbox],input[type=radio]{width: 32px!important;height: 32px!important;}
+*/
+.options-block input.w3-check[type="checkbox"],.options-block input.w3-radio[type="radio"],.options-block input[type="checkbox"],.options-block input[type=radio]{z-index: 1;width: 32px!important;height: 0px!important;}
+/* Show the checkmark when checked */
+.options-block .check-container input:checked ~.checkbtn:after{display:block;}
+/* Show the indicator (dot/circle) when checked */
+.options-block .check-container input:checked ~.radiobtn:after{display:block;}
+/* Style the checkmark/indicator */
+.options-block .check-container .checkbtn::after{left:5px;top:-16px;width:5px;height:10px;content: "\2713";color:#fff;font-size:20px;font-weight:bold;}/* Style the indicator (dot/circle) */
+.options-block .check-container .radiobtn:after{top:8px;left:8px;width:9px;height:9px;border-radius:50%;background:white;}
+
+.options-block .w3-badge, .options-block .w3-tag {width:28px;height: 28px;top: 0px;line-height: 1.5;}
+
+.options-block .w3-input {vertical-align: baseline !important;padding: 0 0 0 0.525em !important;height: 2.825em !important;}
+ol.debug {}
+ol.debug li {list-style-type: decimal-leading-zero;line-height: 1.5;}

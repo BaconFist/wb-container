@@ -1,0 +1,38 @@
+<span class="w3-hide"><!--
+ @version         $Id: groups.htt 76 2017-03-10 14:44:36Z Luisehahne $
+--></span>
+<!-- BEGIN main_block -->
+<section class="access-block w3-container">
+<form class="access" id="groups" action="groups.php" method="post">
+ {FTAN}
+    <div class="w3-cell-row w3-display-container ">
+        <div class="w3-container w3-cell">
+        <h2 class="page_titel">{HEADING_MODIFY_DELETE_GROUP}</h2>
+        </div>
+        <div class="w3-container w3-cell w3-display-right">
+                <!-- BEGIN manage_users_block -->
+                    <span><a class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" href="{ADMIN_URL}/users/index.php">{TEXT_MANAGE_USERS}</a></span>
+                <!-- END manage_users_block -->
+        </div>
+    </div>
+
+    <label class="w3--medium w3-hide" title="{TEXT_GROUPS}">
+      <input class="w3-check" type="checkbox" name="status" title="{TEXT_GROUPS}" style="width: 1.825em; " value="{USER_STATUS}"  class="status {DISPLAY_MODIFY}" />
+    <span class="slider">&nbsp;</span>
+
+    </label>
+
+    <select class="w3-border w3-select" name="group_id" style="margin-left:66px;width: 30.855em;height: 36px!important;">
+        <!-- BEGIN list_block -->
+        <option value="{VALUE}">{NAME}</option>
+        <!-- END list_block -->
+    </select>
+
+    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width {DISPLAY_MODIFY}" type="submit" name="modify" value="{TEXT_MODIFY}" />
+    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width {DISPLAY_DELETE}" type="submit" name="delete" value="{TEXT_DELETE}" onclick="return confirm('{CONFIRM_DELETE}');" >
+
+</form>
+
+<h2 style="margin-top: 1.825em;" class="{DISPLAY_ADD}">&nbsp;{HEADING_ADD_GROUP}</h2>
+</section>
+<!-- END main_block -->

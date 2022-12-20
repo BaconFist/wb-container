@@ -1,0 +1,157 @@
+<!--
+ @version         $Id: pages_sections.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+<div class="header-settings right w3-margin-8">
+    <div class="col-settings right">
+        <div class="w3-row">
+            <div class="w3-col m8">
+              <span class="btn w3-border-0 w3-white w3-round-small w3--medium w3-padding-4 w3-margin-0" title="{PAGE_TITLE}">{TEXT_CURRENT_PAGE}:<b>{MENU_TITLE}</b></span>
+            </div>
+            <div class="w3-col m2">
+        <!-- BEGIN show_modify_block -->
+              <a class="btn w3-sand btn-large w3-light-gray w3-hover-light-gray w3-round-small w3--medium w3-padding-4 w3-margin-0" href="{ADMIN_URL}/pages/modify.php?page_id={PAGE_IDKEY}" >{HEADING_MODIFY_PAGE}</a>
+        <!-- END show_modify_block -->
+            </div>
+            <div class="w3-col m2">
+        <!-- BEGIN show_settings_block -->
+              <a class="btn w3-sand btn-large w3-light-gray w3-hover-light-gray w3-round-small w3--medium w3-padding-4 w3-margin-0" href="{ADMIN_URL}/pages/settings.php?page_id={PAGE_IDKEY}">{TEXT_CHANGE_SETTINGS}</a>
+        <!-- END show_settings_block -->
+            </div>
+        </div>
+    </div>
+    <table class="header-info">
+        <tbody>
+            <tr >
+               <td class="header-modify-page" ><h2>{HEADING_MODIFY_PAGE}</h2></td>
+               <td class="header-page_id">ID: {PAGE_ID}</td>
+               <td class="c60 right" style="line-height: 0;">
+                  <span style="color:#999;" class="{CLASS_DISPLAY_MODIFIED}"><br />
+                  {MESSAGE_PAGES_LAST_MODIFIED} {MODIFIED_BY}, {MODIFIED_WHEN}
+                  </span>
+               </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<article class="pages-block w3-margin">
+<h2 class="w3-margin-0" style="line-height: 0;">&nbsp;</h2>
+<form id="section_properties" action="{ADMIN_URL}/pages/sections_save.php?page_id={PAGE_IDKEY}" method="post">
+    <input type="hidden" name="page_id" value="{PAGE_IDKEY}"  />
+    <input type="hidden" name="section_id" value="{VAR_SECTION_ID}"  />
+    {FTAN}
+    <div class="jsadmin jcalendar hide"></div>
+    <div class="block-outer">
+        <table class="img_noborder pages_section" >
+            <thead>
+                <tr class="sections_list">
+                    <th class="header_list_type" style="width: 40%;">{TEXT_TYPE}</th>
+                    <th class="header_list_block"><span {STYLE_DISPLAY_SECTION_BLOCK}>{TEXT_BLOCK}&nbsp;</span></th>
+                    <th colspan="4" class="header_list_pubdate_start">{TEXT_PUBL_START_DATE}</th>
+                    <th colspan="4" class="header_list_pubdate_end">{TEXT_PUBL_END_DATE}</th>
+                    <th colspan="3" class="header_list_sections_actions" >{TEXT_ACTIONS}</th>
+                    <th class="header_list_section_id">ID</th>
+                    <th colspan="2">&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+    <!-- BEGIN show_section_block -->
+                <tr class="sectionrow data-row" title="{SEC_TAG_TITLE}">
+                    <td style="float: left;width: auto;height: auto;text-align: center;" class="w3-check">
+                      <i class="fa fa-fw w3-hide">&nbsp;</i>
+                    </td>
+                    <td class="modify_link">{LINK_MODIFY_URL_VAR_MODUL_NAME}
+                <!-- BEGIN section_title_block -->
+                    <span class="sec_title" title="{SEC_TAG_TITLE}" style="font-weight: normal;">[ {SECTION_TITLE} ]</span>
+                  <!-- END section_title_block -->
+                    </td>
+                    <td class="{INPUT_ATTRIBUTE}"><span {STYLE_DISPLAY_SECTION_BLOCK}>
+                        <select class="input_normal w3-border" name="block{VAR_SECTION_ID}" style="width: 100%;">
+                        {SET_NONE_DISPLAY_OPTION}
+                        <!-- BEGIN section_list_block -->
+                            <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                        <!-- END section_list_block -->
+                        </select></span>&nbsp;
+                    </td>
+                    <td class="list_pubdate_start data-cell">
+                        <input class="w3-input w3-border w3--medium" type="text" id="start_date{VAR_SECTION_ID}" name="start_date{VAR_SECTION_ID}" value="{VALUE_PUBL_START}" />
+                    </td>
+                    <td class="data-cell">
+                        <img src="{THEME_URL}/images/calendar_16.png" id="trigger_start{VAR_SECTION_ID}" style="cursor:pointer;" title="{TEXT_CALENDAR}" alt="{TEXT_CALENDAR}"  />
+                    </td>
+                    <td class="data-cell">
+                        <img src="{THEME_URL}/images/{CLOCK_DEL_16_PNG}" style="cursor:pointer;" alt="{TEXT_DELETE_DATE}" title="{TEXT_DELETE_DATE}" onclick="document.querySelector('form#section_properties').start_date{VAR_SECTION_ID}.value=''" />
+                    </td>
+                    <td class="data-cell" style="width: 20px;">&#160;</td>
+                    <td class="list_pubdate_end data-cell">
+                        <input class="w3-input w3-border w3--medium" type="text" id="end_date{VAR_SECTION_ID}" name="end_date{VAR_SECTION_ID}" value="{VALUE_PUBL_END}" />
+                    </td>
+                    <td class="data-cell">
+                        <img src="{THEME_URL}/images/calendar_16.png" id="trigger_stop{VAR_SECTION_ID}" alt="{TEXT_CALENDAR}" style="cursor: pointer;" title="{TEXT_CALENDAR}"  />
+                    </td>
+                    <td class="data-cell">
+                        <img src="{THEME_URL}/images/{CLOCK_DEL_16_PNG}" style="cursor:pointer;" alt="{TEXT_DELETE_DATE}" title="{TEXT_DELETE_DATE}" onclick="document.querySelector('form#section_properties').end_date{VAR_SECTION_ID}.value=''" />
+                    </td>
+                    <td class="data-cell" style="width: 20px;">&#160;</td>
+                    <td>{VAR_MOVE_UP_URL}</td>
+                    <td>{VAR_MOVE_DOWN_URL}</td>
+
+                    <td class="delete_section">
+          <!-- BEGIN can_delete_block -->
+                        <a onclick="return confirm_link('{CONFIRM_DELETE}\n{TEXT_ARE_YOU_SURE}','{ADMIN_URL}/pages/sections.php?page_id={PAGE_IDKEY}&amp;section_id={VAR_SECTION_IDKEY}');">
+                        <img src="{THEME_URL}/images/{DELETE_16_PNG}" alt="{TEXT_DELETE}" />
+                        </a>
+          <!-- END can_delete_block -->
+                    </td>
+                    <td class="list_section_id">{VAR_SECTION_ID}</td>
+                    <td {DISPLAY_POS_DEBUG}>{POSITION}</td>
+                </tr>
+    <!-- END show_section_block -->
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <label style="float: left;" >&#160;</label>
+        <input type="submit" name="save" value="{TEXT_SAVE}" class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" />
+    </div>
+</form>
+</article>
+<h2>{TEXT_ADD_SECTION}</h2>
+
+<form id="add" action="{ADMIN_URL}/pages/sections.php" method="post">
+    <input type="hidden" name="page_id" value="{PAGE_IDKEY}"  />
+    {FTAN}
+    <table>
+        <tbody>
+            <tr>
+                <td style="width: 40%;">
+                    <select name="module" class="w3-select w3-light-gray w3-border w3-col m6 w3-left-align " style="padding:0 8px !important;height: 2.525em !important;">
+                    <!-- BEGIN module_block -->
+                     <option value="{VALUE}"{SELECTED}>{NAME}</option>
+                     <!-- END module_block -->
+                    </select>
+                    &nbsp;&nbsp;
+                    <input class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" type="submit" name="submit" value="{TEXT_ADD}"  />
+                 </td>
+            </tr>
+        </tbody>
+   </table>
+</form>
+    <!-- BEGIN calendar_block -->
+    <script >
+         var section_id = '{VAR_SECTION_ID}';
+         var start_date = '{start_date}';
+         var end_date = '{end_date}';
+         var trigger_start = '{trigger_start}';
+         var trigger_end = '{trigger_end}';
+         var jscal_today = '{jscal_today}';
+         var jscal_ifformat = '{jscal_ifformat}';
+         var jscal_firstday = {jscal_firstday};
+         var showsTime = {showsTime};
+         var timeFormat = {timeFormat};
+    </script>
+    <script src="{ADMIN_URL}/pages/page_calendar.js" ></script>
+    <!-- END calendar_block -->
+    <script src="{WB_URL}/include/plugins/default/sweetalert2/09.17.2/dist/sweetalert2.all.min.js"></script>
+
+<!-- END main_block -->

@@ -1,0 +1,46 @@
+<!--
+ @version         $Id: modules_details.htt 76 2017-03-10 14:44:36Z Luisehahne $
+-->
+<!-- BEGIN main_block -->
+
+<h2>{HEADING_MODULE_DETAILS}</h2>
+
+<div class="block-outer w3-container">
+<table class="w3-table-all addons module w3-striped w3-border w3-card">
+  <thead>
+    <tr class=" w3-blue-wb">
+        <th>{TEXT_FIELD}</th>
+        <th>{TEXT_DESCRIPTION}</th>
+    </tr>
+  </thead>
+  <tbody class="w3-container">
+    <tr>
+        <td class="setting_name">{TEXT_NAME}:</td>
+        <td>{NAME}</td>
+    </tr>
+    <tr>
+        <td class="setting_name">{TEXT_TYPE}:</td>
+        <td>{TYPE}</td>
+    </tr>
+    <tr>
+        <td class="setting_name">{TEXT_AUTHOR}:</td>
+        <td>{AUTHOR}</td>
+    </tr>
+    <tr>
+        <td class="setting_name">{TEXT_VERSION}:</td>
+        <td>{VERSION}</td>
+    </tr>
+    <tr>
+        <td class="setting_name">{TEXT_DESIGNED_FOR}:</td>
+        <td>Website Baker {DESIGNED_FOR}</td>
+    </tr>
+    <tr>
+        <td class="setting_name">{TEXT_DESCRIPTION}:</td>
+        <td style="text-align: justify;">{DESCRIPTION}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width" onclick="window.location='{AddonBackUrl}';">{TEXT_CLOSE}</button>
+<!-- END main_block -->

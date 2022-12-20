@@ -1,0 +1,9 @@
+table.default { border-collapse: collapse; table-layout: fixed; width: 100%; white-space: nowrap; }
+/* table thead thead */
+table.default thead tr { background: linear-gradient(#7EB7BF 0%, #507279 100%); background: #538199; color: #fff; }
+/* table tbody rows */
+table.default tbody tr { background: #fff; }
+table.default:nth-child(odd) tbody tr { background: #e8e8e8; }
+table.default tbody tr:hover { background: #FBFCE0; cursor: default; }
+
+li.default:nth-child(odd) > table.default { background: #e8e8e8; }

@@ -1,0 +1,66 @@
+.xdebug-error {
+    font-size: 12px !important;
+    width: 95% !important;
+    margin: 0 auto 10px auto !important;
+    border-color: #666 !important;
+    background: #ddd !important;
+}
+
+.xdebug-error th, .xdebug-error td {
+    padding: 2px !important;
+}
+
+.xdebug-error th {
+    background: #ccc !important;
+}
+
+.xdebug-error span {
+    display: none !important;
+}
+
+.xdebug-error_description th {
+    font-size: 1.2em !important;
+    padding: 20px 4px 20px 100px !important;
+    background: #ccc no-repeat left top !important;
+}
+
+.xdebug-error_callStack th {
+    background: #666 !important;
+    color: #ddd !important;
+}
+/* +---------+---------+---------+---------+---------+---------+---------+
+   orange/black td header line
+---+---------+---------+---------+---------+---------+---------+---------+*/
+.xdebug-error th
+{
+    font-family:monospace;
+    font-weight:normal;
+    font-size:15px;
+    padding: 6px 6px 6px 6px;
+    border:1px solid black;
+    background: #FAD7B4;
+    color:#000000;
+}
+/* +---------+---------+---------+---------+---------+---------+---------+
+   black/white th header line
+---+---------+---------+---------+---------+---------+---------+---------+*/
+.xdebug-error > tr:first-child > th:first-child,
+.xdebug-error > tbody > tr:first-child > th:first-child
+{
+    line-height:1.6em;
+    padding: 10px 10px 10px 10px;
+    border:1px solid #000000;
+    background: #000000;
+    color:#FFFFFF;
+}
+/* +---------+---------+---------+---------+---------+---------+---------+
+   green/black td content one or more lines
+---+---------+---------+---------+---------+---------+---------+---------+*/
+.xdebug-error td
+{
+    font-size:14px;
+    padding: 6px 6px 6px 6px;
+    border:1px solid green;
+    background: #D1FFE8;
+}
+

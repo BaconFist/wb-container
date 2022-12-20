@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<!--
+ * CKeditor - The text editor for Internet - http://www.ckeditor.net
+ * Copyright (C) 2003-2010 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This page shows the actual folder path.
+-->
+<html>
+    <head>
+        <title>Folder path</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="css/browser.css" type="text/css" rel="stylesheet">
+        <script>
+// Automatically detect the correct document.domain (#1919).
+(function()
+{
+    var d = document.domain ;
+
+    while ( true )
+    {
+        // Test if we can access a parent property.
+        try
+        {
+            var test = window.top.opener.document.domain ;
+            break ;
+        }
+        catch( e )
+        {}
+        // Remove a domain part: www.mytest.example.com => mytest.example.com => example.com ...
+        d = d.replace( /.*?(?:\.|$)/, '' ) ;
+        if ( d.length == 0 )
+            break ;        // It was not able to detect the domain.
+        try
+        {
+            document.domain = d ;
+        }
+        catch (e)
+        {
+            break ;
+        }
+    }
+})() ;
+
+function SetCurrentFolder( resourceType, folderPath )
+{
+    document.getElementById('tdName').innerHTML = folderPath ;
+}
+
+window.onload = function()
+{
+    window.top.IsLoadedActualFolder = true ;
+}
+
+        </script>
+    </head>
+    <body class="bar" style="height: 45px;"> <!-- header bar -->
+<!--  -->
+      <table class="fullHeight">
+          <tbody>
+              <tr>
+                  <td>
+                      <button style="WIDTH: 100%" type="button" class="ActualFolder">
+                          <table>
+                              <tbody><tr>
+                                  <td><img alt="" src="images/FolderOpened_big.gif" style="width : 24px; white-space: nowrap;"></td>
+                                  <td>&nbsp;</td>
+                                  <td id="tdName" style="width :100%; white-space: nowrap;">/</td>
+                                  <td>&nbsp;</td>
+                              </tr>
+                          </tbody>
+                          </table>
+                      </button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+
+<!--
+        <div class="fullHeight w3-col m12 " >
+            <div class="w3-col m3 w3-padding-4">
+                <button class=" w3-padding-4" type="button" class="ActualFolder">
+                    <img alt="" src="images/FolderOpened_big.gif" style="width : 24px; white-space: nowrap;"/>
+                    <span id="tdName" style="white-space: nowrap; vertical-align: middle;" >/</span>
+                </button>
+            </div>
+        </div>
+-->
+    </body>
+</html>

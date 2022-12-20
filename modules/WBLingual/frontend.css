@@ -1,0 +1,7 @@
+.anchor { margin :3px auto; }
+#langmenu { float :right; margin-left :auto; margin-right :auto; padding :5px; min-height :0.6em; text-align :center; display :block; vertical-align :middle; }
+#langmenu img { border :0; max-width: 100%; width: 34px; }
+#langmenu a.default img { filter :alpha(opacity=100); -moz-opacity :1.0; opacity :1.0; }
+#langmenu a:hover img,
+#langmenu a.current img { filter :alpha(opacity=30); -moz-opacity :.3; opacity :.3; text-decoration: none; }
+#langmenu a:hover { text-decoration: none; }

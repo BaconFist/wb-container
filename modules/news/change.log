@@ -1,0 +1,175 @@
+
+Version 3.5.8      11. Dec 2011
+
+Version 3.5.7      30. Mrz 2013
+
+25 Jan-2012
+    + module news: added sql-dump to create database tables
+    # module news: some little fixes in install/upgrade
+
+Version 3.5.6      11. Dec 2011
+
+Version 3.5.5      25. Jun 2011
+
+10 Jun-2011
+    + add PL languages to news and captcha_control (tks to vixrealitum)
+
+Version 3.3        12. Jan 2011
+
+16 Jan-2011
+    # Security fix to filter out droplets from user input in news and form modules
+15 Jan-2011
+    # Security fix for news module
+01-Feb-2010
+    ! to hold content, install don't drop existing tables (code, form, menu_link, news, wrapper, wysiwyg)
+28-Jan-2010
+    + Ticket #927 news module language file in swedish
+
+Version 3.5        24. Jan 2010
+
+Version 3.3        16. Dec 2009
+
+09-Oct-2009
+    # fixes and recoded news module
+9-Aug-2009
+    # Fixed bug in news modul introduced in changeset [1057]
+6-Aug-2009
+    ! Updated upgrade_script to make use of the changed news settings
+    # Fixed again some bugs in news modul (ticket #756) (Thanks to Aldus and Luisehahne)
+18-July 2009
+    # Again added some &amp; to news and form to get more valid output (Thanks to Luisehahne)
+16-July 2009 
+    # Fixed E_ALL notice in news/view.php
+    ! replaced in form and news delimiter "&amp;" with "&"
+15-July 2009
+    # fixed display issue of jscalendar in news modul (Thanks to Aldus)
+14-July 2009
+    # Fixed some validiation bugs in news modul (ticket #742) (Thanks to Luisehahne)
+13-July 2009
+    + added changes from news/add.php to the upgrade-script.php
+    # News-Modul: add the unlink-routine for the ".news" folder inside uninstall.php
+    # News-Modul: add the unlink-routine for the ".news" folder inside uninstall.php
+    ! News-Modul: add <tr><td> and </td></tr>-tags to the "none found" part in the view.php to
+    ! The news module post_title link made unclickable when there is no full post.
+11-July-2009
+    + Added changed news settings to upgrade-script
+09-July-2009
+    ! Added a better option to hide the READ_MORE link in the news module. (ticket #739)
+
+Version 2.8        25. Feb 2009
+
+25-Feb-2009
+    # fixed wrong path to images in news and form modul
+    + corrected info.php of news-modul
+
+Version 2.7        24. Feb 2009
+
+17-Jan-2009
+    ! changed handling of post_date in news modul (thanks to susigross)
+    + added hour and minute support to default published_when field in news modul
+13-Jan-2009
+    # fixed bug for the rss of news, see ticket #609
+04-Jan-2009
+    # made news Modul multilingual, see ticket #676 (some additional translations are needed)
+03-Jan-2009
+    # fixed bug in view.php of news module (ticket #676 Thanks to susigross)
+    # fixed another bug in view.php of news modul introduced in changeset [892]
+29-Dec-2008
+    # replaced in news modul special chars with entities to get valid output
+    - Removed the <p> tag around the news as it is added from the editor
+28-Dec-2008
+    + ticket 607: include the frontend.css in the comment_page.php file of the news-module.
+02-Nov-2008
+    ! news: added PAGE_SPACER to $page_title (creates e.g. title-32.php instead of title32.php)
+29-Oct-2008
+    # News: total number of news wasn't calculated correctly
+    # News: total number of news wasn't calculated correctly
+    # applied bugfix for ticket #608 (redeclaration of news module)
+21-Oct-2008
+    # fixed display issue in news modul
+05-Jul-2008
+    # fixed MODI_DATE/PUBLISHED_DATE issue in news-module. Added PUBLISHED_TIME, removed PUBL_DATE,PUBL_TIME. Thanks to forum-member timorotha
+06-Apr-2008
+    ! removed some obsolete language variables from news and form module (now defined in global WB language files)
+03-Apr-2008
+    ! some code clean up in news/form module
+02-Apr-2008
+    ! some code clean-up in News module
+01-Apr-2008
+    ! added updated edit CSS functions to the News module
+24-Mar-2008
+    !  Added class nixhier to frontend.css from form and news Modul (required for ASP)
+08-Mar-2008
+    # fixed issue with news and end-date
+18-Feb-2008
+    ! Modified news module to create a default index.php during installation (directory spoofing)
+08-Feb-2008
+    ! module news: set focus on captcha-field if user have to re-enter captcha
+29-Jan-2008
+     Had to fix some issues in admin/pages/sections and module news.
+26-Jan-2008
+     Improved ASP in news-module.
+    + module news: added publish_until field to control the visibility of a news-posting by date and time
+    + module news: added publish_until field to control the visibility of a news-posting by date and time
+25-Jan-2008
+    + Added new CAPTCHA. Adapted core: signup and modules: news and form.
+    + Added Advanced Spam Protection (ASP) to core: signup and modules news and form.
+    # module news: it was possible to post comments to postings with commenting disabled
+24-Jan-2008
+    + added language support to all integrated modules (except for news and form module)
+20-Jan-2008
+    # fixed E_NOTICE-warning in news-module (about SECTION_ID in comment.php)
+19-Jan-2008
+    # Fixed bug in news modul with missing variable PAGE_DIRECTORY
+    - Module news: removed old calendar
+    + Module news: adapted news to use the new include/jscalendar
+    + Module news: adapted news to use the new include/jscalendar
+18-Jan-2008
+    ! Updated news modul with features from the advanced news modul
+    ! Updated news modul with features from the advanced news modul
+07-Jan-2007
+    # Fixed error when uninstalling the news modul
+17-Nov-2006
+    # Fixed fatal error in line 46 news/comment.php (thanks to eki)(#358)
+20-Oct-2006
+    # Fixed group images in news modul cannot be stored (#342)
+    # Fixed specialchars problem in the news modul (#339)
+    # Fixed news modul stores empty records (#338)
+    # Fixed Captcha didn't work in news comments (#337)
+20-May-2006
+    # Fixed typo in news save comment page (#282)
+    # Fixed typo in news delete post page (#283)
+16-Mar-2006
+    # Removed duplicate expression from modules/news/install.php which caused
+12-Dec-2005
+    # Fixed bugs in RSS news feeder
+    + Added Captcha to News module
+    ! News mod now hides read more link if no need for it (see ticket #56)
+04-Sep-2005
+    + Added and RSS newsfeed script to the News module
+21-Jun-2005
+    # Added htmlspecialchars for modifying WYSIWYG, news, etc. modules (Bug #78)
+13-Jun-2005
+    # Fixed bug (#88) with news module
+07-Apr-2005
+    # Fixed bug with news module when pages directory set to root
+05-Apr-2005
+    # Fixed bug where stripslashes not run on news post titles in admin
+02-Apr-2005
+    # Fixed many bugs with news module when viewing posts by group
+28-Mar-2005
+    + Added option to News module to specify how many posts should be listed
+    # Fixed bug when displaying comments in News module (WB Bug #14)
+    # Fixed stripslashes problem for viewing news comments
+    # News items are displayed with name of poster instead of "Unknown"
+03-Fed-2005
+    ! All "access files" for the news module now stored in pages/posts instead
+26-Jan-2005
+    # Added ordering cleaning to delete_post.php on line 53 for news module
+23-Dec-2004
+    ! News module now use's WYSIWYG for modifying news posts
+20-Dec-2004
+    # Fixed bug when deleting post's in News module
+14-Dec-2004
+    + Added "News" module
+

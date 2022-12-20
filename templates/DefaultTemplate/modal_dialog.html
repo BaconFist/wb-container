@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>SimpleViewer Gallery</title>
+  <meta name="description" content="tmp" />
+  <meta name="keywords" content="tmp" />
+  <meta name="revisit-after" content="7" />
+	<!-- Mobile viewport optimisation -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- stylesheets -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Optional Bootstrap Theme -->
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+  <!-- Documentation extras -->
+<style type="text/css">
+<!--
+#Overlay
+{
+  visibility: hidden;
+  position: absolute;
+  left: 90px;
+  top: 120px;
+  width:200px;
+  height:90px;
+  text-align:center;
+  border: solid;
+  background-color: lightgray;
+}-->
+</style>
+<script>
+<!--
+function DlgShow(Message)
+{
+  // Change the message.
+  var Msg = document.getElementById("DlgContent");
+  Msg.innerHTML = Message;
+ 
+  // Display the dialog box.
+  var Dlg = document.getElementById("Overlay");
+  Dlg.style.visibility = "visible";
+}
+
+function DlgHide(Result)
+{
+  // Display the result onscreen.
+  var Output = document.getElementById("Result");
+  Output.innerHTML = "You clicked: " + Result;
+ 
+  // Hide the dialog box.
+  var Dlg = document.getElementById("Overlay");
+  Dlg.style.visibility = "hidden";
+}
+-->
+</script>
+</head>
+
+<body>
+
+<div id="Overlay">
+  <div>
+   <p id="DlgContent">Content Goes Here</p>
+   <input id="btnYes"
+       type="button"
+       value="Yes"
+       onclick="DlgHide('Yes')" />
+   <input id="btnNo"
+       type="button"
+       value="No"
+       onclick="DlgHide('No')" />
+  </div>
+</div>
+</body>
+</html> 

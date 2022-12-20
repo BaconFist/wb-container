@@ -1,0 +1,53 @@
+<!-- BEGIN main_block -->
+
+<!-- available replacements
+    WB_URL
+    THEME_URL
+    THEME_PATH
+    SAVE_URL
+    TEXT_URL
+    CANCEL_URL
+    TEXT_HEIGHT
+    TEXT_SAVE
+    TEXT_CANCEL
+    HEIGHT
+    URL
+    FTAN
+-->
+
+<form action="{SAVE_URL}" method="post" class="wrapper" style="margin: auto 3%; width: auto;">
+    <input type="hidden" name="page_id" value="{PAGE_ID}" />
+    <input type="hidden" name="section_id" value="{SECTION_ID}" />
+    <input type="hidden" name="cmd" value="save" />
+    <input type="hidden" name="section" value="{IDKEY}" />
+    {FTAN}
+    <table class="wrapper w3-table" style="border-collapse: collapse; width: 100%; white-space: nowrap; vertical-align: central;" >
+        <tbody>
+        <tr style="line-height: 2.9525em; ">
+            <th class="setting_name w3-right-align">{TEXT_URL}:</th>
+            <td><input class="w3-input w3-border" type="text" name="url" value="{URL}" /></td>
+        </tr>
+        <tr>
+            <th class="setting_name w3-right-align">{TEXT_HEIGHT}:</th>
+            <td><input class="w3-input w3-border" type="text" name="height" value="{HEIGHT}" maxlength="4" /></td>
+        </tr>
+        <tr>
+            <th class="setting_name w3-right-align">{TEXT_CLASS_ATTRIBUTES}:</th>
+            <td><input class="w3-input w3-border" type="text" placeholder="{TEXT_ADD_CLASS_ATTRIBUTES}" name="attributes" value="{ATTRIBUTES}" maxlength="4" /></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="wrapper-submit" >
+        <tr>
+            <td>
+                <input class="w3-btn w3-blue-wb w3-hover-green" type="submit" value="{TEXT_SAVE}" />
+                <input class="btn w3-blue-wb w3-hover-green" name="pagetree" type="submit" value="{TEXT_SAVE} & {TEXT_BACK}" />
+            </td>
+            <td>
+                <input class="btn w3-blue-wb w3-hover-green" type="submit" value="{TEXT_CANCEL}" formaction="{CANCEL_URL}" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<!-- END main_block -->

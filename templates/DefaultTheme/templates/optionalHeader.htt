@@ -1,0 +1,18 @@
+<!-- BEGIN header_block -->
+<!DOCTYPE HTML>
+<html lang="{LANGUAGE}">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2" />
+    <meta name="referrer" content="no-referrer|same-origin"/>
+    <title>Media Browse</title>
+    <meta name="description" content="media" />
+    <meta name="keywords" content="media" />
+    <meta name="author" content="WebsiteBaker Org e.V." />
+      <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{THEME_URL}/css/3/w3.css" media="screen" />
+    <link rel="stylesheet" href="{THEME_URL}/css/theme.css" type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="{THEME_URL}/css/fontawesome.min.css" media="screen" />
+</head>

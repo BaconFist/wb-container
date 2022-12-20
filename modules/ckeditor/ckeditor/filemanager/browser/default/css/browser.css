@@ -1,0 +1,88 @@
+/*
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2010 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * CSS styles used by all pages that compose the File Browser.
+ */
+
+body { margin-top: 0; margin-bottom: 0; }
+body, td, input, select { font-size: 12px; font-family: Arial, Helvetica, Verdana, sans-serif; }
+body.FileArea { background-color: #fff!important; margin: 3px; }
+.nav-bar,
+body.bar{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#deefff+0,98bede+100;Blue+3D+%2310 */
+background: rgb(222,239,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(222,239,255,1) 0%, rgba(152,190,222,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede',GradientType=0 ); /* IE6-9 */
+}
+form { margin: 0; padding: 0; }
+img { border: 0; }
+.ActualFolder {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e5eff8;
+    border: solid 2px #f0f0f0;
+}
+.Button, button { -moz-border-radius: 6px; border-radius: 6px; }
+.FolderListCurrentFolder img { background-image: url(../images/FolderOpened.gif); }
+.FolderListCurrentFolder a { color: #bf2f42; font-weight: bold; }
+.FolderListCurrentFolder a { cursor: pointer; }
+.FolderListFolder img { background-image: url(../images/Folder.gif); }
+.FolderListFolder a { color: #003366; }
+.FolderListFolder a { cursor: pointer; }
+.fullHeight { max-height: 100%; }
+.PopupButtons {
+    border-top: #d5d59d 1px solid;
+    background-color: #e3e3c7;
+    padding: 7px 10px 7px 10px;
+}
+.createFolder { background-color: #dbf89f; cursor: pointer; width: 125px; }
+.createFolder:hover { background-color: #ccff66; }
+div.file {
+    background-color: #ffffff;
+    text-align: center;
+    margin: 3px;
+    padding: 3px;
+    width: 150px;
+    height: 150px;
+    float: left;
+    border: double 3px #cccccc;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+div.file:hover { background-color: #dbf89f; }
+.fSize {
+    color: #444444;
+    background-color: #ededed;
+    text-align: left;
+    display: block;
+    padding: 2px;
+}
+.icon { padding: 35px 10px 10px; }
+.thumbnail { margin: 4px auto; height: 64px; overflow: hidden; }
+img.thumb { padding: 2px; width: auto; height: 78px; }
+img.icon { padding-top: 37px; }
+.filename { background-color: #ededed; margin: 2px; padding: 2px; overflow: hidden; }
+.filename a { color: #003366; font-size: 10px; text-decoration: none; }
+fieldset.fType,
+fieldset.fCreate,
+fieldset.fDelete,
+fieldset.fUpload { -moz-border-radius: 6px; border-radius: 6px; border: none; }

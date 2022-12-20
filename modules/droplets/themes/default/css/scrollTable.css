@@ -1,0 +1,13 @@
+/* .table-fixed { width: 100%; background-color: #f3f3f3;} .table-fixed tbody { height: 200px; overflow-y: auto; width: 100%;} .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th { display: flexbox;} .table-fixed tbody td { } .table-fixed thead tr th { border-color: #e67e22;} */
+tbody.scrolling{max-height:31.625em;overflow:auto;display:inline-block;width:100%;}
+/* table#tableData, table#news-ScrollTable { color: #333; font-family: Helvetica, Arial, sans-serif; width: 100%; border-collapse: collapse; border-spacing: 0; }  td.news-Scroll, th.news-Scroll { height: 2.255em; } th.news-Scroll { background: linear-gradient(#7EB7BF 0%, #507279 100%); background: #538199; color: #FFF; font-weight: bold; } td.news-Scroll { background: #FFFFFF; text-align: left; } tr.news-Scroll td { background: #FFFFFF; } tr.news-Scroll:nth-child(odd) td { background: #e8e8e8; } tr.news-Scroll:hover td { background: #FBFCE0; } tr.news-Scroll td.news-Scroll:first-child, tr.news-Scroll th.news-Scroll:first-child { font-size: 0.9525em; text-align: right; padding-right: 5px; width: 100%; } tr.news-Scroll:first-child th.news-Scroll:nth-child(2) { border-radius: 5px 0 0 0;} tr.news-Scroll:first-child th.news-Scroll:last-child { border-radius: 0 5px 0 0;}  thead.news-Scroll { display: table; float: left; width: 100%; }  table#news-ScrollTable { text-align :left; font-size :12px; border :1px ridge #dadada; font-family :verdana; background :transparent; color :#0066ff; } table.mod_form, table#news-ScrollTable { border-collapse: collapse; width: 100%; } table#news-ScrollTable thead  { cursor :pointer; width: 100%; }  table#news-ScrollTable thead tr, table#news-ScrollTable tfoot tr { font-weight: bold; font-size: 0.9525em; height: 1.925em; padding: 0.525em 0; background: #7D9AB6; background: linear-gradient(#7EB7BF 0%, #507279 100%); background: #45788D; }  table#news-ScrollTable tbody tr {  } table#news-ScrollTable tbody tr { line-height: 1.225em; background: #e8e8e8;  } table#news-ScrollTable tbody tr:nth-child(odd) { background: #FFFFFF; } table#news-ScrollTable tbody tr:hover { background: #FBFCE0; } */
+/*****************************************/
+.scrolling-table-container{height:21.225em;overflow-y:scroll;overflow-x:hidden;}
+div.outer{width:100%;}
+table.table-scroll{table-layout:fixed;width:100%;/* same as containing div */}
+table.table-scroll th,table.table-scroll td{
+/* border: solid 0px #ccc;*/}
+table.table-scroll thead{display:block;}
+table.table-scroll tbody{display:block;}
+table.table-scroll tbody{height:42.025em;/* Just for the demo */width:100%;
+/* overflow-y: auto; overflow-x: hidden; */}

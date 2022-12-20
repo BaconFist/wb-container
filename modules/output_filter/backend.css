@@ -1,0 +1,20 @@
+@charset "utf-8 ";
+/* switch path to default or ownstyle */
+@import url("themes/default/css/default.css");
+@import url("themes/default/css/w3-themes/w3-theme-wb.css");
+.w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {line-height: 1.5;padding: 2px 3px!important;display: table-cell;text-align: left;vertical-align: middle;}
+.check-container input:checked ~ .checkbtn {line-height: 1.5;padding: 0!important;}
+label.check-container, label.w3-validate {padding: 0.0em 0 0 0 !important;vertical-align: text-top !important;line-height: 1.9;}
+label.check-container .checkbtn {top: 0px;width:23px;height:23px;}
+.check-container input:checked ~ .checkbtn {}
+.check-container .checkbtn::after {content: "\2713";top: 0px;font-size:16px}
+label, label.w3-validate {color: #777777;}
+.tr-height{height: 40px!important;}
+
+/* Show the checkmark when checked */
+.filter-block .check-container input:checked ~.checkbtn:after{display:block;}
+/* Show the indicator (dot/circle) when checked */
+.filter-block .check-container input:checked ~.radiobtn:after{display:block;}
+/* Style the checkmark/indicator */
+.filter-block .check-container .checkbtn::after{left:5px;top:-5px;width:5px;height:10px;content: "\2713";color:#fff;font-size:20px;font-weight:bold;}/* Style the indicator (dot/circle) */
+.filter-block .check-container .radiobtn:after{top:8px;left:8px;width:9px;height:9px;border-radius:50%;background:white;}

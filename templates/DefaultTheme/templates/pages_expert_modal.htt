@@ -1,0 +1,66 @@
+<!--
+ @version         $Id: pages_expert_modal.htt $
+-->
+<!-- BEGIN modal_expert_block -->
+<div class="w3-container">
+  <div id="sec{aTarget.SectionId}" class="w3-modal" style="padding-top: 0!important;">
+    <div class="w3-modal-content w3-animate-zoom w3-mobile" style="max-width:683px">
+        <header class="section-active w3-section w3-border-bottom w3-padding-6">
+        <div class="w3-container">
+            <h5 class="w3-padding-4 w3--medium">{TEXT_EXTENDED_PAGE_OPTIONS}</h5>
+            <span data-modal-close="sec{aTarget.SectionId}" class="btn-close w3-btn w3-xlarge w3-black w3-hover-red w3-display-topright w3-bold w3-border-0" title="Close Modal" style="min-width: 32px;min-height: 32px;">&times;</span>
+        </div>
+        </header>
+
+        <div class="w3-container">
+          <form id="form{aTarget.SectionId}_section_properties" action="{aTarget.sectionUrl}sections_save.php" method="post">
+            <input type="hidden" name="section_id" value="{aTarget.SectionId}" />
+            <input type="hidden" name="page_id" value="{aTarget.pageId}" />
+            <input type="hidden" name="inputSection" value="1" />
+            {aTarget.FTAN}
+
+            <p>
+            <label><b class="w3-text-blue-wb">{MESSAGE_PAGES_SECTIONS_TITLE}: </b></label>
+            <input class="w3-input w3-border" type="text" name="title_{aTarget.SectionId}" value="{aTarget.title}" />
+            </p>
+            <p>
+            <label><b class="w3-text-blue-wb">&nbsp;</b> </label>
+            <input type="checkbox" id="active{aTarget.SectionId}" value="1" name="active{aTarget.SectionId}" class="w3-check sec_anchor" {aTarget.Checked_Active} />
+            <label class="w3-validate" title='{TEXT_FORMAT_DIV_ACTIVE}' for="active{aTarget.SectionId}">{TEXT_ALLOW_ACTIVE}</label>
+            </p>
+<!-- BEGIN show_anchor_block -->
+            <p>
+            <label><b class="w3-text-blue-wb">&nbsp;</b> </label>
+            <input type="checkbox" id="anchor{aTarget.SectionId}" value="1" name="anchor{aTarget.SectionId}" class="w3-check sec_anchor" {aTarget.Checked_Anchor} />
+            <label class="w3-validate" title='{TEXT_FORMAT_DIV_ANCHOR}' for="anchor{aTarget.SectionId}">{TEXT_ALLOW_ANCHOR}</label>
+            </p>
+<!-- END show_anchor_block -->
+            <p>
+            <label><b class="w3-text-blue-wb">{TEXT_CLASS_ATTRIBUTES}: </b></label>
+            <input class="w3-input w3-border" type="text" name="attribute{aTarget.SectionId}" placeholder="{TEXT_ADD_CLASS_ATTRIBUTES}" value="{aTarget.attribute}" />
+            </p>
+<!-- BEGIN show_panel_block -->
+      <div class="w3-row block-outer w3-large w3-panel w3-pale-green">
+        <div class="w3-padding w3-margin-8 w3-leftbar w3-border-green">
+            <div class="w3-row w3-center w3--medium">
+              <div class="w3-container w3-padding-0">
+              <p>{TEXT_CLASS_PANEL}</p>
+              </div>
+            </div>
+        </div>
+      </div>
+<!-- END show_panel_block -->
+            <input type="submit" name="save" value="{lang.TEXT_SUBMIT}" class="section_{aTarget.SectionId} w3-right w3-btn w3-btn-default w3-blue-wb w3-hover-green w3--medium w3-btn-min-width w3-border-0" />
+          </form>
+        </div>
+
+        <footer class="section-active w3-section w3-border-top w3-padding-8">
+            <div class="w3-container">
+              <button data-modal-close="sec{aTarget.SectionId}" type="button" class="btn-close w3-black w3-btn w3-right w3-padding-6 w3-hover-red w3-border-0 w3-hide">{TEXT_CLOSE}</button>
+            </div>
+        </footer>
+
+    </div>
+  </div>
+</div>
+<!-- END modal_expert_block -->
